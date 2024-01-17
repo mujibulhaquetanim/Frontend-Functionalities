@@ -1,4 +1,4 @@
-import TypescriptConcepts from "./TypescriptConcepts"
+import TypescriptConcepts from "./Text/TypescriptConcepts"
 
 function App() {
 
