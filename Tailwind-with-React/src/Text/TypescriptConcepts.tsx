@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import TopicsList from "./TopicsList";
 
 const TypescriptConcepts = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   return (
     <div className="bg-slate-800 h-screen flex items-center justify-center rounded-md">
