@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-    <h1>Context api Project</h1>
+    <h1 className='text-4xl'>Context api Project</h1>
     </>
   )
 }
