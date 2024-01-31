@@ -1,15 +1,15 @@
-import { Button } from './components/ui/button'
-import './App.css'
+import { useState } from "react";
+import Nav from "./components/custom/Nav";
+// import './App.css'
 
 function App() {
+  const [First, setFirst] = useState("general");
 
   return (
     <>
-      <h1 className='text-3xl font-bold'>Welcome to ♾️ News</h1>  
-      <Button>Click me</Button>
-    
+      <Nav value={First} setValue={setFirst} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
