@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink,Outlet} from "react-router-dom";
 
 interface category {
   value: string;
@@ -41,6 +41,7 @@ const Nav: React.FC<category> = ({ value, setValue }) => {
           );
         })}
       </div>
+      <Outlet/>
     </div>
   );
 };
