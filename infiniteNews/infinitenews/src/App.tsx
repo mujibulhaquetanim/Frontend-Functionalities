@@ -3,11 +3,12 @@ import Nav from "./components/custom/Nav";
 // import './App.css'
 
 function App() {
-  const [First, setFirst] = useState("general");
+  const [category, setCategory] = useState("general");
 
   return (
     <>
-      <Nav value={First} setValue={setFirst} />
+      <Nav setValue={setCategory} />
+      <div className="font-bold text-4xl">{category}</div>
     </>
   );
 }
