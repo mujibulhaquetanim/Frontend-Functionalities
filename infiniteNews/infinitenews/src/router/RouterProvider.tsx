@@ -1,7 +1,7 @@
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import App from "@/App";
 import NotFoundPage from "@/pages/NotFoundPage";
-import General from "@/pages/General";
+
 
 const router=createBrowserRouter([{
   path:'/',
@@ -10,7 +10,7 @@ const router=createBrowserRouter([{
 },
 {
   path:'/:page',
-  element:<App />,
+  element:<App/>,
 }
 ]);
 

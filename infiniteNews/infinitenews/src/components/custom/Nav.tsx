@@ -6,7 +6,8 @@ interface category {
 }
 
 const Nav: React.FC<category> = ({setValue }) => {
-  const arr = [
+
+  const category:string[] = [
     "General",
     "Business",
     "Entertainment",
@@ -20,7 +21,7 @@ const Nav: React.FC<category> = ({setValue }) => {
     <div className="flex">
       <NavLink
           to={`/General`}
-          className="bg-red-700 text-2xl p-2 items-center justify-center font-bold inline-block"
+          className="bg-red-700 text-2xl p-2 items-center justify-center font-bold sticky"
         >
           {" "}
           <span className="text-3xl">♾️</span>News{" "}
@@ -33,7 +34,7 @@ const Nav: React.FC<category> = ({setValue }) => {
       </div>
 
       <div className="flex items-center justify-around w-full">
-        {arr.map((item, index) => {
+        {category.map((item, index) => {
           return (
             <NavLink
               to={`/${item}`}
