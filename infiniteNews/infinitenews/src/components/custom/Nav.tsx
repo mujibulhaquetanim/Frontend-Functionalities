@@ -20,6 +20,7 @@ const Nav: React.FC<category> = ({ setValue }) => {
     <div className="flex">
       <NavLink
         to={`/General`}
+        onClick={() => setValue("General")}
         className="bg-red-700 text-2xl p-2 items-center justify-center font-bold sticky"
       >
         {" "}
