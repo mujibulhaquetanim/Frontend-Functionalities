@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "@/App";
 import NotFoundPage from "@/pages/NotFoundPage";
 
-const allowedPaths = [
+const allowedPaths:string[] = [
   "/",
   "/General",
   "/Business",
