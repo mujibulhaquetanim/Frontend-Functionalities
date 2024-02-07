@@ -20,7 +20,7 @@ const Nav: React.FC<category> = ({ setValue }) => {
     <div className="flex">
       <NavLink
         to={`/General`}
-        onClick={() => setValue("General")}
+        onClick={() => setValue("general")}
         className="bg-red-700 text-2xl p-2 items-center justify-center font-bold sticky"
       >
         {" "}
@@ -41,7 +41,7 @@ const Nav: React.FC<category> = ({ setValue }) => {
                     ? "underline justify-center items-center rounded-lg p-2 transition duration-150 ease-out hover:ease-in bg-slate-500"
                     : "hover:bg-red-800 rounded-full p-1 transition duration-150 ease-out hover:ease-in-out";
                 }}
-                onClick={() => setValue(item)}
+                onClick={() => setValue(item.toLowerCase())}
               >
                 {item}
               </NavLink>
