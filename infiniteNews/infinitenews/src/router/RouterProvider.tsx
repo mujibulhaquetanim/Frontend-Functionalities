@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "@/App";
-import NotFoundPage from "@/pages/NotFoundPage";
+import NotFoundPage from "@/components/custom/pages/NotFoundPage";
 
 const allowedPaths:string[] = [
   "/",
@@ -15,7 +15,7 @@ const allowedPaths:string[] = [
 
 const router = createBrowserRouter([
   ...allowedPaths.map((path) => ({
-    path, //path:path ->as both property and value are same name, no need to mention path:path.
+    path,
     element: <App />,
     errorElement: <NotFoundPage />,
   })),

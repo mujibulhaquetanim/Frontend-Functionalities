@@ -39,7 +39,7 @@ const Nav: React.FC<category> = ({ setValue }) => {
                 className={({ isActive }) => {
                   return isActive
                     ? "underline justify-center items-center rounded-lg p-2 transition duration-150 ease-out hover:ease-in bg-slate-500"
-                    : "hover:bg-red-800 rounded-full p-1 transition duration-150 ease-out hover:ease-in-out";
+                    : "hover:bg-red-800 rounded-full p-1 hover:scale-125 transition duration-500 ease-out hover:ease-in-out";
                 }}
                 onClick={() => setValue(item.toLowerCase())}
               >
