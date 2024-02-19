@@ -8,8 +8,7 @@ function App() {
   return (
     <>
       <Nav setValue={setCategory} />
-      <div className="font-bold text-4xl">{category}</div>
-      <NewsBoard/>
+      <NewsBoard category= {category}/>
     </>
   );
 }

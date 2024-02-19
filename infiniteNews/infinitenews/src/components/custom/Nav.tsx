@@ -47,6 +47,7 @@ const Nav: React.FC<category> = ({ setValue }) => {
               </NavLink>
             );
           })}
+          <div></div>
         </div>
         <Outlet />
       </div>
