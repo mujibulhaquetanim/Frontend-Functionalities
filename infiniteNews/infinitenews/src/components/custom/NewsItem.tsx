@@ -12,9 +12,9 @@ const NewsItem:React.FC<value>=({article,page,title,src,pubDate})=> {
   return (
     <div className="border-2 w-1/6 m-3 p-3 rounded-xl hover:scale-105 duration-300">
       <div className="mb-1">
-        <img src="" alt="news pic" />
+        <img src={src} alt="news pic" />
       </div>
-      <h1 className="font-bold text-2xl">Heading</h1>
+      <h1 className="font-bold text-2xl">{title}</h1>
       <div className="justify-end mt-1">
         {article}
       </div>

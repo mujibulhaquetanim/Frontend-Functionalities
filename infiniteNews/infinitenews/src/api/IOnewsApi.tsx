@@ -5,14 +5,6 @@ interface category {
   category: string;
 }
 
-interface newsApi {
-    description: string;
-    title: string;
-    src: string;
-    pubDate: string;
-    article_id: string;
-  }
-
 const IOnewsApi:React.FC<category>=({category})=> {
     const [NextPage, setNextPage] = useState<string>("");
     const [article, setArticle] = useState<newsApi[]>([]);

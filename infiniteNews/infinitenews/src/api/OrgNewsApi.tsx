@@ -32,10 +32,10 @@ const OrgNewsApi:React.FC<category>=({category})=> {
   }, []);
   return (
     <div className="flex flex-wrap">
-      {article.map((news, article_id) => {
+      {article.map((news, index) => {
         return (
           <NewsItem
-            key={article_id}
+            key={index}
             article={news.description}
             title={news.title}
             page={NextPage}

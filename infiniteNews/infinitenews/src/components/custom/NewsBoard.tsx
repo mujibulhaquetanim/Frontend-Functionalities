@@ -1,4 +1,3 @@
-import NewItem from "./NewsItem";
 import IOnewsApi from "@/api/IOnewsApi";
 import OrgNewsApi from "@/api/OrgNewsApi";
 
