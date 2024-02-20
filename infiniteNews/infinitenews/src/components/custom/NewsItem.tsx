@@ -4,9 +4,11 @@ interface value{
   article: string;
   title: string;
   page: string;
+  src: string;
+  pubDate: string;
 }
 
-const NewItem:React.FC<value>=({article,page,title})=> {
+const NewsItem:React.FC<value>=({article,page,title,src,pubDate})=> {
   return (
     <div className="border-2 w-1/6 m-3 p-3 rounded-xl hover:scale-105 duration-300">
       <div className="mb-1">
@@ -23,4 +25,4 @@ const NewItem:React.FC<value>=({article,page,title})=> {
   );
 }
 
-export default NewItem;
+export default NewsItem;

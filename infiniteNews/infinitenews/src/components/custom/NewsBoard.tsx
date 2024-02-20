@@ -1,40 +1,31 @@
-import { useEffect, useState } from "react";
-import NewItem from "./NewItem";
+import NewItem from "./NewsItem";
+import IOnewsApi from "@/api/IOnewsApi";
+import OrgNewsApi from "@/api/OrgNewsApi";
 
 interface category {
   category: string;
 }
 
 interface newsApi {
-  description:string;
-  title:string;
-
+  article: string[];
+  // description: string;
+  // title: string;
+  // src: string;
+  // pubDate: string;
+  // article_id: string;
 }
 
+const NewsBoard: React.FC<newsApi | category> = ({ article, category }) => {
+  const newsBoard = function newsBoard() {
+    try {
+      return <IOnewsApi category={category} />;
+    } catch (error) {
+      console.log(`${error}: trying another newsapi`);
+      return <OrgNewsApi category={category} />;
+    }
+  };
 
-const NewsBoard: React.FC<category> = ({ category }) => {
-  const [article, setArticle] = useState<newsApi[]>([]);
-  const [NextPage, setNextPage] = useState<string>("");
-  // useEffect(() => {
-  //   const url = `${import.meta.env.VITE_NEWS_URL}&country=${"in"}&category={category}`;
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setArticle(data.results);
-  //       setNextPage(data.nextPage);
-  //       console.log("News data:", data.results);
-  //       console.log("News nextPageId:", data.nextPage);
-  //     });
-  // }, []);
-  return (
-    <div className="flex flex-wrap">
-    {article.map((news,index)=>{
-      return (
-        <NewItem key={index} article={news.description} title={news.title} page={NextPage} />
-      );
-    })}
-    </div>
-  );
+  return <div>{newsBoard()}</div>;
 };
 
 export default NewsBoard;
