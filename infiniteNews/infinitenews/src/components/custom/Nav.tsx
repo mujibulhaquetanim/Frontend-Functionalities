@@ -7,7 +7,6 @@ interface category {
 
 const Nav: React.FC<category> = ({ setValue }) => {
   const category: string[] = [
-    "General",
     "Business",
     "Entertainment",
     "Health",
@@ -19,8 +18,8 @@ const Nav: React.FC<category> = ({ setValue }) => {
   return (
     <div className="flex">
       <NavLink
-        to={`/General`}
-        onClick={() => setValue("general")}
+        to={`/Health`}
+        onClick={() => setValue("health")}
         className="bg-red-700 text-2xl p-2 items-center justify-center font-bold sticky"
       >
         {" "}

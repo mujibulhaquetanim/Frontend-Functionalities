@@ -4,7 +4,6 @@ import NotFoundPage from "@/components/custom/pages/NotFoundPage";
 
 const allowedPaths:string[] = [
   "/",
-  "/General",
   "/Business",
   "/Entertainment",
   "/Health",

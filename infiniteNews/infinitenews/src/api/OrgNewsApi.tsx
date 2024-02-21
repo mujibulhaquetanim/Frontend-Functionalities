@@ -8,28 +8,28 @@ interface category {
 interface newsApi {
   description: string;
   title: string;
-  src: string;
-  pubDate: string;
+  urlToImage: string;
+  publishedAt: string;
   article_id: string;
 }
 
-const OrgNewsApi:React.FC<category>=({category})=> {
-  const [NextPage, setNextPage] = useState<string>("");
+const OrgNewsApi: React.FC<category> = ({ category }) => {
+  const [NextPage, setNextPage] = useState<number>(1);
   const [article, setArticle] = useState<newsApi[]>([]);
 
   useEffect(() => {
+    console.log(category);
     const url = `${
       import.meta.env.VITE_ORG_NEWS
     }&country=${"in"}&category=${category}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setArticle(data.results);
-        setNextPage(data.nextPage);
-        console.log("News data:", data.results);
-        console.log("News nextPageId:", data.nextPage);
+        setArticle(data.articles);
+        setNextPage(data.page);
+        console.log("News data:", data.articles);
       });
-  }, []);
+  }, [category]);
   return (
     <div className="flex flex-wrap">
       {article.map((news, index) => {
@@ -38,13 +38,12 @@ const OrgNewsApi:React.FC<category>=({category})=> {
             key={index}
             article={news.description}
             title={news.title}
-            page={NextPage}
-            src={news.src}
-            pubDate={news.pubDate}
+            src={news.urlToImage}
+            pubDate={news.publishedAt}
           />
         );
       })}
     </div>
   );
-}
+};
 export default OrgNewsApi;
