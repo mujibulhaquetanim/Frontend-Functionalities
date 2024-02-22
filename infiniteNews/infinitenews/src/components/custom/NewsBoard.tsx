@@ -3,19 +3,11 @@ import OrgNewsApi from "@/api/OrgNewsApi";
 
 interface category {
   category: string;
+  ioSuccess: string;
 }
 
-const NewsBoard: React.FC<category> = ({ category }) => {
-  const newsBoard = function newsBoard() {
-    try {
-      return <IOnewsApi category={category} />;
-    } catch (error) {
-      // console.log(`${error}: trying another newsapi`);
-      return <OrgNewsApi category={category} />;
-    }
-  };
-
-  return <div>{newsBoard()}</div>;
-};
+const NewsBoard: React.FC<category> = ({ category,ioSuccess="success"}) => {
+return <div>{ioSuccess==="RateLimitExceeded" ? <OrgNewsApi category={category}/> : <IOnewsApi category={category}/>}</div>  
+}
 
 export default NewsBoard;
