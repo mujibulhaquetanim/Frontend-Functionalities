@@ -6,8 +6,16 @@ interface category {
   ioSuccess: string;
 }
 
-const NewsBoard: React.FC<category> = ({ category,ioSuccess="success"}) => {
-return <div>{ioSuccess==="RateLimitExceeded" ? <OrgNewsApi category={category}/> : <IOnewsApi category={category}/>}</div>  
-}
+const NewsBoard: React.FC<category> = ({ category, ioSuccess = "success" }) => {
+  return (
+    <div>
+      {ioSuccess === "RateLimitExceeded" ? (
+        <OrgNewsApi category={category} />
+      ) : (
+        <IOnewsApi category={category} />
+      )}
+    </div>
+  );
+};
 
 export default NewsBoard;

@@ -1,0 +1,1 @@
+this project is a front end part for graphql backend, for the backend part, look in backend repository.
