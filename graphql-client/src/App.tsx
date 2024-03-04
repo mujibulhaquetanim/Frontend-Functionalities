@@ -1,15 +1,34 @@
 import "./App.css";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 
-const client = new ApolloClient({
-  uri: "http://localhost:8000/graphql",
-  cache: new InMemoryCache(),
-});
+interface todo {
+  id: number;
+  title: string;
+  user: object;
+  name: string;
+}
 
+const query = gql`
+  query TodosUser {
+    getTodos {
+      title
+      id
+      user {
+        name
+        id
+        phone
+      }
+    }
+  }
+`;
 function App() {
+  const { data, loading } = useQuery(query);
+
+  if (loading) return <h1>Loading...</h1>;
+
   return (
     <>
-      <h1>Welcome to GraphQL</h1>
+      <div>{JSON.stringify(data)}</div>
     </>
   );
 }
