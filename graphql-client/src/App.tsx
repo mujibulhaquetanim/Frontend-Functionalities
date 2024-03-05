@@ -1,11 +1,16 @@
 import "./App.css";
 import { gql, useQuery } from "@apollo/client";
 
-interface todo {
-  id: number;
-  title: string;
-  user: object;
+interface User {
   name: string;
+  id: number;
+  phone: string;
+}
+
+interface Todo {
+  title: string;
+  id: number;
+  user: User;
 }
 
 const query = gql`
