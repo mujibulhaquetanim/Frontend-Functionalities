@@ -1,0 +1,1 @@
+change DP by directly clicking on the photo.
