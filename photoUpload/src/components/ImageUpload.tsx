@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, MouseEvent } from "react";
 import defaultImage from "../assets/avatar.jpg";
 import edit from "../assets/edit.svg";
 
@@ -12,10 +12,14 @@ function ImageUpload() {
     fileRef.current?.click();
   };
 
+  const UploadImageDisplay = function(){
+    
+  }
+
   return (
     <div className="relative h-80 w-80 m-8">
       <img
-        src={defaultImage}
+        src={image}
         alt="Avatar"
         className="h-72 w-72 p-2 rounded-full"
       />
@@ -30,7 +34,7 @@ function ImageUpload() {
             className="object-cover size-8 font-bold"
           />
         </button>
-        <input type="file" id="file" ref={fileRef} hidden />
+        <input type="file" id="file" ref={fileRef} onChange={UploadImageDisplay} hidden />
       </form>
     </div>
   );
