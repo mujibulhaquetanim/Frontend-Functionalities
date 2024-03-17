@@ -5,7 +5,7 @@ import edit from "../assets/edit.svg";
 function ImageUpload() {
   const [image, setImage] = useState(defaultImage);
   const fileRef = useRef<HTMLInputElement | null>(null);
-  
+  const [status, setStatus] = useState<boolean>(false);
 
   const handleImageUpload = function (event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
@@ -16,7 +16,7 @@ function ImageUpload() {
 
     const cachedURL = URL.createObjectURL(fileUpload!);
     setImage(cachedURL);
-   
+    setStatus(true);
   };
 
   return (
@@ -42,7 +42,13 @@ function ImageUpload() {
         />
       </form>
 
-      
+      {status === true ? (
+        <div className="font-bold text-xl justify-center flex mt-3">
+          Photo Updated 🥂
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
