@@ -2,27 +2,26 @@ import { useState, useRef, MouseEvent } from "react";
 import defaultImage from "../assets/avatar.jpg";
 import edit from "../assets/edit.svg";
 
-
 function ImageUpload() {
   const [image, setImage] = useState(defaultImage);
   const fileRef = useRef<HTMLInputElement | null>(null);
+  
 
   const handleImageUpload = function (event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     fileRef.current?.click();
   };
+  const UploadImageDisplay = function () {
+    const fileUpload = fileRef.current?.files?.[0];
 
-  const UploadImageDisplay = function(){
-    
-  }
+    const cachedURL = URL.createObjectURL(fileUpload!);
+    setImage(cachedURL);
+   
+  };
 
   return (
     <div className="relative h-80 w-80 m-8">
-      <img
-        src={image}
-        alt="Avatar"
-        className="h-72 w-72 p-2 rounded-full"
-      />
+      <img src={image} alt="Avatar" className="h-72 w-72 p-2 rounded-full" />
       <form id="form" encType="multipart/form-data">
         <button
           className="flex absolute bottom-8 right-12 top-40 rounded-full"
@@ -31,11 +30,19 @@ function ImageUpload() {
           <img
             src={edit}
             alt="editIcon"
-            className="object-cover size-8 font-bold"
+            className="object-cover size-8 font-bold hover:scale-125"
           />
         </button>
-        <input type="file" id="file" ref={fileRef} onChange={UploadImageDisplay} hidden />
+        <input
+          type="file"
+          id="file"
+          ref={fileRef}
+          onChange={UploadImageDisplay}
+          hidden
+        />
       </form>
+
+      
     </div>
   );
 }
