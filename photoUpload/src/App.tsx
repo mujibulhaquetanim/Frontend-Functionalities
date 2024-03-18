@@ -1,8 +1,10 @@
-import ImageUpload from "./components/ImageUpload";
+import ImageUpload from "./components/ImageUpload/ImageUpload";
+import ImageUploadNew from "./components/ImageUpload/ImageUploadNew";
 function App() {
   return (
-    <div className="flex justify-center">
+    <div>
       <ImageUpload />
+      <ImageUploadNew />
     </div>
   );
 }
