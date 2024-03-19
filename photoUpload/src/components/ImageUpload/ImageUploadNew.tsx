@@ -1,6 +1,5 @@
 import { useState, useRef, MouseEvent } from "react";
 import defaultImage from "../../assets/avatar.jpg";
-import edit from "../../assets/edit.svg";
 
 function ImageUploadNew() {
   const [image, setImage] = useState(defaultImage);
@@ -21,18 +20,20 @@ function ImageUploadNew() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-around">
+    <div className="h-screen flex justify-center items-center">
       <div
         onMouseEnter={() => setShowOverlay(true)}
         onMouseLeave={() => setShowOverlay(false)}
       >
         <div className="relative h-80 w-80 m-8">
           <button onClick={handleImageUpload}>
-            <img
-              src={image}
-              alt="Avatar"
-              className="h-72 w-72 p-2 rounded-full hover:scale-110 hover:blur-sm"
-            />
+            <div className="hover:scale-110 hover:blur-sm">
+              <img
+                src={image}
+                alt="Avatar"
+                className="h-72 w-72 p-2 rounded-full"
+              />
+            </div>
           </button>
           <form id="form" encType="multipart/form-data">
             <input
@@ -53,9 +54,12 @@ function ImageUploadNew() {
           )}
         </div>
         {showOverlay && (
-          <div className="relative bottom-56 left-24   font-bold text-2xl">
+          <button
+            className="relative bottom-56 left-20 font-bold text-2xl text-white hover:backdrop-blur-lg"
+            onClick={handleImageUpload}
+          >
             Upload your Image
-          </div>
+          </button>
         )}
       </div>
     </div>
