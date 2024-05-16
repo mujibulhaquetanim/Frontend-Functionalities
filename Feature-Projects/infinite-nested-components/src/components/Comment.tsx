@@ -13,7 +13,7 @@ function Comment({ data }: { data: CommentType }) {
   console.log(`Rendering comment with ID: ${data.id}`);
   return (
     <div>
-      <div className="comment-container">
+      <div className={`${data.text && "comment-container"}`}>
         <h3>{data.text}</h3>
         <div>
           {showInput && (
@@ -28,12 +28,12 @@ function Comment({ data }: { data: CommentType }) {
               <button>Add</button>
               <button onClick={() => setShowInput(false)}>Cancel</button>
             </div>
-          ) : (
+          ) : data.text ? (
             <div>
               <button onClick={() => setShowInput(true)}>Reply</button>
               <button>Delete</button>
             </div>
-          )}
+          ) : null}
         </div>
       </div>
 
