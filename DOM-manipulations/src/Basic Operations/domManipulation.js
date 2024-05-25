@@ -12,4 +12,12 @@ const a = container.appendChild(divElement); //only accepts elements, returns th
 console.log(a);
 const b= container.append(divElement,document.createElement('p'),'Inserted using DOM'); //don't return the element and accepts multiple elements.
 console.log(b);
+// ---------------------------------------------------------
+
+const inputElement = document.querySelector('input[type="text"]');
+
+inputElement.addEventListener('keydown', (e) => {
+  divElement.textContent = e.target.value;
+});
+
 
