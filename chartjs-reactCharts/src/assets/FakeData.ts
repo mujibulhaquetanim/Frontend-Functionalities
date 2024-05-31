@@ -17,10 +17,10 @@ export const linearChartData = {
 };
 
 export const barChartData ={
-    levels: ['Rent','Groceries', 'Utilities', 'Entertainment' , 'Transportation'],
+    labels: ['Rent','Groceries', 'Utilities', 'Entertainment' , 'Transportation'],
     datasets: [{
-        label: 'Expenses',
-        data: [160,100,60,35,80],
+        label: 'Living Expenses In BD',
+        data: [160,100,60,35,50],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -35,6 +35,10 @@ export const barChartData ={
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
         ],
+        borderWidth: 1,
+    },{
+        label: 'Living expenses in USA',
+        data: [750,300,150,80,100],
         borderWidth: 1,
     }]
 };
