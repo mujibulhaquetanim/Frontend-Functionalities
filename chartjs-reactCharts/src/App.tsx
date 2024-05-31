@@ -1,5 +1,6 @@
 import './App.css'
-import LineGraph from './components/line';
+import BarGraph from './components/BarGraph';
+import LineGraph from './components/LineGraph';
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <h1 className='text-3xl font-bold'>Let's ^Chart with react 🙂</h1>
       <LineGraph />
+      <BarGraph/>
     </>
   )
 }
