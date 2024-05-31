@@ -20,6 +20,17 @@ ChartJs.register(
 );
 
 export default function BarGraph() {
-  const options = {};
+  const options = {
+    responsive: true, 
+    plugins: {
+      legend: {
+        position: "top" as const
+      },
+      title: {
+        display: true,
+        text: "Bar Chart, representing Living Expense Comparison between BD & USA"
+      }
+    }
+  };
   return <Bar className="m-3" options={options} data={barChartData} />;
 }

@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1 className='text-3xl font-bold'>Let's ^Chart with react 🙂</h1>
+      <h1 className='text-3xl font-bold bg-slate-500 p-3 mb-5'>Let's ^Chart with react 🙂</h1>
       <LineGraph />
       <BarGraph/>
       <PieGraph/>

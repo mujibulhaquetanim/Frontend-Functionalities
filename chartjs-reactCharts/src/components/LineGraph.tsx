@@ -22,6 +22,17 @@ ChartJs.register(
 );
 
 export default function LineGraph() {
-  const options = {};
+  const options = {
+    responsive: true, 
+    plugins: {
+      legend: {
+        position: "top" as const
+      },
+      title: {
+        display: true,
+        text: "Line Graph, representing Foot steps comparison between Mujib & Emma"
+      }
+    }
+  };
   return <Line className="m-3" options={options} data={linearChartData} />;
 }
