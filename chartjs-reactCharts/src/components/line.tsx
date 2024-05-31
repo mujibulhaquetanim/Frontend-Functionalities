@@ -9,17 +9,19 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { linearChartData } from "../assets/FakeData";
 
-ChartJs.register( CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend);
+ChartJs.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 export default function LineGraph() {
-    const options = {};
-    const data = {};
-  return <Line options={options} data={data}/>
+  const options = {};
+  return <Line className="m-3" options={options} data={linearChartData} />;
 }
