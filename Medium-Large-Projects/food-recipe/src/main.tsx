@@ -5,15 +5,23 @@ import "./index.css";
 import FavoritesPage from "./pages/FavoritesPage";
 import HomePage from "./pages/HomePage";
 import App from "./App";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-  },
-  {
-    path: "/favorites",
-    element: <FavoritesPage/>,
+    element: <App />,
+    errorElement: <NotFoundPage />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/favorites",
+        element: <FavoritesPage />,
+      },
+    ],
   },
 ]);
 
