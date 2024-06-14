@@ -1,19 +1,36 @@
-/* *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+ul,ol{
+    list-style: none;
+    margin-top: 5px;
+}
 
-.new-task-container{
-    border: 1px solid;
-    border-radius: 5rem;
+section {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 5px;
+}
+
+#submit{
     padding: 5px;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    font-size: large;
-    font: bold;
+    border-radius: 1rem;
+}
+
+.new-task-container {
+  border: 1px solid;
+  border-radius: 5rem;
+  padding: 5px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: large;
+  font: bold;
 }
