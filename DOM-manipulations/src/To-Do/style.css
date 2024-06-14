@@ -1,0 +1,19 @@
+/* *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+
+.new-task-container{
+    border: 1px solid;
+    border-radius: 5rem;
+    padding: 5px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: large;
+    font: bold;
+}
