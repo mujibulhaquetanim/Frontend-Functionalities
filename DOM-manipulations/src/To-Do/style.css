@@ -8,8 +8,24 @@ ul,ol{
     list-style: none;
     margin-top: 5px;
     background-color: darkgrey;
-    padding: 0.25rem;
-    border-radius: 5px;
+    padding: 0.5rem;
+    border-radius: 2px;
+}
+
+.item:hover{
+  scale: 105%;
+  font: bold;
+  transition: ease;
+  animation-duration: 500ms;
+}
+
+.item{
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 section {
@@ -21,8 +37,12 @@ section {
 }
 
 #submit{
-    padding: 5px;
+    padding: 0.25rem;
     border-radius: 1rem;
+}
+#submit:hover{
+  cursor: pointer;
+  scale: 105%;
 }
 
 .heading{
@@ -51,13 +71,19 @@ section {
   justify-content: center;
   align-items: center;
   gap: 10rem;
+  width: 50%;
+  background: #e3e1e9;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 .box{
   border: 1px solid;
-  padding: 0.5rem;
+  padding: 1rem;
+  margin: 0.5rem;
 }
 
 button{
-  padding: 2px;
+  padding: 1px;
+  cursor: pointer;
 }

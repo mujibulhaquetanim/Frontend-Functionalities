@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section>
-        <div>
-            <img src="" alt="task logo">
-        </div>
-        <h1>Make Your Todo</h1>
-        <form action="#" class="new-task-container">
-            <label for="new-task">Add a new Task</label>
-            <input type="text" id="new-task">
-            <input type="submit" id="submit" value="Add Task">
-        </form>
+      <div>
+        <img src="" alt="task logo" />
+      </div>
+      <h1>Make Your Todo</h1>
+      <form action="#" class="new-task-container">
+        <label for="new-task">Add a new Task</label>
+        <input type="text" id="new-task" />
+        <input type="submit" id="submit" value="Add Task" />
+      </form>
 
-        <div class="todo-box">
-            <div class='todo box'>
-                <h2 class="heading">Incomplete Tasks</h2>
-                <ul class="items">
-                    <li class="item">
-                        <input type="checkbox"/>
-                        <label>Task Name</label>
-                    </li>
-                </ul>
-            </div>
-    
-            <div class="complete-task box">
-                <h2 class="heading">Completed Tasks</h2>
-                <ul class="items">
-                    <li class="item">Task Name <button class="delete">Delete</button></li>
-                </ul>
-            </div>
+      <div class="todo-box">
+        <div class="incomplete-task box">
+          <h2 class="heading">Incomplete Tasks</h2>
+          <ul class="items">
+            <li class="item">
+              <input type="checkbox" />
+              <label>Task Name</label>
+            </li>
+          </ul>
         </div>
+
+        <div class="complete-task box">
+          <h2 class="heading">Completed Tasks</h2>
+          <ul class="items">
+            <li class="item">
+              Task Name <button class="delete">Delete</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
