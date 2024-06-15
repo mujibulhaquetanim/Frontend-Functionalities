@@ -7,6 +7,9 @@
 ul,ol{
     list-style: none;
     margin-top: 5px;
+    background-color: darkgrey;
+    padding: 0.25rem;
+    border-radius: 5px;
 }
 
 section {
@@ -22,6 +25,14 @@ section {
     border-radius: 1rem;
 }
 
+.heading{
+  background-color: cadetblue;
+  border-radius: 5rem;
+  border-bottom: 2px solid;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
 .new-task-container {
   border: 1px solid;
   border-radius: 5rem;
@@ -33,4 +44,20 @@ section {
   gap: 1.5rem;
   font-size: large;
   font: bold;
+}
+
+.todo-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.box{
+  border: 1px solid;
+  padding: 0.5rem;
+}
+
+button{
+  padding: 2px;
 }
