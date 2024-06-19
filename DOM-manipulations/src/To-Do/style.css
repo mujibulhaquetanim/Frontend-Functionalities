@@ -3,50 +3,57 @@
   margin: 0;
   padding: 0;
 }
-
-ul,ol{
-    list-style: none;
-    margin-top: 5px;
-    background-color: darkgrey;
-    padding: 0.5rem;
-    border-radius: 2px;
+img {
+  padding-top: 2rem;
+  object-fit: cover;
+}
+ul,
+ol {
+  list-style: none;
+  margin-top: 5px;
+  background-color: darkgrey;
+  padding: 0.5rem;
+  border-radius: 2px;
 }
 
-.item:hover{
-  scale: 105%;
+.item:hover {
   font: bold;
   transition: ease;
   animation-duration: 500ms;
 }
 
-.item{
+.item {
   border-bottom: 1px solid;
   padding-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  font-size: large;
 }
 
 section {
   display: grid;
   place-items: center;
   gap: 1rem;
+  padding-top: 1rem;
   text-align: center;
   padding: 5px;
   background: #f7f5f5;
+  padding-bottom: 1rem;
+  border-radius: 2rem;
 }
 
-#submit{
-    padding: 0.25rem;
-    border-radius: 1rem;
+#submit {
+  padding: 0.25rem;
+  border-radius: 1rem;
 }
-#submit:hover{
+#submit:hover {
   cursor: pointer;
   scale: 105%;
 }
 
-.heading{
+.heading {
   background-color: cadetblue;
   border-radius: 5rem;
   border-bottom: 2px solid;
@@ -57,7 +64,7 @@ section {
 .new-task-container {
   border: 1px solid;
   border-radius: 5rem;
-  padding: 5px;
+  padding: 0.5rem;
   width: 50%;
   display: flex;
   justify-content: center;
@@ -67,7 +74,7 @@ section {
   font: bold;
 }
 
-.todo-box{
+.todo-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,13 +85,22 @@ section {
   border-radius: 5px;
 }
 
-.box{
+.box {
   border: 1px solid;
   padding: 1rem;
   margin: 0.5rem;
 }
 
-button{
-  padding: 1px;
+button {
+  padding: 5px;
   cursor: pointer;
+}
+
+#new-task:focus {
+  height: .50rem;
+  font-size: large;
+  padding: 1rem;
+}
+#new-task{
+  height: 2rem;
 }
