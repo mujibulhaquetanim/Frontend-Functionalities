@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="OTP.css" />
+    <script src="OTP.js" defer></script>
+    <title>OTP Project with DOM</title>
+  </head>
+  <body>
+    <div id="otp-box-id" class="otp-box-container">
+      <h1>Enter OPT</h1>
+      <div id="otp-box-list-id" class="otp-box-list">
+        <input type="text" class="otp-box" maxlength="1" />
+        <input type="text" class="otp-box" maxlength="1" />
+        <input type="text" class="otp-box" maxlength="1" />
+        <input type="text" class="otp-box" maxlength="1" />
+      </div>
+
+      <p id="generated-otp-id" class="generate-otp"></p>
+      <p id="result-id" class="otp-validate-msg"></p>
+    </div>
+  </body>
 </html>
