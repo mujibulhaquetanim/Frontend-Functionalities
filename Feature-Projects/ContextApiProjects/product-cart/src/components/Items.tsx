@@ -1,4 +1,4 @@
-import { useCart } from "./context/Cart";
+import { useCart } from "./context/useCart";
 
 interface ItemsProps {
   name: string;
@@ -7,6 +7,7 @@ interface ItemsProps {
 
 export default function Items({ name, price }: ItemsProps) {
   const cart = useCart();
+  console.log(cart);
 
   const handleAddToCart = () => {
     if (cart && cart.items) {
@@ -15,9 +16,17 @@ export default function Items({ name, price }: ItemsProps) {
   };
 
   return (
-    <div className="cart-item">
+    <div
+      style={{
+        textAlign: "center",
+        border: "1px solid white",
+        borderRadius: "1rem",
+        margin: "0.5rem",
+        padding: "1rem",
+      }}
+    >
       <h4>{name}</h4>
-      <p>{price}</p>
+      <p>{`Price: ${price}`}</p>
       <button onClick={handleAddToCart} disabled={!cart || !cart.items}>
         Add to Cart
       </button>
