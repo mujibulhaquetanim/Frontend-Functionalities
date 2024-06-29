@@ -1,3 +1,4 @@
+import PhotoUploadingApp from "./Projects/Photo Uploading/PhotoUploadingApp"
 import ScrollSpyApp from "./Projects/Scroll Spy/ScrollSpyApp"
 import TypescriptConcepts from "./Text/TypescriptConcepts"
 
@@ -7,6 +8,7 @@ function App() {
     <>
     <TypescriptConcepts/>
     <ScrollSpyApp/>
+    <PhotoUploadingApp/>
     
     </>
   )
