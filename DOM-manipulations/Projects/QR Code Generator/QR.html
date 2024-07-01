@@ -8,24 +8,23 @@
     />
     <link rel="stylesheet" href="QR.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="QR.js" defer></script>
     <title>QR Code Generator</title>
   </head>
   <body>
     <h1>Create QR Code Now 👇🏼</h1>
     <div class="container">
       <div class="image">
-        <img src="../public/attention (1).png" alt="QR Code Image" id="image" />
+        <img
+          src="../public/No image to show.jpg"
+          alt="QR Code Image"
+          id="image"
+        />
       </div>
       <div class="form">
         <input type="text" placeholder="Content in QR Code" id="QRcontent" />
         <button id="btnCreate">Create QR Code</button>
       </div>
     </div>
-
-    <script>
-      const QRcontent = document.getElementById("QRcontent");
-      const btnCreate = document.getElementById("btnCreate");
-      const image = document.getElementById("image");
-    </script>
   </body>
 </html>
