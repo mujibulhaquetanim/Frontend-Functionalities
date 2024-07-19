@@ -12,6 +12,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.emoji {
+  font-size: 16px;
+  font-weight: 600;
+}
 
 nav {
   display: flex;
@@ -64,4 +68,29 @@ nav {
   padding: 4px 10px;
   background: #ffd64f;
   border-radius: 0 4px 4px 0;
+}
+
+.nav-language {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.nav-text {
+  margin-left: 15px;
+}
+.nav-text p {
+  font-size: 12px;
+  display: inline-block;
+}
+.nav-text h1 {
+  font-size: 14px;
+}
+
+.nav-cart {
+  display: flex;
+  align-items: center;
+  margin: 0px 15px;
 }
