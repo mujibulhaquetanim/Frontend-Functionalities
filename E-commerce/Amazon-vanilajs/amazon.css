@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -115,9 +116,8 @@ nav {
   display: flex;
   overflow-y: hidden;
 }
-.header-slider img {
+.header-slider .header-img {
   max-width: 100%;
-  max-height: ;
   mask-image: linear-gradient(to bottom, #000000 50%, transparent 100%);
 }
 .header-slider a {
@@ -129,7 +129,8 @@ nav {
   color: #0000007b;
   text-decoration: none;
   cursor: pointer;
-  font-size: 50px;
+  /* font-size added for the emojis */
+  /* font-size: 50px; */
 }
 .header-slider .control-next {
   right: 0;
@@ -143,7 +144,7 @@ nav {
   row-gap: 20px;
 }
 .header-box {
-  margin-top: -20vw;
+  margin-top: -40vw;
 }
 .box-col {
   z-index: 1;
@@ -163,5 +164,5 @@ nav {
 .box-col img {
   /* temporary css properties added for the images */
   max-height: 250px;
-  max-width: 300px;
+  max-width: 250px;
 }
