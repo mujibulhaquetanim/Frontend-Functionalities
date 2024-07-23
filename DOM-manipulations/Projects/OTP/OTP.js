@@ -9,6 +9,11 @@ function tackleOTPboxes() {
             target.value = ""
             return;
         }
+        const nextElement = target.nextElementSibling;
+
+        if (nextElement) {
+            nextElement.focus();
+        }
 
     })
 }
