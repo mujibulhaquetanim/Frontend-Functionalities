@@ -14,8 +14,14 @@ function tackleOTPboxes() {
         if (nextElement) {
             nextElement.focus();
         }
-
     })
 }
 
+function generateOTP() {
+    const genOTP = Math.floor(1000 + Math.random() * 9000)
+    const otpElem = document.getElementById("generated-otp-id")
+
+    otpElem.innerText = `Your OTP: ${genOTP}`
+}
 tackleOTPboxes()
+generateOTP();

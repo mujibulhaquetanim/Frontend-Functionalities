@@ -35,3 +35,9 @@ h1 {
   font-size: 20px;
   font-weight: 700;
 }
+
+#generated-otp-id {
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
