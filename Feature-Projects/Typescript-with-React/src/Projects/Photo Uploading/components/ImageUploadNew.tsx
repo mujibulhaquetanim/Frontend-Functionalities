@@ -1,5 +1,5 @@
 import { useState, useRef, MouseEvent } from "react";
-import defaultImage from "../../../assets/avatar.jpg";
+import defaultImage from "./../../../assets/avatar.jpg";
 
 function ImageUploadNew() {
   const [image, setImage] = useState(defaultImage);

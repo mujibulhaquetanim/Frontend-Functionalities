@@ -1,6 +1,6 @@
 import { useState, useRef, MouseEvent } from "react";
-import defaultImage from "../../assets/avatar.jpg";
-import edit from "../../assets/edit.svg";
+import defaultImage from "../../../assets/avatar.jpg";
+import edit from "../../../assets/edit.svg";
 
 function ImageUpload() {
   const [image, setImage] = useState(defaultImage);
