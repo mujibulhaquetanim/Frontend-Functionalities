@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
-function CountryCard() {
-  return (
-    <div>CountryCard</div>
-  )
+interface CountryCardProps {
+  name: string;
+  code: string;
 }
 
-export default CountryCard
+const CountryCard: React.FC<CountryCardProps> = ({ name, code }) => {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>Code: {code}</p>
+    </div>
+  );
+};
+
+export default CountryCard;
