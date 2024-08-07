@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Cart() {
+const CartSlice: React.FC = function Cart() {
   return (
     <div>Cart</div>
   )
 }
 
-export default Cart
+export default CartSlice

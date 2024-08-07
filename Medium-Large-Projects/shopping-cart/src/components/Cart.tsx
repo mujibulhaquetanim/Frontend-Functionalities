@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Cart() {
+const Cart: React.FC = function Cart() {
   return (
     <div>Cart</div>
   )

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Store() {
+const ReduxStore: React.FC = function Store() {
   return (
     <div>Store</div>
   )
 }
 
-export default Store
+export default ReduxStore

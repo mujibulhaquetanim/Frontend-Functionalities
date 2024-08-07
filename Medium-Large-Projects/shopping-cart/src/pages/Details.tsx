@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Details() {
+const Details: React.FC = function Details() {
   return (
     <div>Details</div>
   )
