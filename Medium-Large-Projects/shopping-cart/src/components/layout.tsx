@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import CartTab from "./Cart";
 
-const layout: React.FC = function layout() {
+const Layout: React.FC = function layout() {
   return (
-    <div>layout</div>
-  )
-}
+    <div>
+      <main>
+        <Header />
+        <Outlet />
+      </main>
+      <CartTab />
+    </div>
+  );
+};
 
-export default layout
+export default Layout;
