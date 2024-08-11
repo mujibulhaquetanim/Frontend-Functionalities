@@ -3,7 +3,7 @@ type Node = {
     nodes?: Node[];
   };
   
-  const folders: Node[] = [
+  const nodes: Node[] = [
     {
       name: "Home",
       nodes: [
@@ -35,4 +35,4 @@ type Node = {
     { name: "Documents", nodes: [{ name: "X Files" }] },
   ];
 
-  export default folders
+  export default nodes

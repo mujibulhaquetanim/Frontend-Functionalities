@@ -1,15 +1,12 @@
-import React from "react";
 import FileSystemItem from "./FileSystemItem";
+import nodes from "./Files";
 
-type Node = {
-  name: string;
-  nodes?: Node[];
-};
-
-const DirList: React.FC = () => {
+const DirList = () => {
   return (
     <div className="p-8 mx-auto max-w-sm">
-      <FileSystemItem/>
+      <ul>
+        <FileSystemItem nodes={nodes} />
+      </ul>
     </div>
   );
 };
