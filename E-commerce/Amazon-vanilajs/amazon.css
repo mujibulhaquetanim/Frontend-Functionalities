@@ -143,9 +143,11 @@ nav {
   margin: 20px 30px;
   row-gap: 20px;
 }
+
 .header-box {
   margin-top: -40vw;
 }
+
 .box-col {
   z-index: 1;
   display: flex;
@@ -153,16 +155,18 @@ nav {
   gap: 10px;
   padding: 15px 20px;
   background: #fff;
-  max-width: 24%;
+  width: 24%;
   min-height: 200px;
 }
+
 .box-col a {
   font-size: 13px;
   color: #009999;
   font-weight: 500;
 }
+
 .box-col img {
-  /* temporary css properties added for the images */
-  max-height: 250px;
-  max-width: 250px;
+  width: 100%; /* Makes the image take up the full width of its container */
+  height: 200px; /* Forces a fixed height */
+  object-fit: cover; /* Ensures the image covers the entire container, default is fill */
 }
