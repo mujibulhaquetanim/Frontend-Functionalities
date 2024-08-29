@@ -145,7 +145,7 @@ nav {
 }
 
 .header-box {
-  margin-top: -40vw;
+  margin-top: -20vw;
 }
 
 .box-col {
@@ -167,6 +167,6 @@ nav {
 
 .box-col img {
   width: 100%; /* Makes the image take up the full width of its container */
-  height: 200px; /* Forces a fixed height */
+  height: 270px; /* Forces a fixed height */
   object-fit: cover; /* Ensures the image covers the entire container, default is fill */
 }
