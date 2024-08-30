@@ -170,3 +170,26 @@ nav {
   height: 270px; /* Forces a fixed height */
   object-fit: cover; /* Ensures the image covers the entire container, default is fill */
 }
+
+.products-slider {
+  background: #fff;
+  margin: 0 30px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.products-slider .products {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.products .products img{
+  max-width: 200px;
+  max-height: 200;
+}
+
+.products-slider .products::-webkit-scrollbar {
+  display: none;
+}
