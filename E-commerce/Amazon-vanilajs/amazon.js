@@ -29,14 +29,11 @@ nextBtn.addEventListener('click', (event) => {
     changeSlide()
 })
 
-const scrollContainer = document.querySelector(".products");
+const scrollContainers = document.querySelectorAll(".products");
 
-scrollContainer.addEventListener('wheel', (event) => {
-    event.preventDefault(); //block default vertical scrolling.
-
-    scrollContainer.scrollLeft += event.deltaY;
-    /*
-    scrollContainer.scrollLeft represents the number of pixels the content of the container has been scrolled to the left.
-    event.deltaY represents the number of pixels the user scrolled.
-    */
-})
+scrollContainers.forEach(scrollContainer => {
+    scrollContainer.addEventListener('wheel', (event) => {
+        event.preventDefault(); // Prevent vertical scrolling
+        scrollContainer.scrollLeft += event.deltaY; // Scroll horizontally
+    });
+});
