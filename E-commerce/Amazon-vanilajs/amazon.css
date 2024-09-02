@@ -112,6 +112,10 @@ nav {
   font-weight: 500;
 }
 
+.header-slider {
+  position: relative;
+}
+
 .header-slider ul {
   display: flex;
   overflow-y: hidden;
@@ -185,7 +189,7 @@ nav {
   margin-top: 10px;
 }
 
-.products .products img{
+.products .products img {
   max-width: 200px;
   max-height: 200;
 }
