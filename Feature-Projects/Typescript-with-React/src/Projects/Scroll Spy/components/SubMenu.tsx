@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
-function SubMenu() {
-  return (
-    <div>SubMenu</div>
-  )
+interface SubMenuProps {
+  char: string;
+  isActive: boolean;
 }
 
-export default SubMenu
+const SubMenu: React.FC = function SubMenu({ char, isActive }) {
+  return (
+    <div
+      className={`char ${isActive} ? "bg-red-700 text-white p-2 border-2" : ""`}
+    >{char}</div>
+  );
+};
+
+export default SubMenu;

@@ -1,14 +1,19 @@
-import React from 'react'
 import { Folder } from "lucide-react";
-import folders  from "./Files";
-const Node: React.FC = () => {
+
+type Node = {
+  name: string;
+  nodes?: Node[];
+};
+
+
+const FileSystemItem = ({ nodes }: { nodes: Node[]}) => {
   return (
     <div>
               <ul>
         <li className="my-1.5">
           <span className="flex items-center gap-1.5">
             <Folder />
-            Home
+            {folders}
           </span>
 
           <ul className="pl-6">
@@ -16,7 +21,7 @@ const Node: React.FC = () => {
               <li className="my-1.5" key={index}>
                 <span className="flex items-center gap-1.5">
                   <Folder />
-                  {folder}
+                  {folder.name}
                 </span>
               </li>
             ))}
@@ -27,4 +32,4 @@ const Node: React.FC = () => {
   )
 }
 
-export default Node
+export default FileSystemItem

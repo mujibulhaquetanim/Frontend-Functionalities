@@ -7,6 +7,10 @@ interface Country {
   code: string;
   name: string;
 }
+interface SubMenu {
+  char: string;
+  isActive: boolean;
+}
 
 function ScrollSpyApp() {
   return <div>
