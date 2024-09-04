@@ -26,7 +26,6 @@ nav {
   padding: 10px 20px;
   color: #fff;
 }
-
 .nav-country {
   display: flex;
   align-items: end;
@@ -246,4 +245,13 @@ nav {
   color: #525252;
   font-size: 15px;
   font-weight: 400;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #232f3e;
+  color: #fff;
 }
