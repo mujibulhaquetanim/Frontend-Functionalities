@@ -198,10 +198,29 @@ nav {
 }
 
 .products-slider-with-price {
+  position: relative;
   margin: 0 30px;
   padding: 20px;
   margin-bottom: 15px;
   background: #fff;
+}
+.products-slider-with-price .scroll-btn a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #c4c4c4;
+  color: white;
+  border: none;
+  padding: 5vh 1vw;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.products-slider-with-price .scroll-btn a:hover {
+  border: solid 1px #c4c4c4;
+}
+.products-slider-with-price .scroll-btn .control-next {
+  right: 20px;
 }
 .products-slider-with-price .products {
   display: flex;
