@@ -222,13 +222,13 @@ nav {
 .products-slider-with-price .scroll-btn .control-next {
   right: 20px;
 }
-.products-slider-with-price .products {
+.products-slider-with-price .products-with-price {
   display: flex;
   overflow-x: auto;
   gap: 20px;
   margin-top: 10px;
 }
-.products-slider-with-price .products::-webkit-scrollbar {
+.products-slider-with-price .products-with-price::-webkit-scrollbar {
   display: none;
 }
 .product-card {
