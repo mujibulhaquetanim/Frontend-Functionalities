@@ -1,14 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import TicTacToeComponent from './components/TicTacToeComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>Tik Tac Toe</div>
+      <TicTacToeComponent/>
     </>
   )
 }
