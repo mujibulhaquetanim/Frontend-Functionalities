@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fontName.className} w-[80%] mx-auto`}>
+      <body className={`${fontName.className} sm:w-[80%] mx-auto`}>
         <NavBar />
         {children}
       </body>
