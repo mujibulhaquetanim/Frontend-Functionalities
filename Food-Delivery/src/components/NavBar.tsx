@@ -51,7 +51,7 @@ export default function NavBar() {
         <div className="flex gap-5 text-2xl font-bold relative">
           <h1>🔎</h1>
           <h1>🛒</h1>
-          <p className="absolute right-0 top-0 min-w-3 min-h-3 rounded-full bg-tomato"></p>
+          <p className="absolute right-0 top-0 min-w-3 min-h-3 rounded-full bg-tomato animate-pulse duration-1000"></p>
         </div>
         <button className="hidden md:block bg-transparent border hover:bg-whitish ml-3 border-tomato px-4 py-1 rounded-3xl duration-500">
           Sign In

@@ -16,8 +16,23 @@ const config: Config = {
       fontFamily: {
         outfit: ["var(--font-outfit)"],
       },
-    },
+      keyframes: {
+        bounceCustom: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-50%)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      // Map keyframes to custom animation names
+      animation: {
+        bounceCustom: 'bounceCustom 1s ease-in-out infinite',
+        fadeIn: 'fadeIn 2s ease-in forwards',
+      },
   },
+},
   plugins: [],
 };
 export default config;
