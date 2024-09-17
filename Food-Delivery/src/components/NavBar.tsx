@@ -6,9 +6,13 @@ export default function NavBar() {
   const [menu, setmenu] = useState("home");
   return (
     <nav className="flex justify-between items-center py-3 px-4 shadow-md">
-      <h1 className="text-2xl font-bold text-tomato hover:cursor-pointer mr-2">
+      <Link
+        href={"/"}
+        className="text-2xl font-bold text-tomato hover:cursor-pointer mr-2"
+        onClick={() => setmenu("home")}
+      >
         YumDispatch
-      </h1>
+      </Link>
       <ul className="hidden sm:flex gap-5 hover:cursor-pointer">
         <li>
           <Link
