@@ -12,6 +12,8 @@ const config: Config = {
         whitish: "#fff4f2",
         ashish: "#49557e",
         tomato: "#ff6347",
+        grayishBlack: "#262626",
+        grayish: "#808080",
       },
       fontFamily: {
         outfit: ["var(--font-outfit)"],
