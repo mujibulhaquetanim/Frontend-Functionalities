@@ -3,7 +3,15 @@ import React, { useState } from "react";
 import { menu_list } from "../../public/assets";
 import Image from "next/image";
 
-export default function ExploreMenu() {
+interface category {
+  selectedMenu: string;
+  setSelectedMenu: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function ExploreMenu({
+  selectedMenu,
+  setSelectedMenu,
+}: category) {
   return (
     <div className="grid place-content-center gap-3 p-1 text-justify">
       <h1 className="text-3xl font-bold mt-3 text-grayishBlack">
@@ -16,14 +24,24 @@ export default function ExploreMenu() {
 
       <div className="hide-scrollbar grid grid-flow-col place-content-between gap-5 overflow-x-scroll p-3">
         {menu_list.map((item, index) => {
+          const isSelected = selectedMenu === item.menu_name;
           return (
             <div
               key={index}
               className="w-36 cursor-pointer text-center space-y-2"
+              onClick={() =>
+                setSelectedMenu((prev) =>
+                  prev === item.menu_name ? "All" : item.menu_name
+                )
+              }
               role="button"
             >
               <Image
-                className={`rounded-full object-cover h-36 transition duration-300 `}
+                className={`rounded-full object-cover h-36 transition duration-300 ${
+                  isSelected
+                    ? "border-4 p-1 border-tomato scale-105"
+                    : "border-4 border-transparent hover:scale-110"
+                }`}
                 src={item.menu_image}
                 alt={item.menu_name}
               />
