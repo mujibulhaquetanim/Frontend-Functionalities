@@ -17,7 +17,7 @@ export default function ExploreMenu({
       <h1 className="text-3xl font-bold mt-3 text-grayishBlack">
         Explore Our Menu
       </h1>
-      <p className="text-lg max-w-[60%] text-grayish">
+      <p className="text-lg max-w-[60%] text-grayish leading-tight">
         Choose from our broad selection of dishes and cuisines. It&apos;s our
         mission to satisfy everyone&apos;s taste.
       </p>

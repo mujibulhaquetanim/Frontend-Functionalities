@@ -5,7 +5,7 @@ import React, { useState } from "react";
 export default function NavBar() {
   const [menu, setmenu] = useState("home");
   return (
-    <nav className="flex justify-between items-center py-3 px-4 shadow-md">
+    <nav className="flex justify-between items-center py-3 px-4 shadow-md flex-wrap">
       <Link
         href={"/"}
         className="text-2xl font-bold text-tomato hover:cursor-pointer mr-2"
