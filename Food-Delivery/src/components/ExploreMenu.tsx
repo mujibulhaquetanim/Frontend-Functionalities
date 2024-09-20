@@ -13,16 +13,16 @@ export default function ExploreMenu({
   setSelectedMenu,
 }: category) {
   return (
-    <div className="grid place-content-center gap-3 p-1 text-justify">
-      <h1 className="text-3xl font-bold mt-3 text-grayishBlack">
+    <div className="grid place-content-center gap-1 text-justify">
+      <h1 className="text-[clamp(1.7rem,2vw,3rem)] font-bold text-grayishBlack pl-2">
         Explore Our Menu
       </h1>
-      <p className="text-lg max-w-[60%] text-grayish leading-tight">
+      <p className="text-[clamp(1rem,1vw,1.5rem)] md:w-[60%] text-grayish leading-tight tracking-wide pl-2 pr-1">
         Choose from our broad selection of dishes and cuisines. It&apos;s our
         mission to satisfy everyone&apos;s taste.
       </p>
 
-      <div className="hide-scrollbar grid grid-flow-col place-content-between gap-5 overflow-x-scroll p-3">
+      <div className="hide-scrollbar grid grid-flow-col place-content-between gap-5 overflow-x-scroll p-1">
         {menu_list.map((item, index) => {
           const isSelected = selectedMenu === item.menu_name;
           return (
