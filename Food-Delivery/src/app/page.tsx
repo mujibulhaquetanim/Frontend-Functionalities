@@ -1,5 +1,6 @@
 "use client";
 import ExploreMenu from "@/components/ExploreMenu";
+import FoodDisplay from "@/components/FoodDisplay";
 import Header from "@/components/Header";
 import { useState } from "react";
 
@@ -12,6 +13,7 @@ export default function Home() {
         selectedMenu={selectedMenu}
         setSelectedMenu={setSelectedMenu}
       />
+      <FoodDisplay selectedMenu={selectedMenu} />
     </main>
   );
 }
