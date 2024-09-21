@@ -1,4 +1,5 @@
-import React, { createContext } from "react";
+"use client";
+import React, { createContext, useContext } from "react";
 import { menu_list } from "../../public/assets";
 import { StaticImageData } from "next/image";
 
@@ -21,4 +22,15 @@ export default function StoreContextProvider({
       {children}
     </storeContext.Provider>
   );
+}
+
+export function useStoreContext() {
+  const context = useContext(storeContext);
+  if (!context) {
+    throw new Error(
+      "useStoreContext must be used within a StoreContextProvider"
+    );
+  } else {
+    return context;
+  }
 }
