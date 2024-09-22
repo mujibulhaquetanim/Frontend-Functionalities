@@ -139,9 +139,9 @@ export const food_list = [
         menu_image: manu_10,
         items: [
             {_id: 46, foodName: 'Club Sandwich', foodImage: 'club_sandwich.jpg', foodPrice: 6.99, description: 'Triple-layered sandwich', category: 'Sandwich'},
-            {_id: 47, foodName: 'BLT', foodImage: 'blt.jpg', foodPrice: 5.99, description: 'Bacon, lettuce, and tomato', category: 'Sandwich'},
+            {_id: 47, foodName: 'Rosted Veggie', foodImage: 'rostedVeggie.jpg', foodPrice: 5.99, description: 'Rosted vegetables sandwich', category: 'Sandwich'},
             {_id: 48, foodName: 'Grilled Cheese', foodImage: 'grilled_cheese.jpg', foodPrice: 4.99, description: 'Melted cheese sandwich', category: 'Sandwich'},
-            {_id: 49, foodName: 'Chicken Sandwich', foodImage: 'chicken_sandwich.jpg', foodPrice: 7.49, description: 'Grilled chicken and veggies', category: 'Sandwich'},
+            {_id: 49, foodName: 'Mesquite Chicken', foodImage: 'mesquite_chicken.jpg', foodPrice: 7.49, description: 'Grilled Mesquite Chicken Sandwich', category: 'Sandwich'},
             {_id: 50, foodName: 'Tuna Sandwich', foodImage: 'tuna_sandwich.jpg', foodPrice: 6.49, description: 'Tuna and mayo', category: 'Sandwich'}
         ]
     }
