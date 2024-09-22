@@ -9,7 +9,7 @@ import manu_8 from '../public/menuImages/rolls.jpg';
 import manu_9 from '../public/menuImages/pizza.png';
 import manu_10 from '../public/menuImages/sandwich.png';
 
-import {} from '../public/foodList/Ilish_bhapa.png';
+import Ilish_bhapa from '../public/foodList/Ilish_bhapa.png';
 
 export const menu_list = [
     {menu_name: 'Salad',
@@ -53,7 +53,7 @@ export const food_list = [
             {_id: 6, foodName: 'Chow Mein', foodImage: 'chow_mein.jpg', foodPrice: 8.99, description: 'Stir-fried noodles with veggies', category: 'Noodles'},
             {_id: 7, foodName: 'Pad Thai', foodImage: 'pad_thai.jpg', foodPrice: 9.99, description: 'Thai-style noodles with peanuts', category: 'Noodles'},
             {_id: 8, foodName: 'Ramen', foodImage: 'ramen.jpg', foodPrice: 10.99, description: 'Japanese noodle soup', category: 'Noodles'},
-            {_id: 9, foodName: 'Spaghetti', foodImage: 'spaghetti.jpg', foodPrice: 7.99, description: 'Classic Italian pasta', category: 'Noodles'},
+            {_id: 9, foodName: 'Spaghetti', foodImage: 'italianPasta.jpg', foodPrice: 7.99, description: 'Classic Italian pasta', category: 'Noodles'},
             {_id: 10, foodName: 'Udon', foodImage: 'udon.jpg', foodPrice: 9.49, description: 'Thick wheat noodles', category: 'Noodles'}
         ]
     },
@@ -64,7 +64,7 @@ export const food_list = [
             {_id: 11, foodName: 'Cheeseburger', foodImage: 'cheeseburger.jpg', foodPrice: 6.99, description: 'Beef patty with cheese', category: 'Burger'},
             {_id: 12, foodName: 'Veggie Burger', foodImage: 'veggie_burger.jpg', foodPrice: 5.99, description: 'Grilled veggie patty', category: 'Burger'},
             {_id: 13, foodName: 'Chicken Burger', foodImage: 'chicken_burger.jpg', foodPrice: 7.49, description: 'Grilled chicken patty', category: 'Burger'},
-            {_id: 14, foodName: 'Bacon Burger', foodImage: 'bacon_burger.jpg', foodPrice: 8.99, description: 'Beef patty with bacon', category: 'Burger'},
+            {_id: 14, foodName: 'Beef Burger', foodImage: 'beefBurger.jpg', foodPrice: 8.99, description: 'Delicious beef grove', category: 'Burger'},
             {_id: 15, foodName: 'Fish Burger', foodImage: 'fish_burger.jpg', foodPrice: 7.99, description: 'Fried fish fillet', category: 'Burger'}
         ]
     },
@@ -74,7 +74,7 @@ export const food_list = [
         items: [
             {_id: 16, foodName: 'Carbonara', foodImage: 'carbonara.jpg', foodPrice: 9.99, description: 'Creamy pasta with bacon', category: 'Pasta'},
             {_id: 17, foodName: 'Bolognese', foodImage: 'bolognese.jpg', foodPrice: 8.99, description: 'Pasta with meat sauce', category: 'Pasta'},
-            {_id: 18, foodName: 'Alfredo', foodImage: 'alfredo.jpg', foodPrice: 9.49, description: 'Creamy white sauce pasta', category: 'Pasta'},
+            {_id: 18, foodName: 'Alfredo', foodImage: 'alfredo.jpg', foodPrice: 9.49, description: 'Creamy white sauce pasta with chicken', category: 'Pasta'},
             {_id: 19, foodName: 'Pesto Pasta', foodImage: 'pesto.jpg', foodPrice: 8.49, description: 'Pasta with basil pesto', category: 'Pasta'},
             {_id: 20, foodName: 'Lasagna', foodImage: 'lasagna.jpg', foodPrice: 10.99, description: 'Layered pasta with cheese', category: 'Pasta'}
         ]
@@ -87,7 +87,7 @@ export const food_list = [
             {_id: 22, foodName: 'Tofu Stir-fry', foodImage: 'tofu_stirfry.jpg', foodPrice: 8.49, description: 'Tofu with mixed veggies', category: 'Pure Vegetarian'},
             {_id: 23, foodName: 'Veggie Wrap', foodImage: 'veggie_wrap.jpg', foodPrice: 6.99, description: 'Grilled veggies in a wrap', category: 'Pure Vegetarian'},
             {_id: 24, foodName: 'Lentil Soup', foodImage: 'lentil_soup.jpg', foodPrice: 5.99, description: 'Hearty lentil soup', category: 'Pure Vegetarian'},
-            {_id: 25, foodName: 'Veg Biryani', foodImage: 'stuffed_peppers.jpg', foodPrice: 7.49, description: 'A fragrant rice dish cooked with mixed vegetables and aromatic spices', category: 'Pure Vegetarian'}
+            {_id: 25, foodName: 'Veg Biryani', foodImage: 'vegBiryani.jpg', foodPrice: 8.99, description: 'A fragrant rice dish cooked with mixed vegetables and aromatic spices', category: 'Pure Vegetarian'}
         ]
     },
     {
@@ -107,8 +107,8 @@ export const food_list = [
         items: [
             {_id: 31, foodName: 'Chocolate Cake', foodImage: 'chocolate_cake.jpg', foodPrice: 4.99, description: 'Rich chocolate cake', category: 'Dessert'},
             {_id: 32, foodName: 'Cheesecake', foodImage: 'cheesecake.jpg', foodPrice: 5.99, description: 'Creamy cheesecake', category: 'Dessert'},
-            {_id: 33, foodName: 'Ice Cream', foodImage: 'ice_cream.jpg', foodPrice: 3.99, description: 'Assorted flavors', category: 'Dessert'},
-            {_id: 34, foodName: 'Brownie', foodImage: 'brownie.jpg', foodPrice: 2.99, description: 'Fudgy chocolate brownie', category: 'Dessert'},
+            {_id: 33, foodName: 'Baklava', foodImage: 'baklava.jpg', foodPrice: 3.99, description: 'Turkish sweet Pastry', category: 'Dessert'},
+            {_id: 34, foodName: 'Brownie', foodImage: 'brownie.jpg', foodPrice: 2.99, description: 'Fudgy chocolate brownie with nuts', category: 'Dessert'},
             {_id: 35, foodName: 'Fruit Tart', foodImage: 'fruit_tart.jpg', foodPrice: 4.49, description: 'Tart with fresh fruits', category: 'Dessert'}
         ]
     },
@@ -118,9 +118,9 @@ export const food_list = [
         items: [
             {_id: 36, foodName: 'Spring Roll', foodImage: 'spring_roll.jpg', foodPrice: 5.49, description: 'Crispy veggie roll', category: 'Rolls'},
             {_id: 37, foodName: 'Egg Roll', foodImage: 'egg_roll.jpg', foodPrice: 5.99, description: 'Roll with egg and veggies', category: 'Rolls'},
-            {_id: 38, foodName: 'Chicken Roll', foodImage: 'chicken_roll.jpg', foodPrice: 6.49, description: 'Grilled chicken roll', category: 'Rolls'},
+            {_id: 38, foodName: 'Chicken Roll', foodImage: 'chicken_roll.jpg', foodPrice: 6.49, description: 'Juicy chicken bread roll', category: 'Rolls'},
             {_id: 39, foodName: 'Beef Roll', foodImage: 'beef_roll.jpg', foodPrice: 6.99, description: 'Beef and veggie roll', category: 'Rolls'},
-            {_id: 40, foodName: 'Shrimp Roll', foodImage: 'shrimp_roll.jpg', foodPrice: 7.49, description: 'Shrimp and veggie roll', category: 'Rolls'}
+            {_id: 40, foodName: 'Shrimp Roll', foodImage: 'shrimp_roll.jpg', foodPrice: 7.49, description: 'Shrimp Tempura Roll', category: 'Rolls'}
         ]
     },
     {
