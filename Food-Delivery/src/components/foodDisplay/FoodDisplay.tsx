@@ -19,9 +19,12 @@ export default function FoodDisplay({
 
   return (
     <div>
-      <h2 className="text-[clamp(1.3rem,1.5vw,3rem)] mb-1 ml-3">
-        Top Picks Nearby
-      </h2>
+      <div className="flex justify-between items-center mb-1 ml-3 mr-3">
+        <h2 className="text-[clamp(1.3rem,1.5vw,3rem)]">
+          Top Picks Nearby
+        </h2>
+        <div className="ml-3 text-grayish">Total displayed Items: {visibleItems}</div>
+      </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
         {flattenedFoodList.slice(0, visibleItems).map((food, index) => (
           <div key={index}>
