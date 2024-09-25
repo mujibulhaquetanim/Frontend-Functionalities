@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="bg-[url('/foodCollectionEid.jpg')] mt-1 bg-center bg-cover h-[44vh] md:h-[34vw] relative rounded-b-2xl">
+    <header className="header mt-1 bg-center bg-cover h-[44vh] md:h-[34vw] relative rounded-b-2xl">
       <div className="overflow-hidden absolute gap-1 bg-black/50 md:bg-black/30 shadow-2xl w-[90%] sm:w-[50%] text-white p-2 md:p-5 flex flex-col items-start bottom-[5%] left-[2%] rounded-xl animate-fadeIn">
         <h2 className="font-bold text-[clamp(2rem,4vw,5rem)] tracking-wider leading-none">
           Order your favorite food here

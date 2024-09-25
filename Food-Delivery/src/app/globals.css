@@ -13,3 +13,18 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
+
+@keyframes headerBgChange {
+  0% { background-image: url('../../public/foodList/brownie.jpg'); }
+  20% { background-image: url('../../public/foodList/veggie_burger.jpg'); }
+  40% { background-image: url('../../public/foodList/pad_thai.jpg'); }
+  60% { background-image: url('../../public/foodList/margherita.jpg'); }
+  80% { background-image: url('../../public/foodList/fruitSalad.jpg'); }
+  100% { background-image: url('../../public/foodCollectionEid.jpg'); }
+}
+
+.header {
+  animation: headerBgChange 25s infinite;
+  transition: background-image 1ms ease-in-out;
+}
+
