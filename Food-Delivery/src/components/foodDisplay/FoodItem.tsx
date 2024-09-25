@@ -18,7 +18,7 @@ export default function FoodItem({
   category,
 }: FoodItemProps) {
   return (
-    <div className="m-3 border-2 p-3 rounded-2xl">
+    <div className="m-3 border-2 p-3 rounded-2xl transition-all hover:scale-105 shadow-lg animate-fadeIn">
       <div className="mb-1">
         <Image className="object-cover aspect-video rounded-md" src={foodImage} alt={foodName} />
       </div>

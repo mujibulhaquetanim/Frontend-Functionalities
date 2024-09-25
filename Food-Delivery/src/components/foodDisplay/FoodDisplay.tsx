@@ -41,7 +41,7 @@ export default function FoodDisplay({
           <div className="flex items-end mb-6">
             <button
               onClick={showMoreItems}
-              className="mt-4 p-2 bg-tomato text-white rounded-xl hover:scale-105"
+              className="mt-4 p-2 bg-tomato text-white rounded-xl hover:scale-95"
             >
               Show More...
             </button>
