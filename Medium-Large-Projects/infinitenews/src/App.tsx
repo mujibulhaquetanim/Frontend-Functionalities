@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Nav setValue={setCategory} />
-      <NewsBoard category={category} />
+      <NewsBoard category={category} ioSuccess="success"/>
     </>
   );
 }

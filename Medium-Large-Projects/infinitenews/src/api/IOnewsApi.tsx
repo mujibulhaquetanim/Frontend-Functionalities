@@ -47,7 +47,7 @@ const IOnewsApi:React.FC<category>=({category})=> {
             title={news.title}
             src={news.src}
             pubDate={news.pubDate}
-            ioSuccess={news.ioSuccess}
+            // ioSuccess={news.ioSuccess}
           />
         );
       })}
