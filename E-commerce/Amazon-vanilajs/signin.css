@@ -10,8 +10,11 @@ body {
   min-height: 100vh;
 }
 
-.log {
+.logo {
   margin-top: 20px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
 }
 .signin-container {
   max-width: 350px;
