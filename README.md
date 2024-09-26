@@ -1,38 +1,30 @@
-# My Awesome all in one Frontend Components Repository 🙂
+# All in One Repository for Frontend-Functionalities 🙂
 
-Welcome to the **Frontend Components** repository! This repository contains a collection of reusable frontend components, organized by feature-based projects. Whether you're building a small website or a large-scale application, you'll find something useful here.
+Welcome to the Frontend Functionalities repository! This all-in-one repository contains a variety of frontend projects, ranging from DOM manipulations with vanilla JavaScript to full-fledged projects using React/Next.js and other frontend libraries/frameworks like Redux/RTK, TanStack Query, React Router DOM, and more.
+
+Anyone looking for a diverse collection of projects in one place will greatly benefit from this repository. All projects are well-organized in separate directories.
 
 ## Table of Contents
 
-- [Introduction](#introduction)
+- [Live Links](#live-links)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
-## Introduction
+## Live Links
 
-This repository houses a variety of frontend components, each designed to solve specific problems. Here's how the repository is structured:
+- YumDispatch (Food-Delivery): <https://yumdispatchbd.netlify.app/>
+- Vanilla-Amazon (Amazon-clone): <https://vanilla-amazon.netlify.app/>
 
-1. **Individual Projects**:
-   - Each individual project has its own directory within this repository.
-   - These projects are self-contained and can be used independently.
-   - Examples: `photo-upload`, `quiz-app`, `redux-todo`.
-
-2. **Feature Projects**:
-   - Smaller individual projects related to specific features are grouped together in a separate directory called `feature-project`.
-   - These feature projects may include multiple components that work together.
-   - Examples: `news-app`, `search-filter`.
-
-3. **Big Projects**:
-   - Larger projects that don't fit into the individual or feature categories reside directly in the main repository.
-   - These big projects may have their own subdirectories.
-   - Examples: `clone-apps`, `portfolio-website`.
+**Note:** Most of the projects aren’t hosted yet, but the included ones will give you an impression of the rest.
 
 ## Installation
 
 To use any of the components from this repository, follow these steps:
+
+**Note:** You can use Bun for Next.js projects as it compiles faster than its competitors. For the rest of the projects, use pnpm for better disk efficiency and speed.
 
 1. Clone the repository to your local machine:
 
@@ -43,7 +35,7 @@ To use any of the components from this repository, follow these steps:
 2. Navigate to the relevant project directory:
 
    ```bash
-   cd frontend-components/(replace with subDirectory-name) i.e infiniteNews,searchFilter
+   cd frontend-components/(replace with subDirectory-name) i.e E-commerce/vanilla-amazonjs, food-delivery etc.
    ```
 
 3. Install dependencies (if any):
