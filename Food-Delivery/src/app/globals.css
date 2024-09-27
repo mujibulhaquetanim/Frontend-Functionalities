@@ -25,6 +25,6 @@
 
 .header {
   animation: headerBgChange 25s infinite;
-  transition: background-image 1ms ease-in-out;
+  transition: background-image 5s ease-in-out;
 }
 
