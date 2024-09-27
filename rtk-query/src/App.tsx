@@ -1,11 +1,10 @@
-import React from 'react'
+import Counter from "./components/Counter";
 
-function App() {
+export default function App() {
   return (
     <div>
-      <h1>RTK Query</h1>
+      <h2>Redux Toolkit Query</h2>
+      <Counter />
     </div>
-  )
+  );
 }
-
-export default App
