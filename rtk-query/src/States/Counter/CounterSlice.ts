@@ -28,6 +28,7 @@ export const counterSlice = createSlice({
         incrementAsync.fulfilled,
         (state, action: PayloadAction<number>) => {
           state.value += action.payload;
+          console.log("incrementAsync.fulfilled");
         }
       );
   },
@@ -40,5 +41,5 @@ export const incrementAsync = createAsyncThunk(
     return amount;
   })
 
-export const { increment, decrement, } = counterSlice.actions;
+export const { increment, decrement} = counterSlice.actions;
 export default counterSlice.reducer
