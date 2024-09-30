@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Post } from "../../types/posts";
 
 // createApi is a function that takes in 3 arguments:
 // 1. reducerPath: a string that represents the name of the slice in the store
@@ -16,8 +17,9 @@ export const postApiSlice = createApi({
   }),
   endpoints: (builder) => {
     return {
-      getPosts: builder.query({
-        query: () => "/posts", // query is a function that returns an object that represents the API endpoint, /posts is the API endpoint of the baseUrl
+      getPosts: builder.query<Post[], { limit: number; offset: number }>({
+        query: ({ limit, offset }) =>
+          `/posts?_limit=${limit}&_offset=${offset}`, // query is a function that returns an object that represents the API endpoint, /posts is the API endpoint of the baseUrl
       }),
     };
   },
