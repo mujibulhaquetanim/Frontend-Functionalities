@@ -21,6 +21,13 @@ export const postApiSlice = createApi({
         query: ({ limit, offset }) =>
           `/posts?_limit=${limit}&_offset=${offset}`, // query is a function that returns an object that represents the API endpoint, /posts is the API endpoint of the baseUrl
       }),
+      createPost: builder.mutation<Post, Omit<Post, "id">>({
+        query: (post) => ({
+          url: "/posts",
+          method: "POST",
+          body: post,
+        }),
+      }),
     };
   },
 });
