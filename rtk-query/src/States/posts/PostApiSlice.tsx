@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // createApi is a function that takes in 3 arguments:
 // 1. reducerPath: a string that represents the name of the slice in the store
@@ -22,3 +22,5 @@ export const postApiSlice = createApi({
     };
   },
 });
+
+export const { useGetPostsQuery } = postApiSlice;
