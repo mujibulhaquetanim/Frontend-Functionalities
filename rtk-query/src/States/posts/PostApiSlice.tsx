@@ -18,10 +18,12 @@ export const postApiSlice = createApi({
   endpoints: (builder) => {
     return {
       getPosts: builder.query<Post[], { limit: number; offset: number }>({
+        // Post[] is the return type of the query & {limit: number, offset: number} is the argument type of the query that will be sent to the API.
         query: ({ limit, offset }) =>
           `/posts?_limit=${limit}&_offset=${offset}`, // query is a function that returns an object that represents the API endpoint, /posts is the API endpoint of the baseUrl
       }),
       createPost: builder.mutation<Post, Omit<Post, "id">>({
+        // Post is the return type of the mutation & Omit<Post, "id"> is the argument type of the mutation that will be sent to the API. omitting the id field will allow the API to generate an id for the post.
         query: (post) => ({
           url: "/posts",
           method: "POST",
@@ -32,4 +34,4 @@ export const postApiSlice = createApi({
   },
 });
 
-export const { useGetPostsQuery } = postApiSlice;
+export const { useGetPostsQuery, useCreatePostMutation } = postApiSlice;
