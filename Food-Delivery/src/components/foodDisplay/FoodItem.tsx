@@ -35,16 +35,16 @@ export default function FoodItem({
             ➕
           </button>
         ) : (
-          <div className="absolute bottom-2 right-2 bg-whitish p-1 rounded-2xl text-sm">
+          <div className="absolute bottom-2 right-2 bg-whitish rounded-2xl text-xs">
             <button
-              className="w-7 rounded-full border-2"
+              className="w-7 h-7 rounded-full border-2 bg-red-700"
               onClick={() => setItemCount((prev) => prev - 1)}
             >
               ➖
             </button>
-            <span className="font-bold m-2">{itemCount}</span>
+            <span className="font-bold m-2 text-lg">{itemCount}</span>
             <button
-              className="w-7 rounded-full border-2"
+              className="w-7 h-7 rounded-full border-2 bg-green-900"
               onClick={() => setItemCount((prev) => prev + 1)}
             >
               ➕
