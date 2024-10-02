@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { food_list } from "../../../public/assets";
-import { useStoreContext } from "@/context/StoreContext";
 import FoodItem from "./FoodItem";
 
 export default function FoodDisplay({
@@ -8,7 +7,6 @@ export default function FoodDisplay({
 }: {
   selectedMenu: string;
 }) {
-  const { menu_list } = useStoreContext();
   const [visibleItems, setVisibleItems] = useState(15);
 
   const showMoreItems = () => {
@@ -19,6 +17,9 @@ export default function FoodDisplay({
   const filteredFoodList = food_list
     .flatMap((item) => item.items)
     .filter((food) => selectedMenu === "All" || food.category === selectedMenu);
+
+  // check on filteredFoodList length not the whole food_list length
+  const hasMoreItemsToShow = visibleItems < filteredFoodList.length;
 
   return (
     <div>
@@ -40,7 +41,7 @@ export default function FoodDisplay({
             category={food.category}
           />
         ))}
-        {visibleItems < filteredFoodList.length && (
+        {hasMoreItemsToShow && (
           <div className="flex items-end mb-6">
             <button
               onClick={showMoreItems}
