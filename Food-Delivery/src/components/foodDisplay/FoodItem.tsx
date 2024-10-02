@@ -19,7 +19,7 @@ export default function FoodItem({
 }: FoodItemProps) {
   const [itemCount, setItemCount] = useState(0);
   return (
-    <div className="m-3 border-2 p-3 rounded-2xl transition-all hover:scale-105 shadow-lg animate-fadeIn">
+    <div className="m-3 rounded-2xl transition-all shadow-lg animate-fadeIn">
       <div className="mb-1 relative">
         <Image
           className="object-cover aspect-video rounded-md"
@@ -38,23 +38,24 @@ export default function FoodItem({
           <div className="absolute bottom-2 right-2 bg-whitish p-1 rounded-2xl text-sm">
             <button
               className="w-7 rounded-full border-2"
-              onClick={() => setItemCount((prev) => prev + 1)}
-            >
-              ➕
-            </button>
-            <span className="font-bold m-2">{itemCount}</span>
-            <button
-              className="w-7 rounded-full border-2"
               onClick={() => setItemCount((prev) => prev - 1)}
             >
               ➖
             </button>
+            <span className="font-bold m-2">{itemCount}</span>
+            <button
+              className="w-7 rounded-full border-2"
+              onClick={() => setItemCount((prev) => prev + 1)}
+            >
+              ➕
+            </button>
           </div>
         )}
       </div>
-      <div className="space-y-1">
+
+      <div className="space-y-1 pl-4 pb-3">
         <h1>
-          <span className="font-bold text-tomato">{foodName}</span>
+          <span className="font-bold text-xl text-tomato">{foodName}</span>
         </h1>
         <p className="line-clamp-1 text-grayish">
           <span className=""></span> {description}
