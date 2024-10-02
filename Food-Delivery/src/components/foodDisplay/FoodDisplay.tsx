@@ -15,34 +15,32 @@ export default function FoodDisplay({
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 15);
   };
 
-  const flattenedFoodList = food_list.flatMap((item) => item.items);
+  // First, filter based on the selected category
+  const filteredFoodList = food_list
+    .flatMap((item) => item.items)
+    .filter((food) => selectedMenu === "All" || food.category === selectedMenu);
 
   return (
     <div>
       <div className="flex justify-between items-center mb-1 ml-3 mr-3">
         <h2 className="text-[clamp(1.3rem,1.5vw,3rem)]">Top Picks Nearby</h2>
         <div className="ml-3 text-grayish">
-          Total displayed Items: {visibleItems}
+          Total displayed Items:{" "}
+          {Math.min(visibleItems, filteredFoodList.length)}
         </div>
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
-        {flattenedFoodList.slice(0, visibleItems).map((food, index) => {
-          {
-            if (food.category === selectedMenu || selectedMenu === "All") {
-              return (
-                <FoodItem
-                  key={index}
-                  foodName={food.foodName}
-                  foodImage={food.foodImage}
-                  foodPrice={food.foodPrice}
-                  description={food.description}
-                  category={food.category}
-                />
-              );
-            }
-          }
-        })}
-        {visibleItems < flattenedFoodList.length && (
+        {filteredFoodList.slice(0, visibleItems).map((food, index) => (
+          <FoodItem
+            key={index}
+            foodName={food.foodName}
+            foodImage={food.foodImage}
+            foodPrice={food.foodPrice}
+            description={food.description}
+            category={food.category}
+          />
+        ))}
+        {visibleItems < filteredFoodList.length && (
           <div className="flex items-end mb-6">
             <button
               onClick={showMoreItems}
@@ -56,4 +54,3 @@ export default function FoodDisplay({
     </div>
   );
 }
-
