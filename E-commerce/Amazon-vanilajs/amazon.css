@@ -188,7 +188,7 @@ nav {
 }
 .span-2 {
   display: grid;
-  grid-column: span 2; 
+  grid-column: span 2;
 }
 
 .products-slider {
@@ -350,7 +350,7 @@ footer {
   object-fit: fill;
   margin: 0 auto;
 }
-.box-row-divs .span-2 img{
+.box-row-divs .span-2 img {
   width: 100%;
 }
 
@@ -394,4 +394,28 @@ footer {
   height: 1px;
   background: #dadada;
   border: none;
+}
+
+.productPage {
+  outline: 2px solid #c2f2ff;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fbfbfb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+.productPage:hover {
+  scale: 1.05;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.productPage:hover:after {
+  content: "Product Details";
+  display: block;
+  clear: both;
+  color: #be0b3b;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #be0b3b;
 }
