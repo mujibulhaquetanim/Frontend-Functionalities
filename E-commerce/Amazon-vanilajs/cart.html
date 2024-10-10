@@ -3,9 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="amazon.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <title>Cart Page</title>
   </head>
   <body>
-    <h1>Cart Page</h1>
+    <nav>
+      <a href="./index.html"
+        ><img src="./public/logo.png" width="70" height="30" alt="logo"
+      /></a>
+      <div class="nav-country">
+        <!-- <img src="" alt=""> -->
+        <p class="emoji">🌐</p>
+        <div>
+          <p>Deliver to</p>
+          <h1>Bangladesh</h1>
+        </div>
+      </div>
+
+      <div class="nav-search">
+        <div class="nav-search-category">
+          <p>All</p>
+          <!-- <img src="" alt=""> -->
+          <p class="emoji">🔻</p>
+        </div>
+        <input
+          type="text"
+          id="nav-search-input"
+          placeholder="Search Googazon"
+        />
+        <!-- <img src="" alt="" class="nav-search-icon"> -->
+        <p class="nav-search-icon">🔍</p>
+      </div>
+
+      <div class="nav-language">
+        <!-- <img src="" alt="flag"> -->
+        <p style="font-size: 1.25rem">▭</p>
+        <p>En</p>
+        <!-- <img src="" alt="dropDown"> -->
+        <p class="emoji">🔻</p>
+      </div>
+
+      <div class="nav-text">
+        <a href="./signin.html"><p>Hello, Sign in</p></a>
+        <h1>
+          Account & Lists
+          <p class="emoji">🔻</p>
+        </h1>
+      </div>
+      <div class="nav-text">
+        <p>Return</p>
+        <h1>& Order</h1>
+      </div>
+
+      <a href="./cart.html" class="nav-cart">
+        <p style="font-weight: bolder; font-size: 1.75rem">🛒</p>
+        <h4>Cart</h4>
+      </a>
+    </nav>
+
+    <div class="nav-bottom">
+      <div>
+        <h1
+          style="
+            font-size: 1.5rem;
+            font-weight: bolder;
+            transform: rotate(90deg);
+          "
+        >
+          ⫴
+        </h1>
+        <p>All</p>
+      </div>
+      <p>Today's Deal</p>
+      <p>Customer Service</p>
+      <p>Registry</p>
+      <p>Gift Cards</p>
+      <p>Sell</p>
+    </div>
+
+    <div class="cart">
+      <div class="cart-left">
+        <h1>Cart</h1>
+        <hr>
+        <div class="product-cart-list">
+          <img src="./public/box-col/headPhones.png" alt="" width="200">
+          <div>
+            <div class="product-cart-titlePrice">
+              <p>
+                BENGOO G9000 Stereo Gaming Headset for PS4 PC Xbox One PS5 Controller, Noise Cancelling Over Ear Headphones with Mic, LED Light, Bass Surround, Soft Memory Earmuffs (Blue)
+              </p>
+              <p><b>$25.99</b></p>
+            </div>
+            <p class="product-cart-bestSeller"><span>#1 Best Seller</span> in PC Game Headsets</p>
+          </div>
+        </div>
+      </div>
+      <div class="cart-right"></div>
+    </div>
   </body>
 </html>
