@@ -73,6 +73,7 @@ nav {
   padding: 4px 10px;
   background: #ffd64f;
   border-radius: 0 4px 4px 0;
+  cursor: pointer;
 }
 
 .nav-language {
@@ -261,6 +262,11 @@ nav {
   transition: transform 0.5s ease; /* Smooth sliding when buttons are clicked */
 }
 
+.products-slider-with-price .products-with-price img {
+  max-height: 200px;
+  object-fit: contain;
+}
+
 /* Hide scrollbar */
 .products-slider-with-price .products-with-price::-webkit-scrollbar {
   display: none;
@@ -408,7 +414,7 @@ footer {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .productPage:hover:after {
-  content: "Product Details";
+  content: "Product Details (Sample)";
   display: block;
   clear: both;
   color: #be0b3b;
