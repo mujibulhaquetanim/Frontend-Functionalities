@@ -467,4 +467,21 @@ footer {
     justify-content: flex-end;
     font-size: 28px;
   }
+  .nav-cart h4 {
+    display: none;
+  }
+  .header-slider a {
+    top: 24%;
+    padding: 2vh 1vw;
+    font-size: 15px;
+  }
+  .box-col {
+    max-width: 100%;
+    width: 100%;
+  }
+  footer {
+    justify-content: center;
+    flex-direction: column;
+    font-size: 14px;
+  }
 }
