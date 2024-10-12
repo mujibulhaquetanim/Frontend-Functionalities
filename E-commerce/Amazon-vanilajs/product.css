@@ -62,3 +62,19 @@ body{
 .product-rating h5{
     font-weight: 600;
 }
+
+/*media query*/
+@media screen and (max-width: 900px) {
+    .product-display{
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 600px) {
+    .product-icons{
+        display: none;
+    }
+    .product-main-image{
+        width: 100%;
+        padding: 20px;
+    }
+}
