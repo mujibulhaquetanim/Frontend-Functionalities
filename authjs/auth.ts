@@ -13,7 +13,7 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                 //only way login become successful is if user exists, 
                 let user = null;
                 user={
-                    id: 1,
+                    id: "1",
                     name: 'John Doe',
                     email: '9Qq9Z@example.com',
                 }
