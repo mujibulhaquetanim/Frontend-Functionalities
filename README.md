@@ -4,7 +4,9 @@ Welcome to the Frontend Functionalities repository! This all-in-one repository c
 
 Anyone looking for a diverse collection of projects in one place will greatly benefit from this repository. All projects are well-organized in separate directories.
 
-- If you're solely interested in component-based Works, consider exploring the following: [Component-based repository](https://github.com/mujibulhaquetanim/componentGallery.git): 
+- If you're solely interested in component-based Works or React-Native for Mobile App Developments, consider exploring the following: [Component-based repository](https://github.com/mujibulhaquetanim/componentGallery.git) , [Expo](https://github.com/mujibulhaquetanim/React-Native.git)
+
+> **If you find this helpful, please consider giving it a star** 🙂
 
 ## Table of Contents
 
