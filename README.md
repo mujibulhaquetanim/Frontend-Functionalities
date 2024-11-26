@@ -1,8 +1,12 @@
-# All in One Repository for Frontend-Functionalities 🙂
+# All-in-One Repository for Frontend-Functionalities 🙂
 
 Welcome to the Frontend Functionalities repository! This all-in-one repository contains a variety of frontend projects, ranging from DOM manipulations with vanilla JavaScript to full-fledged projects using React/Next.js and other frontend libraries/frameworks like Redux/RTK, TanStack Query, React Router DOM, and more.
 
 Anyone looking for a diverse collection of projects in one place will greatly benefit from this repository. All projects are well-organized in separate directories.
+
+- If you're solely interested in component-based Works or React-Native for Mobile App Developments, consider exploring the following: [Component-based repository](https://github.com/mujibulhaquetanim/componentGallery.git) , [Expo](https://github.com/mujibulhaquetanim/React-Native.git)
+
+> **If you find this helpful, please consider giving it a star** 🙂
 
 ## Table of Contents
 
@@ -35,16 +39,17 @@ To use any of the components from this repository, follow these steps:
 2. Navigate to the relevant project directory:
 
    ```bash
-   cd frontend-components/(replace with subDirectory-name) i.e E-commerce/vanilla-amazonjs, food-delivery etc.
+   cd frontend-components/(replace with subDirectory-name) i.e E-commerce/vanilla-amazonjs, food-delivery, etc.
    ```
 
 3. Install dependencies (if any):
+   use `pnpm` for efficiency
 
    ```bash
    pnpm install
    ```
 
-4. Start using the component in your project!
+5. Start using the component in your project!
 
 ## Usage
 
@@ -65,4 +70,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions, issues or feedback, feel free to reach out to me through linkedin/twitter or comment in the respective repository.
+If you have any questions, issues, or feedback, feel free to reach out to me through linkedin/twitter or comment in the respective repository.
