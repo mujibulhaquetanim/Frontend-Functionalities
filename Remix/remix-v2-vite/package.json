@@ -1,5 +1,5 @@
 {
-  "name": "remix-strapi",
+  "name": "remix-v2-vite",
   "private": true,
   "sideEffects": false,
   "type": "module",
