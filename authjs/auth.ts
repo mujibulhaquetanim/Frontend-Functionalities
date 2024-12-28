@@ -24,6 +24,11 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                 
                 return user
             }
-        })
-    ]
+        }),
+    ],
+    callbacks: {
+        jwt: async ()=>{},
+        session: async ()=>{}
+    },
+    pages: {},
 })
