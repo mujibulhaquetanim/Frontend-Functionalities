@@ -1,12 +1,14 @@
 # All-in-One Repository for Frontend-Functionalities 🙂
 
-Welcome to the Frontend Functionalities repository! This all-in-one repository contains a variety of frontend projects, ranging from DOM manipulations with vanilla JavaScript to full-fledged projects using React/Next.js and other frontend libraries/frameworks like Redux/RTK, TanStack Query, React Router DOM, and more.
+Welcome to the Frontend Functionalities repository! This all-in-one repository contains a variety of frontend projects, ranging from DOM manipulations with vanilla JavaScript to full-fledged projects with authjs using React and its frameworks like Next.js, Remix, Gatsby, Astro, etc., and other frontend libraries/frameworks/tools like PWA, Redux/RTK, Zustand, TanStack Query, React-Router, Chartjs, and more.
+
+- For smaller projects, check out Feature-Projects directory.
+- For medium-large projects, check out the Medium-Large_Projects directory.
+- Large projects are in the root directory with their own directories.
 
 Anyone looking for a diverse collection of projects in one place will greatly benefit from this repository. All projects are well-organized in separate directories.
 
 - If you're solely interested in component-based Works or React-Native for Mobile App Developments, consider exploring the following: [Component-based repository](https://github.com/mujibulhaquetanim/componentGallery.git) , [Expo](https://github.com/mujibulhaquetanim/React-Native.git)
-
-> **If you find this helpful, please consider giving it a star** 🙂
 
 ## Table of Contents
 
@@ -19,10 +21,14 @@ Anyone looking for a diverse collection of projects in one place will greatly be
 
 ## Live Links
 
+These are the live links for the projects included in this repository, they all are hosted using their respective directories.
+
 - YumDispatch (Food-Delivery): <https://yumdispatchbd.netlify.app/>
 - Vanilla-Amazon (Amazon-clone): <https://vanilla-amazon.netlify.app/>
 
 **Note:** Most of the projects aren’t hosted yet, but the included ones will give you an impression of the rest.
+
+> **If you find this helpful, please consider giving it a star** 🙂
 
 ## Installation
 
