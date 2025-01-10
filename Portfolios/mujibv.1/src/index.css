@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-border {
+    position: relative;
+  }
+  
+  .custom-border::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    border-bottom: 4px solid whitesmoke;
+  }
+  
