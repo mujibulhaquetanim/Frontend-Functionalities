@@ -15,4 +15,31 @@
     width: 70%;
     border-bottom: 4px solid whitesmoke;
   }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .animate-marquee {
+    animation: marquee var(--duration, 40s) linear infinite;
+  }
+  
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration, 40s) linear infinite;
+  }
+  
   

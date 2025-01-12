@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { NavLink } from "react-router";
 import ProjectsCard from "../Home-components/ProjectsCard";
+import TechStacks from "../Home-components/TechStack";
 
 export default function Home() {
   return (
@@ -67,7 +68,10 @@ export default function Home() {
           </div>
         </NavLink>
         <div className="grid col-span-3 row-span-2 bg-slate-600 rounded-xl">
-          Tech Stack
+          <h1 className="text-lg text-white font-bold flex justify-center items-center underline tracking-widest">
+            Tech Stack
+          </h1>
+          <TechStacks />
         </div>
         <NavLink
           to={"/Blogs"}
