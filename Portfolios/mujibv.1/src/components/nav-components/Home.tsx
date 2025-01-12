@@ -1,4 +1,6 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { NavLink } from "react-router";
 import ProjectsCard from "../Home-components/ProjectsCard";
 
@@ -11,13 +13,13 @@ export default function Home() {
             <NavLink
               to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
               target="_blank"
-              className="border-2 p-3 rounded-xl text-white font-bold relative hover:scale-105 cursor-pointer mb-5"
+              className="border-2 p-3 rounded-xl text-white font-bold relative hover:scale-105 cursor-pointer mb-5 hover:bg-slate-700"
             >
               Available for hire
               <div className="absolute w-7 h-7 bg-green-900 rounded-full right-0 top-0 animate-ping"></div>
             </NavLink>
             <h1 className="text-7xl text-white text-start tracking-wide">
-              Salam, I’m Mujibul Haque Tanim,
+              Salam, I’m Mujibul Haque <span className="font-bold">Tanim</span>,
             </h1>
             <h3 className="text-lg text-gray-300">
               A software engineer. Mainly working in the JavaScript ecosystem,
@@ -26,7 +28,7 @@ export default function Home() {
             </h3>
             <NavLink
               to={"/about"}
-              className="border-2 px-3 py-1 place-self-end rounded-xl text-white font-bold hover:scale-95 mt-5 cursor-pointer"
+              className="border-2 px-3 py-1 place-self-end rounded-xl text-white font-bold hover:scale-95 mt-5 cursor-pointer hover:bg-slate-700"
             >
               Explore More
             </NavLink>
@@ -71,7 +73,7 @@ export default function Home() {
           to={"/Blogs"}
           className="grid col-span-3 row-span-1 bg-slate-600 rounded-xl"
         >
-          <h1 className="text-lg text-white font-bold mt-2 flex justify-center items-center hover:scale-105 cursor-pointer">
+          <h1 className="text-lg text-white font-bold mt-2 flex justify-center items-center hover:scale-105 cursor-pointer hover:underline">
             Click to see Blogs 📚
           </h1>
         </NavLink>
@@ -82,7 +84,7 @@ export default function Home() {
             "border hover:border-2 hover:bg-slate-700 hover:scale-95 cursor-pointer  rounded-xl p-1 space-x-1 flex justify-center items-center"
           }
         >
-          <Linkedin color="white" />
+          <FaLinkedin color="white" size={70} />
         </NavLink>
         <NavLink
           to={"https://github.com/mujibulhaquetanim"}
@@ -91,7 +93,7 @@ export default function Home() {
             "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-700 hover:scale-95 cursor-pointer"
           }
         >
-          <Github color="white" />
+          <FaGithub color="white" size={70} />
         </NavLink>
         <NavLink
           to={"https://twitter.com/mmhtanim"}
@@ -100,7 +102,7 @@ export default function Home() {
             "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-700 hover:scale-95 cursor-pointer"
           }
         >
-          <Twitter color="white" />
+          <FaXTwitter color="white" size={70} />
         </NavLink>
       </section>
     </div>
