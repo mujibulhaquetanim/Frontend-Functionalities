@@ -4,6 +4,7 @@ import { NavLink } from "react-router";
 import ProjectsCard from "../Home-components/ProjectsCard";
 import TechStacks from "../Home-components/TechStack";
 import GitTimeline from "../Home-components/GithubActivity/GitTimeline";
+import resume from "/Mujibulhaquetanim.pdf";
 
 export default function Home() {
   return (
@@ -36,9 +37,14 @@ export default function Home() {
                   Explore More
                 </div>
               </NavLink>
-              <div className="rounded-full border-2 px-3 py-1 place-self-end text-white font-bold hover:scale-95 mt-5 cursor-pointer hover:bg-slate-700/80 backdrop-blur-xl">
+              <a
+                href={resume}
+                aria-label="Download Resume"
+                download={"resume.pdf"}
+                className="rounded-full border-2 px-3 py-1 place-self-end text-white font-bold hover:scale-95 mt-5 cursor-pointer hover:bg-slate-700/80 backdrop-blur-xl"
+              >
                 <FaFileExport size={24} />
-              </div>
+              </a>
             </div>
           </div>
         </section>
