@@ -1,4 +1,5 @@
-import { SiDocker, SiDrizzle, SiHono, SiJest, SiNestjs, SiNextdotjs, SiPrisma, SiPuppeteer, SiReact, SiReactquery, SiSwr, SiTailwindcss, SiTypescript} from 'react-icons/si';
+import { SiDocker, SiRemix, SiRedux, SiDrizzle, SiHono, SiNestjs, SiNextdotjs, SiPrisma, SiPostgresql, SiMongodb, SiPandas, SiPython, SiReact, SiReactquery, SiSwr, SiTailwindcss, SiTypescript} from 'react-icons/si';
+import { FaGolang } from "react-icons/fa6";
 import type { JSX, SVGProps } from 'react';
 
 type TechStack = {
@@ -19,6 +20,11 @@ const techStacks: TechStack[] = [
     description: 'Next.js is a React framework that enables server-side rendering and static site generation.'
   },
   {
+    name: 'Remix',
+    icon: SiRemix,
+    description: 'Remix is a framework for building server-rendered React applications.'
+  },
+  {
     name: 'React Native',
     icon: SiReact,
     description: 'React Native is a framework for building native apps using React.'
@@ -27,6 +33,11 @@ const techStacks: TechStack[] = [
     name: 'React Query',
     icon: SiReactquery,
     description: 'React Query is a library for fetching, caching, and updating asynchronous data in React.'
+  },
+  {
+    name: 'Redux',
+    icon: SiRedux,
+    description: 'Redux is a state management library for JavaScript applications.'
   },
   {
     name: 'Tailwind',
@@ -39,16 +50,6 @@ const techStacks: TechStack[] = [
     description: 'SWR is a React Hooks library for data fetching.'
   },
   {
-    name: 'Puppeteer',
-    icon: SiPuppeteer,
-    description: 'Puppeteer is a Node library which provides a high-level API to control Chrome or Chromium.'
-  },
-  {
-    name: 'Jest',
-    icon: SiJest,
-    description: 'Jest is a delightful JavaScript testing framework with a focus on simplicity.'
-  },
-  {
     name: 'Prisma',
     icon: SiPrisma,
     description: 'Prisma is an open-source database toolkit for TypeScript and Node.js.'
@@ -57,6 +58,21 @@ const techStacks: TechStack[] = [
     name: 'Drizzle',
     icon: SiDrizzle,
     description: 'Drizzle is a collection of front-end libraries that make writing dapp front-ends easier and more predictable.'
+  },
+  {
+    name: 'PostgreSQL',
+    icon: SiPostgresql,
+    description: 'PostgreSQL is a powerful, open source object-relational database system.'
+  },
+  {
+    name: 'MongoDB',
+    icon: SiMongodb,
+    description: 'MongoDB is a cross-platform document-oriented database program.'
+  },
+  {
+    name: 'Remix',
+    icon: SiRemix,
+    description: 'Remix is a framework for building server-rendered React applications.'
   },
   {
     name: 'Nest',
@@ -72,7 +88,22 @@ const techStacks: TechStack[] = [
     name: 'Docker',
     icon: SiDocker,
     description: 'Docker is a platform for developing, shipping, and running applications in containers.'
-  }
+  },
+  {
+    name: 'Go',
+    icon: FaGolang,
+    description: 'Go is a statically typed, compiled programming language designed at Google.'
+  },
+  {
+    name: 'Python',
+    icon: SiPython,
+    description: 'Python is a high-level, general-purpose programming language.'
+  },
+  {
+    name: 'Pandas',
+    icon: SiPandas,
+    description: 'Pandas is a high-level data manipulation library.'
+  },
 ];
 
 export default techStacks;

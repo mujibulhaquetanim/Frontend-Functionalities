@@ -19,7 +19,7 @@ export default function Marquee({
   ...props
 }: Readonly<MarqueeProps>) {
   const baseClass =
-    'group flex overflow-hidden p-2 [--duration:40s] [--gap:2rem] [gap:var(--gap)]';
+    'group flex overflow-hidden p-5 [--duration:40s] [--gap:2rem] [gap:var(--gap)]';
   const flexDirectionClass = vertical ? 'flex-col' : 'flex-row';
   const combinedClass = `${baseClass} ${flexDirectionClass} ${className}`;
 
