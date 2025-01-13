@@ -1,12 +1,13 @@
 import { NavLink } from "react-router";
-import { Home, FolderGit, Rss, LayoutDashboard } from "lucide-react";
+import { FaHome, FaFolder, FaRss } from "react-icons/fa";
+import { MdOutlineDashboard } from "react-icons/md";
 
 export default function NavBar() {
   const routes = [
-    { to: "/", icon: <Home color="white" /> },
-    { to: "/Projects", icon: <FolderGit color="white" /> },
-    { to: "/Blogs", icon: <Rss color="white" /> },
-    { to: "/dashboard", icon: <LayoutDashboard color="white" /> },
+    { to: "/", icon: <FaHome color="white"  size={20}/> },
+    { to: "/Projects", icon: <FaFolder color="white" size={20} /> },
+    { to: "/Blogs", icon: <FaRss color="white"  size={20}/> },
+    { to: "/dashboard", icon: <MdOutlineDashboard color="white" size={20} /> },
   ];
   return (
     <nav className="grid place-items-center place-content-center h-full drop-shadow-lg gap-3">
