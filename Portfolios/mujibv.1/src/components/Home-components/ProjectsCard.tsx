@@ -43,7 +43,7 @@ export default function ProjectsCard() {
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          depth: 25,
+          depth: 30,
           modifier: 3.5,
           slideShadows: true,
         }}
@@ -58,7 +58,7 @@ export default function ProjectsCard() {
           <SwiperSlide
             key={index}
             className={`rounded-xl shadow-lg overflow-hidden transition-all ${
-              activeIndex === index ? "border-4 border-green-700" : ""
+              activeIndex === index ? "border-4 border-slate-300" : ""
             }`}
           >
             <div className="w-full h-full">
