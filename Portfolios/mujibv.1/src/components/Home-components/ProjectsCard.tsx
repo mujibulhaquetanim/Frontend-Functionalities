@@ -31,15 +31,15 @@ export default function ProjectsCard() {
   ];
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center p-4">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={4}
-        spaceBetween={30}
         loop={true}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        slidesPerView={4} // Default slides per view
+        spaceBetween={30}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -50,6 +50,20 @@ export default function ProjectsCard() {
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
         }}
         modules={[EffectCoverflow, Autoplay]}
         className="w-full h-full"
@@ -66,7 +80,7 @@ export default function ProjectsCard() {
                 src={src}
                 alt={`Slide ${index + 1}`}
                 loading="lazy"
-                className="w-full h-32 object-cover rounded-lg"
+                className="w-full h-56 md:h-40 object-cover rounded-lg"
               />
             </div>
           </SwiperSlide>
