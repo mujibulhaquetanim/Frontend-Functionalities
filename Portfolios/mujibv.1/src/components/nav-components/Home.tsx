@@ -8,7 +8,7 @@ import resume from "/Mujibulhaquetanim.pdf";
 
 export default function Home() {
   return (
-    <div className="md:h-screen h-full flex items-center justify-center py-7 px-3">
+    <div className="min-h-screen bg-slate-700 md:h-screen h-full flex items-center justify-center py-7 px-3">
       <section className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-6 gap-4 w-full h-full p-3 place-content-center">
         <section className="grid col-span-6 row-span-5 bg-slate-600 rounded-xl">
           <div className="grid place-content-center h-full place-items-center p-10 text-justify gap-3">
@@ -48,6 +48,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <NavLink
           to={"https://github.com/mujibulhaquetanim"}
           target="_blank"
@@ -57,11 +58,12 @@ export default function Home() {
             markdownText={`![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mujibulhaquetanim&theme=nord_bright)`}
           />
         </NavLink>
+
         <NavLink
           to={"/Projects"}
-          className="grid col-span-6 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl"
+          className="grid col-span-6 md:h-full h-[44vh] md:row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl"
         >
-          <div className="relative space-y-5 text-center">
+          <div className="relative space-y-1 text-center">
             <h1 className="text-2xl text-white font-bold mt-2 tracking-widest hover:scale-105 hover:underline">
               Projects Overview
             </h1>
@@ -77,16 +79,16 @@ export default function Home() {
         <NavLink
           to={"https://monkeytype.com/profile/mujibtanim"}
           target="_blank"
-          className="grid col-span-3 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl"
+          className="grid col-span-6 py-4 md:p-0 md:col-span-3 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl"
         >
           <div className="grid place-items-center place-content-center gap-3">
-            <h1 className="text-9xl flex justify-center items-center text-white font-bold gap-3 hover:scale-105">
+            <h1 className="text-9xl flex justify-center flex-wrap items-center text-white font-bold gap-3 hover:scale-105">
               60 <p className="text-xs text-gray-400 font-bold text-end">WPM</p>
             </h1>
             <p className="text-base text-white font-bold">Typing Speed ⌨️</p>
           </div>
         </NavLink>
-        <div className="grid col-span-3 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl">
+        <div className="grid col-span-6 md:h-full h-[24vh] md:col-span-3 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl">
           <div className="w-full h-full absolute grid place-items-center place-content-center gap-7">
             <h1 className="text-2xl text-white font-bold hover:scale-105 hover:underline tracking-widest mt-5 text-center">
               Tech Stack
@@ -96,7 +98,7 @@ export default function Home() {
         </div>
         <NavLink
           to={"/Blogs"}
-          className="grid col-span-3 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl"
+          className="grid col-span-6 md:h-full h-[12vh] md:col-span-3 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl"
         >
           <h1 className="text-lg text-white font-bold mt-2 flex justify-center items-center hover:scale-105 cursor-pointer hover:underline">
             Click to see Blogs 📚
@@ -106,7 +108,7 @@ export default function Home() {
           to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
           target="_blank"
           className={
-            "border hover:border-2 hover:bg-slate-700/80 backdrop-blur-xl hover:scale-95 cursor-pointer  rounded-xl p-1 space-x-1 flex justify-center items-center"
+            "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-700/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
           }
         >
           <FaLinkedin color="white" size={70} />
