@@ -1,7 +1,4 @@
-import React from 'react'
 
 export default function Backend() {
-  return (
-    <div>Backend</div>
-  )
+  return <div>Backend</div>;
 }

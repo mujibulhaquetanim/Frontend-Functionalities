@@ -61,8 +61,12 @@ export default function ProjectsCard() {
             spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 30,
+          },
+          2560: {
+            slidesPerView: 4,
+            spaceBetween: 40,
           },
         }}
         modules={[EffectCoverflow, Autoplay]}
@@ -75,12 +79,12 @@ export default function ProjectsCard() {
               activeIndex === index ? "border-4 border-slate-300" : ""
             }`}
           >
-            <div className="w-full h-full">
+            <div className="w-full h-56 md:h-40">
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
                 loading="lazy"
-                className="w-full h-56 md:h-40 object-cover rounded-lg"
+                className="w-full h-full md:h-40 object-cover rounded-lg"
               />
             </div>
           </SwiperSlide>
