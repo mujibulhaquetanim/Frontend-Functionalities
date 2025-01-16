@@ -6,8 +6,8 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
         Credentials({
             name: 'credentials',
             credentials: {
-                email: {label: 'Email', type: 'email'},
-                password: {label: 'Password', type: 'password'}
+                email: {label: 'Email', type: 'email', placeholder: '9Qq9Z@example.com'},
+                password: {label: 'Password', type: 'password', placeholder: '********'}
             },
             async authorize(credentials) {
                 //only way login become successful is if user exists, 
@@ -27,8 +27,8 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
         }),
     ],
     callbacks: {
-        jwt: async ()=>{},
-        session: async ()=>{}
+        // jwt: async ()=>{},
+        // session: async ()=>{}
     },
     pages: {},
 })

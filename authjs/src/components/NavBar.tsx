@@ -1,12 +1,14 @@
-"use client";
+// "use client";
 import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
+import { auth } from "../../auth";
 
-export default function NavBar() {
-  const { data: session } = useSession();
-  console.log(session);
+export default async function NavBar() {
+  // const { data: session } = useSession();
+  // console.log(session);
+  const session = await auth;
   return (
     <nav className="flex justify-between items-center py-3 px-4 bg-white shadow-md">
       <Link href={"/"}>
