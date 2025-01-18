@@ -8,7 +8,7 @@ import resume from "/Mujibulhaquetanim.pdf";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-700 md:h-screen flex items-center justify-center py-7 px-3">
+    <div className="min-h-screen bg-slate-700 md:h-screen flex items-center justify-center">
       <section className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-6 gap-4 w-full h-full p-3 place-content-center">
         <section className="grid col-span-6 row-span-5 bg-slate-600 rounded-xl">
           <div className="grid place-content-center h-full place-items-center p-10 text-justify gap-3">
@@ -18,7 +18,7 @@ export default function Home() {
               className="border-2 p-3 rounded-xl tracking-wide hover:uppercase text-white font-bold relative hover:scale-105 cursor-pointer mb-5 hover:bg-slate-700/80 backdrop-blur-xl"
             >
               Available for hire
-              <div className="absolute w-7 h-7 bg-green-900/80 backdrop-blur-xl rounded-full right-0 top-0 animate-ping"></div>
+              <div className="absolute w-12 h-12 bg-green-900/80 backdrop-blur-xl rounded-full right-0 top-0 animate-ping"></div>
             </NavLink>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white text-start tracking-wide sm:tracking-normal">
               Salam, I’m Mujibul Haque <span className="font-bold">Tanim</span>,
@@ -64,13 +64,10 @@ export default function Home() {
           to={"/Projects"}
           className="grid col-span-6 md:h-full h-[44vh] md:row-span-2 bg-slate-600/80  backdrop-blur-xl rounded-xl"
         >
-          <div className="relative space-y-1 text-center">
-            <h1 className="text-2xl text-white font-bold mt-2 tracking-widest hover:scale-105 hover:underline">
+          <div className="relative text-center">
+            <h1 className="text-2xl text-white font-bold tracking-widest hover:scale-95 hover:underline">
               Projects Overview
             </h1>
-            <p className="text-xs text-gray-400 font-bold hover:scale-105 hover:underline">
-              Click to see in detail
-            </p>
             <div className="w-full absolute">
               <ProjectsCard />
             </div>
@@ -90,8 +87,8 @@ export default function Home() {
           </div>
         </NavLink>
         <div className="grid col-span-6 md:h-full h-[24vh] md:col-span-3 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl">
-          <div className="w-full h-full absolute grid place-items-center place-content-center gap-7">
-            <h1 className="text-2xl text-white font-bold hover:scale-105 hover:underline tracking-widest mt-5 text-center">
+          <div className="w-full h-full absolute grid place-items-center place-content-center gap-5 md:gap-7">
+            <h1 className="text-2xl text-white font-bold hover:scale-95 hover:underline tracking-widest md:mt-5  text-center">
               Tech Stack
             </h1>
             <TechStacks />
@@ -105,33 +102,38 @@ export default function Home() {
             Click to see Blogs 📚
           </h1>
         </NavLink>
+
+        <div className="grid col-span-6 md:h-full h-[12vh] md:col-span-3 row-span-1 backdrop-blur-xl rounded-xl">
+        <div className="grid grid-flow-col place-content-around place-items-center gap-3">
         <NavLink
-          to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
-          target="_blank"
-          className={
-            "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-700/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
-          }
-        >
-          <FaLinkedin color="white" size={70} />
-        </NavLink>
-        <NavLink
-          to={"https://github.com/mujibulhaquetanim"}
-          target="_blank"
-          className={
-            "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-700/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
-          }
-        >
-          <FaGithub color="white" size={70} />
-        </NavLink>
-        <NavLink
-          to={"https://twitter.com/mmhtanim"}
-          target="_blank"
-          className={
-            "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-700/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
-          }
-        >
-          <FaXTwitter color="white" size={70} />
-        </NavLink>
+            to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
+            target="_blank"
+            className={
+              "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
+            }
+          >
+            <FaLinkedin color="white" size={70} />
+          </NavLink>
+          <NavLink
+            to={"https://github.com/mujibulhaquetanim"}
+            target="_blank"
+            className={
+              "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
+            }
+          >
+            <FaGithub color="white" size={70} />
+          </NavLink>
+          <NavLink
+            to={"https://twitter.com/mmhtanim"}
+            target="_blank"
+            className={
+              "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
+            }
+          >
+            <FaXTwitter color="white" size={70} />
+          </NavLink>
+        </div>
+        </div>
       </section>
     </div>
   );

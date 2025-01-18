@@ -11,7 +11,7 @@ export default function NavBar() {
   ];
   return (
     <nav className="grid place-items-center place-content-center h-full drop-shadow-lg gap-3">
-      <div className=" border-2 py-7 px-5 rounded-2xl gap-7 grid md:grid-flow-row grid-flow-col bg-slate-700">
+      <div className=" border-2 py-3 md:py-7 px-5 rounded-2xl gap-7 grid md:grid-flow-row grid-flow-col bg-slate-700">
         {routes.map((route, index) => {
           return (
             <NavLink
