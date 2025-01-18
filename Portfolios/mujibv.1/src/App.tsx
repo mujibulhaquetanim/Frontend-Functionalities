@@ -5,10 +5,10 @@ function App() {
   const location = useLocation();
   const homePage = location.pathname === "/";
   return (
-    <div className="flex h-screen bg-slate-500">
-      <div className="grid grid-cols-12 h-full w-full">
+    <div className="grid min-h-screen bg-slate-700">
+      <div className="md:grid md:grid-cols-12">
         {!homePage && (
-          <div className="grid col-span-1">
+          <div className="hidden md:grid md:col-span-1">
             <NavBar />
           </div>
         )}

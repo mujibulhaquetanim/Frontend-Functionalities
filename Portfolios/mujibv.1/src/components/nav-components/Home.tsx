@@ -8,7 +8,7 @@ import resume from "/Mujibulhaquetanim.pdf";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-700 md:h-screen h-full flex items-center justify-center py-7 px-3">
+    <div className="min-h-screen bg-slate-700 md:h-screen flex items-center justify-center py-7 px-3">
       <section className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-6 gap-4 w-full h-full p-3 place-content-center">
         <section className="grid col-span-6 row-span-5 bg-slate-600 rounded-xl">
           <div className="grid place-content-center h-full place-items-center p-10 text-justify gap-3">
@@ -61,7 +61,7 @@ export default function Home() {
 
         <NavLink
           to={"/Projects"}
-          className="grid col-span-6 md:h-full h-[44vh] md:row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl"
+          className="grid col-span-6 md:h-full h-[44vh] md:row-span-2 bg-slate-600/80  backdrop-blur-xl rounded-xl"
         >
           <div className="relative space-y-1 text-center">
             <h1 className="text-2xl text-white font-bold mt-2 tracking-widest hover:scale-105 hover:underline">
