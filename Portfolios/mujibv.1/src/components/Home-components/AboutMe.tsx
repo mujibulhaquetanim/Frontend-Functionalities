@@ -7,8 +7,10 @@ export default function AboutMe() {
     <div className="min-h-screen backdrop-blur-xl grid grid-flow-col place-items-center place-content-center">
       <div className="grid place-items-center place-content-center grid-cols-12 grid-rows-8 gap-2 m-3 md:m-0">
         <div className="md:col-span-6 md:row-span-8 col-span-12 row-span-12 border-2 border-slate-700/80 bg-slate-600/80 text-white backdrop-blur-xl rounded-xl p-5 space-y-5 text-justify">
-          <h1 className="text-3xl font-bold underline">About Me</h1>
-          <div className="hidden md:block space-y-3">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold underline text-center md:text-left">
+            About Me
+          </h1>
+          <div className="hidden md:block space-y-3 text-gray-300 leading-relaxed">
             <p>
               👋 Hi, I'm Mujibul Haque Tanim, a passionate Computer Science
               graduate with a strong foundation in software engineering and data
@@ -56,7 +58,7 @@ export default function AboutMe() {
             </p>
           </div>
           {/* Mobile View */}
-          <div className="md:hidden space-y-3">
+          <div className="md:hidden space-y-3 text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed">
             <p>
               👋 Hi, I'm Mujibul Haque Tanim, a passionate Computer Science
               graduate with a strong foundation in software engineering and data
@@ -124,37 +126,43 @@ export default function AboutMe() {
         </div>
 
         {/* Education */}
-        <div className="md:col-span-6 md:row-span-4 col-span-12 row-span-12 border-2 border-slate-600/80 bg-slate-600/80 text-white backdrop-blur-xl rounded-xl p-5 space-y-5">
-          <div className="text-2xl underline font-bold">Education</div>
-          <div>
-            <h1 className="text-xl">
-              Master of Science (MSc) in Computer Science and Engineering.
+        <div className="md:col-span-6 md:row-span-4 col-span-12 row-span-12 border-2 border-slate-600/80 bg-slate-600/80 text-white backdrop-blur-xl rounded-xl p-5 space-y-6">
+          <div className="text-lg sm:text-xl lg:text-2xl underline font-bold text-center md:text-left">
+            Education
+          </div>
+          <div className="space-y-4">
+            <h1 className="text-base sm:text-lg lg:text-xl font-semibold">
+              Master of Science (MSc) in Computer Science and Engineering
             </h1>
             <NavLink
               to={"https://www.iiuc.ac.bd/"}
               target="_blank"
-              className="text-base cursor-pointer"
+              className="text-sm sm:text-base lg:text-lg cursor-pointer hover:underline text-blue-300"
             >
-              International Islamic University Chittagong. Chattogram,
+              International Islamic University Chittagong, Chattogram,
               Bangladesh
             </NavLink>
-            <p className="text-base">Expected Completion: 2026</p>
+            <p className="text-sm sm:text-base lg:text-lg text-gray-300">
+              Expected Completion: 2026
+            </p>
           </div>
 
           <hr className="outline-none border border-gray-500" />
 
-          <div>
-            <h1 className="text-xl">
-              Bachelor of Science (BSc) in Computer Science and Engineering.
+          <div className="space-y-4">
+            <h1 className="text-base sm:text-lg lg:text-xl font-semibold">
+              Bachelor of Science (BSc) in Computer Science and Engineering
             </h1>
             <NavLink
               to={"https://www.portcity.edu.bd/"}
               target="_blank"
-              className="text-base cursor-pointer"
+              className="text-sm sm:text-base lg:text-lg cursor-pointer hover:underline text-blue-300"
             >
-              Port City International University. Chattogram, Bangladesh
+              Port City International University, Chattogram, Bangladesh
             </NavLink>
-            <p className="text-base">Completion: 2023</p>
+            <p className="text-sm sm:text-base lg:text-lg text-gray-300">
+              Completion: 2023
+            </p>
           </div>
         </div>
 

@@ -20,14 +20,15 @@ export default function Home() {
               Available for hire
               <div className="absolute w-7 h-7 bg-green-900/80 backdrop-blur-xl rounded-full right-0 top-0 animate-ping"></div>
             </NavLink>
-            <h1 className="text-7xl text-white text-start tracking-wide">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white text-start tracking-wide sm:tracking-normal">
               Salam, I’m Mujibul Haque <span className="font-bold">Tanim</span>,
             </h1>
-            <h3 className="text-lg text-gray-300">
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300">
               A software engineer. Mainly working in the JavaScript ecosystem,
               I’m a dedicated problem-solver who thrives on learning and
               building.
             </h3>
+
             <div className="flex gap-3 justify-between items-center place-self-end">
               <NavLink
                 to={"/about"}
@@ -40,7 +41,7 @@ export default function Home() {
               <a
                 href={resume}
                 aria-label="Download Resume"
-                download={"resume.pdf"}
+                download={"Mujibulhaquetanim-resume.pdf"}
                 className="rounded-full border-2 px-3 py-1 place-self-end text-white font-bold hover:scale-95 mt-5 cursor-pointer hover:bg-slate-700/80 backdrop-blur-xl"
               >
                 <FaFileExport size={24} />
