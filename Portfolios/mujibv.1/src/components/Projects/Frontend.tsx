@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Frontend = () => {
   // Simulating fetched data without layout-specific classes.
   const images = [
@@ -21,6 +23,16 @@ const Frontend = () => {
     "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3",
   ];
 
+  const links = [
+    "https://yumdispatchbd.netlify.app/",
+    "https://github.com/mujibulhaquetanim/Backend-Functionalities/tree/main/Payment%20Gateways/Stripe/One-time%20Payment",
+    "https://third-party-ui.netlify.app/",
+    "https://vanilla-amazon.netlify.app/",
+    "https://github.com/KRShanto/memorica",
+    "https://tw-react-components.netlify.app/",
+    "https://tw-projects.netlify.app/",
+  ];
+
   // Mapping images and layout classes to create grid. hardcoded classes.
   return (
     <div className="w-full">
@@ -30,14 +42,18 @@ const Frontend = () => {
             key={index}
             className={`relative overflow-hidden rounded-2xl bg-indigo-400 ${layoutClasses[index]}`}
           >
-            <div className="absolute inset-0">
+            <Link
+              to={links[index]}
+              target="_blank"
+              className="absolute inset-0"
+            >
               <img
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-            </div>
+            </Link>
           </div>
         ))}
       </div>
