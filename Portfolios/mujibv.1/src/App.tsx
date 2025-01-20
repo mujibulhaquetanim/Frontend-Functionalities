@@ -1,29 +1,27 @@
 import { Outlet, useLocation } from "react-router";
 import NavBar from "./components/NavBar";
 
-function App() {
+interface LayoutProps {
+  children?: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = () => {
   const location = useLocation();
-  const homePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/";
+
   return (
-    <div className="grid min-h-screen bg-slate-700">
-      <div className="md:grid md:grid-cols-12 relative">
-        {!homePage && (
-          <div
-            className="
-        absolute z-10 bottom-10 left-[50%] right-[50%] translate-x-[-50%] translate-y-[50%]
-        md:static md:translate-x-0 md:translate-y-0
-        md:grid md:col-span-1
-      "
-          >
+    <div className="min-h-screen bg-slate-700">
+      {/* Main container */}
+      <div className="flex relative">
+        {/* Fixed navigation */}
+        {!isHomePage && (
+          <div className="fixed top-0 left-0 h-screen w-16 md:w-24">
             <NavBar />
           </div>
         )}
 
-        <div
-          className={`${
-            homePage ? "col-span-12" : "col-span-10"
-          } grid col-span-11`}
-        >
+        {/* Main content with conditional padding */}
+        <div className={`flex-1 ${!isHomePage ? 'pl-16 md:pl-24' : ''}`}>
           <Outlet />
         </div>
       </div>
@@ -31,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default Layout;
