@@ -9,8 +9,8 @@ export default function Projects() {
     }`;
 
   return (
-    <div className="w-full min-h-screen grid place-content-center place-items-center gap-3">
-      <div className="flex justify-center items-center border rounded-full px-7 py-2 text-center bg-slate-400">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center gap-2">
+      <div className="flex justify-center items-center border rounded-full m-1 md:px-7 p-2 md:py-2 text-center bg-slate-400">
         <NavLink to="/projects/frontend" className={navLinkClass}>
           Frontend
         </NavLink>
@@ -21,7 +21,9 @@ export default function Projects() {
           Backend
         </NavLink>
       </div>
-      <Outlet />
+      <div className="w-full h-full md:pr-2 flex flex-col">
+        <Outlet />
+      </div>
     </div>
   );
 }
