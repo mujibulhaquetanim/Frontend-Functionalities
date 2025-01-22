@@ -2,10 +2,10 @@ import { NavLink, Outlet } from "react-router";
 
 export default function Projects() {
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `px-5 ${
+    `px-5 transition-all duration-300 ${
       isActive
-        ? "text-white uppercase border-b-2 border-white"
-        : "hover:text-white cursor-pointer"
+        ? "text-white uppercase font-semibold border-b border-r border-l rounded-full border-white"
+        : "text-gray-300 hover:text-white hover:bg-slate-500 rounded-full"
     }`;
 
   return (
