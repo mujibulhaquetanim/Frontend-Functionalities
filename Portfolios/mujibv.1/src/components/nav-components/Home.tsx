@@ -23,11 +23,11 @@ export default function Home() {
                 <div className="absolute w-full h-full bg-green-500/50 rounded-full animate-ping"></div>
               </div>
             </NavLink>
-            
+
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white">
               Salam, I'm Mujibul Haque <span className="font-bold">Tanim</span>
             </h1>
-            
+
             <h3 className="text-sm sm:text-base lg:text-lg text-gray-300">
               A software engineer. Mainly working in the JavaScript ecosystem,
               I'm a dedicated problem-solver who thrives on learning and
@@ -57,9 +57,11 @@ export default function Home() {
         <NavLink
           to={"/projects"}
           target="_blank"
-          className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300"
+          className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-12 hover:bg-slate-600 transition-colors duration-300 h-full w-full" // Add h-full and w-full
         >
-                    <div className="relative">
+          <div className="relative h-full w-full">
+            {" "}
+            {/* Add h-full and w-full */}
             <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline text-center mb-4">
               Projects Overview
             </h1>
@@ -72,7 +74,7 @@ export default function Home() {
           to={"https://github.com/mujibulhaquetanim"}
           className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300"
         >
-                    <div className="h-full flex flex-col justify-center">
+          <div className="h-full flex flex-col justify-center">
             <GitTimeline
               markdownText={`![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mujibulhaquetanim&theme=nord_bright)`}
             />
@@ -87,10 +89,14 @@ export default function Home() {
         >
           <div className="flex flex-col items-center justify-center h-full p-4 gap-2">
             <div className="flex items-baseline">
-              <span className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold">60</span>
+              <span className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold">
+                60
+              </span>
               <span className="text-xs text-gray-400 font-bold ml-2">WPM</span>
             </div>
-            <p className="text-sm sm:text-base text-white font-bold">Typing Speed ⌨️</p>
+            <p className="text-sm sm:text-base text-white font-bold">
+              Typing Speed ⌨️
+            </p>
           </div>
         </NavLink>
 
@@ -118,9 +124,12 @@ export default function Home() {
         <div className="md:col-span-1 lg:col-span-3 rounded-xl">
           <div className="grid grid-cols-3 gap-2 h-full">
             {[
-              { icon: FaLinkedin, url: "https://www.linkedin.com/in/mujibulhaquetanim/" },
+              {
+                icon: FaLinkedin,
+                url: "https://www.linkedin.com/in/mujibulhaquetanim/",
+              },
               { icon: FaGithub, url: "https://github.com/mujibulhaquetanim" },
-              { icon: FaXTwitter, url: "https://twitter.com/mmhtanim" }
+              { icon: FaXTwitter, url: "https://twitter.com/mmhtanim" },
             ].map((social, index) => (
               <NavLink
                 key={index}
@@ -128,7 +137,10 @@ export default function Home() {
                 target="_blank"
                 className="border rounded-xl p-2 hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 transition-all duration-300 flex items-center justify-center"
               >
-                <social.icon color="white" className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16" />
+                <social.icon
+                  color="white"
+                  className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16"
+                />
               </NavLink>
             ))}
           </div>
