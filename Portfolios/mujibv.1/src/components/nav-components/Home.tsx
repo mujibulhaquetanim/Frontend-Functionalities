@@ -8,41 +8,44 @@ import resume from "/Mujibulhaquetanim.pdf";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-700 md:h-screen flex items-center justify-center">
-      <section className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-6 gap-4 w-full h-full p-3 place-content-center">
-        <section className="grid col-span-6 row-span-5 bg-slate-600 rounded-xl">
-          <div className="grid place-content-center h-full place-items-center p-10 text-justify gap-3">
+    <div className="min-h-screen bg-slate-700 w-full overflow-x-hidden px-2 sm:px-4 lg:px-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 max-w-7xl mx-auto py-4">
+        {/* Main intro section */}
+        <section className="md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl">
+          <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
             <NavLink
               to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
               target="_blank"
-              className="border-2 p-3 rounded-xl tracking-wide hover:uppercase text-white font-bold relative hover:scale-105 cursor-pointer mb-5 hover:bg-slate-700/80 backdrop-blur-xl"
+              className="inline-block border-2 p-3 rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit"
             >
               Available for hire
-              <div className="absolute w-12 h-12 bg-green-900/80 backdrop-blur-xl rounded-full right-0 top-0 animate-ping"></div>
+              <div className="absolute w-3 h-3 bg-green-500 rounded-full -right-1 -top-1">
+                <div className="absolute w-full h-full bg-green-500/50 rounded-full animate-ping"></div>
+              </div>
             </NavLink>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white text-start tracking-wide sm:tracking-normal">
-              Salam, I’m Mujibul Haque <span className="font-bold">Tanim</span>,
+            
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white">
+              Salam, I'm Mujibul Haque <span className="font-bold">Tanim</span>
             </h1>
-            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300">
+            
+            <h3 className="text-sm sm:text-base lg:text-lg text-gray-300">
               A software engineer. Mainly working in the JavaScript ecosystem,
-              I’m a dedicated problem-solver who thrives on learning and
+              I'm a dedicated problem-solver who thrives on learning and
               building.
             </h3>
 
-            <div className="flex gap-3 justify-between items-center place-self-end">
+            <div className="flex gap-3 mt-auto">
               <NavLink
                 to={"/about"}
-                className="flex justify-end items-center gap-3 place-self-end rounded-xl text-white font-bold "
+                className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
               >
-                <div className="rounded-full border-2 px-3 py-1 text-white font-bold hover:scale-95 mt-5 cursor-pointer hover:bg-slate-700/80 backdrop-blur-xl">
-                  Explore More
-                </div>
+                Explore More
               </NavLink>
               <a
                 href={resume}
                 aria-label="Download Resume"
                 download={"Mujibulhaquetanim-resume.pdf"}
-                className="rounded-full border-2 px-3 py-1 place-self-end text-white font-bold hover:scale-95 mt-5 cursor-pointer hover:bg-slate-700/80 backdrop-blur-xl"
+                className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
               >
                 <FaFileExport size={24} />
               </a>
@@ -50,89 +53,85 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Projects section */}
         <NavLink
-          to={"https://github.com/mujibulhaquetanim"}
+          to={"/projects"}
           target="_blank"
-          className="grid col-span-6 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl"
+          className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300"
         >
-          <GitTimeline
-            markdownText={`![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mujibulhaquetanim&theme=nord_bright)`}
-          />
-        </NavLink>
-
-        <NavLink
-          to={"/Projects"}
-          className="grid col-span-6 md:h-full h-[44vh] md:row-span-2 bg-slate-600/80  backdrop-blur-xl rounded-xl"
-        >
-          <div className="relative text-center">
-            <h1 className="text-2xl text-white font-bold tracking-widest hover:scale-95 hover:underline">
+                    <div className="relative">
+            <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline text-center mb-4">
               Projects Overview
             </h1>
-            <div className="w-full absolute">
-              <ProjectsCard />
-            </div>
+            <ProjectsCard />
           </div>
         </NavLink>
 
+        {/* GitHub section */}
+        <NavLink
+          to={"https://github.com/mujibulhaquetanim"}
+          className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300"
+        >
+                    <div className="h-full flex flex-col justify-center">
+            <GitTimeline
+              markdownText={`![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mujibulhaquetanim&theme=nord_bright)`}
+            />
+          </div>
+        </NavLink>
+
+        {/* Typing speed section */}
         <NavLink
           to={"https://monkeytype.com/profile/mujibtanim"}
           target="_blank"
-          className="grid col-span-6 py-4 md:p-0 md:col-span-3 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl"
+          className="md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300"
         >
-          <div className="grid place-items-center place-content-center gap-3">
-            <h1 className="text-9xl flex justify-center flex-wrap items-center text-white font-bold gap-3 hover:scale-105">
-              60 <p className="text-xs text-gray-400 font-bold text-end">WPM</p>
-            </h1>
-            <p className="text-base text-white font-bold">Typing Speed ⌨️</p>
+          <div className="flex flex-col items-center justify-center h-full p-4 gap-2">
+            <div className="flex items-baseline">
+              <span className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold">60</span>
+              <span className="text-xs text-gray-400 font-bold ml-2">WPM</span>
+            </div>
+            <p className="text-sm sm:text-base text-white font-bold">Typing Speed ⌨️</p>
           </div>
         </NavLink>
-        <div className="grid col-span-6 md:h-full h-[24vh] md:col-span-3 row-span-2 bg-slate-600/80 backdrop-blur-xl rounded-xl">
-          <div className="w-full h-full absolute grid place-items-center place-content-center gap-5 md:gap-7">
-            <h1 className="text-2xl text-white font-bold hover:scale-95 hover:underline tracking-widest md:mt-5  text-center">
+
+        {/* Tech stack section */}
+        <div className="md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4">
+          <div className="flex flex-col items-center justify-center h-full gap-4">
+            <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider">
               Tech Stack
             </h1>
             <TechStacks />
           </div>
         </div>
+
+        {/* Blogs section */}
         <NavLink
           to={"/Blogs"}
-          className="grid col-span-6 md:h-full h-[12vh] md:col-span-3 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl"
+          className="md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300"
         >
-          <h1 className="text-lg text-white font-bold mt-2 flex justify-center items-center hover:scale-105 cursor-pointer hover:underline">
+          <h1 className="text-base sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline">
             Click to see Blogs 📚
           </h1>
         </NavLink>
 
-        <div className="grid col-span-6 md:h-full h-[12vh] md:col-span-3 row-span-1 backdrop-blur-xl rounded-xl">
-        <div className="grid grid-flow-col place-content-around place-items-center gap-3">
-        <NavLink
-            to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
-            target="_blank"
-            className={
-              "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
-            }
-          >
-            <FaLinkedin color="white" size={70} />
-          </NavLink>
-          <NavLink
-            to={"https://github.com/mujibulhaquetanim"}
-            target="_blank"
-            className={
-              "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
-            }
-          >
-            <FaGithub color="white" size={70} />
-          </NavLink>
-          <NavLink
-            to={"https://twitter.com/mmhtanim"}
-            target="_blank"
-            className={
-              "border rounded-xl p-1 space-x-1 flex justify-center items-center hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 cursor-pointer"
-            }
-          >
-            <FaXTwitter color="white" size={70} />
-          </NavLink>
-        </div>
+        {/* Social links section */}
+        <div className="md:col-span-1 lg:col-span-3 rounded-xl">
+          <div className="grid grid-cols-3 gap-2 h-full">
+            {[
+              { icon: FaLinkedin, url: "https://www.linkedin.com/in/mujibulhaquetanim/" },
+              { icon: FaGithub, url: "https://github.com/mujibulhaquetanim" },
+              { icon: FaXTwitter, url: "https://twitter.com/mmhtanim" }
+            ].map((social, index) => (
+              <NavLink
+                key={index}
+                to={social.url}
+                target="_blank"
+                className="border rounded-xl p-2 hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 transition-all duration-300 flex items-center justify-center"
+              >
+                <social.icon color="white" className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16" />
+              </NavLink>
+            ))}
+          </div>
         </div>
       </section>
     </div>
