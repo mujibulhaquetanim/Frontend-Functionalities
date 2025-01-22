@@ -56,7 +56,6 @@ export default function Home() {
         {/* Projects section */}
         <NavLink
           to={"/projects"}
-          target="_blank"
           className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-12 hover:bg-slate-600 transition-colors duration-300 h-full w-full" // Add h-full and w-full
         >
           <div className="relative h-full w-full">
@@ -72,6 +71,7 @@ export default function Home() {
         {/* GitHub section */}
         <NavLink
           to={"https://github.com/mujibulhaquetanim"}
+          target="_blank"
           className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300"
         >
           <div className="h-full flex flex-col justify-center">

@@ -35,7 +35,7 @@ const Frontend = () => {
 
   // Mapping images and layout classes to create grid. hardcoded classes.
   return (
-    <div className="w-full">
+    <div className="w-full px-4 py-2 lg:p-2">
       <div className="grid w-full gap-4 auto-rows-[minmax(3.3rem,auto)] grid-cols-12">
         {images.map((image, index) => (
           <div
