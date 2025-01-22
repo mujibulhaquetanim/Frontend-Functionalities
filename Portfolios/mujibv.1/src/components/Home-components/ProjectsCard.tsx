@@ -31,7 +31,7 @@ export default function ProjectsCard() {
   ];
 
   return (
-    <div className="flex items-center justify-center p-4">
+    <div className="flex items-center justify-center p-4 h-full w-full">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -60,14 +60,6 @@ export default function ProjectsCard() {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          2560: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
         }}
         modules={[EffectCoverflow, Autoplay]}
         className="w-full h-full"
@@ -79,12 +71,12 @@ export default function ProjectsCard() {
               activeIndex === index ? "border-4 border-slate-300" : ""
             }`}
           >
-            <div className="w-full h-56 md:h-40">
+            <div className="w-full h-full aspect-[16/9]">
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
                 loading="lazy"
-                className="w-full h-full md:h-40 object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
           </SwiperSlide>
