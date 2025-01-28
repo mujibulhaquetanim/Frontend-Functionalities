@@ -3,7 +3,7 @@ import "./App.css";
 import { createTodoQueryOptions } from "./queryOptions/createTodoQueryOptions";
 
 function App() {
-  const { data, isPending, isError, error } = useSuspenseQuery(
+  const { data, isError, error, isFetching, refetch } = useSuspenseQuery(
     createTodoQueryOptions()
   );
 
@@ -13,7 +13,7 @@ function App() {
       {/* json.stringify will convert the array to string, if we don't use it then we will get the array in the form of object which is not readable and cannot be displayed  */}
       {/* <div>{isPending ? "Loading..." : JSON.stringify(data?.slice(0, 10))}</div> */}
       <div>
-        {isPending
+        {isFetching
           ? "Loading..."
           : data?.slice(0, 10).map((todo) => (
               <div key={todo.id} style={{ marginBottom: "10px" }}>
@@ -33,6 +33,7 @@ function App() {
             ))}
       </div>
       {isError && <div>Error: {(error as Error).message}</div>}
+      <button onClick={()=> refetch()}>Refetch it</button>
     </>
   );
 }
