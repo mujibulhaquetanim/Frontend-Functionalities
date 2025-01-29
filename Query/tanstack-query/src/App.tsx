@@ -1,20 +1,23 @@
-import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import "./App.css";
-import { createTodoQueryOptions } from "./queryOptions/createTodoQueryOptions";
+// import { createTodoQueryOptions } from "./queryOptions/createTodoQueryOptions";
 import { useState } from "react";
 import { createCommentsOptions } from "./queryOptions/createCommentsOptions";
 import { Icomment } from "./types/todoTypes";
+import { useTodoQuery } from "./queryOptions/useTodoQuery";
 
 function App() {
   const [page, setPage] = useState(1);
-  const { data, isError, error, isFetching, refetch } = useSuspenseQuery(
-    createTodoQueryOptions()
-  );
+  const { data, isError, error, isFetching, refetch } = useTodoQuery();
   const {
     data: commnetsData,
     isError: isCommentError,
     isPending: isCommentsPending,
-  } = useQuery(createCommentsOptions(page));
+  } = useSuspenseQuery(createCommentsOptions(page));
+
+  // const { data, isError, error, isFetching, refetch } = useSuspenseQuery(
+  //   createTodoQueryOptions()
+  // );
 
   return (
     <>
