@@ -47,7 +47,10 @@ export default function PasswordForm() {
   );
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[300px] space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-[300px] space-y-8"
+      >
         <FormField
           control={form.control}
           name="password"
@@ -55,9 +58,9 @@ export default function PasswordForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="password" {...field} />
+                <Input type="password" placeholder="********" {...field} />
               </FormControl>
-              
+
               <FormMessage />
             </FormItem>
           )}
@@ -71,7 +74,7 @@ export default function PasswordForm() {
               <FormControl>
                 <Input placeholder="confirmPassword" {...field} />
               </FormControl>
-              
+
               <FormMessage />
             </FormItem>
           )}

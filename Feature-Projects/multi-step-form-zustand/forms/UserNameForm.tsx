@@ -2,30 +2,33 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import React from "react";
+import React, { useCallback } from "react";
 import { onboardingSchema } from "@/types/schema";
 import { z } from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@radix-ui/react-checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
+import { useSubmitDataStore } from "@/store/submitDataStore";
 
-// only picked firstName and lastName fields from onboardingSchema
+// Picked fields from onboardingSchema
 const onboardingUserNamesSchema = onboardingSchema.pick({
   username: true,
   terms: true,
 });
+
 type onboardingUserNamesSchemaType = z.infer<typeof onboardingUserNamesSchema>;
 
 export default function UserNameForm() {
+  const router = useRouter();
   const form = useForm<onboardingUserNamesSchemaType>({
     resolver: zodResolver(onboardingUserNamesSchema),
     defaultValues: {
@@ -34,12 +37,24 @@ export default function UserNameForm() {
     },
   });
 
-  const onSubmit = (data: onboardingUserNamesSchemaType) => {
-    console.log(data);
-  };
+  const setData = useSubmitDataStore((state) => state.setData);
+  const firstName = useSubmitDataStore((state) => state.firstName);
+  const lastName = useSubmitDataStore((state) => state.lastName);
+  const password = useSubmitDataStore((state) => state.password);
+  const confirmPassword = useSubmitDataStore((state) => state.confirmPassword);
+
+  const onSubmit = useCallback(
+    (data: onboardingUserNamesSchemaType) => {
+      setData(data);
+      console.log({ ...data, firstName, lastName, password, confirmPassword });
+      // router.replace("/profile");
+    },
+    [router]
+  );
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="username"
@@ -47,31 +62,37 @@ export default function UserNameForm() {
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="username" {...field} />
+                <Input placeholder="Enter your username" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="terms"
           render={({ field }) => (
             <FormItem>
-              <div className="space-y-1 leading-none">
-              <FormLabel>I agree to the terms and conditions.</FormLabel>
+              <div className="flex items-center gap-3">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={(checked) => field.onChange(checked)}
+                  />
+                </FormControl>
+                <FormLabel className="text-sm">
+                  I agree to the terms and conditions.
+                </FormLabel>
               </div>
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+
+        <Button type="submit" disabled={form.formState.isSubmitting}>
+          {form.formState.isSubmitting ? "Submitting..." : "Submit"}
+        </Button>
       </form>
     </Form>
   );
