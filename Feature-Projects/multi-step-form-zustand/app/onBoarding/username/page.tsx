@@ -1,7 +1,7 @@
-import React from 'react'
+import UserNameForm from '@/forms/UserNameForm'
 
 export default function page() {
   return (
-    <div>page</div>
+    <div><UserNameForm/></div>
   )
 }
