@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "multi-step-form-zustand",
-  description: "This is a multi-step form built using zustand with persistent state.",
+  description:
+    "This is a multi-step form built using zustand with persistent state.",
 };
 
 export default function RootLayout({
@@ -27,7 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex items-center justify-center min-h-screen">{children}</div>
+        <div className="flex flex-col gap-7 items-center justify-center min-h-screen">
+          <NavBar />
+          {children}
+        </div>
       </body>
     </html>
   );
