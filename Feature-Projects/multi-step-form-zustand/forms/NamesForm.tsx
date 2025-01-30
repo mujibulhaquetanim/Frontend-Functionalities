@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import React from "react";
+import React, { useCallback } from "react";
 import { onboardingSchema } from "@/types/schema";
 import { z } from "zod";
 import {
@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
+import { useSubmitDataStore } from "@/store/submitDataStore";
 
 // only picked firstName and lastName fields from onboardingSchema
 const onboardingNamesSchema = onboardingSchema.pick({
@@ -24,6 +26,7 @@ const onboardingNamesSchema = onboardingSchema.pick({
 type onboardingNamesSchemaType = z.infer<typeof onboardingNamesSchema>;
 
 export default function NamesForm() {
+  const router = useRouter();
   const form = useForm<onboardingNamesSchemaType>({
     resolver: zodResolver(onboardingNamesSchema),
     defaultValues: {
@@ -32,12 +35,23 @@ export default function NamesForm() {
     },
   });
 
-  const onSubmit = (data: onboardingNamesSchemaType) => {
-    console.log(data);
-  };
+  const setData = useSubmitDataStore((state) => state.setData);
+
+  const onSubmit = useCallback(
+    (data: onboardingNamesSchemaType) => {
+      console.log(data);
+      setData(data);
+      router.replace("/onboarding/password");
+    },
+    [router]
+  );
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[300px] space-y-8">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-2/3 space-y-8 p-4 border"
+      >
         <FormField
           control={form.control}
           name="firstName"
@@ -47,7 +61,7 @@ export default function NamesForm() {
               <FormControl>
                 <Input placeholder="firstName" {...field} />
               </FormControl>
-              
+
               <FormMessage />
             </FormItem>
           )}
@@ -61,12 +75,14 @@ export default function NamesForm() {
               <FormControl>
                 <Input placeholder="lastName" {...field} />
               </FormControl>
-              
+
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Next</Button>
+        <Button type="submit" className="mt-10">
+          Next
+        </Button>
       </form>
     </Form>
   );
