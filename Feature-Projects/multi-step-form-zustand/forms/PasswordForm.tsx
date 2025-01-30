@@ -15,6 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 // only picked firstName and lastName fields from onboardingSchema
 const onboardingPasswordSchema = onboardingSchema.pick({
@@ -37,7 +38,7 @@ export default function PasswordForm() {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[300px] space-y-8">
         <FormField
           control={form.control}
           name="password"
@@ -45,7 +46,7 @@ export default function PasswordForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <input placeholder="password" {...field} />
+                <Input placeholder="password" {...field} />
               </FormControl>
               <FormDescription>This is your password.</FormDescription>
               <FormMessage />
@@ -59,14 +60,14 @@ export default function PasswordForm() {
             <FormItem>
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <input placeholder="confirmPassword" {...field} />
+                <Input placeholder="confirmPassword" {...field} />
               </FormControl>
               <FormDescription>This is your confirm password.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Next</Button>
       </form>
     </Form>
   );

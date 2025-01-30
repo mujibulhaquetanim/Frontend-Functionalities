@@ -1,7 +1,5 @@
-import React from 'react'
+import NamesForm from "@/forms/NamesForm";
 
 export default function page() {
-  return (
-    <div>page</div>
-  )
+  return <NamesForm />;
 }

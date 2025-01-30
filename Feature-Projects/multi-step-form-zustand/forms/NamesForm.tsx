@@ -8,13 +8,13 @@ import { z } from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 // only picked firstName and lastName fields from onboardingSchema
 const onboardingNamesSchema = onboardingSchema.pick({
@@ -37,7 +37,7 @@ export default function NamesForm() {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-[300px] space-y-8">
         <FormField
           control={form.control}
           name="firstName"
@@ -45,9 +45,9 @@ export default function NamesForm() {
             <FormItem>
               <FormLabel>First Name</FormLabel>
               <FormControl>
-                <input placeholder="firstName" {...field} />
+                <Input placeholder="firstName" {...field} />
               </FormControl>
-              <FormDescription>This is your first name.</FormDescription>
+              
               <FormMessage />
             </FormItem>
           )}
@@ -59,14 +59,14 @@ export default function NamesForm() {
             <FormItem>
               <FormLabel>Last Name</FormLabel>
               <FormControl>
-                <input placeholder="lastName" {...field} />
+                <Input placeholder="lastName" {...field} />
               </FormControl>
-              <FormDescription>This is your last name.</FormDescription>
+              
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Next</Button>
       </form>
     </Form>
   );
