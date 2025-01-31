@@ -43,6 +43,8 @@ export default function UserNameForm() {
   const password = useSubmitDataStore((state) => state.password);
   const confirmPassword = useSubmitDataStore((state) => state.confirmPassword);
 
+  //  // this is to prevent the user to come this page directly without going through name page
+  //hasHydrated is used to check if the state has been hydrated or not and if it has not been hydrated then the user will be redirected to the name page. this is done as zustand when persist data is enabled, it is going to be undefined in the first render and then it will be hydrated the data from the local storage, which means we have to wait until the data is hydrated before we can proceed to the next page.
   useEffect(() => {
     if (!useSubmitDataStore.persist.hasHydrated) return;
     if (!firstName || !lastName || !password || !confirmPassword) {
