@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import React, { use, useCallback } from "react";
+import React, { use, useCallback, useEffect } from "react";
 import { onboardingSchema } from "@/types/schema";
 import { z } from "zod";
 import {
@@ -36,6 +36,8 @@ export default function PasswordForm() {
   });
 
   const setData = useSubmitDataStore((state) => state.setData);
+  const firstName = useSubmitDataStore((state) => state.firstName);
+  const lastName = useSubmitDataStore((state) => state.lastName);
 
   const onSubmit = useCallback(
     (data: onboardingPasswordSchemaType) => {
@@ -45,6 +47,13 @@ export default function PasswordForm() {
     },
     [router]
   );
+
+  useEffect(() => {
+    if (!useSubmitDataStore.persist.hasHydrated) return;
+    if (!firstName || !lastName) {
+      router.replace("/onboarding/name");
+    }
+  }, [useSubmitDataStore.persist.hasHydrated, firstName, lastName]);
   return (
     <Form {...form}>
       <form
