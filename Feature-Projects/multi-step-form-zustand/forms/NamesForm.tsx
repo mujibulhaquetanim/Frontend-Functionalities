@@ -48,10 +48,7 @@ export default function NamesForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="w-2/3 space-y-8"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-8">
         <FormField
           control={form.control}
           name="firstName"

@@ -8,6 +8,9 @@ type OnBoardingState = Partial<onboardingSchema> & {
 }
 
 export const useSubmitDataStore = create<OnBoardingState>()(
+    // persist is used to store the data in the local storage.
+    // setData will be used to update the state. we can use it to update only the data we need to update.
+    //to get the data we can use the selector.
     persist((set)=>({
         setData: (data)=>set(data),
     }), {

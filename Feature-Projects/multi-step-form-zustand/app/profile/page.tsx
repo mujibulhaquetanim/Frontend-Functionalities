@@ -2,6 +2,7 @@
 import React from "react";
 import { useSubmitDataStore } from "@/store/submitDataStore";
 
+// we can use the selector to get the data
 export default function page() {
   const { setData, ...state } = useSubmitDataStore();
   return (
