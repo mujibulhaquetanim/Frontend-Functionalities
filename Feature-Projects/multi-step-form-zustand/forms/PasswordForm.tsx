@@ -72,7 +72,7 @@ export default function PasswordForm() {
             <FormItem>
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <Input placeholder="confirmPassword" {...field} />
+                <Input type="password" placeholder="********" {...field} />
               </FormControl>
 
               <FormMessage />

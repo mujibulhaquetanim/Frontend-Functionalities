@@ -50,7 +50,7 @@ export default function NamesForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-2/3 space-y-8 p-4 border"
+        className="w-2/3 space-y-8"
       >
         <FormField
           control={form.control}

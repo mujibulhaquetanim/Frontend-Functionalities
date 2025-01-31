@@ -47,7 +47,7 @@ export default function UserNameForm() {
     (data: onboardingUserNamesSchemaType) => {
       setData(data);
       console.log({ ...data, firstName, lastName, password, confirmPassword });
-      // router.replace("/profile");
+      router.replace("/profile");
     },
     [router]
   );
