@@ -20,14 +20,14 @@ export const useTodoStore = create<TodoState>((set)=>({
     todos: [],
     addTodo: (text: string)=> {
         const newTodo: Todo = {id: Date.now(), text, done: false}
-        set(state=> ({}))
+        set(state=> ({todos: [...state.todos, newTodo]}))
     },
     toggleTodo: (id: number)=>{
-        set(state=> ({}))
+        set(state=> ({todos: state.todos.map(todo=>todo.id===id?{...todo, todo: !todo.done}:todo)}))
     },
     removeTodo: (id: number)=>{
-        set(state=> ({}))},
+        set(state=> ({todos: state.todos.filter(todo=>todo.id !== id)}))},
     updateTodo: (id: number, updatedTodo: Partial<Todo>)=>{
-        set(state=>({}))
+        set(state=>({todos: state.todos.filter(todo=>todo.id===id?{...todo, updatedTodo}:todo)}))
     }
 }))
