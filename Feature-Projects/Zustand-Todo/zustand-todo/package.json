@@ -9,6 +9,16 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "esbuild"
+    ]
+  },
+  
+  "comments": {
+      "comments added for pnpm script":"The configuration key pnpm.onlyBuiltDependencies in your package.json tells pnpm which dependencies should have their build scripts executed. If a dependency is not listed there, its build script will be skipped. Some packages (in this case, @swc/core and esbuild) include build scripts.These scripts are usually necessary for compiling native code, optimizing performance, or performing other setup tasks that are required after the package is installed. Some build scripts might need to run on the target system to compile binaries or perform system-specific optimizations. Ignoring them might lead to incompatibility or performance issues if the scripts are indeed necessary. or, In many projects, especially in large monorepos or CI/CD pipelines, you might not want every dependency to run its build scripts automatically. This provides better control over what is built and when, and it can also reduce unnecessary build time."},
+  
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
