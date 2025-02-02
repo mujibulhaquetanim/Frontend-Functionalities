@@ -14,6 +14,8 @@ interface TodoState{
     updateTodo: (id: number, updatedTodo: Partial<Todo>)=> void
 }
 
+//Zustand stores state internally in an object created by the create function, using setState for updates. The initial store details aren't visible. Zustand's set function uses shallow merging, meaning it integrates new object data with the existing state. The store is empty until setData is called. here setData is the name of the properties like addTodo, setTodo etc. where data is updated using respective set function zustand. 
+// Zustand's set function uses shallow merging, meaning it integrates new object data with the existing state. The store is empty until setData is called.
 export const useTodoStore = create<TodoState>((set)=>({
     todos: [],
     addTodo: (text: string)=> {
