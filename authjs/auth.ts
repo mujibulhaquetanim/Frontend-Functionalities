@@ -37,6 +37,18 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
         }),
     ],
     callbacks: {
+        //this function is called when user tries to access a protected route and is not authenticated
+        authorized({request: {nextUrl}, auth}){
+            const isLoggedIn = !!auth?.user;
+            const {pathname} = nextUrl;
+
+            //redirect user to home page if they are already logged in
+            if(pathname.startsWith('/auth/signin')&& isLoggedIn){
+                return Response.redirect(new URL('/', nextUrl));
+            }
+            //redirect user to login page if they are not logged in
+            return !!auth
+        }
         // jwt: async ()=>{},
         // session: async ()=>{}
     },
