@@ -23,6 +23,10 @@ export async function handleCredentialSignIn({email, password}:{email: string, p
     }
 }
 
+export async function handleGithubSignIn() {
+    await signIn('github', {callbackUrl: '/'});
+}
+
 export async function handleSignOut() {
     await signOut();
 }

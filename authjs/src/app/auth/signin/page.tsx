@@ -16,7 +16,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -24,9 +23,14 @@ import {
 import { Input } from "@/components/ui/input";
 import LoadingButton from "@/components/LoadingButton";
 import { signinSchema } from "@/schema/signinSchema";
-import { handleCredentialSignIn } from "@/app/actions/authActions";
+import {
+  handleCredentialSignIn,
+  handleGithubSignIn,
+} from "@/app/actions/authActions";
 import { useState } from "react";
 import ErrorMessage from "@/components/error-message";
+import { Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Signin() {
   const [globalError, setGlobalError] = useState<string>("");
@@ -99,6 +103,14 @@ export function Signin() {
             <LoadingButton pending={form.formState.isSubmitting} />
           </form>
         </Form>
+
+        <span className="text-sm text-gray-500 text-center block my-2">or</span>
+        <form action={handleGithubSignIn}>
+          <Button variant="outline" className="w-full" type="submit">
+            <Github className="h-4 w-4 mr-2" />
+            Sign in with Github
+          </Button>
+        </form>
       </CardContent>
     </Card>
   );
