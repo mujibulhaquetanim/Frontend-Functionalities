@@ -1,3 +1,4 @@
+import { signinSchema } from "@/schema/signinSchema";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
@@ -12,6 +13,15 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
             async authorize(credentials) {
                 //only way login become successful is if user exists, 
                 let user = null;
+
+                //validate user credentials
+                const parsedCredentials = signinSchema.safeParse(credentials);
+                if(!parsedCredentials.success){
+                    console.error("Invalid credentials", parsedCredentials.error.errors);
+                    return null
+                }
+                
+                //get user
                 user={
                     id: "1",
                     name: 'John Doe',
