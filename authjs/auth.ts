@@ -1,9 +1,11 @@
 import { signinSchema } from "@/schema/signinSchema";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import Github    from "next-auth/providers/github";
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
     providers: [
+        Github,
         Credentials({
             name: 'credentials',
             credentials: {
@@ -48,9 +50,17 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
             }
             //redirect user to login page if they are not logged in
             return !!auth
+        },
+        jwt({token, user}){
+            if(user){
+                token.user = user
+            }
+            return token
+        },
+        session({session, token}){
+            session.user.id = token.id;
+            return session;
         }
-        // jwt: async ()=>{},
-        // session: async ()=>{}
     },
     //pages block defined where should custom pages be rendered
     pages: {
