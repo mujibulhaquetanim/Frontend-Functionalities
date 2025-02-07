@@ -40,5 +40,8 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
         // jwt: async ()=>{},
         // session: async ()=>{}
     },
-    pages: {},
+    //pages block defined where should custom pages be rendered
+    pages: {
+        signIn: '/auth/signin'
+    },
 })
