@@ -32,7 +32,7 @@ import ErrorMessage from "@/components/error-message";
 import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function Signin() {
+export default function Signin() {
   const [globalError, setGlobalError] = useState<string>("");
   const form = useForm<z.infer<typeof signinSchema>>({
     resolver: zodResolver(signinSchema),
@@ -49,12 +49,12 @@ export function Signin() {
         setGlobalError(result.message);
       }
     } catch (error) {
-      console.log("An unexpected error occured. Please try again.");
+      console.log("An unexpected error occurred. Please try again.");
     }
   }
 
   return (
-    <Card className="flex justify-center items-center p-4">
+    <Card className="flex flex-col h-screen-minus-navbar justify-center items-center p-4">
       <CardHeader>
         <CardTitle>Sign In</CardTitle>
         <CardDescription>Please enter your credentials</CardDescription>
