@@ -72,6 +72,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      height: {
+        'screen-minus-navbar': 'calc(100vh - 4rem)', // adjusting for the navbar height of 4rem
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
