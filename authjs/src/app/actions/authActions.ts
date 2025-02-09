@@ -28,5 +28,5 @@ export async function handleGithubSignIn() {
 }
 
 export async function handleSignOut() {
-    await signOut();
+    await signOut({redirectTo: '/'});
 }
