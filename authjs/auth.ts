@@ -10,9 +10,11 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                 // this function is called when user logs in and we get the profile of user which returns an object with id, name and email, we use this object to store user in our database.
                 return {
                     //make sure to convert id to string because id is of type bigint
+                    //profile object has id, name and email so if we give any other values to them, original values will be overwritten. i.e. id: "some name", instead of this, id will be the returned value of profile object.
                     id: profile.id.toString(),
                     name: profile.name,
-                    email: profile.email
+                    email: profile.email,
+                    role: 'user'
                 }
             }
         }),
@@ -33,11 +35,12 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                     return null
                 }
                 
-                //get user
+                // this is dummy user, it will be replaced with actual user from database.
                 user={
                     id: "1",
                     name: 'John Doe',
                     email: '9Qq9Z@example.com',
+                    role: 'admin'
                 }
 
                 if(!user) {
@@ -65,13 +68,15 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
         //this function is called when a token is created or updated, when user logins we get access token and user object. user object is from credentials provider (authorize function)
         jwt({token, user}){
             if(user){
-                token.user = user
+                token.id = user.id as string;
+                token.role = user.role as string;
             }
             return token
         },
-        //it is executed whenever we try to access token
+        //it is executed whenever we try to access tokenx`
         session({session, token}){
             session.user.id = token.id
+            session.user.role = token.role
             return session;
         }
     },
