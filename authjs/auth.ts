@@ -14,7 +14,7 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                     id: profile.id.toString(),
                     name: profile.name,
                     email: profile.email,
-                    role: 'user'
+                    role: 'user' //default role as custom types expects a role field.
                 }
             }
         }),
@@ -40,7 +40,8 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                     id: "1",
                     name: 'John Doe',
                     email: '9Qq9Z@example.com',
-                    role: 'admin'
+                    // role: 'admin'
+                    role: 'user'
                 }
 
                 if(!user) {
@@ -56,9 +57,14 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
         authorized({request: {nextUrl}, auth}){
             const isLoggedIn = !!auth?.user;
             const {pathname} = nextUrl;
+            const role = auth?.user?.role || 'user';
 
             //redirect user to home page if they are already logged in
             if(pathname.startsWith('/auth/signin')&& isLoggedIn){
+                return Response.redirect(new URL('/', nextUrl));
+            }
+            
+            if(pathname.startsWith('/admin')&& role !== 'admin'){
                 return Response.redirect(new URL('/', nextUrl));
             }
             //redirect user to login page if they are not logged in
