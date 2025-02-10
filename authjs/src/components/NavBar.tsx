@@ -1,15 +1,22 @@
 // "use client";
+// import { useSession } from "next-auth/react";
 import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
-// import { useSession } from "next-auth/react";
-import { auth } from "../../auth";
+// import { auth } from "../../auth";
+import { getSession } from "@/lib/getSession";
 import { handleSignOut } from "@/app/actions/authActions";
 
 export default async function NavBar() {
+  // it is used when we are using client component
   // const { data: session } = useSession();
+
+  // it is used when we are using server component
+  //const session = await auth();
   // console.log(session);
-  const session = await auth();
+
+  // it is used when we are using server component but we are using custom hook which is used to get the session and keep it in the cache.
+  const session = await getSession();
   console.log(session);
   return (
     <nav className="flex justify-between items-center py-3 px-4 bg-white shadow-md">
