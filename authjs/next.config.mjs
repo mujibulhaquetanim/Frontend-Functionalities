@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["images.pexels.com"],
-    }
+        //domains is deprecated, use remotePatterns
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.pexels.com',
+            },
+        ],
+    },
 };
 
 export default nextConfig;
