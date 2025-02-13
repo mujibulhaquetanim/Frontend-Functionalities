@@ -68,7 +68,25 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                 return Response.redirect(new URL('/', nextUrl));
             }
             //redirect user to login page if they are not logged in
-            return !!auth
+            return isLoggedIn
+        },
+
+        signIn({user, account, profile, email, credentials}){
+            // this function is called when user tries to sign in with credentials provider (authorize function)
+            // account contains information about the provider we are using, e.g. provider name, type, etc.
+            // profile contains information about the user from the provider
+            // email and credentials contain information about the user from the credentials provider
+            // you can use this information to authenticate the user
+            
+            // for example, you can use the email to lookup the user in your database
+            // and compare the credentials entered by the user with the credentials in the database
+            // if they match, you can return the user object
+            // if they don't match, you can return null
+            
+            // here we are just returning the user object that we created above
+            console.log(user, account, profile, email, credentials)
+            // returning null will redirect user to /auth/signin. returning true will allow the user to sign in.
+            return true
         },
 
         //this function is called when a token is created or updated, when user logins we get access token and user object. user object is from credentials provider (authorize function)
@@ -79,7 +97,7 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
             }
             return token
         },
-        //it is executed whenever we try to access tokenx`
+        //it is executed whenever we try to access token`
         session({session, token}){
             session.user.id = token.id
             session.user.role = token.role
