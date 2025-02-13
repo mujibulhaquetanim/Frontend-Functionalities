@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 // import { auth } from "../../auth";
 import { getSession } from "@/lib/getSession";
-import { handleSignOut } from "@/app/actions/authActions";
+import { handleSignOut } from "@/actions/authActions";
 
 export default async function NavBar() {
   // it is used when we are using client component
@@ -17,7 +17,7 @@ export default async function NavBar() {
 
   // it is used when we are using server component but we are using custom hook which is used to get the session and keep it in the cache.
   const session = await getSession();
-  console.log({session}); //for debugging purpose it was used to show the session value in the console.
+  console.log({ session }); //for debugging purpose it was used to show the session value in the console.
   return (
     <nav className="flex justify-between items-center py-3 px-4 bg-white shadow-md">
       <Link href={"/"}>

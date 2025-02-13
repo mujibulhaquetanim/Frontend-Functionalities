@@ -26,7 +26,7 @@ import { signinSchema } from "@/schema/signinSchema";
 import {
   handleCredentialSignIn,
   handleGithubSignIn,
-} from "@/app/actions/authActions";
+} from "@/actions/authActions";
 import { useState } from "react";
 import ErrorMessage from "@/components/error-message";
 import { Github } from "lucide-react";
