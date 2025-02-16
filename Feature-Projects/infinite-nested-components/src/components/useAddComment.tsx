@@ -14,11 +14,11 @@ export default function useFunctions() {
       parentTree.replies.unshift(newComment);
       return parentTree;
     }
-    
+
     // Recursively update the replies of the current node
     // map will return an array of updated replies of the current node (parentTree).
-    const updatedReplies : CommentType[] = parentTree.replies.map((reply) => {
-      addComments(reply, commendId, newComment);
+    const updatedReplies: CommentType[] = parentTree.replies.map((reply) => {
+      return addComments(reply, commendId, newComment);
     });
     return { ...parentTree, replies: updatedReplies };
   };
