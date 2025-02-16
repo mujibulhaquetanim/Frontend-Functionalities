@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./comment.css";
 
-interface CommentType {
+export interface CommentType {
   id: string;
   text: string;
   replies: CommentType[];
