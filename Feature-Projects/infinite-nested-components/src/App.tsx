@@ -11,11 +11,13 @@ interface CommentType {
 function App() {
   const [comment, setComment] = useState<CommentType>(commentData);
 
-  console.log(comment);
+  const handleComments = (commentId: string, newComment: CommentType)=>{
+    console.log(commentId, newComment, 'handleComments');
+  }
   
   return (
     <>
-      <Comment key={comment.id} data={comment}/>
+      <Comment key={comment.id} data={comment} handleComments={handleComments}/>
     </>
   )
 }
