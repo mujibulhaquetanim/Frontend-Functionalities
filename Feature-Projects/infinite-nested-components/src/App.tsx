@@ -1,17 +1,19 @@
 import Comment from "./components/Comment.tsx";
 import useFunctions from "./components/useAddComment.tsx";
-import { commentData } from "./data/CommentsData.ts";
+import commentData from "./data/CommentsData.json";
 import { useState } from "react";
 
 interface CommentType {
-  id: string;
-  text: string;
+  id: number;
+  content: string;
+  votes: number;
+  timestamp: string;
   replies: CommentType[]; // Recursive structure for nested comments
 }
 
 function App() {
   const [newComment, setNewComment] = useState("");
-  const [comment, setComment] = useState<CommentType>(commentData);
+  const [comment, setComment] = useState<CommentType[]>(commentData);
   const { addComments } = useFunctions();
 
   const handleComments = (commentId: string, newComment: CommentType) => {
@@ -45,7 +47,7 @@ function App() {
         </button>
       </div>
       <Comment
-        key={comment.id}
+        key={comment.}
         data={comment}
         handleComments={handleComments}
       />
