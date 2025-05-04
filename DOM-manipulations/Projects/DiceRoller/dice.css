@@ -1,32 +1,56 @@
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: lightblue;
-    gap: 10px;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: lightblue;
+  gap: 10px;
 }
-#dice{
-    font-size: 4em;
-    font-weight: bold;
+#dice {
+  font-size: 4em;
+  font-weight: bold;
 }
-input{
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    outline: none;
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
+h1{
+  font-size: 4em;
+  font-weight: bold;
 }
-button{
-    border-radius: 10px;
-    padding: 5px;
-    border: none;
-    outline: none;
-    font-size: large;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 12px 20px;
+input {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+button {
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 12px 20px;
+}
+
+button:hover {
+  background-color: #eeebeb;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  scale: 1.1;
+}
+
+#diceImg {
+  border-radius: 10px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#diceImages {
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
