@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightblue;
+    gap: 10px;
+}
+#dice{
+    font-size: 4em;
+    font-weight: bold;
+}
+input{
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+button{
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px 20px;
+}
