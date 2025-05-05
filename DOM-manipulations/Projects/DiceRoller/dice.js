@@ -15,6 +15,8 @@ function rollDice() {
     diceImg.innerHTML = img.join('');
 }
 
+document.getElementById('roll-dice').onload = rollDice();
+
 // run rollDice function on enter key press
 document.getElementById('dice-input').addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
