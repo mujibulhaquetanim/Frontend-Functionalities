@@ -14,3 +14,10 @@ function rollDice() {
     diceNum.textContent = diceArr.join(', ');
     diceImg.innerHTML = img.join('');
 }
+
+// run rollDice function on enter key press
+document.getElementById('dice-input').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        rollDice();
+    }
+})
