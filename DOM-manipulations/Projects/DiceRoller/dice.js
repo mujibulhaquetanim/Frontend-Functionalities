@@ -8,9 +8,9 @@ function rollDice() {
     // loop will run numOfDice times and push random number between 1 to 6
     for (let i = 1; i <= numOfDice; i++) {
         // if isFirstTime doesn't exist in sessionStorage, then only show alert once, after that set isFirstTime to false which will prevent alert from showing again as it is not first time and exists in sessionStorage.
-        if(numOfDice > 51 && !sessionStorage.getItem('isFirstTime')) {
+        if (numOfDice > 51 && !sessionStorage.getItem('isFirstTime')) {
             alert('Please enter number less than 51')
-            sessionStorage.setItem('isFirstTime', 'false')     
+            sessionStorage.setItem('isFirstTime', 'false')
         }
         const diceRoll = Math.floor(Math.random() * 6) + 1;
         diceArr.push(diceRoll);
@@ -22,10 +22,13 @@ function rollDice() {
 
 // document.getElementById('roll-dice').onload = rollDice();
 // instead of adding event listener to button, we can call rollDice function on window load.
-window.onload = rollDice();
+// window.onload = rollDice();
 
-// run rollDice function on enter key press
-document.getElementById('dice-input').addEventListener('keypress', (event) => {
+//window.onload = rollDice(); directly calls the function, which might cause issues if elements aren't fully loaded yet.
+window.addEventListener('load', rollDice);
+
+// run rollDice function on enter key press, used keydown instead of keypress because keypress event is fired when user releases the key, while keydown event is fired when user presses the key and it supports by modern browsers.
+document.getElementById('dice-input').addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         rollDice();
     }
