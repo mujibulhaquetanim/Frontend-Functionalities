@@ -15,7 +15,9 @@ function rollDice() {
     diceImg.innerHTML = img.join('');
 }
 
-document.getElementById('roll-dice').onload = rollDice();
+// document.getElementById('roll-dice').onload = rollDice();
+// instead of adding event listener to button, we can call rollDice function on window load.
+window.onload = rollDice();
 
 // run rollDice function on enter key press
 document.getElementById('dice-input').addEventListener('keypress', (event) => {
