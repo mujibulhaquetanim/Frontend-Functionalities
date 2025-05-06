@@ -7,6 +7,11 @@ function rollDice() {
 
     // loop will run numOfDice times and push random number between 1 to 6
     for (let i = 1; i <= numOfDice; i++) {
+        // if isFirstTime doesn't exist in sessionStorage, then only show alert once, after that set isFirstTime to false which will prevent alert from showing again as it is not first time and exists in sessionStorage.
+        if(numOfDice > 51 && !sessionStorage.getItem('isFirstTime')) {
+            alert('Please enter number less than 51')
+            sessionStorage.setItem('isFirstTime', 'false')     
+        }
         const diceRoll = Math.floor(Math.random() * 6) + 1;
         diceArr.push(diceRoll);
         img.push(`<img src="./images/${diceRoll}.png" width="100px" height="100px" id="diceImages" alt="dice${diceRoll}">`);
