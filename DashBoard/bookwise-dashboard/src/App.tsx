@@ -1,12 +1,8 @@
-import './App.css'
+import DashBoardPage from './app/dashboard/DashBoardPage'
 
 function App() {
 
-  return (
-    <>
-      <h1 className="flex justify-center items-center font-bold text-3xl">Welcome to the Bookwise Dashboard</h1>
-    </>
-  )
+  return <DashBoardPage/>
 }
 
 export default App
