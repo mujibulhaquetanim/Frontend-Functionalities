@@ -1,13 +1,13 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 // If your Prisma file is located elsewhere, you can change the path
-import { PrismaClient } from "@/generated/prisma";
+import { PrismaClient } from "@/lib/generated/prisma";
 
 const prisma = new PrismaClient();
  
 export const auth = betterAuth({
     database: prismaAdapter(prisma,{
-        provider: "sqlite"
+        provider: "sqlite",
     }),
     
     //...other options
