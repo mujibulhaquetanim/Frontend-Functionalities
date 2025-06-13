@@ -17,3 +17,17 @@ export const signInAction = validatedAction(signinSchema, async (data)=>{
 
     redirect("/dashboard");
 });
+
+export const signUpAction = validatedAction(signupSchema, async (data)=>{
+    const {name, email, password} = data;
+
+    await auth.api.signUpEmail({
+        body: {
+            name,
+            email,
+            password
+        }
+    });
+
+    redirect("/dashboard");
+})
