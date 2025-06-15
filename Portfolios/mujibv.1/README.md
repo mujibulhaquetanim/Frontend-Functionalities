@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Portfolio Version 1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a portfolio version 1. It is a simple portfolio to showcase my work and skills. The design concept is inspired by Bento Grid.
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Portfolio](./public/porfolioV1.gif)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Bento Layout
+- Featured Projects
+- Slider functionality
+- Routing functionality
+- Marquee functionality
+- Mobile First Design
+- Responsive Design
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- React
+- Tailwind CSS
+- SwiperJS
+- React Markdown
+- React Router V6
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Live Link
+
+[Portfolio Version 1](https://mujibulhaquetanim.netlify.app/)
