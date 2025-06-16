@@ -27,8 +27,8 @@ const Frontend = () => {
     "https://yumdispatchbd.netlify.app/",
     "https://github.com/mujibulhaquetanim/Backend-Functionalities/tree/main/Payment%20Gateways/Stripe/One-time%20Payment",
     "https://third-party-ui.netlify.app/",
-    "https://vanilla-amazon.netlify.app/",
-    "https://github.com/KRShanto/memorica",
+    "https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs",
+    "https://memorica-seven.vercel.app/",
     "https://tw-react-components.netlify.app/",
     "https://tw-projects.netlify.app/",
   ];
