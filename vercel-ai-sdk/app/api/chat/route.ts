@@ -1,10 +1,16 @@
 import { groq } from '@ai-sdk/groq';
-import { generateText } from 'ai';
+import { streamText } from 'ai';
 
-const result = await generateText({
-  model: groq('qwen-qwq-32b'),
-  providerOptions: {
-    groq: { reasoningFormat: 'parsed' },
-  },
-  prompt: 'How many "r"s are in the word "strawberry"?',
-});
+// Allow streaming responses up to 30 seconds
+export const maxDuration = 30;
+
+export async function POST(req: Request) {
+  const { messages } = await req.json();
+
+  const result = streamText({
+    model: groq('gpt-4o'),
+    messages,
+  });
+
+  return result.toDataStreamResponse();
+}
