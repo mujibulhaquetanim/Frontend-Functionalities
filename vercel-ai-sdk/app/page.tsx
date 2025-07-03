@@ -18,7 +18,15 @@ export default function Page() {
             } max-w-[80%]`}
           >
             <p className="text-sm font-medium mb-1">
-              {msg.role === "user" ? "You" : "AI"}
+              {msg.role === "user" ? (
+                <span className="text-black text-2xl font-bold rounded-md border border-gray-600 px-2">
+                  You
+                </span>
+              ) : (
+                <span className="text-gray-600 text-2xl font-bold rounded-md border border-gray-600 px-2">
+                  AI
+                </span>
+              )}
             </p>
             <div className="text-sm text-gray-800 space-y-1">
               {msg.parts?.map((part, i) => {
@@ -36,7 +44,7 @@ export default function Page() {
 
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-2 border rounded-lg p-2 shadow-sm bg-white"
+        className="flex items-center gap-2 border rounded-lg p-2 shadow-sm bg-white fixed dark:bg-zinc-900 bottom-0 w-full max-w-md  mb-8  border-zinc-300 dark:border-zinc-800"
       >
         <input
           type="text"
