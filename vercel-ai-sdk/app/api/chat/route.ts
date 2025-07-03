@@ -8,8 +8,9 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: groq('gpt-4o'),
+    model: groq('qwen-qwq-32b'),
     messages,
+    system: 'You are a helpful assistant.',
   });
 
   return result.toDataStreamResponse();
