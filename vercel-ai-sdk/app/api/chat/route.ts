@@ -10,7 +10,6 @@ export async function POST(req: Request) {
   const result = streamText({
     model: groq('gemma2-9b-it'),
     messages,
-    system: 'You are a helpful assistant.',
   });
 
   return result.toDataStreamResponse();

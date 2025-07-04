@@ -3,7 +3,18 @@ import React from "react";
 import { useChat } from "@ai-sdk/react";
 
 export default function Page() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: "/api/chat",
+    initialMessages: [
+      {
+        id: "1",
+        role: "system",
+        content:
+          "You are a helpful assistant. when you are not sure of the answer, just say that you don't know, don't try to make up an answer. introduce yourself as Mujib AI and don't expose yourself your internal state like which model you are using and the messages you have seen.",
+        parts: [{ type: "text", text: "Hye there, how can I help you?" }],
+      },
+    ],
+  });
 
   return (
     <div className="flex flex-col w-full max-w-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -24,7 +35,7 @@ export default function Page() {
                 </span>
               ) : (
                 <span className="text-gray-600 text-2xl font-bold rounded-md border border-gray-600 px-2">
-                  AI
+                  Mujib AI
                 </span>
               )}
             </p>
