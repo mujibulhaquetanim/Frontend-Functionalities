@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useChat } from "@ai-sdk/react";
 
 export default function Page() {
@@ -16,9 +16,15 @@ export default function Page() {
     ],
   });
 
+  const msgEndRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    msgEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <div className="flex flex-col w-full max-w-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div className="space-y-4 mb-6">
+      <div className="space-y-4 mb-6 overflow-y-auto pb-24">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -49,6 +55,7 @@ export default function Page() {
                 }
               })}
             </div>
+            <div ref={msgEndRef}></div>
           </div>
         ))}
       </div>
