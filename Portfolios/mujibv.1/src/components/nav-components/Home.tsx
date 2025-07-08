@@ -8,10 +8,10 @@ import resume from "/Mujibulhaquetanim.pdf";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-700 w-full overflow-x-hidden px-2 sm:px-4 lg:px-6">
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 max-w-7xl mx-auto py-4 min-h-screen h-screen auto-rows-fr">
-        {/* Main intro section */}
-        <section className="md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl h-full">
+    <div className="h-screen bg-slate-700 w-full overflow-x-hidden px-2 sm:px-4 lg:px-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 max-w-7xl mx-auto py-4 h-full grid-rows-[3fr_2fr_1fr]">
+        {/* Intro - 3/6 height */}
+        <section className="md:col-span-2 lg:col-span-6 row-span-1 bg-slate-600 rounded-xl h-full">
           <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
             <NavLink
               to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
@@ -53,10 +53,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects section */}
+        {/* Projects - 3/6 height */}
         <NavLink
           to={"/projects"}
-          className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-12 hover:bg-slate-600 transition-colors duration-300 h-full"
+          className="md:col-span-2 lg:col-span-6 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-12 hover:bg-slate-600 transition-colors duration-300 h-full"
         >
           <div className="relative h-full w-full">
             <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline text-center mb-4">
@@ -66,11 +66,11 @@ export default function Home() {
           </div>
         </NavLink>
 
-        {/* GitHub section */}
+        {/* GitHub - 2/6 height */}
         <NavLink
           to={"https://github.com/mujibulhaquetanim"}
           target="_blank"
-          className="md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 h-full"
+          className="md:col-span-2 lg:col-span-6 row-start-2 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 h-full"
         >
           <div className="h-full flex flex-col justify-center">
             <GitTimeline
@@ -79,11 +79,11 @@ export default function Home() {
           </div>
         </NavLink>
 
-        {/* Typing speed section */}
+        {/* Typing Speed - 2/6 height */}
         <NavLink
           to={"https://monkeytype.com/profile/mujibtanim"}
           target="_blank"
-          className="md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 h-full"
+          className="md:col-span-1 lg:col-span-3 row-start-2 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 h-full"
         >
           <div className="flex flex-col items-center justify-center h-full p-4 gap-2">
             <div className="flex items-baseline">
@@ -98,8 +98,8 @@ export default function Home() {
           </div>
         </NavLink>
 
-        {/* Tech stack section */}
-        <div className="md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 h-full">
+        {/* Tech Stack - 2/6 height */}
+        <div className="md:col-span-1 lg:col-span-3 row-start-2 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 h-full">
           <div className="flex flex-col items-center justify-center h-full gap-4">
             <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider">
               Tech Stack
@@ -108,18 +108,18 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Blogs section */}
+        {/* Blogs - 1/6 height */}
         <NavLink
           to={"/Blogs"}
-          className="md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 h-full"
+          className="md:col-span-1 lg:col-span-3 row-start-3 row-span-1 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 h-full"
         >
           <h1 className="text-base sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline">
             Click to see Blogs 📚
           </h1>
         </NavLink>
 
-        {/* Social links section */}
-        <div className="md:col-span-1 lg:col-span-3 rounded-xl h-full">
+        {/* Socials - 1/6 height */}
+        <div className="md:col-span-1 lg:col-span-3 row-start-3 row-span-1 rounded-xl h-full">
           <div className="grid grid-cols-3 gap-2 h-full">
             {[
               {
