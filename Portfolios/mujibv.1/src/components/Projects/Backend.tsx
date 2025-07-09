@@ -8,7 +8,7 @@ const Backend = () => {
     "Golang",
     "More Backend Services",
     "Database",
-    "Authentication",
+    "Auth",
     "Langchain",
   ];
 
