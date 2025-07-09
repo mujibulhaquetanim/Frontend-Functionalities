@@ -14,13 +14,13 @@ const Backend = () => {
 
   // Defined layout classes separately, hardcoded for now.
   const layoutClasses = [
-    "col-span-12 row-span-6 md:col-span-6 md:row-span-8 lg:col-span-4 lg:row-span-8",
-    "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3",
-    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
-    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
-    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
-    "col-span-12 row-span-3 md:col-span-6 md:row-span-4 lg:col-span-4 lg:row-span-4",
-    "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3",
+    "col-span-12 row-span-6 md:col-span-6 md:row-span-8 lg:col-span-4 lg:row-span-8 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
+    "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
+    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
+    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6 hover:scale-75 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
+    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
+    "col-span-12 row-span-3 md:col-span-6 md:row-span-4 lg:col-span-4 lg:row-span-4 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
+    "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
   ];
 
   const links = [
