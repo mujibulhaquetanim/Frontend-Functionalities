@@ -14,9 +14,9 @@ export default function AboutMe() {
       {/* Content */}
       <div className="relative z-10 h-full">
         {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 lg:gap-6 lg:p-6 lg:h-screen">
+        <div className="hidden lg:grid lg:grid-cols-2 lg:grid-rows-6 lg:gap-6 lg:p-6 lg:h-screen">
           {/* LEFT: About Me */}
-          <div className="grid bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 hover:border-slate-400/50 transition-all duration-500 group">
+          <div className="grid col-span-1 row-span-6 bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 hover:border-slate-400/50 transition-all duration-500 group">
             <div className="flex-shrink-0 p-8 pb-6">
               <h1 className="text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-500 to-purple-600 text-center lg:text-left tracking-wide group-hover:scale-105 transition-transform duration-300">
                 About Me
@@ -139,7 +139,7 @@ export default function AboutMe() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex flex-col h-full gap-6">
+          <div className="grid col-span-1 row-span-6 h-full gap-6">
             {/* EDUCATION */}
             <div className="flex-1 bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 hover:border-slate-400/50 transition-all duration-500 overflow-hidden group">
               <div className="h-full flex flex-col">
@@ -205,34 +205,34 @@ export default function AboutMe() {
                     <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 via-blue-500 to-purple-600"></div>
                     <div className="space-y-6">
                       {[
-                    ["2019", "Started with C & Java in university", "🎯"],
-                    [
-                      "2020",
-                      "Built first dynamic website using JavaScript",
-                      "🌐",
-                    ],
-                    ["2021", "Learned React, joined dev internship", "⚛️"],
-                    [
-                      "2022",
-                      "Worked on backend (MERN), thesis on ML/NLP",
-                      "🚀",
-                    ],
-                    [
-                      "2023",
-                      "Graduated BSc, started to work as a freelancer",
-                      "🎓",
-                    ],
-                    [
-                      "2024",
-                      "Began MSc, building production-grade systems",
-                      "💼",
-                    ],
-                    [
-                      "2025",
-                      "Learned cloud computing,Langchain and continue to build systems",
-                      "🌟",
-                    ],  
-                  ].map(([year, desc, icon]) => (
+                        ["2019", "Started with C & Java in university", "🎯"],
+                        [
+                          "2020",
+                          "Built first dynamic website using JavaScript",
+                          "🌐",
+                        ],
+                        ["2021", "Learned React, joined dev internship", "⚛️"],
+                        [
+                          "2022",
+                          "Worked on backend (MERN), thesis on ML/NLP",
+                          "🚀",
+                        ],
+                        [
+                          "2023",
+                          "Graduated BSc, started to work as a freelancer",
+                          "🎓",
+                        ],
+                        [
+                          "2024",
+                          "Began MSc, building production-grade systems",
+                          "💼",
+                        ],
+                        [
+                          "2025",
+                          "Learned cloud computing,Langchain and continue to build systems",
+                          "🌟",
+                        ],
+                      ].map(([year, desc, icon]) => (
                         <div key={year} className="relative pl-14">
                           <div className="absolute left-4 w-4 h-4 bg-gradient-to-r from-sky-400 to-purple-600 rounded-full shadow-lg border-2 border-slate-800"></div>
                           <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
@@ -473,7 +473,7 @@ export default function AboutMe() {
                       "2025",
                       "Learned cloud computing,Langchain and continue to build systems",
                       "🌟",
-                    ],  
+                    ],
                   ].map(([year, desc, icon]) => (
                     <div key={year} className="relative pl-14">
                       <div className="absolute left-4 w-4 h-4 bg-gradient-to-r from-sky-400 to-purple-600 rounded-full shadow-lg border-2 border-slate-800"></div>
