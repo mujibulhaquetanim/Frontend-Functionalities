@@ -57,7 +57,7 @@ const Layout: React.FC<LayoutProps> = () => {
         {/* NavBar for smaller screens (visible by default, hides on scroll down) */}
         {!isHomePage && (
           <div
-            className={`md:hidden fixed bottom-0 left-0 right-0 w-full transition-transform duration-300 ${
+            className={`md:hidden z-50 fixed bottom-0 left-0 right-0 w-full transition-transform duration-300 ${
               isVisible ? "translate-y-0" : "translate-y-full"
             }`}
           >

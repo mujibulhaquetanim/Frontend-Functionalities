@@ -1,8 +1,8 @@
 import { NavLink } from "react-router";
-import React from "react";
+import {useState} from "react";
 
 export default function AboutMe() {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = useState(false);
   
   return (
     <div className="min-h-screen lg:h-screen w-full text-white  relative overflow-hidden">
