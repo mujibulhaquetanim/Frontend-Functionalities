@@ -14,9 +14,9 @@ export default function Projects() {
         <NavLink to="/projects/frontend" className={navLinkClass}>
           Frontend
         </NavLink>
-        <NavLink to="/projects/fullstack" className={navLinkClass}>
+        {/* <NavLink to="/projects/fullstack" className={navLinkClass}>
           FullStack
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/projects/backend" className={navLinkClass}>
           Backend
         </NavLink>

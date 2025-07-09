@@ -40,7 +40,7 @@ const Frontend = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`relative overflow-hidden rounded-2xl bg-indigo-400 ${layoutClasses[index]}`}
+            className={`relative overflow-hidden rounded-2xl bg-slate-600 ${layoutClasses[index]}`}
           >
             <Link
               to={links[index]}
