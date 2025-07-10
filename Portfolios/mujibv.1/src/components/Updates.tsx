@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
 
+declare global {
+  interface Window {
+    twttr: {
+      widgets: {
+        load: (element?: HTMLElement) => void;
+      };
+    };
+  }
+}
+
 export default function Updates() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -10,12 +20,16 @@ export default function Updates() {
     script.onload = () => {
       setIsLoaded(true);
       setTimeout(() => {
-        window.dispatchEvent(new Event("resize")); // triggers layout recalculation
+        window.dispatchEvent(new Event("resize"));
+        window?.twttr?.widgets?.load(); // reload Twitter layout
       }, 100);
     };
-
     document.body.appendChild(script);
-  }, []);
+
+    return () => {
+      script.remove(); // cleanup on unmount
+    };
+  }, [isLoaded]); // rerun when route changes
 
   return (
     <div className="border-2 m-3 border-slate-700/80 backdrop-blur-xl rounded-xl text-white flex flex-col lg:flex-row items-center justify-center text-center min-h-screen overflow-x-hidden lg:overflow-hidden">
