@@ -5,59 +5,71 @@ export default function Updates() {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    script.setAttribute("async", "");
-    script.onload = () => setIsLoaded(true); // when Twitter finishes loading
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    script.onload = () => {
+      setIsLoaded(true);
+      setTimeout(() => {
+        window.dispatchEvent(new Event("resize")); // triggers layout recalculation
+      }, 100);
+    };
+
     document.body.appendChild(script);
   }, []);
 
   return (
-    <div className="border-2 m-3 border-slate-700/80 backdrop-blur-xl rounded-xl p-3 text-white flex items-center justify-center h-[calc(100vh-64px)] text-center text-5xl">
+    <div className="border-2 m-3 border-slate-700/80 backdrop-blur-xl rounded-xl text-white flex flex-col lg:flex-row items-center justify-center text-center min-h-screen overflow-x-hidden lg:overflow-hidden">
       {!isLoaded ? (
-        <div className="animate-pulse text-xl text-slate-300">
+        <div className="animate-pulse text-xl text-slate-300 p-6">
           Loading tweet…
         </div>
       ) : (
-        <div className="flex justify-center items-center gap-2">
-          <blockquote className="twitter-tweet">
-            <p lang="in" dir="ltr">
-              New Year Plan 2025
-              <a href="https://t.co/LeXx8pw7Yq"></a>
-            </p>
-            <a href="https://twitter.com/mmhtanim/status/1874347986450608597?ref_src=twsrc%5Etfw"></a>
-          </blockquote>
+        <div className="flex flex-col lg:flex-row lg:h-screen lg:items-start lg:justify-center gap-6 w-full overflow-y-auto lg:overflow-y-hidden p-4">
+          <div className="w-full lg:w-1/3 max-w-md">
+            <blockquote className="twitter-tweet">
+              <p lang="in" dir="ltr">
+                New Year Plan 2025
+                <a href="https://t.co/LeXx8pw7Yq"></a>
+              </p>
+              <a href="https://twitter.com/mmhtanim/status/1874347986450608597?ref_src=twsrc%5Etfw"></a>
+            </blockquote>
+          </div>
 
-          <blockquote className="twitter-tweet">
-            <p lang="en" dir="ltr">
-              I started doing the same on January 1, 2024, and haven&#39;t
-              missed a single day since.
-              <a href="https://twitter.com/hashtag/Consistency?src=hash&amp;ref_src=twsrc%5Etfw">
-                #Consistency
-              </a>{" "}
-              <a href="https://twitter.com/hashtag/coding?src=hash&amp;ref_src=twsrc%5Etfw">
-                #coding
-              </a>{" "}
-              <a href="https://twitter.com/hashtag/github?src=hash&amp;ref_src=twsrc%5Etfw">
-                #github
-              </a>{" "}
-              <a href="https://t.co/HaRK34THWx">pic.twitter.com/HaRK34THWx</a>
-            </p>
-            &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
-            <a href="https://twitter.com/mmhtanim/status/1874438603746799715?ref_src=twsrc%5Etfw">
-              January 1, 2025
-            </a>
-          </blockquote>
+          <div className="w-full lg:w-1/3 max-w-md">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">
+                I started doing the same on January 1, 2024, and haven&#39;t
+                missed a single day since.
+                <a href="https://twitter.com/hashtag/Consistency?src=hash&amp;ref_src=twsrc%5Etfw">
+                  #Consistency
+                </a>{" "}
+                <a href="https://twitter.com/hashtag/coding?src=hash&amp;ref_src=twsrc%5Etfw">
+                  #coding
+                </a>{" "}
+                <a href="https://twitter.com/hashtag/github?src=hash&amp;ref_src=twsrc%5Etfw">
+                  #github
+                </a>{" "}
+                <a href="https://t.co/HaRK34THWx">pic.twitter.com/HaRK34THWx</a>
+              </p>
+              &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
+              <a href="https://twitter.com/mmhtanim/status/1874438603746799715?ref_src=twsrc%5Etfw">
+                January 1, 2025
+              </a>
+            </blockquote>
+          </div>
 
-          <blockquote className="twitter-tweet">
-            <p lang="en" dir="ltr">
-              New Start <br />
-              Over 800 tweets have been deleted from my timeline.
-            </p>
-            &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
-            <a href="https://twitter.com/mmhtanim/status/1871563219724275907?ref_src=twsrc%5Etfw">
-              December 24, 2024
-            </a>
-          </blockquote>
+          <div className="w-full lg:w-1/3 max-w-md">
+            <blockquote className="twitter-tweet">
+              <p lang="en" dir="ltr">
+                New Start <br />
+                Over 800 tweets have been deleted from my timeline.
+              </p>
+              &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
+              <a href="https://twitter.com/mmhtanim/status/1871563219724275907?ref_src=twsrc%5Etfw">
+                December 24, 2024
+              </a>
+            </blockquote>
+          </div>
         </div>
       )}
     </div>
