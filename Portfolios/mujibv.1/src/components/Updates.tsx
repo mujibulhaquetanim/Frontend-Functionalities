@@ -14,22 +14,25 @@ export default function Updates() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://platform.twitter.com/widgets.js";
-    script.async = true;
-    script.onload = () => {
+    if (!window.twttr) {
+      // Inject the script only if Twitter is not already loaded
+      const script = document.createElement("script");
+      script.src = "https://platform.twitter.com/widgets.js";
+      script.async = true;
+      script.onload = () => {
+        setIsLoaded(true);
+        setTimeout(() => {
+          window.dispatchEvent(new Event("resize"));
+          window.twttr?.widgets?.load();
+        }, 100);
+      };
+      document.body.appendChild(script);
+    } else {
+      // Script already loaded, just trigger a widget reload
+      window.twttr.widgets.load();
       setIsLoaded(true);
-      setTimeout(() => {
-        window.dispatchEvent(new Event("resize"));
-        window?.twttr?.widgets?.load(); // reload Twitter layout
-      }, 100);
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove(); // cleanup on unmount
-    };
-  }, [isLoaded]); // rerun when route changes
+    }
+  }, []); // No dependency — just run once
 
   return (
     <div className="border-2 m-3 border-slate-700/80 backdrop-blur-xl rounded-xl text-white flex flex-col lg:flex-row items-center justify-center text-center min-h-screen overflow-x-hidden lg:overflow-hidden">
