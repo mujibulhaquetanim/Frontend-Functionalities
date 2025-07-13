@@ -56,3 +56,14 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #0284c7, #7c3aed);
         }
+
+.animated-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animated-wrapper.enter {
+  opacity: 1;
+  transform: translateY(0);
+}
