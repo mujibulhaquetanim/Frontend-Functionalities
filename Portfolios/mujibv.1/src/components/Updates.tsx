@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AnimatedWrapper from "./AnimatedWrapper";
 
 declare global {
   interface Window {
@@ -42,51 +43,59 @@ export default function Updates() {
         </div>
       ) : (
         <div className="flex flex-col lg:flex-row lg:h-screen lg:items-start lg:justify-center gap-6 w-full overflow-y-auto lg:overflow-y-hidden p-4">
-          <div className="w-full lg:w-1/3 max-w-md">
-            <blockquote className="twitter-tweet">
-              <p lang="in" dir="ltr">
-                New Year Plan 2025
-                <a href="https://t.co/LeXx8pw7Yq"></a>
-              </p>
-              <a href="https://twitter.com/mmhtanim/status/1874347986450608597?ref_src=twsrc%5Etfw"></a>
-            </blockquote>
-          </div>
+          <AnimatedWrapper delay={100}>
+            <div className="w-full lg:w-1/3 max-w-md">
+              <blockquote className="twitter-tweet">
+                <p lang="in" dir="ltr">
+                  New Year Plan 2025
+                  <a href="https://t.co/LeXx8pw7Yq"></a>
+                </p>
+                <a href="https://twitter.com/mmhtanim/status/1874347986450608597?ref_src=twsrc%5Etfw"></a>
+              </blockquote>
+            </div>
+          </AnimatedWrapper>
 
-          <div className="w-full lg:w-1/3 max-w-md">
-            <blockquote className="twitter-tweet">
-              <p lang="en" dir="ltr">
-                I started doing the same on January 1, 2024, and haven&#39;t
-                missed a single day since.
-                <a href="https://twitter.com/hashtag/Consistency?src=hash&amp;ref_src=twsrc%5Etfw">
-                  #Consistency
-                </a>{" "}
-                <a href="https://twitter.com/hashtag/coding?src=hash&amp;ref_src=twsrc%5Etfw">
-                  #coding
-                </a>{" "}
-                <a href="https://twitter.com/hashtag/github?src=hash&amp;ref_src=twsrc%5Etfw">
-                  #github
-                </a>{" "}
-                <a href="https://t.co/HaRK34THWx">pic.twitter.com/HaRK34THWx</a>
-              </p>
-              &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
-              <a href="https://twitter.com/mmhtanim/status/1874438603746799715?ref_src=twsrc%5Etfw">
-                January 1, 2025
-              </a>
-            </blockquote>
-          </div>
+          <AnimatedWrapper delay={200}>
+            <div className="w-full lg:w-1/3 max-w-md">
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  I started doing the same on January 1, 2024, and haven&#39;t
+                  missed a single day since.
+                  <a href="https://twitter.com/hashtag/Consistency?src=hash&amp;ref_src=twsrc%5Etfw">
+                    #Consistency
+                  </a>{" "}
+                  <a href="https://twitter.com/hashtag/coding?src=hash&amp;ref_src=twsrc%5Etfw">
+                    #coding
+                  </a>{" "}
+                  <a href="https://twitter.com/hashtag/github?src=hash&amp;ref_src=twsrc%5Etfw">
+                    #github
+                  </a>{" "}
+                  <a href="https://t.co/HaRK34THWx">
+                    pic.twitter.com/HaRK34THWx
+                  </a>
+                </p>
+                &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
+                <a href="https://twitter.com/mmhtanim/status/1874438603746799715?ref_src=twsrc%5Etfw">
+                  January 1, 2025
+                </a>
+              </blockquote>
+            </div>
+          </AnimatedWrapper>
 
-          <div className="w-full lg:w-1/3 max-w-md">
-            <blockquote className="twitter-tweet">
-              <p lang="en" dir="ltr">
-                New Start <br />
-                Over 800 tweets have been deleted from my timeline.
-              </p>
-              &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
-              <a href="https://twitter.com/mmhtanim/status/1871563219724275907?ref_src=twsrc%5Etfw">
-                December 24, 2024
-              </a>
-            </blockquote>
-          </div>
+          <AnimatedWrapper delay={300}>
+            <div className="w-full lg:w-1/3 max-w-md">
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  New Start <br />
+                  Over 800 tweets have been deleted from my timeline.
+                </p>
+                &mdash; Mujibul Haque Tanim (@mmhtanim){" "}
+                <a href="https://twitter.com/mmhtanim/status/1871563219724275907?ref_src=twsrc%5Etfw">
+                  December 24, 2024
+                </a>
+              </blockquote>
+            </div>
+          </AnimatedWrapper>
         </div>
       )}
     </div>
