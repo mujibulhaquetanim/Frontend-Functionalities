@@ -44,7 +44,7 @@ export default function Updates() {
       ) : (
         <div className="flex flex-col lg:flex-row lg:h-screen lg:items-start lg:justify-center gap-6 w-full overflow-y-auto lg:overflow-y-hidden p-4">
           <AnimatedWrapper delay={100}>
-            <div className="w-full lg:w-1/3 max-w-md">
+            <AnimatedWrapper delay={1500} className="w-full lg:w-1/3 max-w-md">
               <blockquote className="twitter-tweet">
                 <p lang="in" dir="ltr">
                   New Year Plan 2025
@@ -52,11 +52,11 @@ export default function Updates() {
                 </p>
                 <a href="https://twitter.com/mmhtanim/status/1874347986450608597?ref_src=twsrc%5Etfw"></a>
               </blockquote>
-            </div>
+            </AnimatedWrapper>
           </AnimatedWrapper>
 
           <AnimatedWrapper delay={200}>
-            <div className="w-full lg:w-1/3 max-w-md">
+            <AnimatedWrapper delay={2000} className="w-full lg:w-1/3 max-w-md">
               <blockquote className="twitter-tweet">
                 <p lang="en" dir="ltr">
                   I started doing the same on January 1, 2024, and haven&#39;t
@@ -79,11 +79,11 @@ export default function Updates() {
                   January 1, 2025
                 </a>
               </blockquote>
-            </div>
+            </AnimatedWrapper>
           </AnimatedWrapper>
 
           <AnimatedWrapper delay={300}>
-            <div className="w-full lg:w-1/3 max-w-md">
+            <AnimatedWrapper delay={2500} className="w-full lg:w-1/3 max-w-md">
               <blockquote className="twitter-tweet">
                 <p lang="en" dir="ltr">
                   New Start <br />
@@ -94,7 +94,7 @@ export default function Updates() {
                   December 24, 2024
                 </a>
               </blockquote>
-            </div>
+            </AnimatedWrapper>
           </AnimatedWrapper>
         </div>
       )}
