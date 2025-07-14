@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 
 interface AnimatedWrapperProps {
   children: React.ReactNode;
-  delay?: number; // optional delay in ms
+  delay?: number;
+  className?: string;
 }
 
-export default function AnimatedWrapper({ children, delay = 0 }: AnimatedWrapperProps) {
+export default function AnimatedWrapper({
+  children,
+  delay = 0,
+  className = "", // Provide a default value
+}: AnimatedWrapperProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -13,8 +18,9 @@ export default function AnimatedWrapper({ children, delay = 0 }: AnimatedWrapper
     return () => clearTimeout(timeout);
   }, [delay]);
 
+  // Apply the passed className to the div
   return (
-    <div className={`animated-wrapper ${isVisible ? "enter" : ""}`}>
+    <div className={`animated-wrapper ${isVisible ? "enter" : ""} ${className}`}>
       {children}
     </div>
   );
