@@ -168,68 +168,102 @@ export default function Home() {
                       Projects Overview
                     </h1>
                   </AnimatedWrapper>
-                  <ProjectsCard />
+                  <AnimatedWrapper delay={3700} className="w-full h-full">
+                    <ProjectsCard />
+                  </AnimatedWrapper>
                 </div>
               </AnimatedWrapper>
             </NavLink>
           </AnimatedWrapper>
 
           {/* GitHub Section */}
-          <NavLink
-            to={"https://github.com/mujibulhaquetanim"}
-            target="_blank"
+          <AnimatedWrapper
+            delay={3000}
             className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
-            <div className="h-full flex flex-col justify-center">
-              <GitTimeline
-                markdownText={`![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mujibulhaquetanim&theme=nord_bright)`}
-              />
-            </div>
-          </NavLink>
+            <NavLink
+              to={"https://github.com/mujibulhaquetanim"}
+              target="_blank"
+            >
+              <AnimatedWrapper
+                delay={3000}
+                className="h-full flex flex-col justify-center"
+              >
+                <GitTimeline
+                  markdownText={`![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mujibulhaquetanim&theme=nord_bright)`}
+                />
+              </AnimatedWrapper>
+            </NavLink>
+          </AnimatedWrapper>
 
           {/* Typing Speed Section */}
-          <NavLink
-            to={"https://monkeytype.com/profile/mujibtanim"}
-            target="_blank"
+          <AnimatedWrapper
+            delay={3500}
             className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
-            <div className="flex flex-col items-center justify-center h-full p-4 gap-2">
-              <div className="flex items-baseline">
-                <span className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold">
-                  60
-                </span>
-                <span className="text-xs text-gray-400 font-bold ml-2">
-                  WPM
-                </span>
+            <NavLink
+              to={"https://monkeytype.com/profile/mujibtanim"}
+              target="_blank"
+            >
+              <div className="flex flex-col items-center justify-center h-full p-4 gap-2">
+                <div className="flex items-baseline">
+                  <AnimatedWrapper
+                    delay={3700}
+                    className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold"
+                  >
+                    <p>60</p>
+                  </AnimatedWrapper>
+                  <span className="text-xs text-gray-400 font-bold ml-2">
+                    WPM
+                  </span>
+                </div>
+                <AnimatedWrapper
+                  delay={4000}
+                  className="text-sm sm:text-base text-white font-bold"
+                >
+                  Typing Speed ⌨️
+                </AnimatedWrapper>
               </div>
-              <p className="text-sm sm:text-base text-white font-bold">
-                Typing Speed ⌨️
-              </p>
-            </div>
-          </NavLink>
+            </NavLink>
+          </AnimatedWrapper>
 
           {/* Tech Stack Section */}
-          <div className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 w-full h-full">
-            <div className="flex flex-col items-center justify-center h-full gap-4">
-              <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider">
-                Tech Stack
-              </h1>
+          <AnimatedWrapper
+            delay={4500}
+            className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 w-full h-full"
+          >
+            <AnimatedWrapper
+              delay={4700}
+              className="flex flex-col items-center justify-center h-full gap-4"
+            >
+              <AnimatedWrapper delay={5000}>
+                <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider">
+                  Tech Stack
+                </h1>
+              </AnimatedWrapper>
               <TechStacks />
-            </div>
-          </div>
+            </AnimatedWrapper>
+          </AnimatedWrapper>
 
           {/* Blogs Section */}
-          <NavLink
-            to={"/Blogs"}
+          <AnimatedWrapper
+            delay={5300}
             className="col-span-full md:col-span-1 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
-            <h1 className="text-base sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline">
-              Click to see Blogs 📚
-            </h1>
-          </NavLink>
+            <NavLink to={"/Blogs"}>
+              <AnimatedWrapper delay={5500} className="w-full h-full">
+                <h1 className="text-base sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline">
+                  Click to see Blogs 📚
+                </h1>
+              </AnimatedWrapper>
+            </NavLink>
+          </AnimatedWrapper>
 
           {/* Social Links Section */}
-          <div className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full">
+          <AnimatedWrapper
+            delay={6000}
+            className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
+          >
             <div className="grid grid-cols-3 gap-2 h-full">
               {[
                 {
@@ -255,7 +289,7 @@ export default function Home() {
                 </NavLink>
               ))}
             </div>
-          </div>
+          </AnimatedWrapper>
         </section>
       </div>
     </>
