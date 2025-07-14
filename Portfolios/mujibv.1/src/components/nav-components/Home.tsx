@@ -90,11 +90,11 @@ export default function Home() {
         "
         >
           {/* Intro Section */}
-          <section className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full">
-            <AnimatedWrapper
-              delay={1000}
-              className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full"
-            >
+          <AnimatedWrapper
+            delay={500}
+            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full"
+          >
+            <section>
               <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
                 <AnimatedWrapper delay={2500}>
                   <NavLink
@@ -105,9 +105,12 @@ export default function Home() {
                     <AnimatedWrapper delay={3000}>
                       <h1>Available for hire</h1>
                     </AnimatedWrapper>
-                    <div className="absolute w-3 h-3 bg-green-500 rounded-full -right-1 -top-1">
+                    <AnimatedWrapper
+                      delay={3500}
+                      className="absolute w-3 h-3 bg-green-500 rounded-full -right-1 -top-1"
+                    >
                       <div className="absolute w-full h-full bg-green-500/50 rounded-full animate-ping"></div>
-                    </div>
+                    </AnimatedWrapper>
                   </NavLink>
                 </AnimatedWrapper>
 
@@ -126,42 +129,50 @@ export default function Home() {
                   </h3>
                 </AnimatedWrapper>
 
-                <div className="flex gap-3 mt-auto">
-                  <NavLink
-                    to={"/about"}
-                    className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
-                  >
-                    Explore More
-                  </NavLink>
-                  <a
-                    href={resume}
-                    aria-label="Download Resume"
-                    download={"Mujibulhaquetanim-resume.pdf"}
-                    className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
-                  >
-                    <FaFileExport size={24} />
-                  </a>
-                </div>
+                <AnimatedWrapper delay={3700}>
+                  <div className="flex gap-3 mt-auto">
+                    <NavLink
+                      to={"/about"}
+                      className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
+                    >
+                      <AnimatedWrapper delay={4000}>
+                        Explore More
+                      </AnimatedWrapper>
+                    </NavLink>
+                    <a
+                      href={resume}
+                      aria-label="Download Resume"
+                      download={"Mujibulhaquetanim-resume.pdf"}
+                      className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
+                    >
+                      <AnimatedWrapper delay={4000}>
+                        <FaFileExport size={24} />
+                      </AnimatedWrapper>
+                    </a>
+                  </div>
+                </AnimatedWrapper>
               </div>
-            </AnimatedWrapper>
-          </section>
+            </section>
+          </AnimatedWrapper>
 
           {/* Projects Section */}
-          <NavLink
-            to={"/projects"}
+          <AnimatedWrapper
+            delay={2500}
             className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-12 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
-            <AnimatedWrapper delay={3000} className="w-full h-full">
-              <div className="relative h-full w-full">
-                <AnimatedWrapper delay={3500}>
-                  <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline text-center mb-4">
-                    Projects Overview
-                  </h1>
-                </AnimatedWrapper>
-                <ProjectsCard />
-              </div>
-            </AnimatedWrapper>
-          </NavLink>
+            <NavLink to={"/projects"}>
+              <AnimatedWrapper delay={3000} className="w-full h-full">
+                <div className="relative h-full w-full">
+                  <AnimatedWrapper delay={3400}>
+                    <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline text-center mb-1 mt-3">
+                      Projects Overview
+                    </h1>
+                  </AnimatedWrapper>
+                  <ProjectsCard />
+                </div>
+              </AnimatedWrapper>
+            </NavLink>
+          </AnimatedWrapper>
 
           {/* GitHub Section */}
           <NavLink
