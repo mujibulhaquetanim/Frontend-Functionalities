@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AnimatedWrapper from "./AnimatedWrapper";
+import AnimatedWrapper from "./wrapper/AnimatedWrapper";
 
 declare global {
   interface Window {

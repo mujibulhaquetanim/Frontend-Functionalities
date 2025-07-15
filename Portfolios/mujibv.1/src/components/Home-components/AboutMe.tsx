@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import { useState } from "react";
-import AnimatedWrapper from "../AnimatedWrapper";
+import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 
 export default function AboutMe() {
   const [show, setShow] = useState(false);

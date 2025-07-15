@@ -6,7 +6,7 @@ import TechStacks from "../Home-components/TechStack";
 import GitTimeline from "../Home-components/GithubActivity/GitTimeline";
 import resume from "/Mujibulhaquetanim.pdf";
 import { Helmet } from "react-helmet-async";
-import AnimatedWrapper from "../AnimatedWrapper";
+import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 
 export default function Home() {
   return (
