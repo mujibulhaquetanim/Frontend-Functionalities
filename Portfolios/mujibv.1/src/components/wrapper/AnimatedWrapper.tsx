@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useScrollAnimation } from "../../hook/use-scroll-animation";
 
 interface AnimatedWrapperProps {
   children: React.ReactNode;
@@ -9,18 +10,16 @@ interface AnimatedWrapperProps {
 export default function AnimatedWrapper({
   children,
   delay = 0,
-  className = "", // Provide a default value
+  className = "",
 }: AnimatedWrapperProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
-  useEffect(() => {
-    const timeout = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timeout);
-  }, [delay]);
-
-  // Apply the passed className to the div
   return (
-    <div className={`animated-wrapper ${isVisible ? "enter" : ""} ${className}`}>
+    <div
+      ref={ref}
+      className={`animated-wrapper ${isVisible ? "enter" : ""} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       {children}
     </div>
   );
