@@ -92,7 +92,7 @@ export default function Home() {
           {/* Intro Section */}
           <AnimatedWrapper
             delay={500}
-            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full"
+            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full shadow-lg"
           >
             <section>
               <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
@@ -100,7 +100,7 @@ export default function Home() {
                   <NavLink
                     to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
                     target="_blank"
-                    className="inline-block border-2 p-3 rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit"
+                    className="mt-4 px-4 py-2 border-solid hover:border-white border-2 shadow-[-7px_7px_0px_#334155] inline-block rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit"
                   >
                     <AnimatedWrapper delay={3000}>
                       <h1>Available for hire</h1>
@@ -133,7 +133,7 @@ export default function Home() {
                   <div className="flex gap-3 mt-auto">
                     <NavLink
                       to={"/about"}
-                      className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
+                      className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
                     >
                       <AnimatedWrapper delay={4000}>
                         Explore More
@@ -143,7 +143,7 @@ export default function Home() {
                       href={resume}
                       aria-label="Download Resume"
                       download={"Mujibulhaquetanim-resume.pdf"}
-                      className="rounded-xl border-2 px-4 py-2 text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
+                      className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
                     >
                       <AnimatedWrapper delay={4000}>
                         <FaFileExport size={24} />
@@ -164,7 +164,7 @@ export default function Home() {
               <AnimatedWrapper delay={3000} className="w-full h-full">
                 <div className="relative h-full w-full">
                   <AnimatedWrapper delay={3400}>
-                    <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline text-center mb-1 mt-3">
+                    <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center mb-1 mt-3">
                       Projects Overview
                     </h1>
                   </AnimatedWrapper>
@@ -252,8 +252,8 @@ export default function Home() {
           >
             <NavLink to={"/Blogs"}>
               <AnimatedWrapper delay={5500} className="w-full h-full">
-                <h1 className="text-base sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline">
-                  Click to see Blogs 📚
+                <h1 className="md:text-7xl sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline hover:underline-offset-4">
+                  Blogs
                 </h1>
               </AnimatedWrapper>
             </NavLink>
