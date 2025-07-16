@@ -199,6 +199,7 @@ export default function Home() {
           {/* Typing Speed Section */}
           <AnimatedWrapper
             delay={3500}
+            subDelay={2500}
             className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
             <NavLink
@@ -230,6 +231,7 @@ export default function Home() {
           {/* Tech Stack Section */}
           <AnimatedWrapper
             delay={4500}
+            subDelay={1000}
             className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 w-full h-full"
           >
             <AnimatedWrapper
@@ -248,10 +250,11 @@ export default function Home() {
           {/* Blogs Section */}
           <AnimatedWrapper
             delay={5300}
+            subDelay={2500}
             className="col-span-full md:col-span-1 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
             <NavLink to={"/Blogs"}>
-              <AnimatedWrapper delay={5500} className="w-full h-full">
+              <AnimatedWrapper delay={5500} subDelay={1900} className="w-full h-full">
                 <h1 className="md:text-7xl sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline hover:underline-offset-4">
                   Blogs
                 </h1>
@@ -262,6 +265,7 @@ export default function Home() {
           {/* Social Links Section */}
           <AnimatedWrapper
             delay={6000}
+            subDelay={2500}
             className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
           >
             <div className="grid grid-cols-3 gap-2 h-full">
