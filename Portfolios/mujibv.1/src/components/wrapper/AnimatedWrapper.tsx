@@ -12,13 +12,15 @@ interface AnimatedWrapperProps {
 export default function AnimatedWrapper({
   children,
   delay = 0,
-  subDelay,
+  subDelay, // no default as it is not passed in some components; only for mobile screen
   className = "",
 }: AnimatedWrapperProps) {
   const { ref, isVisible } = useScrollAnimation();
-  const isLargerScreen = useMediaQuery("(max-width: 1024px)");
+  const isLargeScreen = useMediaQuery("(min-width: 1024px)");
 
-  const appliedDelay = isLargerScreen ? delay : subDelay ?? delay;
+  const appliedDelay = isLargeScreen
+    ? delay // large screen → ignore subDelay
+    : subDelay ?? delay; // mobile → use subDelay if provided, else fallback to delay
 
   return (
     <div
