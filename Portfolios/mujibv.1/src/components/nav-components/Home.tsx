@@ -91,18 +91,18 @@ export default function Home() {
         >
           {/* Intro Section */}
           <AnimatedWrapper
-            delay={500}
+            delay={1000}
             className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full shadow-lg"
           >
             <section>
               <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
-                <AnimatedWrapper delay={2500}>
+                <AnimatedWrapper delay={2900}>
                   <NavLink
                     to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
                     target="_blank"
                     className="mt-4 px-4 py-2 border-solid hover:border-white border-2 shadow-[-7px_7px_0px_#334155] inline-block rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit"
                   >
-                    <AnimatedWrapper delay={3000}>
+                    <AnimatedWrapper delay={3200}>
                       <h1>Available for hire</h1>
                     </AnimatedWrapper>
                     <AnimatedWrapper
@@ -121,7 +121,7 @@ export default function Home() {
                   </h1>
                 </AnimatedWrapper>
 
-                <AnimatedWrapper delay={2000}>
+                <AnimatedWrapper delay={1900}>
                   <h3 className="text-sm sm:text-base lg:text-lg text-gray-300">
                     A software engineer. Mainly working in the JavaScript
                     ecosystem, I'm a dedicated problem-solver who thrives on
@@ -129,13 +129,13 @@ export default function Home() {
                   </h3>
                 </AnimatedWrapper>
 
-                <AnimatedWrapper delay={3700}>
+                <AnimatedWrapper delay={2300}>
                   <div className="flex gap-3 mt-auto">
                     <NavLink
                       to={"/about"}
                       className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
                     >
-                      <AnimatedWrapper delay={4000}>
+                      <AnimatedWrapper delay={2500}>
                         Explore More
                       </AnimatedWrapper>
                     </NavLink>
@@ -145,7 +145,7 @@ export default function Home() {
                       download={"Mujibulhaquetanim-resume.pdf"}
                       className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
                     >
-                      <AnimatedWrapper delay={4000}>
+                      <AnimatedWrapper delay={3000}>
                         <FaFileExport size={24} />
                       </AnimatedWrapper>
                     </a>
@@ -157,18 +157,18 @@ export default function Home() {
 
           {/* Projects Section */}
           <AnimatedWrapper
-            delay={2500}
+            delay={3500}
             className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-12 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
             <NavLink to={"/projects"}>
-              <AnimatedWrapper delay={3000} className="w-full h-full">
+              <AnimatedWrapper delay={3700} className="w-full h-full">
                 <div className="relative h-full w-full">
-                  <AnimatedWrapper delay={3400}>
+                  <AnimatedWrapper delay={3800}>
                     <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center mb-1 mt-3">
                       Projects Overview
                     </h1>
                   </AnimatedWrapper>
-                  <AnimatedWrapper delay={3700} className="w-full h-full">
+                  <AnimatedWrapper delay={3900} className="w-full h-full">
                     <ProjectsCard />
                   </AnimatedWrapper>
                 </div>
@@ -178,7 +178,7 @@ export default function Home() {
 
           {/* GitHub Section */}
           <AnimatedWrapper
-            delay={3000}
+            delay={4100}
             className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
             <NavLink
@@ -186,7 +186,7 @@ export default function Home() {
               target="_blank"
             >
               <AnimatedWrapper
-                delay={3000}
+                delay={4500}
                 className="h-full flex flex-col justify-center"
               >
                 <GitTimeline
@@ -198,8 +198,8 @@ export default function Home() {
 
           {/* Typing Speed Section */}
           <AnimatedWrapper
-            delay={3500}
-            subDelay={2500}
+            delay={4700}
+            subDelay={700}
             className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
             <NavLink
@@ -209,7 +209,8 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center h-full p-4 gap-2">
                 <div className="flex items-baseline">
                   <AnimatedWrapper
-                    delay={3700}
+                    delay={5000}
+                    subDelay={1000}
                     className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold"
                   >
                     <p>60</p>
@@ -219,7 +220,8 @@ export default function Home() {
                   </span>
                 </div>
                 <AnimatedWrapper
-                  delay={4000}
+                  delay={5300}
+                  subDelay={1500}
                   className="text-sm sm:text-base text-white font-bold"
                 >
                   Typing Speed ⌨️
@@ -230,15 +232,16 @@ export default function Home() {
 
           {/* Tech Stack Section */}
           <AnimatedWrapper
-            delay={4500}
-            subDelay={1000}
+            delay={5700}
+            subDelay={2000}
             className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 w-full h-full"
           >
             <AnimatedWrapper
-              delay={4700}
+              delay={6000}
+              subDelay={2500}
               className="flex flex-col items-center justify-center h-full gap-4"
             >
-              <AnimatedWrapper delay={5000}>
+              <AnimatedWrapper delay={6500} subDelay={3000}>
                 <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider">
                   Tech Stack
                 </h1>
@@ -249,12 +252,16 @@ export default function Home() {
 
           {/* Blogs Section */}
           <AnimatedWrapper
-            delay={5300}
-            subDelay={2500}
+            delay={6700}
+            subDelay={3200}
             className="col-span-full md:col-span-1 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
           >
             <NavLink to={"/Blogs"}>
-              <AnimatedWrapper delay={5500} subDelay={1900} className="w-full h-full">
+              <AnimatedWrapper
+                delay={7000}
+                subDelay={3500}
+                className="w-full h-full"
+              >
                 <h1 className="md:text-7xl sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline hover:underline-offset-4">
                   Blogs
                 </h1>
@@ -264,8 +271,8 @@ export default function Home() {
 
           {/* Social Links Section */}
           <AnimatedWrapper
-            delay={6000}
-            subDelay={2500}
+            delay={7500}
+            subDelay={4000}
             className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
           >
             <div className="grid grid-cols-3 gap-2 h-full">
