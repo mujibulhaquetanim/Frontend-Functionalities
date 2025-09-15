@@ -10,7 +10,7 @@ Anyone looking for a diverse collection of projects in one place will greatly be
 
 - If you're solely interested in component-based Works or React-Native for Mobile App Developments, consider exploring the following: [Component-based repository](https://github.com/mujibulhaquetanim/componentGallery.git) , [Expo](https://github.com/mujibulhaquetanim/React-Native.git)
 
-Bonus: If you are interested about fully seo optimized portfolio website with reactjs, and want to learn how to implement and achieve fully seo optimization walkthrough, check out [My Current Portfolio](https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/Portfolios/mujibv.1).
+Bonus: If you are interested about fully seo optimized portfolio website with reactjs, and want to learn how to implement and achieve fully seo optimization walkthrough, check out [My Current Portfolio](https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/Portfolios/mujibv.1), check out the [Live Link](#live-links) section to see the live version.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Bonus: If you are interested about fully seo optimized portfolio website with re
 
 These are the live links for the projects included in this repository, they all are hosted using their respective directories.
 
-- [mujibulhaquetanim.dev](https:mujibulhaquetanim.dev)
+- [mujibulhaquetanim.dev](https://mujibulhaquetanim.dev)
 - [Yum Dispatch](https://yumdispatchbd.netlify.app/)
 - [Vanilla-Amazon](https://vanilla-amazon.netlify.app/) (Currently unavailable due to copyright issues with Amazon but you can see the source code [here](https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs))
 
@@ -79,4 +79,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-If you have any questions, issues, or feedback, feel free to reach out to me through linkedin/twitter or comment in the respective repository.
+If you have any questions, issues, or feedback, feel free to reach out to me through linkedin/twitter or comment in the respective repository or email me directly at [info@mujibulhaquetanim.dev](mailto:info@mujibulhaquetanim.dev).
