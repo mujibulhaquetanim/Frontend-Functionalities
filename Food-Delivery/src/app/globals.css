@@ -15,12 +15,15 @@
 }
 
 @keyframes headerBgChange {
-  0% { background-image: url('../../public/foodList/brownie.jpg'); }
-  20% { background-image: url('../../public/foodList/veggie_burger.jpg'); }
-  40% { background-image: url('../../public/foodList/pad-thai.jpg'); }
-  60% { background-image: url('../../public/foodList/margherita.jpg'); }
-  80% { background-image: url('../../public/foodList/fruit-salad.jpg'); }
-  100% { background-image: url('../../public/foodCollectionEid.jpg'); }
+  /* Files in public/foodList/ go to /foodList/ in the published site */
+  0% { background-image: url('/foodList/brownie.jpg'); }
+  20% { background-image: url('/foodList/veggie-burger.jpg'); }
+  40% { background-image: url('/foodList/pad-thai.jpg'); }
+  60% { background-image: url('/foodList/margherita.jpg'); }
+  80% { background-image: url('/foodList/fruit-salad.jpg'); }
+
+  /* File in public/ goes to / in the published site */
+  100% { background-image: url('/food-collection-eid.jpg'); }
 }
 
 .header {
