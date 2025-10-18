@@ -2,64 +2,63 @@ import manu_1 from '../public/menuImages/salad.png';
 import manu_2 from '../public/menuImages/noodles.png';
 import manu_3 from '../public/menuImages/burger.png';
 import manu_4 from '../public/menuImages/pasta.jpg';
-import manu_5 from '../public/menuImages/vegetarian food.png';
+import manu_5 from '../public/menuImages/pure-veg.png'; // 👈 Renamed file
 import manu_6 from '../public/menuImages/seafood.png';
 import manu_7 from '../public/menuImages/dessert.jpg';
 import manu_8 from '../public/menuImages/rolls.jpg';
 import manu_9 from '../public/menuImages/pizza.png';
 import manu_10 from '../public/menuImages/sandwich.png';
 
-import caesarSalad from '../public/foodList/caesarSalad.jpg';
-import greekSalad from '../public/foodList/greekSalad.jpg'
-import gardenSalad from '../public/foodList/gardenSalad.jpg'
-import chickenSalad from '../public/foodList/chickenSalad.jpg'
-import fruitSalad from '../public/foodList/fruitSalad.jpg'
-import chowMein from '../public/foodList/chow_mein.jpg';
-import padThai from '../public/foodList/pad_thai.jpg';
+import caesarSalad from '../public/foodList/caesar-salad.jpg'; // 👈 Renamed file
+import greekSalad from '../public/foodList/greek-salad.jpg'; // 👈 Renamed file
+import gardenSalad from '../public/foodList/garden-salad.jpg'; // 👈 Renamed file
+import chickenSalad from '../public/foodList/chicken-salad.jpg'; // 👈 Renamed file
+import fruitSalad from '../public/foodList/fruit-salad.jpg'; // 👈 Renamed file
+import chowMein from '../public/foodList/chow-mein.jpg'; // 👈 Renamed file
+import padThai from '../public/foodList/pad-thai.jpg'; // 👈 Renamed file
 import ramen from '../public/foodList/ramen.jpg';
-import italianPasta from '../public/foodList/italianPasta.jpg';
+import italianPasta from '../public/foodList/italian-pasta.jpg'; // 👈 Renamed file
 import udon from '../public/foodList/udon.jpg';
-import cheeseBurger from '../public/foodList/cheeseburger.jpg';
-import veggieBurger from '../public/foodList/veggie_burger.jpg';
-import chickenBurger from '../public/foodList/chicken_burger.jpg';
-import beefBurger from '../public/foodList/beefBurger.jpg';
-import fishBurger from '../public/foodList/fish_burger.jpg';
+import cheeseBurger from '../public/foodList/cheese-burger.jpg'; // 👈 Renamed file
+import veggieBurger from '../public/foodList/veggie-burger.jpg'; // 👈 Renamed file
+import chickenBurger from '../public/foodList/chicken-burger.jpg'; // 👈 Renamed file
+import beefBurger from '../public/foodList/beef-burger.jpg'; // 👈 Renamed file
+import fishBurger from '../public/foodList/fish-burger.jpg'; // 👈 Renamed file
 import carbonara from '../public/foodList/carbonara.jpg';
 import bolognese from '../public/foodList/bolognese.jpg';
 import alfredo from '../public/foodList/alfredo.jpg';
-import pestoPasta from '../public/foodList/pesto.jpg';
+import pestoPasta from '../public/foodList/pesto-pasta.jpg'; // 👈 Renamed file
 import lasagna from '../public/foodList/lasagna.jpg';
-import shrimpScampi from '../public/foodList/shrimp_scampi.jpg';
-import fishTacos from '../public/foodList/fish_tacos.jpg';
-import lobsterRoll from '../public/foodList/lobster_roll.jpg';
-import grilledSalmon from '../public/foodList/grilled_salmon.jpg';
-import ilishBhapa from '../public/foodList/Ilish_bhapa.png';
-import springRoll from '../public/foodList/spring_roll.jpg';
-import eggRoll from '../public/foodList/egg_roll.jpg';
-import chickenRoll from '../public/foodList/chicken_roll.jpg';
-import beefRoll from '../public/foodList/beef_roll.jpg';
-import shrimpRoll from '../public/foodList/shrimp_roll.jpg';
-import vegCurry from '../public/foodList/veg_curry.jpg';
-import tofuStirfry from '../public/foodList/tofu_stirfry.jpg';
-import veggieWrap from '../public/foodList/veggie_wrap.jpg';
-import lentilSoup from '../public/foodList/lentil_soup.jpg';
-import vegBiryani from '../public/foodList/vegBiriyani.jpg';
-import chocolateCake from '../public/foodList/chocolate_cake.jpg';
+import shrimpScampi from '../public/foodList/shrimp-scampi.jpg'; // 👈 Renamed file
+import fishTacos from '../public/foodList/fish-tacos.jpg'; // 👈 Renamed file
+import lobsterRoll from '../public/foodList/lobster-roll.jpg'; // 👈 Renamed file
+import grilledSalmon from '../public/foodList/grilled-salmon.jpg'; // 👈 Renamed file
+import ilishBhapa from '../public/foodList/ilish-bhapa.png'; // 👈 Case/Name Fixed
+import springRoll from '../public/foodList/spring-roll.jpg'; // 👈 Renamed file
+import eggRoll from '../public/foodList/egg-roll.jpg'; // 👈 Renamed file
+import chickenRoll from '../public/foodList/chicken-roll.jpg'; // 👈 Renamed file
+import beefRoll from '../public/foodList/beef-roll.jpg'; // 👈 Renamed file
+import shrimpRoll from '../public/foodList/shrimp-roll.jpg'; // 👈 Renamed file
+import vegCurry from '../public/foodList/veg-curry.jpg'; // 👈 Renamed file
+import tofuStirfry from '../public/foodList/tofu-stir-fry.jpg'; // 👈 Renamed file
+import veggieWrap from '../public/foodList/veggie-wrap.jpg'; // 👈 Renamed file
+import lentilSoup from '../public/foodList/lentil-soup.jpg'; // 👈 Renamed file
+import vegBiryani from '../public/foodList/veg-biryani.jpg'; // 👈 Renamed file
+import chocolateCake from '../public/foodList/chocolate-cake.jpg'; // 👈 Renamed file
 import cheesecake from '../public/foodList/cheesecake.jpg';
 import baklava from '../public/foodList/baklava.jpg';
 import brownie from '../public/foodList/brownie.jpg';
-import fruitTart from '../public/foodList/fruit_tart.jpg';
+import fruitTart from '../public/foodList/fruit-tart.jpg'; // 👈 Renamed file
 import margherita from '../public/foodList/margherita.jpg';
 import pepperoni from '../public/foodList/pepperoni.jpg';
-import bbqChicken from '../public/foodList/bbq_chicken.jpg';
-import veggiePizza from '../public/foodList/veggie_pizza.jpg';
-import hawaiian from '../public/foodList/hawaiiwan.jpg';
-import clubSandwich from '../public/foodList/club_sandwich.jpg';
-import roastedVeggie from '../public/foodList/rostedVeggie.jpg';
-import grilledCheeseSandwich from '../public/foodList/grilled_cheese.jpg';
-import mesquite from '../public/foodList/mesquite_chicken.jpg';
-import tunaSandwich from '../public/foodList/tuna_sandwich.jpg';
-
+import bbqChicken from '../public/foodList/bbq-chicken.jpg'; // 👈 Name Fixed
+import veggiePizza from '../public/foodList/veggie-pizza.jpg'; // 👈 Renamed file
+import hawaiian from '../public/foodList/hawaiian.jpg'; // 👈 Spelling/Name Fixed
+import clubSandwich from '../public/foodList/club-sandwich.jpg'; // 👈 Renamed file
+import roastedVeggie from '../public/foodList/roasted-veggie.jpg'; // 👈 Name Fixed
+import grilledCheeseSandwich from '../public/foodList/grilled-cheese.jpg'; // 👈 Renamed file
+import mesquite from '../public/foodList/mesquite-chicken.jpg'; // 👈 Name Fixed
+import tunaSandwich from '../public/foodList/tuna-sandwich.jpg'; // 👈 Renamed file
 
 
 export const menu_list = [
