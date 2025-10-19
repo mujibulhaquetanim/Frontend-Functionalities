@@ -1,14 +1,13 @@
 "use client";
 import React, { createContext, useContext } from "react";
 import { menu_list } from "../../public/assets";
-import { StaticImageData } from "next/image";
 
 interface storeContextProviderProps {
   children: React.ReactNode;
 }
 
 type storeContextType = {
-  menu_list: { menu_name: string; menu_image: StaticImageData }[];
+  menu_list: { menu_name: string; menu_image: string }[];
 };
 
 const storeContext = createContext<storeContextType | undefined>(undefined);
