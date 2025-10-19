@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 interface FoodItemProps {
   foodName: string;
-  foodImage: StaticImageData;
+  foodImage: string;
   foodPrice: number;
   description: string;
   category: string;
@@ -25,6 +25,8 @@ export default function FoodItem({
           className="object-cover aspect-video rounded-md"
           src={foodImage}
           alt={foodName}
+          width={500}
+          height={500}
         />
 
         {!itemCount ? (

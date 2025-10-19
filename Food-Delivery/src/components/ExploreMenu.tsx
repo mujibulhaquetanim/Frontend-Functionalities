@@ -44,6 +44,8 @@ export default function ExploreMenu({
                 }`}
                 src={item.menu_image}
                 alt={item.menu_name}
+                width={500}
+                height={500}
               />
               <p className="text-[max(1.2vw,16px)] pb-1">{item.menu_name}</p>
             </div>
