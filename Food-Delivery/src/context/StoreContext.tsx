@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext } from "react";
-import { menu_list } from "../../public/assets";
+import { menu_list } from "../components/data/assets";
 
 interface storeContextProviderProps {
   children: React.ReactNode;

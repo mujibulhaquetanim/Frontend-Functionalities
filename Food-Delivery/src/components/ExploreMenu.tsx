@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { menu_list } from "../../public/assets";
+import { menu_list } from "./data/assets";
 import Image from "next/image";
 
 interface category {

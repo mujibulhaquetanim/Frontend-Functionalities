@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { food_list } from "../../../public/assets";
+import { food_list } from "../data/assets";
 import FoodItem from "./FoodItem";
 
 export default function FoodDisplay({
