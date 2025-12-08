@@ -1,15 +1,15 @@
 import { Elysia, t } from 'elysia'
 
-const user = new Elysia()
-    .get('/user', () => ({ user: { name: 'Hello Mujib, Welcome to ElysiaJS with Next.js 16' } }))
-    .post('/', ({ body }) => body, {
+const user = new Elysia({ prefix: '/user' })
+    .get('/', () => ({ user: { user: 'customize elysia api for multiple routes' } }))
+    .post('/create', ({ body }) => console.log(body), {
         body: t.Object({
             name: t.String()
         })
     });
 
 const task = new Elysia()
-    .get('/task', () => ({ task: { task: 'customize elysia api for multiple routes' } }));
+    .get('/task', () => ({ task: { name: 'customize elysia api for multiple routes' } }));
 
 const app = new Elysia({ prefix: '/api' })
     .use(user)
