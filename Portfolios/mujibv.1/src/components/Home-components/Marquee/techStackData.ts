@@ -1,108 +1,121 @@
-import { SiDocker, SiRemix, SiRedux, SiDrizzle, SiHono, SiNestjs, SiNextdotjs, SiPrisma, SiPostgresql, SiMongodb, SiPandas, SiPython, SiReact, SiReactquery, SiSwr, SiTailwindcss, SiTypescript} from 'react-icons/si';
+import {
+  SiDocker,
+  SiRemix,
+  SiRedux,
+  SiDrizzle,
+  SiHono,
+  SiNestjs,
+  SiNextdotjs,
+  SiPrisma,
+  SiPostgresql,
+  SiMongodb,
+  SiPandas,
+  SiPython,
+  SiReact,
+  SiReactquery,
+  SiSwr,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import { FaGolang } from "react-icons/fa6";
-import type { JSX, SVGProps } from 'react';
+import type { IconType } from "react-icons";
 
 type TechStack = {
   name: string;
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: IconType;
   description: string;
 };
 
 const techStacks: TechStack[] = [
   {
-    name: 'TypeScript',
+    name: "TypeScript",
     icon: SiTypescript,
-    description: 'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.'
+    description: "TypeScript is a typed superset of JavaScript.",
   },
   {
-    name: 'Next',
+    name: "Next.js",
     icon: SiNextdotjs,
-    description: 'Next.js is a React framework that enables server-side rendering and static site generation.'
+    description: "React framework for SSR and static generation.",
   },
   {
-    name: 'Remix',
+    name: "Remix",
     icon: SiRemix,
-    description: 'Remix is a framework for building server-rendered React applications.'
+    description: "Full-stack web framework focused on web standards.",
   },
   {
-    name: 'React Native',
+    name: "React",
     icon: SiReact,
-    description: 'React Native is a framework for building native apps using React.'
+    description: "Library for building user interfaces.",
   },
   {
-    name: 'React Query',
+    name: "React Query",
     icon: SiReactquery,
-    description: 'React Query is a library for fetching, caching, and updating asynchronous data in React.'
+    description: "Async state management for React.",
   },
   {
-    name: 'Redux',
+    name: "Redux",
     icon: SiRedux,
-    description: 'Redux is a state management library for JavaScript applications.'
+    description: "Predictable state container for JS apps.",
   },
   {
-    name: 'Tailwind',
+    name: "Tailwind",
     icon: SiTailwindcss,
-    description: 'Tailwind CSS is a utility-first CSS framework for rapidly building custom designs.'
+    description: "Utility-first CSS framework.",
   },
   {
-    name: 'SWR',
+    name: "SWR",
     icon: SiSwr,
-    description: 'SWR is a React Hooks library for data fetching.'
+    description: "React data fetching library.",
   },
   {
-    name: 'Prisma',
+    name: "Prisma",
     icon: SiPrisma,
-    description: 'Prisma is an open-source database toolkit for TypeScript and Node.js.'
+    description: "Next-generation ORM for Node.js.",
   },
   {
-    name: 'Drizzle',
+    name: "Drizzle",
     icon: SiDrizzle,
-    description: 'Drizzle is a collection of front-end libraries that make writing dapp front-ends easier and more predictable.'
+    description: "Type-safe SQL toolkit for TypeScript.",
   },
   {
-    name: 'PostgreSQL',
+    name: "PostgreSQL",
     icon: SiPostgresql,
-    description: 'PostgreSQL is a powerful, open source object-relational database system.'
+    description: "Advanced open-source relational database.",
   },
   {
-    name: 'MongoDB',
+    name: "MongoDB",
     icon: SiMongodb,
-    description: 'MongoDB is a cross-platform document-oriented database program.'
+    description: "NoSQL document database.",
   },
   {
-    name: 'Remix',
-    icon: SiRemix,
-    description: 'Remix is a framework for building server-rendered React applications.'
-  },
-  {
-    name: 'Nest',
+    name: "NestJS",
     icon: SiNestjs,
-    description: 'NestJS is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications.'
+    description: "Progressive Node.js framework.",
   },
   {
-    name: 'Hono',
+    name: "Hono",
     icon: SiHono,
-    description: 'Hono is a lightweight, high-performance web framework for Node.js.'
+    description: "Fast, lightweight web framework.",
   },
   {
-    name: 'Docker',
+    name: "Docker",
     icon: SiDocker,
-    description: 'Docker is a platform for developing, shipping, and running applications in containers.'
+    description: "Containerization platform.",
   },
   {
-    name: 'Go',
+    name: "Go",
     icon: FaGolang,
-    description: 'Go is a statically typed, compiled programming language designed at Google.'
+    description: "Compiled, concurrent programming language.",
   },
   {
-    name: 'Python',
+    name: "Python",
     icon: SiPython,
-    description: 'Python is a high-level, general-purpose programming language.'
+    description: "High-level general-purpose language.",
   },
   {
-    name: 'Pandas',
+    name: "Pandas",
     icon: SiPandas,
-    description: 'Pandas is a high-level data manipulation library.'
+    description: "Data analysis and manipulation library.",
   },
 ];
 
