@@ -14,11 +14,15 @@ import UITesting from "/UITesting.png";
 import CliProjectGo from "/CliProjectGo.png";
 import BackendFuncs from "/BackendFuncs.png";
 import GoBackEnd from "/GoBackEnd.png";
+import instafeed from "/instafeed.gif";
+import reelclone from "/reelclone.gif";
 
 export default function ProjectsCard() {
   const [activeIndex, setActiveIndex] = useState(0);
   const images = [
     VanillaAmazon,
+    instafeed,
+    reelclone,
     ClientProject,
     YumDispatch,
     rawStripePayment,
