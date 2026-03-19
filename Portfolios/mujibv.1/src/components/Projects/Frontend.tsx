@@ -8,8 +8,8 @@ const Frontend = () => {
     { src: "/UITesting.png", alt: "UITesting" },
     { src: "/VanillaAmazon.png", alt: "VanillaAmazon" },
     { src: "/ClientProject.png", alt: "ClientProject" },
-    { src: "/ComponentTesting.png", alt: "ComponentTesting" },
-    { src: "/RawTw.png", alt: "RawTw" },
+    { src: "/instafeed.gif", alt: "instafeed" },
+    { src: "/reelclone.gif", alt: "reelclone" },
   ];
 
   // Defined layout classes separately, hardcoded for now.
@@ -29,8 +29,8 @@ const Frontend = () => {
     "https://third-party-ui.netlify.app/",
     "https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs",
     "https://memorica-seven.vercel.app/",
-    "https://tw-react-components.netlify.app/",
-    "https://tw-projects.netlify.app/",
+    "https://instafeed.netlify.app/",
+    "https://reelclone.netlify.app/",
   ];
 
   // Mapping images and layout classes to create grid. hardcoded classes.
