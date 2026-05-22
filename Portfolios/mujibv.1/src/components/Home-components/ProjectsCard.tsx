@@ -4,18 +4,17 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 import { useState } from "react";
-import RawTw from "/RawTw.png";
 import VanillaAmazon from "/VanillaAmazon.png";
 import ClientProject from "/ClientProject.png";
 import YumDispatch from "/YumDispatch.png";
 import rawStripePayment from "/rawStripePayment.png";
 import ComponentTesting from "/ComponentTesting.png";
-import UITesting from "/UITesting.png";
 import CliProjectGo from "/CliProjectGo.png";
-import BackendFuncs from "/BackendFuncs.png";
-import GoBackEnd from "/GoBackEnd.png";
 import instafeed from "/instafeed.gif";
 import reelclone from "/reelclone.gif";
+import aatbazar from "/aatbazar.png";
+import shopmart from "/shopmart.png";
+import pharma from "/pharma.png";
 
 export default function ProjectsCard() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,15 +22,13 @@ export default function ProjectsCard() {
     VanillaAmazon,
     instafeed,
     reelclone,
-    ClientProject,
+    shopmart,
+    aatbazar,
+    CliProjectGo,
     YumDispatch,
+    pharma,
     rawStripePayment,
     ComponentTesting,
-    RawTw,
-    UITesting,
-    CliProjectGo,
-    BackendFuncs,
-    GoBackEnd,
   ];
 
   return (

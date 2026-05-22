@@ -3,12 +3,12 @@ import { Link } from "react-router";
 const Frontend = () => {
   // Simulating fetched data without layout-specific classes.
   const images = [
-    { src: "/YumDispatch.png", alt: "YumDispatch" },
-    { src: "/rawStripePayment.png", alt: "rawStripePayment" },
-    { src: "/UITesting.png", alt: "UITesting" },
-    { src: "/VanillaAmazon.png", alt: "VanillaAmazon" },
-    { src: "/ClientProject.png", alt: "ClientProject" },
+    { src: "/shopmart.gif", alt: "Ecomm with dashboard" },
+    { src: "/pharmacms.gif", alt: "Pharma CMS" },
+    { src: "/aatbaazar.gif", alt: "ClientProject" },
+    { src: "/vanillaamazon.gif", alt: "VanillaAmazon" },
     { src: "/instafeed.gif", alt: "instafeed" },
+    { src: "/YumDispatch.png", alt: "YumDispatch" },
     { src: "/reelclone.gif", alt: "reelclone" },
   ];
 
@@ -24,12 +24,12 @@ const Frontend = () => {
   ];
 
   const links = [
-    "https://yumdispatchbd.netlify.app/",
+    "https://shopmart.mujibulhaquetanim.dev/",
     "https://github.com/mujibulhaquetanim/Backend-Functionalities/tree/main/Payment%20Gateways/Stripe/One-time%20Payment",
-    "https://third-party-ui.netlify.app/",
+    "https://aat-baazar.mujibulhaquetanim.dev/",
     "https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs",
-    "https://memorica-seven.vercel.app/",
     "https://instafeed.netlify.app/",
+    "https://yumdispatchbd.netlify.app/",
     "https://reelclone.netlify.app/",
   ];
 
