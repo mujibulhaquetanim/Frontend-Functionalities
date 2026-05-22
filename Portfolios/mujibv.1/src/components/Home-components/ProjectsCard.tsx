@@ -5,7 +5,6 @@ import "swiper/css/autoplay";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 import { useState } from "react";
 import VanillaAmazon from "/VanillaAmazon.png";
-import ClientProject from "/ClientProject.png";
 import YumDispatch from "/YumDispatch.png";
 import rawStripePayment from "/rawStripePayment.png";
 import ComponentTesting from "/ComponentTesting.png";
