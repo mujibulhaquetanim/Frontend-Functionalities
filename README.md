@@ -26,8 +26,10 @@ Bonus: If you are interested about fully seo optimized portfolio website with re
 These are the live links for the projects included in this repository, they all are hosted using their respective directories.
 
 - [mujibulhaquetanim.dev](https://mujibulhaquetanim.dev)
+- [E-Commerce (Elegent One)](https://aat-baazar.mujibulhaquetanim.dev/)
+- [E-Commerce (Upgraded Version of Walmart)](https://shopmart.mujibulhaquetanim.dev/)
 - [Yum Dispatch](https://yumdispatchbd.netlify.app/)
-- [Vanilla-Amazon](https://vanilla-amazon.netlify.app/) (Currently unavailable due to copyright issues with Amazon but you can see the source code [here](https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs))
+- [Vanilla-Amazon](https://vanilla-amazon.netlify.app/) (Currently unavailable due to copyright issues with Amazon but you can see the source code [to visit, Click here](https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs))
 
 **Note:** Most of the projects aren’t hosted yet, but the included ones will give you an impression of the rest.
 
