@@ -122,10 +122,17 @@ export default function Home() {
                 </AnimatedWrapper>
 
                 <AnimatedWrapper delay={1900}>
-                  <h3 className="text-sm sm:text-base lg:text-lg text-gray-300">
-                    A software engineer. Mainly working in the JavaScript
-                    ecosystem, I'm a dedicated problem-solver who thrives on
-                    learning and building.
+                  <h3 className="text-sm sm:text-base lg:text-lg text-gray-300 text-justify leading-relaxed pr-2">
+                    A performance-driven <b>Full Stack & AI Engineer</b> crafting
+                    intelligent, end-to-end applications. I combine robust
+                    backend expertise (Node.js/TypeScript, microservices,
+                    real-time streaming) with hands-on AI/ML integration.
+                    <h5 className="mt-2 text-sm sm:text-base lg:text-lg text-gray-400 text-justify leading-relaxed pr-2">
+                      Driven by a deep fascination with system design and tool
+                      internals, I build secure, scalable cloud architectures
+                      focused on exceptional user experience and lightning-fast
+                      execution.{" "}
+                    </h5>
                   </h3>
                 </AnimatedWrapper>
 
