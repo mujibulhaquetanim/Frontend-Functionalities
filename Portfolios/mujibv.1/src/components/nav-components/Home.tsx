@@ -7,6 +7,7 @@ import GitTimeline from "../Home-components/GithubActivity/GitTimeline";
 import resume from "/Mujibulhaquetanim.pdf";
 import { Helmet } from "react-helmet-async";
 import AnimatedWrapper from "../wrapper/AnimatedWrapper";
+import { MdEmail } from "react-icons/md";
 
 export default function Home() {
   return (
@@ -98,19 +99,27 @@ export default function Home() {
               <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
                 <AnimatedWrapper delay={2900}>
                   <NavLink
-                    to={"https://www.linkedin.com/in/mujibulhaquetanim/"}
+                    to={
+                      "mailto:info@mujibulhaquetanim.dev?subject=Salam%20Mujibul%20Haque%20Tanim&body=I%20would%20like%20to%20connect%20with%20you!"
+                    }
                     target="_blank"
-                    className="mt-4 px-4 py-2 border-solid hover:border-white border-2 shadow-[-7px_7px_0px_#334155] inline-block rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit"
+                    className="mt-4 px-4 py-2 border-solid hover:border-white border-2 shadow-[-7px_7px_0px_#334155] inline-block hover:shadow-[7px_7px_0px_#334155] rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit group"
                   >
                     <AnimatedWrapper delay={3200}>
                       <h1>Available for hire</h1>
                     </AnimatedWrapper>
+
                     <AnimatedWrapper
                       delay={3500}
                       className="absolute w-3 h-3 bg-green-500 rounded-full -right-1 -top-1"
                     >
                       <div className="absolute w-full h-full bg-green-500/50 rounded-full animate-ping"></div>
                     </AnimatedWrapper>
+
+                    {/* Tooltip text */}
+                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-white bg-slate-600 px-2 py-1 rounded-md text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[7px_7px_0px_#334155] inline-block">
+                      <MdEmail size={24} className="inline-block text-center" />
+                    </span>
                   </NavLink>
                 </AnimatedWrapper>
 
@@ -123,9 +132,9 @@ export default function Home() {
 
                 <AnimatedWrapper delay={1900}>
                   <h3 className="text-sm sm:text-base lg:text-lg text-gray-300 text-justify leading-relaxed pr-2">
-                    A performance-driven <b>Full Stack & AI Engineer</b> crafting
-                    intelligent, end-to-end applications. I combine robust
-                    backend expertise (Node.js/TypeScript, microservices,
+                    A performance-driven <b>Full Stack & AI Engineer</b>{" "}
+                    crafting intelligent, end-to-end applications. I combine
+                    robust backend expertise (Node.js/TypeScript, microservices,
                     real-time streaming) with hands-on AI/ML integration.
                     <h5 className="mt-2 text-sm sm:text-base lg:text-lg text-gray-400 text-justify leading-relaxed pr-2">
                       Driven by a deep fascination with system design and tool
@@ -137,10 +146,10 @@ export default function Home() {
                 </AnimatedWrapper>
 
                 <AnimatedWrapper delay={2300}>
-                  <div className="flex gap-3 mt-auto">
+                  <div className="flex gap-5 mt-auto">
                     <NavLink
                       to={"/about"}
-                      className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
+                      className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] hover:shadow-[7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
                     >
                       <AnimatedWrapper delay={2500}>
                         Explore More
@@ -150,7 +159,7 @@ export default function Home() {
                       href={resume}
                       aria-label="Download Resume"
                       download={"Mujibulhaquetanim-resume.pdf"}
-                      className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
+                      className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] hover:shadow-[7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
                     >
                       <AnimatedWrapper delay={3000}>
                         <FaFileExport size={24} />
@@ -220,7 +229,9 @@ export default function Home() {
                     subDelay={1000}
                     className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold"
                   >
-                    <p>60</p>
+                    <p className="hover:shadow-[7px_7px_0px_#334155] hover:scale-110 transition-transform duration-300 hover:m-2 p-2">
+                      60
+                    </p>
                   </AnimatedWrapper>
                   <span className="text-xs text-gray-400 font-bold ml-2">
                     WPM
@@ -282,7 +293,7 @@ export default function Home() {
             subDelay={4000}
             className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
           >
-            <div className="grid grid-cols-3 gap-2 h-full">
+            <div className="grid grid-cols-3 gap-2 h-full transition-colors">
               {[
                 {
                   icon: FaLinkedin,
@@ -298,11 +309,11 @@ export default function Home() {
                   key={index}
                   to={social.url}
                   target="_blank"
-                  className="border rounded-xl p-2 hover:border-2 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 transition-all duration-300 flex items-center justify-center"
+                  className="border rounded-xl p-2 hover:border-4 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 transition-all duration-300 flex items-center justify-center"
                 >
                   <social.icon
                     color="white"
-                    className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16"
+                    className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 hover:shadow-[7px_7px_0px_#334155] hover:scale-110 transition-transform duration-300"
                   />
                 </NavLink>
               ))}
