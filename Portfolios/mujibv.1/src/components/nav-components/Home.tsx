@@ -8,6 +8,7 @@ import resume from "/Mujibulhaquetanim.pdf";
 import { Helmet } from "react-helmet-async";
 import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 import { MdEmail } from "react-icons/md";
+import { GrArticle } from "react-icons/gr";
 
 export default function Home() {
   return (
@@ -96,7 +97,7 @@ export default function Home() {
             className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full shadow-lg"
           >
             <section>
-              <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-4 sm:gap-6">
+              <div className="flex flex-col h-full p-4 sm:p-6 lg:p-8 gap-3 sm:gap-6">
                 <AnimatedWrapper delay={2900}>
                   <NavLink
                     to={
@@ -136,13 +137,29 @@ export default function Home() {
                     crafting intelligent, end-to-end applications. I combine
                     robust backend expertise (Node.js/TypeScript, microservices,
                     real-time streaming) with hands-on AI/ML integration.
-                    <h5 className="mt-2 text-sm sm:text-base lg:text-lg text-gray-400 text-justify leading-relaxed pr-2">
-                      Driven by a deep fascination with system design and tool
-                      internals, I build secure, scalable cloud architectures
-                      focused on exceptional user experience and lightning-fast
-                      execution.{" "}
-                    </h5>
                   </h3>
+                </AnimatedWrapper>
+
+                <AnimatedWrapper delay={2100}>
+                  <div className="flex flex-wrap">
+                    {[
+                      "TypeScript",
+                      "NestJS",
+                      "Next.js",
+                      "PostgreSQL",
+                      "WebRTC",
+                      "AWS",
+                      "LangGraph",
+                      "Docker",
+                    ].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[12px] md:text-sm text-slate-100 backdrop-blur-sm"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </AnimatedWrapper>
 
                 <AnimatedWrapper delay={2300}>
@@ -161,8 +178,9 @@ export default function Home() {
                       download={"Mujibulhaquetanim-resume.pdf"}
                       className="mt-4 px-4 py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] hover:shadow-[7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300"
                     >
-                      <AnimatedWrapper delay={3000}>
+                      <AnimatedWrapper delay={3000} className="flex gap-2">
                         <FaFileExport size={24} />
+                        Resume
                       </AnimatedWrapper>
                     </a>
                   </div>
@@ -229,7 +247,7 @@ export default function Home() {
                     subDelay={1000}
                     className="text-5xl sm:text-6xl lg:text-7xl text-white font-bold"
                   >
-                    <p className="hover:shadow-[7px_7px_0px_#334155] hover:scale-110 transition-transform duration-300 hover:m-2 p-2">
+                    <p className="hover:shadow-[7px_7px_0px_#334155] hover:scale-95 transition-transform duration-300">
                       60
                     </p>
                   </AnimatedWrapper>
@@ -254,18 +272,25 @@ export default function Home() {
             subDelay={2000}
             className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-4 w-full h-full"
           >
-            <AnimatedWrapper
-              delay={6000}
-              subDelay={2500}
-              className="flex flex-col items-center justify-center h-full gap-4"
-            >
-              <AnimatedWrapper delay={6500} subDelay={3000}>
-                <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider">
-                  Tech Stack
-                </h1>
+            <NavLink to={"/tech-stack"}>
+              <AnimatedWrapper
+                delay={6000}
+                subDelay={2500}
+                className="flex flex-col items-center justify-center h-full gap-4"
+              >
+                <AnimatedWrapper delay={6500} subDelay={3000}>
+                  <NavLink
+                    to={"/tech-stack"}
+                    className="cursor-pointer hover:underline text-xl sm:text-2xl text-white font-bold tracking-wider"
+                  >
+                    <h1 className="text-xl sm:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center mb-1 mt-3">
+                      Tech Stack
+                    </h1>
+                  </NavLink>
+                </AnimatedWrapper>
+                <TechStacks />
               </AnimatedWrapper>
-              <TechStacks />
-            </AnimatedWrapper>
+            </NavLink>
           </AnimatedWrapper>
 
           {/* Blogs Section */}
@@ -281,7 +306,7 @@ export default function Home() {
                 className="w-full h-full"
               >
                 <h1 className="md:text-7xl sm:text-lg text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline hover:underline-offset-4">
-                  Blogs
+                  <GrArticle></GrArticle>
                 </h1>
               </AnimatedWrapper>
             </NavLink>
