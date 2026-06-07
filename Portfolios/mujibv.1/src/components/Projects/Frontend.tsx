@@ -1,57 +1,128 @@
 import { Link } from "react-router";
+import { useEffect, useRef, useState } from "react";
 
-const Frontend = () => {
-  // Simulating fetched data without layout-specific classes.
-  const images = [
-    { src: "/shopmart.gif", alt: "Ecomm with dashboard" },
-    { src: "/pharmacms.gif", alt: "Pharma CMS" },
-    { src: "/aatbaazar.gif", alt: "ClientProject" },
-    { src: "/vanillaamazon.gif", alt: "VanillaAmazon" },
-    { src: "/instafeed.gif", alt: "instafeed" },
-    { src: "/YumDispatch.png", alt: "YumDispatch" },
-    { src: "/reelclone.gif", alt: "reelclone" },
+type Project = {
+  src: string;
+  alt: string;
+  link: string;
+  layout: string;
+};
+
+function LazyImage({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const [imageSrc, setImageSrc] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+
+        setImageSrc(src);
+        observer.disconnect();
+      },
+      {
+        rootMargin: "200px",
+      },
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [src]);
+
+  return (
+    <img
+      ref={imgRef}
+      src={imageSrc}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      className={className}
+    />
+  );
+}
+
+export default function Frontend() {
+  const projects: Project[] = [
+    {
+      src: "/shopmart.gif",
+      alt: "Ecomm with dashboard",
+      link: "https://shopmart.mujibulhaquetanim.dev/",
+      layout:
+        "col-span-12 row-span-6 md:col-span-6 md:row-span-8 lg:col-span-4 lg:row-span-8",
+    },
+    {
+      src: "/pharmacms.gif",
+      alt: "Pharma CMS",
+      link: "https://github.com/mujibulhaquetanim/Backend-Functionalities/tree/main/Payment%20Gateways/Stripe/One-time%20Payment",
+      layout:
+        "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3",
+    },
+    {
+      src: "/aatbaazar.gif",
+      alt: "ClientProject",
+      link: "https://aat-baazar.mujibulhaquetanim.dev/",
+      layout:
+        "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
+    },
+    {
+      src: "/vanillaamazon.gif",
+      alt: "VanillaAmazon",
+      link: "https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs",
+      layout:
+        "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
+    },
+    {
+      src: "/instafeed.gif",
+      alt: "instafeed",
+      link: "https://instafeed.netlify.app/",
+      layout:
+        "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
+    },
+    {
+      src: "/YumDispatch.png",
+      alt: "YumDispatch",
+      link: "https://yumdispatchbd.netlify.app/",
+      layout:
+        "col-span-12 row-span-3 md:col-span-6 md:row-span-4 lg:col-span-4 lg:row-span-4",
+    },
+    {
+      src: "/reelclone.gif",
+      alt: "reelclone",
+      link: "https://reelclone.netlify.app/",
+      layout:
+        "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3",
+    },
   ];
 
-  // Defined layout classes separately, hardcoded for now.
-  const layoutClasses = [
-    "col-span-12 row-span-6 md:col-span-6 md:row-span-8 lg:col-span-4 lg:row-span-8",
-    "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3",
-    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
-    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
-    "col-span-12 row-span-4 md:col-span-6 md:row-span-5 lg:col-span-4 lg:row-span-6",
-    "col-span-12 row-span-3 md:col-span-6 md:row-span-4 lg:col-span-4 lg:row-span-4",
-    "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3",
-  ];
-
-  const links = [
-    "https://shopmart.mujibulhaquetanim.dev/",
-    "https://github.com/mujibulhaquetanim/Backend-Functionalities/tree/main/Payment%20Gateways/Stripe/One-time%20Payment",
-    "https://aat-baazar.mujibulhaquetanim.dev/",
-    "https://github.com/mujibulhaquetanim/Frontend-Functionalities/tree/main/E-commerce/Amazon-vanilajs",
-    "https://instafeed.netlify.app/",
-    "https://yumdispatchbd.netlify.app/",
-    "https://reelclone.netlify.app/",
-  ];
-
-  // Mapping images and layout classes to create grid. hardcoded classes.
   return (
     <div className="w-full px-4 py-2 lg:p-2">
-      <div className="grid w-full gap-4 auto-rows-[minmax(3.3rem,auto)] grid-cols-12">
-        {images.map((image, index) => (
+      <div className="grid w-full grid-cols-12 gap-4 auto-rows-[minmax(3.3rem,auto)]">
+        {projects.map((project) => (
           <div
-            key={index}
-            className={`relative overflow-hidden rounded-2xl bg-slate-600 ${layoutClasses[index]}`}
+            key={project.alt}
+            className={`relative overflow-hidden rounded-2xl bg-slate-700 ${project.layout}`}
           >
             <Link
-              to={links[index]}
+              to={project.link}
               target="_blank"
+              rel="noopener noreferrer"
               className="absolute inset-0"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
+              <LazyImage
+                src={project.src}
+                alt={project.alt}
+                className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
               />
             </Link>
           </div>
@@ -59,6 +130,4 @@ const Frontend = () => {
       </div>
     </div>
   );
-};
-
-export default Frontend;
+}

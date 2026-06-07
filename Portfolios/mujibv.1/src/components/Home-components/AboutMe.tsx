@@ -1,464 +1,391 @@
-import { useState } from "react";
+import { NavLink } from "react-router";
 import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 
 export default function AboutMe() {
-  const [show, setShow] = useState(false);
+  const timeline = [
+    [
+      "2023",
+      "Graduated BSc and started freelance full-stack work",
+      "🎓",
+    ],
+    [
+      "2024",
+      "Built secure client systems with realtime APIs and performance tuning",
+      "💼",
+    ],
+    [
+      "2025",
+      "Joined 3Zero Digital, improved throughput 45%, and shipped Agentic RAG on MCP",
+      "🚀",
+    ],
+    [
+      "2026",
+      "Focused on scalable realtime systems, multi-tenant backends, and AI integration",
+      "🤖",
+    ],
+  ];
+
+  const education = [
+    {
+      title: "Master of Science (MSc) in Computer Science and Engineering",
+      school: "International Islamic University Chittagong, Chattogram, Bangladesh",
+      link: "https://www.iiuc.ac.bd/",
+      meta: "Expected Completion: 2026",
+    },
+    {
+      title: "Bachelor of Science (BSc) in Computer Science and Engineering",
+      school: "Port City International University, Chattogram, Bangladesh",
+      link: "https://www.portcity.edu.bd/",
+      meta: "Completion: 2023",
+    },
+    {
+      title: "Thesis",
+      school: "Gender Predictions of Bengali Names: An Ensemble and BERT-based Approach",
+      link: undefined,
+      meta: "Research focus: NLP and predictive modeling",
+    },
+  ];
 
   return (
-    <div className="min-h-screen lg:h-screen w-full text-white relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-      <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div className="min-h-screen w-full bg-[#2f3b4d] text-white overflow-hidden">
+      <div className="mx-auto max-w-[1600px] px-4 py-4 md:px-5 md:py-5 lg:px-6 lg:py-6">
+        <div className="space-y-4 lg:space-y-5">
+          {/* Hero row */}
+          <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+            <AnimatedWrapper
+              delay={400}
+              className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-7 lg:p-8"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]" />
+              <div className="relative flex h-full flex-col">
+                <NavLink to="/tech-stack" className="mb-5 inline-flex w-fit items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white shadow-lg backdrop-blur-sm animate-pulse hover:animate-none">
+                  <span className="inline-flex h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(34,197,94,0.18)] animate-ping" />
+                  Find out about my tech stack
+                </NavLink>
 
-      <div className="relative z-10 h-full">
-        {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 lg:grid-rows-6 lg:gap-6 lg:p-6 lg:h-screen">
-          {/* LEFT: About Me */}
-          <AnimatedWrapper
-            delay={500}
-            className="grid col-span-1 row-span-6 bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 hover:border-slate-400/50 transition-all duration-500 group"
-          >
-            <AnimatedWrapper delay={700} className="flex-shrink-0 p-8 pb-6">
-              <h1 className="text-5xl xl:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-500 to-purple-600 text-center lg:text-left tracking-wide group-hover:scale-105 transition-transform duration-300">
-                About Me
-              </h1>
-              <div className="w-20 h-1 bg-gradient-to-r from-sky-400 to-purple-600 rounded-full mt-4 mx-auto lg:mx-0"></div>
+                <div className="max-w-2xl">
+                  <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
+                    Full-Stack AI Engineer
+                  </p>
+                  <h1 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl">
+                    Building scalable systems with
+                    <span className="block font-extrabold text-white">
+                      backend, realtime, and AI depth.
+                    </span>
+                  </h1>
+
+                  <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 md:text-base md:leading-8">
+                    I design and build production-ready software with a focus on
+                    security, scalability, and maintainability. My work spans
+                    multi-tenant backends, realtime systems, AI workflows, and
+                    full-stack product delivery.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {[
+                    "TypeScript",
+                    "NestJS",
+                    "Next.js",
+                    "PostgreSQL",
+                    "WebRTC",
+                    "AWS",
+                    "LangGraph",
+                    "Docker",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[12px] md:text-sm text-slate-100 backdrop-blur-sm"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </AnimatedWrapper>
 
-            <div className="flex-1 overflow-y-auto px-8 pb-8 custom-scrollbar">
-              <div className="text-base xl:text-lg space-y-6 leading-relaxed text-gray-100">
-                <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                  <p className="flex items-start gap-3">
-                    <span className="text-2xl">👋</span>
-                    <span>
-                      Hi, I&apos;m{" "}
-                      <span className="font-semibold text-sky-300">
-                        Mujibul Haque Tanim
-                      </span>
-                      , a Full-Stack AI Engineer focused on building scalable,
-                      resilient, and production-ready systems. I care about
-                      architecture, security, and code that still makes sense
-                      after the hype dies down.
-                    </span>
-                  </p>
+            <AnimatedWrapper
+              delay={600}
+              className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-7 lg:p-8"
+            >
+              <div className="relative flex h-full flex-col justify-between">
+                <div>
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
+                        Focus Areas
+                      </p>
+                      <h2 className="mt-2 text-2xl font-semibold text-white md:text-3xl">
+                        What I care about most
+                      </h2>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
+                      🚀
+                    </div>
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-2">
+                    {[
+                      {
+                        title: "Backend Architecture",
+                        desc: "Secure APIs, modular design, and multi-tenant systems.",
+                      },
+                      {
+                        title: "Realtime Systems",
+                        desc: "WebRTC, Socket.io, Kafka, Redis, and streaming pipelines.",
+                      },
+                      {
+                        title: "AI Workflows",
+                        desc: "LangGraph, MCP servers, OpenAI SDK, and automation.",
+                      },
+                      {
+                        title: "Cloud Delivery",
+                        desc: "AWS, Docker, CI/CD, observability, and reliable deployment.",
+                      },
+                    ].map((item) => (
+                      <div
+                        key={item.title}
+                        className="rounded-[24px] border border-white/10 bg-black/15 p-4"
+                      >
+                        <h3 className="text-sm font-semibold text-white">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-6 text-slate-300">
+                          {item.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                  <p className="flex items-start gap-3">
-                    <span className="text-2xl">⚙️</span>
-                    <span>
-                      My core stack is{" "}
-                      <span className="font-semibold text-blue-400">
-                        TypeScript, Next.js, NestJS, Fastify, and GraphQL
-                      </span>
-                      , with a strong focus on secure APIs, clean modular design,
-                      and multi-tenant backend systems.
-                    </span>
-                  </p>
-                </div>
-
-                <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                  <p className="flex items-start gap-3">
-                    <span className="text-2xl">🚀</span>
-                    <span>
-                      I build with{" "}
-                      <span className="font-semibold text-green-400">
-                        PostgreSQL RLS, Drizzle ORM, Redis, Docker, AWS, Kafka,
-                        RabbitMQ, and NGINX
-                      </span>
-                      , usually when the problem needs scale, reliability, and
-                      a system that does not fold under load.
-                    </span>
-                  </p>
-                </div>
-
-                <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                  <p className="flex items-start gap-3">
-                    <span className="text-2xl">🤖</span>
-                    <span>
-                      I also work on AI workflows using{" "}
-                      <span className="font-semibold text-pink-400">
-                        LangGraph, MCP servers, OpenAI SDK, and n8n
-                      </span>
-                      , especially for Agentic RAG, automation, and smarter
-                      product flows.
-                    </span>
-                  </p>
-                </div>
-
-                <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                  <p className="flex items-start gap-3">
-                    <span className="text-2xl">📡</span>
-                    <span>
-                      My work also includes{" "}
-                      <span className="font-semibold text-yellow-400">
-                        WebRTC, Socket.io, HLS, and FFmpeg
-                      </span>
-                      , which I have used for realtime systems and video
-                      streaming pipelines.
-                    </span>
-                  </p>
-                </div>
-
-                <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                  <p className="flex items-start gap-3">
-                    <span className="text-2xl">🎓</span>
-                    <span>
-                      I&apos;m currently pursuing an{" "}
-                      <span className="font-semibold text-indigo-400">
-                        M.Sc. in Computer Science and Engineering
-                      </span>
-                      , and I keep sharpening my craft through real projects,
-                      architecture work, and continuous learning.
-                    </span>
+                <div className="mt-5 rounded-[24px] border border-white/10 bg-black/15 p-4">
+                  <p className="text-sm leading-7 text-slate-300">
+                    I care about software that stays understandable after it
+                    ships. Fancy structure is nice. Maintainable structure is
+                    nicer.
                   </p>
                 </div>
               </div>
-            </div>
-          </AnimatedWrapper>
+            </AnimatedWrapper>
+          </div>
 
-          {/* RIGHT SIDE */}
-          <AnimatedWrapper
-            delay={700}
-            className="grid col-span-1 row-span-6 h-full gap-6"
-          >
-            {/* EDUCATION */}
+          {/* Middle row */}
+          <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:h-[34rem]">
             <AnimatedWrapper
-              delay={1000}
-              className="flex-1 bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 hover:border-slate-400/50 transition-all duration-500 overflow-hidden group"
+              delay={800}
+              className="flex h-full min-h-0 flex-col overflow-hidden rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-6"
             >
-              <div className="h-full flex flex-col">
-                <AnimatedWrapper
-                  delay={1200}
-                  className="flex-shrink-0 p-8 pb-6"
-                >
-                  <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600 group-hover:scale-105 transition-transform duration-300">
-                    Education
+              <div className="flex-shrink-0 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
+                    About Me
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                    Who I am
                   </h2>
-                  <div className="w-16 h-1 bg-gradient-to-r from-indigo-400 to-purple-600 rounded-full mt-3"></div>
-                </AnimatedWrapper>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
+                  👋
+                </div>
+              </div>
 
-                <div className="flex-1 overflow-y-auto px-8 pb-8 custom-scrollbar">
-                  <div className="space-y-6">
-                    <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                      <h3 className="text-lg font-bold text-gray-100 mb-3">
-                        Master of Science (MSc) in Computer Science and
-                        Engineering
-                      </h3>
-                      <a
-                        href="https://www.iiuc.ac.bd/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-400 hover:text-blue-300 hover:underline text-sm block transition-colors duration-200"
-                      >
-                        International Islamic University Chittagong, Chattogram,
-                        Bangladesh
-                      </a>
-                      <p className="text-gray-400 text-sm mt-2 font-medium">
-                        Expected Completion: 2026
-                      </p>
-                    </div>
+              <div className="mt-4 flex-1 min-h-0 overflow-y-auto pr-1 custom-scrollbar">
+                <div className="space-y-3 text-sm leading-7 text-slate-200 md:text-base">
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    Hi, I&apos;m{" "}
+                    <span className="font-semibold text-sky-300">
+                      Mujibul Haque Tanim
+                    </span>
+                    , a Full-Stack AI Engineer focused on building scalable,
+                    resilient, and production-ready systems.
+                  </div>
 
-                    <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                      <h3 className="text-lg font-bold text-gray-100 mb-3">
-                        Bachelor of Science (BSc) in Computer Science and
-                        Engineering
-                      </h3>
-                      <a
-                        href="https://www.portcity.edu.bd/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-blue-400 hover:text-blue-300 hover:underline text-sm block transition-colors duration-200"
-                      >
-                        Port City International University, Chattogram,
-                        Bangladesh
-                      </a>
-                      <p className="text-gray-400 text-sm mt-2 font-medium">
-                        Completion: 2023
-                      </p>
-                    </div>
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    My core stack is{" "}
+                    <span className="font-semibold text-blue-300">
+                      TypeScript, Next.js, NestJS, Fastify, and GraphQL
+                    </span>
+                    , with a strong focus on secure APIs, clean modular design,
+                    and multi-tenant backend systems.
+                  </div>
 
-                    <div className="p-6 bg-slate-800/30 rounded-2xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                      <h3 className="text-lg font-bold text-gray-100 mb-3">
-                        Thesis
-                      </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        Gender Predictions of Bengali Names: An Ensemble and
-                        BERT-based Approach
-                      </p>
-                    </div>
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    I build with{" "}
+                    <span className="font-semibold text-emerald-300">
+                      PostgreSQL RLS, Drizzle ORM, Redis, Docker, AWS, Kafka,
+                      RabbitMQ, and NGINX
+                    </span>
+                    , usually when the problem needs scale, reliability, and a
+                    system that does not fold under load.
+                  </div>
+
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    I also work on AI workflows using{" "}
+                    <span className="font-semibold text-pink-300">
+                      LangGraph, MCP servers, OpenAI SDK, and n8n
+                    </span>
+                    , especially for Agentic RAG, automation, and smarter
+                    product flows.
+                  </div>
+
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    My work also includes{" "}
+                    <span className="font-semibold text-yellow-300">
+                      WebRTC, Socket.io, HLS, and FFmpeg
+                    </span>
+                    , which I have used for realtime systems and video streaming
+                    pipelines.
+                  </div>
+
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    I&apos;m currently pursuing an{" "}
+                    <span className="font-semibold text-indigo-300">
+                      M.Sc. in Computer Science and Engineering
+                    </span>
+                    , and I keep sharpening my craft through real projects,
+                    architecture work, and continuous learning.
                   </div>
                 </div>
               </div>
             </AnimatedWrapper>
 
-            {/* TIMELINE */}
             <AnimatedWrapper
-              delay={1500}
-              className="flex-1 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 hover:border-slate-400/50 transition-all duration-500 overflow-hidden group"
+              delay={1000}
+              className="flex h-full min-h-0 flex-col overflow-hidden rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-6"
             >
-              <div className="h-full flex flex-col">
-                <AnimatedWrapper
-                  delay={1700}
-                  className="flex-shrink-0 p-8 pb-6"
-                >
-                  <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-600 group-hover:scale-105 transition-transform duration-300">
-                    Career Timeline
+              <div className="flex-shrink-0 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
+                    Education
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                    Academic background
                   </h2>
-                  <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-cyan-600 rounded-full mt-3"></div>
-                </AnimatedWrapper>
-
-                <div className="flex-1 overflow-y-auto px-8 pb-8 custom-scrollbar">
-                  <AnimatedWrapper delay={2000} className="relative">
-                    <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 via-blue-500 to-purple-600"></div>
-                    <div className="space-y-6">
-                      {[
-                        [
-                          "2023",
-                          "Graduated BSc and started freelance full-stack work",
-                          "🎓",
-                        ],
-                        [
-                          "2024",
-                          "Built secure client systems with realtime APIs and performance tuning",
-                          "💼",
-                        ],
-                        [
-                          "2025",
-                          "Joined 3Zero Digital, improved throughput 45%, and shipped Agentic RAG on MCP",
-                          "🚀",
-                        ],
-                        [
-                          "2026",
-                          "Focused on scalable realtime systems, multi-tenant backends, and AI integration",
-                          "🤖",
-                        ],
-                      ].map(([year, desc, icon]) => (
-                        <div key={year} className="relative pl-14">
-                          <div className="absolute left-4 w-4 h-4 bg-gradient-to-r from-sky-400 to-purple-600 rounded-full shadow-lg border-2 border-slate-800"></div>
-                          <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20 hover:border-slate-500/30 transition-all duration-300 hover:shadow-lg backdrop-blur-sm">
-                            <div className="flex items-center gap-3 mb-2">
-                              <span className="text-lg">{icon}</span>
-                              <span className="text-sky-300 font-bold text-lg">
-                                {year}
-                              </span>
-                            </div>
-                            <p className="text-gray-200 text-sm leading-relaxed">
-                              {desc}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </AnimatedWrapper>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
+                  🎓
                 </div>
               </div>
-            </AnimatedWrapper>
-          </AnimatedWrapper>
-        </div>
 
-        {/* Mobile Layout */}
-        <div className="lg:hidden min-h-screen">
-          <div className="p-4 space-y-6">
-            {/* About Me Section */}
-            <div className="bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 p-6">
-              <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-500 to-purple-600 text-center tracking-wide mb-4">
-                About Me
-              </h1>
-              <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-purple-600 rounded-full mx-auto mb-6"></div>
-
-              <div className="space-y-4 text-gray-100 text-justify leading-relaxed">
-                <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                  <p className="flex items-start gap-3">
-                    <span className="text-xl">👋</span>
-                    <span>
-                      Hi, I&apos;m{" "}
-                      <span className="font-semibold text-sky-300">
-                        Mujibul Haque Tanim
-                      </span>
-                      , a Full-Stack AI Engineer focused on scalable,
-                      production-ready systems.
-                    </span>
-                  </p>
-                </div>
-
-                <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                  <p className="flex items-start gap-3">
-                    <span className="text-xl">⚙️</span>
-                    <span>
-                      I build with{" "}
-                      <span className="font-semibold text-blue-400">
-                        TypeScript, Next.js, NestJS, Fastify, and GraphQL
-                      </span>
-                      , with a strong focus on secure APIs and clean backend
-                      architecture.
-                    </span>
-                  </p>
-                </div>
-
-                {!show && (
-                  <button
-                    onClick={() => setShow(true)}
-                    className="w-full mt-4 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-500 hover:to-slate-600 border border-slate-500 px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                  >
-                    Read More...
-                  </button>
-                )}
-
-                {show && (
-                  <>
-                    <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                      <p className="flex items-start gap-3">
-                        <span className="text-xl">🚀</span>
-                        <span>
-                          I work with{" "}
-                          <span className="font-semibold text-green-400">
-                            PostgreSQL RLS, Redis, Docker, AWS, Kafka, RabbitMQ,
-                            and NGINX
-                          </span>{" "}
-                          to build scalable and reliable systems.
-                        </span>
-                      </p>
-                    </div>
-
-                    <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                      <p className="flex items-start gap-3">
-                        <span className="text-xl">🤖</span>
-                        <span>
-                          I also integrate{" "}
-                          <span className="font-semibold text-pink-400">
-                            LangGraph, MCP servers, OpenAI SDK, and n8n
-                          </span>{" "}
-                          for AI workflows and automation.
-                        </span>
-                      </p>
-                    </div>
-
-                    <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                      <p className="flex items-start gap-3">
-                        <span className="text-xl">🎓</span>
-                        <span>
-                          I&apos;m currently pursuing an{" "}
-                          <span className="font-semibold text-yellow-400">
-                            M.Sc. in Computer Science and Engineering
-                          </span>
-                          , while continuing to build real-world systems and
-                          improve my architecture skills.
-                        </span>
-                      </p>
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-
-            {/* Education Section */}
-            <div className="bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 p-6">
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600 text-center mb-4">
-                Education
-              </h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-indigo-400 to-purple-600 rounded-full mx-auto mb-6"></div>
-
-              <div className="space-y-4">
-                <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                  <h3 className="text-lg font-bold text-gray-100 mb-3">
-                    Master of Science (MSc) in Computer Science and Engineering
-                  </h3>
-                  <a
-                    href="https://www.iiuc.ac.bd/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-blue-400 hover:text-blue-300 hover:underline text-sm block transition-colors duration-200"
-                  >
-                    International Islamic University Chittagong, Chattogram,
-                    Bangladesh
-                  </a>
-                  <p className="text-gray-400 text-sm mt-2 font-medium">
-                    Expected Completion: 2026
-                  </p>
-                </div>
-
-                <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                  <h3 className="text-lg font-bold text-gray-100 mb-3">
-                    Bachelor of Science (BSc) in Computer Science and
-                    Engineering
-                  </h3>
-                  <a
-                    href="https://www.portcity.edu.bd/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-blue-400 hover:text-blue-300 hover:underline text-sm block transition-colors duration-200"
-                  >
-                    Port City International University, Chattogram, Bangladesh
-                  </a>
-                  <p className="text-gray-400 text-sm mt-2 font-medium">
-                    Completion: 2023
-                  </p>
-                </div>
-
-                <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                  <h3 className="text-lg font-bold text-gray-100 mb-3">
-                    Thesis
-                  </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Gender Predictions of Bengali Names: An Ensemble and
-                    BERT-based Approach
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Timeline Section */}
-            <div className="bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-500/30 p-6">
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-600 text-center mb-4">
-                Career Timeline
-              </h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-cyan-600 rounded-full mx-auto mb-6"></div>
-
-              <div className="relative">
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-sky-400 via-blue-500 to-purple-600"></div>
-                <div className="space-y-4">
-                  {[
-                    [
-                      "2023",
-                      "Graduated BSc and started freelance full-stack work",
-                      "🎓",
-                    ],
-                    [
-                      "2024",
-                      "Built secure client systems with realtime APIs and performance tuning",
-                      "💼",
-                    ],
-                    [
-                      "2025",
-                      "Joined 3Zero Digital, improved throughput 45%, and shipped Agentic RAG on MCP",
-                      "🚀",
-                    ],
-                    [
-                      "2026",
-                      "Focused on scalable realtime systems, multi-tenant backends, and AI integration",
-                      "🤖",
-                    ],
-                  ].map(([year, desc, icon]) => (
-                    <div key={year} className="relative pl-14">
-                      <div className="absolute left-4 w-4 h-4 bg-gradient-to-r from-sky-400 to-purple-600 rounded-full shadow-lg border-2 border-slate-800"></div>
-                      <div className="p-4 bg-slate-800/30 rounded-xl border border-slate-600/20">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-lg">{icon}</span>
-                          <span className="text-sky-300 font-bold text-lg">
-                            {year}
-                          </span>
-                        </div>
-                        <p className="text-gray-200 text-sm leading-relaxed">
-                          {desc}
+              <div className="mt-4 flex-1 min-h-0 overflow-y-auto pr-1 custom-scrollbar">
+                <div className="space-y-3">
+                  {education.map((item) => (
+                    <div
+                      key={item.title}
+                      className="rounded-[24px] border border-white/10 bg-black/15 p-4"
+                    >
+                      <h3 className="text-base font-semibold text-white">
+                        {item.title}
+                      </h3>
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-2 block text-sm text-sky-300 hover:text-sky-200 hover:underline"
+                        >
+                          {item.school}
+                        </a>
+                      ) : (
+                        <p className="mt-2 text-sm text-slate-300">
+                          {item.school}
                         </p>
-                      </div>
+                      )}
+                      <p className="mt-2 text-sm text-slate-400">{item.meta}</p>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
+            </AnimatedWrapper>
+          </div>
+
+          {/* Bottom row */}
+          <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+            <AnimatedWrapper
+              delay={1200}
+              className="rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-6"
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
+                    Career Timeline
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                    Milestones
+                  </h2>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
+                  ⏳
+                </div>
+              </div>
+
+              <div className="mt-4 grid gap-3 md:grid-cols-2">
+                {timeline.map(([year, desc, icon]) => (
+                  <div
+                    key={year}
+                    className="rounded-[24px] border border-white/10 bg-black/15 p-4"
+                  >
+                    <div className="mb-2 flex items-center gap-3">
+                      <span className="text-lg">{icon}</span>
+                      <span className="text-lg font-bold text-sky-300">
+                        {year}
+                      </span>
+                    </div>
+                    <p className="text-sm leading-7 text-slate-300">{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </AnimatedWrapper>
+
+            <AnimatedWrapper
+              delay={1400}
+              className="rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-6"
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
+                    Currently
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                    Where I&apos;m heading
+                  </h2>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
+                  ✨
+                </div>
+              </div>
+
+              <div className="mt-4 space-y-3">
+                <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                  <p className="text-sm leading-7 text-slate-300">
+                    I&apos;m focused on building systems that combine product
+                    quality, backend reliability, and AI capability without
+                    turning the codebase into a haunted house.
+                  </p>
+                </div>
+
+                <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                  <p className="text-sm leading-7 text-slate-300">
+                    My current interests sit around scalable architecture,
+                    realtime products, multi-tenant SaaS, and intelligent
+                    workflow automation.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {["Backend-first", "Realtime-ready", "AI-integrated", "Cloud-native"].map(
+                    (item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-sm text-slate-100"
+                      >
+                        {item}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+            </AnimatedWrapper>
           </div>
         </div>
       </div>

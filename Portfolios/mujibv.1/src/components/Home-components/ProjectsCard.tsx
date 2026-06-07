@@ -1,9 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
-import { EffectCoverflow, Autoplay } from "swiper/modules";
+
 import { useState } from "react";
+
 import VanillaAmazon from "/VanillaAmazon.png";
 import YumDispatch from "/YumDispatch.png";
 import rawStripePayment from "/rawStripePayment.png";
@@ -15,8 +18,9 @@ import aatbazar from "/aatbazar.png";
 import shopmart from "/shopmart.png";
 import pharma from "/pharma.png";
 
-export default function ProjectsCard() {
+export default function ProjectsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+
   const images = [
     VanillaAmazon,
     instafeed,
@@ -33,12 +37,12 @@ export default function ProjectsCard() {
   return (
     <div className="flex items-center justify-center p-4 h-full w-full">
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
+        effect="coverflow"
+        grabCursor
+        centeredSlides
+        loop
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        slidesPerView={4} // Default slides per view
+        slidesPerView={4}
         spaceBetween={30}
         coverflowEffect={{
           rotate: 0,
@@ -76,6 +80,7 @@ export default function ProjectsCard() {
                 src={src}
                 alt={`Slide ${index + 1}`}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>

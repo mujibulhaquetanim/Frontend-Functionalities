@@ -14,6 +14,7 @@ import Updates from "./components/Updates.tsx";
 import { HelmetProvider } from "react-helmet-async";
 import UpcomingProjectPage from "./components/Projects/Upcoming-project.tsx";
 import NotFound from "./components/not-found.tsx";
+import TechStacksPage from "./components/nav-components/TechPage.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -33,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="work-updates" element={<Updates />} />
             <Route path="about" element={<AboutMe />} />
             <Route path="coming-soon" element={<UpcomingProjectPage />} />
+            <Route path="tech-stack" element={<TechStacksPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
