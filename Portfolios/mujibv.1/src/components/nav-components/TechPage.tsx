@@ -34,14 +34,14 @@ const pillarCards = [
     icon: Server,
     title: "Backend Engineering",
     short: "APIs, services, and system design",
-    items: ["TypeScript", "NestJS", "Fastify", "GraphQL", "JWT", "Zod"],
+    items: ["TypeScript", "NestJS", "Fastify", "GraphQL", "JWT", "Zod", "Microservices"],
     accent: "from-sky-400 to-blue-500",
   },
   {
     icon: Workflow,
     title: "Realtime & Streaming",
     short: "Low-latency communication and media",
-    items: ["WebRTC", "Socket.io", "Kafka", "Redis", "FFmpeg", "HLS"],
+    items: ["WebRTC", "Socket.io", "RabbitMQ", "Kafka", "Redis", "FFmpeg", "HLS"],
     accent: "from-cyan-400 to-indigo-500",
   },
   {
@@ -102,6 +102,7 @@ const featured = [
   "Redis",
   "AWS",
   "WebRTC",
+  "Docker",
   "LangGraph",
 ];
 
@@ -184,7 +185,7 @@ export default function TechStacksPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#2f3b4d] text-white">
+    <main className="min-h-screen text-white">
       <section className="mx-auto max-w-[1600px] px-4 py-4 md:px-5 md:py-5 lg:px-6 lg:py-6">
         <div className="space-y-4 lg:space-y-5">
           <div className="grid gap-4 lg:grid-cols-[1.15fr_1fr]">
