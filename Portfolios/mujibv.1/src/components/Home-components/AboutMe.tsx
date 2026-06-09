@@ -3,11 +3,7 @@ import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 
 export default function AboutMe() {
   const timeline = [
-    [
-      "2023",
-      "Graduated BSc and started freelance full-stack work",
-      "🎓",
-    ],
+    ["2023", "Graduated BSc and started freelance full-stack work", "🎓"],
     [
       "2024",
       "Built secure client systems with realtime APIs and performance tuning",
@@ -28,7 +24,8 @@ export default function AboutMe() {
   const education = [
     {
       title: "Master of Science (MSc) in Computer Science and Engineering",
-      school: "International Islamic University Chittagong, Chattogram, Bangladesh",
+      school:
+        "International Islamic University Chittagong, Chattogram, Bangladesh",
       link: "https://www.iiuc.ac.bd/",
       meta: "Expected Completion: 2026",
     },
@@ -40,66 +37,165 @@ export default function AboutMe() {
     },
     {
       title: "Thesis",
-      school: "Gender Predictions of Bengali Names: An Ensemble and BERT-based Approach",
+      school:
+        "Gender Predictions of Bengali Names: An Ensemble and BERT-based Approach",
       link: undefined,
       meta: "Research focus: NLP and predictive modeling",
     },
   ];
 
+  const focusAreas = [
+    {
+      title: "Backend Architecture",
+      desc: "Secure APIs, modular design, and multi-tenant systems that remain maintainable under real product pressure.",
+    },
+    {
+      title: "Realtime Systems",
+      desc: "WebRTC, Socket.io, Kafka, Redis, and streaming pipelines for low-latency communication and delivery.",
+    },
+    {
+      title: "AI Workflows",
+      desc: "LangGraph, MCP servers, OpenAI SDK, and n8n for Agentic RAG, automation, and smarter product flows.",
+    },
+    {
+      title: "Cloud Delivery",
+      desc: "AWS, Docker, CI/CD, observability, and stable deployment patterns for production environments.",
+    },
+  ];
+
+  const stats = [
+    { value: "3+",  label: "Years building"     },
+    { value: "10+", label: "Projects shipped"   },
+    { value: "TS",  label: "Primary language"   },
+    { value: "MSc", label: "Currently pursuing" },
+  ];
+
+  const principles = [
+    { icon: "⚙️", text: "Domain-first design"  },
+    { icon: "🔒", text: "Security by default"  },
+    { icon: "📦", text: "Ship, then iterate"   },
+  ];
+
   return (
-    <div className="min-h-screen w-full bg-[#2f3b4d] text-white overflow-hidden">
+    <div className="min-h-screen w-full overflow-hidden text-white">
       <div className="mx-auto max-w-[1600px] px-4 py-4 md:px-5 md:py-5 lg:px-6 lg:py-6">
         <div className="space-y-4 lg:space-y-5">
+
           {/* Hero row */}
-          <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
             <AnimatedWrapper
               delay={400}
               className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-7 lg:p-8"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]" />
-              <div className="relative flex h-full flex-col">
-                <NavLink to="/tech-stack" className="mb-5 inline-flex w-fit items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white shadow-lg backdrop-blur-sm animate-pulse hover:animate-none">
-                  <span className="inline-flex h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(34,197,94,0.18)] animate-ping" />
-                  Find out about my tech stack
-                </NavLink>
+              <div className="relative flex h-full gap-5">
+                <div className="hidden sm:flex w-1 flex-shrink-0 rounded-full bg-gradient-to-b from-sky-400 via-blue-500 to-purple-600" />
 
-                <div className="max-w-2xl">
-                  <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
-                    Full-Stack AI Engineer
-                  </p>
-                  <h1 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl">
-                    Building scalable systems with
-                    <span className="block font-extrabold text-white">
-                      backend, realtime, and AI depth.
+                <div className="flex min-w-0 flex-1 flex-col">
+                  <div className="mb-5 flex flex-wrap items-center gap-3">
+                    <span className="inline-flex w-fit items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white shadow-lg backdrop-blur-sm">
+                      <span className="inline-flex h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(34,197,94,0.18)]" />
+                      Available for hire
                     </span>
-                  </h1>
 
-                  <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-200 md:text-base md:leading-8">
-                    I design and build production-ready software with a focus on
-                    security, scalability, and maintainability. My work spans
-                    multi-tenant backends, realtime systems, AI workflows, and
-                    full-stack product delivery.
-                  </p>
-                </div>
-
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {[
-                    "TypeScript",
-                    "NestJS",
-                    "Next.js",
-                    "PostgreSQL",
-                    "WebRTC",
-                    "AWS",
-                    "LangGraph",
-                    "Docker",
-                  ].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[12px] md:text-sm text-slate-100 backdrop-blur-sm"
-                    >
-                      {item}
+                    <span className="inline-flex w-fit items-center rounded-2xl border border-white/10 bg-black/15 px-4 py-2 text-sm text-slate-200">
+                      Full-Stack AI Engineer
                     </span>
-                  ))}
+                  </div>
+
+                  <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+                    <div className="flex flex-col items-start gap-4">
+                      <div className="flex h-28 w-28 rounded-full items-center justify-center border border-white/10 bg-black/15 shadow-xl">
+                        <img
+                          src="https://avatars.githubusercontent.com/u/70325279?v=4"
+                          alt="MT"
+                          className="h-24 w-24 rounded-full object-cover"
+                        />
+                      </div>
+
+                      <div className="text-pretty">
+                        <p className="text-xs font-medium tracking-[0.22em] text-slate-300 uppercase">
+                          Mujibul Haque Tanim
+                        </p>
+                        <h1 className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl md:pl-2">
+                          Building systems that are
+                          <span className="block font-extrabold text-white">
+                            scalable, realtime, and AI-ready.
+                          </span>
+                        </h1>
+                      </div>
+                    </div>
+
+                    <div className="space-y-8 justify-end text-justify rounded-[24px] border border-white/10 bg-black/15 p-4">
+                      <p className="max-w-2xl text-sm leading-7 text-slate-200 md:text-base md:leading-8">
+                        I design and build production-ready software with a
+                        focus on security, scalability, and maintainability. My
+                        work spans multi-tenant backends, realtime systems, AI
+                        workflows, and full-stack product delivery.
+                      </p>
+
+                      <div className="grid gap-3 sm:grid-cols-3">
+                        {[
+                          {
+                            label: "Primary stack",
+                            value: "TypeScript",
+                            note: "Backend + full-stack",
+                          },
+                          {
+                            label: "Specialty",
+                            value: "Realtime",
+                            note: "WebRTC, Socket.io, Redis, Kafka",
+                          },
+                          {
+                            label: "AI focus",
+                            value: "Agentic flows",
+                            note: "LangGraph, MCP, A2A, n8n",
+                          },
+                        ].map((item) => (
+                          <div
+                            key={item.label}
+                            className="rounded-[22px] border text-justify border-white/10 bg-black/15 p-4"
+                          >
+                            <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
+                              {item.label}
+                            </p>
+                            <p className="mt-2 text-lg font-semibold text-white">
+                              {item.value}
+                            </p>
+                            <p className="mt-1 text-sm text-slate-300">
+                              {item.note}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                      <NavLink
+                        to="/tech-stack"
+                        className="mt-4 text-sm font-medium text-sky-300 hover:text-sky-200 hover:underline"
+                      >
+                        Explore my tech stack &rarr;
+                      </NavLink>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {[
+                      "TypeScript",
+                      "NestJS",
+                      "Next.js",
+                      "PostgreSQL",
+                      "WebRTC",
+                      "AWS",
+                      "LangGraph",
+                      "Docker",
+                    ].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[12px] md:text-sm text-slate-100 backdrop-blur-sm"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </AnimatedWrapper>
@@ -108,9 +204,11 @@ export default function AboutMe() {
               delay={600}
               className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-7 lg:p-8"
             >
-              <div className="relative flex h-full flex-col justify-between">
-                <div>
-                  <div className="mb-4 flex items-center justify-between gap-4">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.08),transparent_40%)]" />
+
+              <div className="relative flex h-full flex-col justify-between gap-5">
+                <div className="space-y-5">
+                  <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
                         Focus Areas
@@ -119,38 +217,27 @@ export default function AboutMe() {
                         What I care about most
                       </h2>
                     </div>
-                    <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
+
+                    <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg shadow-lg">
                       🚀
                     </div>
                   </div>
 
-                  <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-2">
-                    {[
-                      {
-                        title: "Backend Architecture",
-                        desc: "Secure APIs, modular design, and multi-tenant systems.",
-                      },
-                      {
-                        title: "Realtime Systems",
-                        desc: "WebRTC, Socket.io, Kafka, Redis, and streaming pipelines.",
-                      },
-                      {
-                        title: "AI Workflows",
-                        desc: "LangGraph, MCP servers, OpenAI SDK, and automation.",
-                      },
-                      {
-                        title: "Cloud Delivery",
-                        desc: "AWS, Docker, CI/CD, observability, and reliable deployment.",
-                      },
-                    ].map((item) => (
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {focusAreas.map((item, index) => (
                       <div
                         key={item.title}
-                        className="rounded-[24px] border border-white/10 bg-black/15 p-4"
+                        className="group rounded-[24px] border border-white/10 bg-black/15 p-4 transition-all duration-300 hover:border-white/20 hover:bg-black/20"
                       >
-                        <h3 className="text-sm font-semibold text-white">
-                          {item.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-slate-300">
+                        <div className="mb-3 flex items-center gap-3">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-slate-200">
+                            0{index + 1}
+                          </div>
+                          <h3 className="text-sm font-semibold text-white">
+                            {item.title}
+                          </h3>
+                        </div>
+                        <p className="text-sm leading-6 text-slate-300">
                           {item.desc}
                         </p>
                       </div>
@@ -158,7 +245,53 @@ export default function AboutMe() {
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-[24px] border border-white/10 bg-black/15 p-4">
+                {/* ── Replaced snapshot placeholders ── */}
+                <div className="grid gap-3 md:grid-cols-[1.1fr_0.9fr]">
+                  {/* By the numbers */}
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    <p className="mb-3 text-xs uppercase tracking-[0.22em] text-slate-400">
+                      By the numbers
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {stats.map((stat) => (
+                        <div
+                          key={stat.label}
+                          className="rounded-[16px] border border-white/[0.08] bg-white/[0.04] p-3"
+                        >
+                          <p className="text-lg font-bold text-sky-300">
+                            {stat.value}
+                          </p>
+                          <p className="mt-0.5 text-xs text-slate-400">
+                            {stat.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* How I work */}
+                  <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    <p className="mb-3 text-xs uppercase tracking-[0.22em] text-slate-400">
+                      How I work
+                    </p>
+                    <div className="space-y-2">
+                      {principles.map((item) => (
+                        <div
+                          key={item.text}
+                          className="flex items-center gap-3 rounded-[14px] border border-white/[0.08] bg-white/[0.04] px-3 py-2.5"
+                        >
+                          <span className="text-base leading-none">
+                            {item.icon}
+                          </span>
+                          <p className="text-sm text-slate-200">{item.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* ── End replacement ── */}
+
+                <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
                   <p className="text-sm leading-7 text-slate-300">
                     I care about software that stays understandable after it
                     ships. Fancy structure is nice. Maintainable structure is
@@ -373,20 +506,24 @@ export default function AboutMe() {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {["Backend-first", "Realtime-ready", "AI-integrated", "Cloud-native"].map(
-                    (item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-sm text-slate-100"
-                      >
-                        {item}
-                      </span>
-                    ),
-                  )}
+                  {[
+                    "Backend-first",
+                    "Realtime-ready",
+                    "AI-integrated",
+                    "Cloud-native",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-sm text-slate-100"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             </AnimatedWrapper>
           </div>
+
         </div>
       </div>
     </div>
