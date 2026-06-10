@@ -1,13 +1,13 @@
 import { NavLink } from "react-router";
-import { FaHome, FaFolder, FaRss } from "react-icons/fa";
-import { MdOutlineDashboard } from "react-icons/md";
+import { FaHome, FaFolder, FaTasks } from "react-icons/fa";
+import {  MdSupervisedUserCircle } from "react-icons/md";
 
 export default function NavBar() {
   const routes = [
     { to: "/", icon: FaHome, name: "Home" },
     { to: "/projects", icon: FaFolder, name: "Projects" },
-    { to: "/blogs", icon: FaRss, name: "Blogs" },
-    { to: "/work-updates", icon: MdOutlineDashboard, name: "Updates" },
+    { to: "/tech-stack", icon: FaTasks, name: "Stack" },
+    { to: "/about", icon: MdSupervisedUserCircle, name: "About" },
   ];
 
   return (
