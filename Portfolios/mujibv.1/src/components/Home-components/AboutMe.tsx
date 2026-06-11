@@ -1,86 +1,18 @@
 import { NavLink } from "react-router";
 import AnimatedWrapper from "../wrapper/AnimatedWrapper";
+import {
+  focusAreas,
+  education,
+  principles,
+  stats,
+  timeline,
+} from "../../assets/aboutMeData";
 
 export default function AboutMe() {
-  const timeline = [
-    ["2023", "Graduated BSc and started freelance full-stack work", "🎓"],
-    [
-      "2024",
-      "Built secure client systems with realtime APIs and performance tuning",
-      "💼",
-    ],
-    [
-      "2025",
-      "Joined 3Zero Digital, improved throughput 45%, and shipped Agentic RAG on MCP",
-      "🚀",
-    ],
-    [
-      "2026",
-      "Focused on scalable realtime systems, multi-tenant backends, and AI integration",
-      "🤖",
-    ],
-  ];
-
-  const education = [
-    {
-      title: "Master of Science (MSc) in Computer Science and Engineering",
-      school:
-        "International Islamic University Chittagong, Chattogram, Bangladesh",
-      link: "https://www.iiuc.ac.bd/",
-      meta: "Expected Completion: 2026",
-    },
-    {
-      title: "Bachelor of Science (BSc) in Computer Science and Engineering",
-      school: "Port City International University, Chattogram, Bangladesh",
-      link: "https://www.portcity.edu.bd/",
-      meta: "Completion: 2023",
-    },
-    {
-      title: "Thesis",
-      school:
-        "Gender Predictions of Bengali Names: An Ensemble and BERT-based Approach",
-      link: undefined,
-      meta: "Research focus: NLP and predictive modeling",
-    },
-  ];
-
-  const focusAreas = [
-    {
-      title: "Backend Architecture",
-      desc: "Secure APIs, modular design, and multi-tenant systems that remain maintainable under real product pressure.",
-    },
-    {
-      title: "Realtime Systems",
-      desc: "WebRTC, Socket.io, Kafka, Redis, and streaming pipelines for low-latency communication and delivery.",
-    },
-    {
-      title: "AI Workflows",
-      desc: "LangGraph, MCP servers, OpenAI SDK, and n8n for Agentic RAG, automation, and smarter product flows.",
-    },
-    {
-      title: "Cloud Delivery",
-      desc: "AWS, Docker, CI/CD, observability, and stable deployment patterns for production environments.",
-    },
-  ];
-
-  const stats = [
-    { value: "3+",  label: "Years building"     },
-    { value: "10+", label: "Projects shipped"   },
-    { value: "TS",  label: "Primary language"   },
-    { value: "MSc", label: "Currently pursuing" },
-  ];
-
-  const principles = [
-    { icon: "⚙️", text: "Domain-first design"  },
-    { icon: "🔒", text: "Security by default"  },
-    { icon: "📦", text: "Ship, then iterate"   },
-  ];
-
   return (
     <div className="min-h-screen w-full overflow-hidden text-white">
       <div className="mx-auto max-w-[1600px] px-4 py-4 md:px-5 md:py-5 lg:px-6 lg:py-6">
         <div className="space-y-4 lg:space-y-5">
-
           {/* Hero row */}
           <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
             <AnimatedWrapper
@@ -105,13 +37,22 @@ export default function AboutMe() {
 
                   <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
                     <div className="flex flex-col items-start gap-4">
-                      <div className="flex h-28 w-28 rounded-full items-center justify-center border border-white/10 bg-black/15 shadow-xl">
-                        <img
-                          src="https://avatars.githubusercontent.com/u/70325279?v=4"
-                          alt="MT"
-                          className="h-24 w-24 rounded-full object-cover"
-                        />
-                      </div>
+                      <AnimatedWrapper
+                        delay={500}
+                        className="rounded-[24px] border border-white/10 bg-black/15 p-4"
+                      >
+                        <AnimatedWrapper delay={600} className="text-4xl">
+                          <div className="flex h-28 w-28 rounded-full items-center justify-center border border-white/10 bg-black/15 shadow-xl">
+                            <AnimatedWrapper delay={700} className="text-4xl">
+                              <img
+                                src="https://avatars.githubusercontent.com/u/70325279?v=4"
+                                alt="MT"
+                                className="h-24 w-24 rounded-full object-cover"
+                              />
+                            </AnimatedWrapper>
+                          </div>
+                        </AnimatedWrapper>
+                      </AnimatedWrapper>
 
                       <div className="text-pretty">
                         <p className="text-xs font-medium tracking-[0.22em] text-slate-300 uppercase">
@@ -523,7 +464,6 @@ export default function AboutMe() {
               </div>
             </AnimatedWrapper>
           </div>
-
         </div>
       </div>
     </div>
