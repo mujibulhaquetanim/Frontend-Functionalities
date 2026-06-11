@@ -13,7 +13,7 @@ import rawStripePayment from "/rawStripePayment.png";
 import ComponentTesting from "/ComponentTesting.png";
 import CliProjectGo from "/CliProjectGo.png";
 import instafeed from "/instafeed.gif";
-import reelclone from "/reelclone.gif";
+import tinderClone from "/tinderClone.gif";
 import aatbazar from "/aatbazar.png";
 import shopmart from "/shopmart.png";
 import pharma from "/pharma.png";
@@ -24,7 +24,7 @@ export default function ProjectsCarousel() {
   const images = [
     VanillaAmazon,
     instafeed,
-    reelclone,
+    tinderClone,
     shopmart,
     aatbazar,
     CliProjectGo,
