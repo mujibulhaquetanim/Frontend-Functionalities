@@ -1,5 +1,5 @@
 import Marquee from "../Home-components/Marquee/Marquee";
-import techStacks from "./Marquee/techStackData";
+import techStacks from "../../assets/techStackData";
 
 const TechStacks = () => {
   return (
