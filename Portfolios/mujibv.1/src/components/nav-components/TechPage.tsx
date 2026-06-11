@@ -18,7 +18,7 @@ import {
   Sparkles,
   Workflow,
 } from "lucide-react";
-import techStacks from "../Home-components/Marquee/techStackData.ts";
+import techStacks from "../../assets/techStackData.ts";
 import { NavLink } from "react-router";
 
 type TechStack = {
@@ -34,14 +34,30 @@ const pillarCards = [
     icon: Server,
     title: "Backend Engineering",
     short: "APIs, services, and system design",
-    items: ["TypeScript", "NestJS", "Fastify", "GraphQL", "JWT", "Zod", "Microservices"],
+    items: [
+      "TypeScript",
+      "NestJS",
+      "Fastify",
+      "GraphQL",
+      "JWT",
+      "Zod",
+      "Microservices",
+    ],
     accent: "from-sky-400 to-blue-500",
   },
   {
     icon: Workflow,
     title: "Realtime & Streaming",
     short: "Low-latency communication and media",
-    items: ["WebRTC", "Socket.io", "RabbitMQ", "Kafka", "Redis", "FFmpeg", "HLS"],
+    items: [
+      "WebRTC",
+      "Socket.io",
+      "RabbitMQ",
+      "Kafka",
+      "Redis",
+      "FFmpeg",
+      "HLS",
+    ],
     accent: "from-cyan-400 to-indigo-500",
   },
   {
@@ -69,7 +85,14 @@ const pillarCards = [
     icon: Globe,
     title: "Frontend & Product UI",
     short: "Responsive interfaces that ship well",
-    items: ["Next.js", "React", "React Query", "Redux", "Tailwind", "shadcn/ui"],
+    items: [
+      "Next.js",
+      "React",
+      "React Query",
+      "Redux",
+      "Tailwind",
+      "shadcn/ui",
+    ],
     accent: "from-amber-400 to-yellow-500",
   },
   {
@@ -83,14 +106,27 @@ const pillarCards = [
     icon: Code2,
     title: "Engineering Principles",
     short: "Clean architecture and maintainability",
-    items: ["SOLID", "KISS", "Modular design", "Observability", "Testing", "Linux"],
+    items: [
+      "SOLID",
+      "KISS",
+      "Modular design",
+      "Observability",
+      "Testing",
+      "Linux",
+    ],
     accent: "from-slate-300 to-slate-500",
   },
 ];
 
 const spotlight = [
-  { label: "Primary stack", value: "TypeScript • NestJS • PostgreSQL • Next.js" },
-  { label: "Specialty", value: "Realtime systems • Multi-tenant SaaS • AI workflows" },
+  {
+    label: "Primary stack",
+    value: "TypeScript • NestJS • PostgreSQL • Next.js",
+  },
+  {
+    label: "Specialty",
+    value: "Realtime systems • Multi-tenant SaaS • AI workflows",
+  },
   { label: "Delivery", value: "Docker • AWS • CI/CD • Observability" },
 ];
 
@@ -118,7 +154,9 @@ function StatTile({ value, label }: { value: string; label: string }) {
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-5 shadow-xl backdrop-blur-md">
       <div className="text-2xl md:text-3xl font-bold text-white">{value}</div>
-      <div className="mt-1 text-xs md:text-sm leading-6 text-slate-300">{label}</div>
+      <div className="mt-1 text-xs md:text-sm leading-6 text-slate-300">
+        {label}
+      </div>
     </div>
   );
 }
@@ -143,11 +181,15 @@ function SkillCard({
       className="group rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-xl backdrop-blur-md transition-colors duration-300 hover:border-white/20 hover:bg-white/8"
     >
       <div className="flex items-start gap-3">
-        <div className={`rounded-2xl bg-gradient-to-br ${accent} p-3 text-slate-950 shadow-lg`}>
+        <div
+          className={`rounded-2xl bg-gradient-to-br ${accent} p-3 text-slate-950 shadow-lg`}
+        >
           <Icon className="h-5 w-5" />
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="text-base md:text-lg font-semibold text-white">{title}</h3>
+          <h3 className="text-base md:text-lg font-semibold text-white">
+            {title}
+          </h3>
           <p className="mt-1 text-sm leading-6 text-slate-300">{short}</p>
         </div>
       </div>
@@ -192,7 +234,6 @@ export default function TechStacksPage() {
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/8 p-5 shadow-2xl md:p-7 lg:p-8">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]" />
               <div className="relative flex h-full flex-col">
-
                 <div className="max-w-2xl flex-1">
                   <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
                     Tech Stack & Expertise
@@ -205,9 +246,10 @@ export default function TechStacksPage() {
                   </h1>
 
                   <p className="mt-5 text-justify max-w-xl text-sm leading-7 text-slate-200 md:text-base md:leading-8">
-                    I focus on production-ready engineering: secure APIs, multi-tenant backends, realtime
-                    communication, AI orchestration, and cloud delivery. The page below highlights the stack I use
-                    most often to ship those systems.
+                    I focus on production-ready engineering: secure APIs,
+                    multi-tenant backends, realtime communication, AI
+                    orchestration, and cloud delivery. The page below highlights
+                    the stack I use most often to ship those systems.
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-3">
@@ -219,14 +261,19 @@ export default function TechStacksPage() {
                         <div className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
                           {item.label}
                         </div>
-                        <div className="mt-1 text-sm text-white">{item.value}</div>
+                        <div className="mt-1 text-sm text-white">
+                          {item.value}
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div className="mt-6 flex items-center gap-3">
-                  <NavLink to="/about" className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-white/15 text-center animate-pulse">
+                  <NavLink
+                    to="/about"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-white/15 text-center animate-pulse"
+                  >
                     Explore About Me
                     <ArrowUpRight className="h-4 w-4" />
                   </NavLink>
@@ -260,12 +307,24 @@ export default function TechStacksPage() {
                     {
                       title: "Systems",
                       icon: Layers3,
-                      items: ["Node.js", "TypeScript", "NestJS", "Fastify", "GraphQL"],
+                      items: [
+                        "Node.js",
+                        "TypeScript",
+                        "NestJS",
+                        "Fastify",
+                        "GraphQL",
+                      ],
                     },
                     {
                       title: "Product",
                       icon: Globe,
-                      items: ["Next.js", "React", "Tailwind", "shadcn/ui", "React Query"],
+                      items: [
+                        "Next.js",
+                        "React",
+                        "Tailwind",
+                        "shadcn/ui",
+                        "React Query",
+                      ],
                     },
                     {
                       title: "Ops + AI",
@@ -281,7 +340,9 @@ export default function TechStacksPage() {
                         <div className="rounded-2xl bg-white/10 p-2">
                           <group.icon className="h-4 w-4 text-white" />
                         </div>
-                        <h3 className="text-base font-semibold text-white">{group.title}</h3>
+                        <h3 className="text-base font-semibold text-white">
+                          {group.title}
+                        </h3>
                       </div>
 
                       <div className="mt-4 flex flex-wrap gap-2">
@@ -301,7 +362,9 @@ export default function TechStacksPage() {
                 <div className="mt-4 rounded-[24px] border border-white/10 bg-black/15 p-4 md:p-5">
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <h3 className="text-base font-semibold text-white md:text-lg">Core strengths</h3>
+                      <h3 className="text-base font-semibold text-white md:text-lg">
+                        Core strengths
+                      </h3>
                       <p className="mt-1 text-sm text-slate-300">
                         The technologies I rely on most often in real projects.
                       </p>
@@ -316,7 +379,9 @@ export default function TechStacksPage() {
                         className="flex flex-col items-center justify-center rounded-[20px] border border-white/10 bg-white/5 p-4 text-center"
                       >
                         <Icon className="size-9 md:size-11 text-white" />
-                        <span className="mt-3 text-xs md:text-sm text-slate-200">{name}</span>
+                        <span className="mt-3 text-xs md:text-sm text-slate-200">
+                          {name}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -332,7 +397,9 @@ export default function TechStacksPage() {
                   <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
                     Expertise Grid
                   </p>
-                  <h2 className="mt-2 text-2xl font-semibold text-white">What I’m strongest in</h2>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                    What I’m strongest in
+                  </h2>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
                   <Lock className="h-5 w-5 text-white" />
@@ -353,24 +420,36 @@ export default function TechStacksPage() {
                     <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
                       Impact
                     </p>
-                    <h2 className="mt-2 text-2xl font-semibold text-white text-justify">Work that moved metrics</h2>
+                    <h2 className="mt-2 text-2xl font-semibold text-white text-justify">
+                      Work that moved metrics
+                    </h2>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
                     <Brain className="h-5 w-5 text-white" />
                   </div>
                 </div>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
-                  These are the kinds of results I aim for: lower latency, stronger stability, better throughput,
-                  and cleaner delivery pipelines.
+                  These are the kinds of results I aim for: lower latency,
+                  stronger stability, better throughput, and cleaner delivery
+                  pipelines.
                 </p>
               </div>
 
               <div className="mt-6 flex-1 min-h-0 space-y-3 overflow-y-auto pr-1 custom-scrollbar">
                 <StatTile value="45%" label="Backend throughput improvement" />
                 <StatTile value="3k+" label="Concurrent users supported" />
-                <StatTile value="<200ms" label="Median latency in realtime work" />
-                <StatTile value="Agentic RAG" label="Deployed on MCP servers for automation" />
-                <StatTile value="Multi-tenant" label="Built with RLS and strong data isolation" />
+                <StatTile
+                  value="<200ms"
+                  label="Median latency in realtime work"
+                />
+                <StatTile
+                  value="Agentic RAG"
+                  label="Deployed on MCP servers for automation"
+                />
+                <StatTile
+                  value="Multi-tenant"
+                  label="Built with RLS and strong data isolation"
+                />
               </div>
             </div>
 
@@ -380,7 +459,9 @@ export default function TechStacksPage() {
                   <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
                     Stack Notes
                   </p>
-                  <h2 className="mt-2 text-2xl font-semibold text-white">Tools I reach for</h2>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                    Tools I reach for
+                  </h2>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
                   <Gauge className="h-5 w-5 text-white" />
@@ -397,8 +478,12 @@ export default function TechStacksPage() {
                       <Icon className="size-5 text-white" />
                     </div>
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold text-white">{name}</div>
-                      <div className="mt-1 text-sm leading-6 text-slate-300">{description}</div>
+                      <div className="text-sm font-semibold text-white">
+                        {name}
+                      </div>
+                      <div className="mt-1 text-sm leading-6 text-slate-300">
+                        {description}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -413,7 +498,9 @@ export default function TechStacksPage() {
                   <p className="text-sm font-medium tracking-[0.22em] text-slate-300 uppercase">
                     How I work
                   </p>
-                  <h2 className="mt-2 text-2xl font-semibold text-white">Engineering principles</h2>
+                  <h2 className="mt-2 text-2xl font-semibold text-white">
+                    Engineering principles
+                  </h2>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
                   <ShieldCheck className="h-5 w-5 text-white" />
@@ -450,10 +537,14 @@ export default function TechStacksPage() {
                     My approach
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold text-white">
-                      My approach to building with this stack
+                    My approach to building with this stack
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-slate-300">
-                    I build with a backend-first approach, integrating AI where it adds the most value, and optimizing for realtime performance and cloud scalability. My focus is on delivering secure, maintainable systems that drive real business impact.
+                    I build with a backend-first approach, integrating AI where
+                    it adds the most value, and optimizing for realtime
+                    performance and cloud scalability. My focus is on delivering
+                    secure, maintainable systems that drive real business
+                    impact.
                   </p>
                 </div>
 
