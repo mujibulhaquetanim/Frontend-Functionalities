@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
 import { Helmet } from "react-helmet-async";
-import AnimatedWrapper from "../components/wrapper/AnimatedWrapper";
+import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 import { FaClock } from "react-icons/fa";
 import { HiArrowRight } from "react-icons/hi";
-import { POSTS } from "../assets/BlogData";
-import { StatusBadge, TagChip } from "./wrapper/SubComponent";
+import { POSTS } from "../../assets/BlogData";
+import { StatusBadge, TagChip } from "../wrapper/SubComponent";
 
 const ALL_TAGS = [...new Set(POSTS.flatMap((p) => p.tags))];
 const MAX_READ_TIME = Math.max(...POSTS.map((p) => p.readTime));
@@ -135,7 +135,6 @@ export default function Blogs() {
                 </span>
               </div>
             </NavLink>
-
             // Featured post read-time bar
             <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/5 rounded-b-xl overflow-hidden">
               <div
