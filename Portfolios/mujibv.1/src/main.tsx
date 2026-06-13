@@ -5,7 +5,7 @@ import App from "./App.tsx";
 import "./index.css";
 import Home from "./components/nav-components/Home.tsx";
 import Projects from "./components/Projects/Projects.tsx";
-import Blogs from "./components/Blogs.tsx";
+import Blogs from "./components/nav-components/Blogs.tsx";
 import AboutMe from "./components/Home-components/AboutMe.tsx";
 import Frontend from "./components/Projects/Frontend.tsx";
 import Backend from "./components/Projects/Backend.tsx";

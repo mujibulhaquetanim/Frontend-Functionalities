@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/nav-components/NavBar";
 import { useEffect, useState } from "react";
 
 interface LayoutProps {
