@@ -17,12 +17,15 @@ export default function Home() {
         <title>Mujibul Haque Tanim - Full-stack Software Engineer</title>
         <meta
           name="description"
-          content="Full-stack engineer specializing in JavaScript, TypeScript, NestJS, and AI integrations."
+          content="Full-stack software engineer specializing in JavaScript/TypeScript, clean architecture, NestJS, and AI model integrations."
         />
-        <meta property="og:title" content="Mujibul Haque Tanim - Portfolio" />
+        <meta
+          property="og:title"
+          content="Mujibul Haque Tanim - Full-stack Software Engineer"
+        />
         <meta
           property="og:description"
-          content="Explore my projects, skills, blogs, and more."
+          content="Full-stack software engineer specializing in JavaScript/TypeScript, clean architecture, NestJS, and AI model integrations."
         />
         <meta property="og:url" content="https://www.mujibulhaquetanim.dev" />
         <meta
@@ -45,14 +48,15 @@ export default function Home() {
               "https://www.linkedin.com/in/mujibulhaquetanim",
               "https://github.com/mujibulhaquetanim",
               "https://twitter.com/mmhtanim",
+              "https://www.kaggle.com/mujibulhaque",
             ],
             jobTitle: "Full-stack Software Engineer",
             worksFor: {
               "@type": "Organization",
-              name: "Freelance",
+              name: "Software Engineer",
             },
             description:
-              "Full-stack software engineer specializing in JavaScript/TypeScript, clean architecture, NestJS, and AI model integrations.",
+              "Performance-driven full-stack software engineer specializing in JavaScript/TypeScript, clean architecture, NestJS, and AI model integrations. Passionate about crafting intelligent, end-to-end applications that solve real-world problems.",
             image: "https://www.mujibulhaquetanim.dev/og-image.png",
             knowsAbout: [
               "React",
@@ -62,6 +66,7 @@ export default function Home() {
               "AWS",
               "MERN",
               "PostgreSQL",
+              "LangGraph",
               "Clean Architecture",
               "Redis",
               "Rabbitmq",
@@ -97,12 +102,11 @@ export default function Home() {
           {/* ── Intro Section ── */}
           <AnimatedWrapper
             delay={1000}
-            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full shadow-lg"
+            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full shadow-lg bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)] backdrop-blur-xl hover:bg-slate-600/80 transition-colors duration-300"
           >
             <section>
               {/* Reduced padding at lg; restored at xl+ */}
               <div className="flex flex-col h-full p-4 sm:p-5 lg:p-4 xl:p-6 2xl:p-8 gap-2 sm:gap-4 lg:gap-2 xl:gap-4 2xl:gap-6">
-
                 <AnimatedWrapper delay={2900}>
                   <NavLink
                     to={
@@ -112,7 +116,9 @@ export default function Home() {
                     className="mt-2 lg:mt-1 xl:mt-4 px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 border-solid hover:border-white border-2 shadow-[-7px_7px_0px_#334155] inline-block hover:shadow-[7px_7px_0px_#334155] rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit group"
                   >
                     <AnimatedWrapper delay={3200}>
-                      <h1 className="text-sm lg:text-xs xl:text-sm">Available for hire</h1>
+                      <h1 className="text-sm lg:text-xs xl:text-sm">
+                        Available for hire
+                      </h1>
                     </AnimatedWrapper>
 
                     <AnimatedWrapper
@@ -186,7 +192,10 @@ export default function Home() {
                       download={"Mujibulhaquetanim-resume.pdf"}
                       className="mt-2 lg:mt-1 xl:mt-4 px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] hover:shadow-[7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 text-sm lg:text-xs xl:text-sm"
                     >
-                      <AnimatedWrapper delay={3000} className="flex gap-1.5 items-center">
+                      <AnimatedWrapper
+                        delay={3000}
+                        className="flex gap-1.5 items-center"
+                      >
                         <FaFileExport size={18} />
                         Resume
                       </AnimatedWrapper>
@@ -200,17 +209,17 @@ export default function Home() {
           {/* ── Projects Section ── */}
           <AnimatedWrapper
             delay={3500}
-            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-4 lg:pb-4 xl:pb-8 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
+            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-4 lg:pb-4 xl:pb-8 hover:bg-slate-600 transition-colors duration-300 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
           >
             <NavLink to={"/projects"}>
               <AnimatedWrapper delay={3700} className="w-full h-full">
                 <div className="relative h-full w-full">
                   <AnimatedWrapper delay={3800}>
-                    <h1 className="text-lg sm:text-xl lg:text-lg xl:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center mb-1 mt-2 lg:mt-2">
+                    <h1 className="text-lg sm:text-xl lg:text-lg xl:text-2xl text-white font-bold pt-2 tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center lg:mt-2">
                       Projects Overview
                     </h1>
                   </AnimatedWrapper>
-                  <AnimatedWrapper delay={3900} className="w-full h-full">
+                  <AnimatedWrapper delay={3900} className="w-full h-full pb-4">
                     <ProjectsCard />
                   </AnimatedWrapper>
                 </div>
@@ -221,7 +230,7 @@ export default function Home() {
           {/* ── GitHub Section ── */}
           <AnimatedWrapper
             delay={4100}
-            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
+            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
           >
             <NavLink
               to={"https://github.com/mujibulhaquetanim"}
@@ -242,31 +251,31 @@ export default function Home() {
           <AnimatedWrapper
             delay={4700}
             subDelay={700}
-            className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 w-full h-full"
+            className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
           >
             <NavLink
               to={"https://monkeytype.com/profile/mujibtanim"}
               target="_blank"
             >
-              <div className="flex flex-col items-center justify-center h-full p-3 gap-1.5">
-                <div className="flex items-baseline">
+              <div className="flex flex-col items-center justify-center h-full p-3 gap-1.5 lg:gap-1 xl:gap-2">
+                <div className="flex items-baseline gap-1">
                   <AnimatedWrapper
                     delay={5000}
                     subDelay={1000}
-                    className="text-4xl sm:text-5xl lg:text-4xl xl:text-6xl 2xl:text-7xl text-white font-bold"
+                    className="text-4xl sm:text-5xl lg:text-4xl xl:text-6xl 2xl:text-7xl text-white font-bold hover:shadow [7px_7px_0px_#334155] hover:scale-95 transition-transform duration-300 px-2 py-1 rounded-xl"
                   >
-                    <p className="hover:shadow-[7px_7px_0px_#334155] hover:scale-95 transition-transform duration-300">
-                      60
+                    <p className="hover:shadow-[7px_7px_0px_#334155] hover:scale-95 transition-transform duration-300 px-2 py-1 rounded-xl text-center hover:bg-slate-700">
+                      60+
                     </p>
                   </AnimatedWrapper>
-                  <span className="text-xs text-gray-400 font-bold ml-1.5">
+                  <span className="text-xs text-gray-400 font-bold ml-1.5 lg:ml-1 xl:ml-2 2xl:ml-3">
                     WPM
                   </span>
                 </div>
                 <AnimatedWrapper
                   delay={5300}
                   subDelay={1500}
-                  className="text-xs sm:text-sm lg:text-xs xl:text-base text-white font-bold"
+                  className="text-xs sm:text-sm lg:text-xs xl:text-base text-white font-bold tracking-wide hover:scale-95 hover:underline hover:underline-offset-4 text-center mt-0.5"
                 >
                   Typing Speed ⌨️
                 </AnimatedWrapper>
@@ -278,16 +287,16 @@ export default function Home() {
           <AnimatedWrapper
             delay={5700}
             subDelay={2000}
-            className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 w-full h-full"
+            className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 w-full h-full hover:bg-slate-600 transition-colors duration-300 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
           >
             <NavLink to={"/tech-stack"}>
               <AnimatedWrapper
                 delay={6000}
                 subDelay={2500}
-                className="flex flex-col items-center justify-center h-full gap-2 lg:gap-1.5 xl:gap-4"
+                className="flex flex-col items-center justify-center h-full gap-2 lg:gap-1.5 xl:gap-4 px-2 py-1 rounded-xl"
               >
                 <AnimatedWrapper delay={6500} subDelay={3000}>
-                  <h1 className="text-lg sm:text-xl lg:text-base xl:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center mb-0.5 mt-1">
+                  <h1 className="text-lg sm:text-xl lg:text-base xl:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center mb-0.5 mt-1 lg:mt-0 xl:mt-2 2xl:mt-3">
                     Tech Stack
                   </h1>
                 </AnimatedWrapper>
@@ -300,16 +309,16 @@ export default function Home() {
           <AnimatedWrapper
             delay={6700}
             subDelay={3200}
-            className="col-span-full md:col-span-1 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full"
+            className="col-span-full md:col-span-1 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
           >
             <NavLink to={"/Blogs"}>
               <AnimatedWrapper
                 delay={7000}
                 subDelay={3500}
-                className="w-full h-full"
+                className="w-full h-full flex items-center justify-center"
               >
                 {/* Scaled down at lg; xl gets the larger icon back */}
-                <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-6xl 2xl:text-7xl text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline hover:underline-offset-4">
+                <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-6xl 2xl:text-7xl text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline hover:underline-offset-4 transition-transform duration-300 px-2 py-1 rounded-xl hover:shadow-[7px_7px_0px_#334155] hover:bg-slate-700/80 backdrop-blur-xl">
                   <GrArticle />
                 </h1>
               </AnimatedWrapper>
@@ -322,7 +331,7 @@ export default function Home() {
             subDelay={4000}
             className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
           >
-            <div className="grid grid-cols-3 gap-2 h-full transition-colors">
+            <div className="grid grid-cols-3 gap-2 h-full transition-colors duration-300 px-2 py-1 rounded-xl">
               {[
                 {
                   icon: FaLinkedin,
@@ -338,11 +347,11 @@ export default function Home() {
                   key={index}
                   to={social.url}
                   target="_blank"
-                  className="border rounded-xl p-2 hover:border-4 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 transition-all duration-300 flex items-center justify-center"
+                  className="border rounded-xl p-2 hover:border-4 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 duration-700 flex items-center justify-center bg-slate-600/80 hover:bg-slate-600 transition-colors bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
                 >
                   <social.icon
                     color="white"
-                    className="w-6 h-6 sm:w-10 sm:h-10 lg:w-8 lg:h-8 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 hover:shadow-[7px_7px_0px_#334155] hover:scale-110 transition-transform duration-300"
+                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-8 lg:h-8 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 hover:shadow-[7px_7px_0px_#334155] hover:scale-110 transition-transform duration-300 p-1 rounded-xl bg-slate-700/80"
                   />
                 </NavLink>
               ))}
