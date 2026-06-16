@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 
 const Backend = () => {
-  // Simulating fetched data without layout-specific classes.
   const services = [
     "AWS",
     "NestJS",
@@ -12,7 +11,6 @@ const Backend = () => {
     "Langchain",
   ];
 
-  // Defined layout classes separately, hardcoded for now.
   const layoutClasses = [
     "col-span-12 row-span-6 md:col-span-6 md:row-span-8 lg:col-span-4 lg:row-span-8 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
     "col-span-12 row-span-3 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-3 hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300",
@@ -33,7 +31,6 @@ const Backend = () => {
     "https://github.com/mujibulhaquetanim/Backend-Functionalities/tree/main/LangChain-js",
   ];
 
-  // Mapping images and layout classes to create grid. hardcoded classes.
   return (
     <div className="w-full px-4 py-2 lg:p-2">
       <div className="grid w-full gap-4 auto-rows-[minmax(3.3rem,auto)] grid-cols-12">
@@ -47,7 +44,7 @@ const Backend = () => {
               target="_blank"
               className="absolute inset-0"
             >
-              <div className="flex h-full items-center justify-center text-white text-7xl font-extrabold text-center">
+              <div className="flex h-full items-center justify-center text-white text-7xl font-extrabold text-center bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)] backdrop-blur-sm p-4 transition-opacity duration-300">
                 {service}
               </div>
             </Link>

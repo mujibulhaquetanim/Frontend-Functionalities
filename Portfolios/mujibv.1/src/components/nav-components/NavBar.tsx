@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import { FaHome, FaFolder, FaTasks } from "react-icons/fa";
-import {  MdSupervisedUserCircle } from "react-icons/md";
+import { MdSupervisedUserCircle } from "react-icons/md";
 
 export default function NavBar() {
   const routes = [
@@ -12,7 +12,7 @@ export default function NavBar() {
 
   return (
     <nav className="grid place-items-center place-content-center h-full drop-shadow-lg gap-3">
-      <div className="border-2 py-3 md:py-7 px-5 rounded-2xl gap-7 grid md:grid-flow-row grid-flow-col bg-slate-700">
+      <div className="border-2 py-3 md:py-7 px-5 rounded-2xl gap-7 grid md:grid-flow-row grid-flow-col bg-slate-700 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]">
         {routes.map((route, index) => (
           <NavLink
             to={route.to}
