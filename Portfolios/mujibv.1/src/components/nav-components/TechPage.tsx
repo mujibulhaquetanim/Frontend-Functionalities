@@ -1,212 +1,23 @@
 import { useMemo } from "react";
-import { motion } from "framer-motion";
-import type { IconType } from "react-icons";
 import {
   ArrowUpRight,
-  Bot,
   Brain,
-  Cloud,
-  Code2,
-  Database,
   Gauge,
   Globe,
   Layers3,
   Lock,
   Rocket,
-  Server,
   ShieldCheck,
   Sparkles,
-  Workflow,
 } from "lucide-react";
-import techStacks from "../../assets/techStackData.ts";
+import {
+  pillarCards,
+  typedTechStacks,
+  spotlight,
+  featured,
+} from "../../assets/techStackData.ts";
+import { Pill, SkillCard, StatTile } from "../../hook/TechStackFuncs.tsx";
 import { NavLink } from "react-router";
-
-type TechStack = {
-  name: string;
-  icon: IconType;
-  description: string;
-};
-
-const typedTechStacks = techStacks as TechStack[];
-
-const pillarCards = [
-  {
-    icon: Server,
-    title: "Backend Engineering",
-    short: "APIs, services, and system design",
-    items: [
-      "TypeScript",
-      "NestJS",
-      "Fastify",
-      "GraphQL",
-      "JWT",
-      "Zod",
-      "Microservices",
-    ],
-    accent: "from-sky-400 to-blue-500",
-  },
-  {
-    icon: Workflow,
-    title: "Realtime & Streaming",
-    short: "Low-latency communication and media",
-    items: [
-      "WebRTC",
-      "Socket.io",
-      "RabbitMQ",
-      "Kafka",
-      "Redis",
-      "FFmpeg",
-      "HLS",
-    ],
-    accent: "from-cyan-400 to-indigo-500",
-  },
-  {
-    icon: Bot,
-    title: "AI & Automation",
-    short: "Agents, RAG, orchestration, workflows",
-    items: ["LangGraph", "LangChain", "MCP", "OpenAI", "A2A", "n8n"],
-    accent: "from-violet-400 to-fuchsia-500",
-  },
-  {
-    icon: Database,
-    title: "Data & Persistence",
-    short: "Relational, graph, cache, analytics",
-    items: ["PostgreSQL", "Drizzle", "Redis", "MongoDB", "Neo4j", "Pandas"],
-    accent: "from-emerald-400 to-teal-500",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & Delivery",
-    short: "Infra, deployment, performance, CI/CD",
-    items: ["AWS", "Docker", "Cloudflare", "Linux", "GitHub Actions", "NGINX"],
-    accent: "from-orange-400 to-rose-500",
-  },
-  {
-    icon: Globe,
-    title: "Frontend & Product UI",
-    short: "Responsive interfaces that ship well",
-    items: [
-      "Next.js",
-      "React",
-      "React Query",
-      "Redux",
-      "Tailwind",
-      "shadcn/ui",
-    ],
-    accent: "from-amber-400 to-yellow-500",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Auth & Security",
-    short: "Access control and safe defaults",
-    items: ["OAuth", "RBAC", "ABAC", "CASL", "Passport", "BetterAuth"],
-    accent: "from-lime-400 to-green-500",
-  },
-  {
-    icon: Code2,
-    title: "Engineering Principles",
-    short: "Clean architecture and maintainability",
-    items: [
-      "SOLID",
-      "KISS",
-      "Modular design",
-      "Observability",
-      "Testing",
-      "Linux",
-    ],
-    accent: "from-slate-300 to-slate-500",
-  },
-];
-
-const spotlight = [
-  {
-    label: "Primary stack",
-    value: "TypeScript • NestJS • PostgreSQL • Next.js",
-  },
-  {
-    label: "Specialty",
-    value: "Realtime systems • Multi-tenant SaaS • AI workflows",
-  },
-  { label: "Delivery", value: "Docker • AWS • CI/CD • Observability" },
-];
-
-const featured = [
-  "TypeScript",
-  "Next.js",
-  "NestJS",
-  "PostgreSQL",
-  "Redis",
-  "AWS",
-  "WebRTC",
-  "Docker",
-  "LangGraph",
-];
-
-function Pill({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] md:text-sm text-slate-100 backdrop-blur-sm">
-      {children}
-    </span>
-  );
-}
-
-function StatTile({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-5 shadow-xl backdrop-blur-md">
-      <div className="text-2xl md:text-3xl font-bold text-white">{value}</div>
-      <div className="mt-1 text-xs md:text-sm leading-6 text-slate-300">
-        {label}
-      </div>
-    </div>
-  );
-}
-
-function SkillCard({
-  icon: Icon,
-  title,
-  short,
-  items,
-  accent,
-}: {
-  icon: React.ElementType;
-  title: string;
-  short: string;
-  items: string[];
-  accent: string;
-}) {
-  return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ type: "spring", stiffness: 280, damping: 24 }}
-      className="group rounded-[28px] border border-white/10 bg-white/5 p-5 shadow-xl backdrop-blur-md transition-colors duration-300 hover:border-white/20 hover:bg-white/8"
-    >
-      <div className="flex items-start gap-3">
-        <div
-          className={`rounded-2xl bg-gradient-to-br ${accent} p-3 text-slate-950 shadow-lg`}
-        >
-          <Icon className="h-5 w-5" />
-        </div>
-        <div className="min-w-0 flex-1">
-          <h3 className="text-base md:text-lg font-semibold text-white">
-            {title}
-          </h3>
-          <p className="mt-1 text-sm leading-6 text-slate-300">{short}</p>
-        </div>
-      </div>
-
-      <div className="mt-4 flex flex-wrap gap-2">
-        {items.map((item) => (
-          <span
-            key={item}
-            className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs md:text-sm text-slate-100"
-          >
-            {item}
-          </span>
-        ))}
-      </div>
-    </motion.div>
-  );
-}
 
 export default function TechStacksPage() {
   const coreIcons = useMemo(() => {
