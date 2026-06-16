@@ -31,6 +31,7 @@ import {
 } from "react-icons/si";
 import { FaGolang } from "react-icons/fa6";
 import type { IconType } from "react-icons";
+import { Bot, Cloud, Code2, Database, Globe, Server, ShieldCheck, Workflow,  } from "lucide-react";
 
 type TechStack = {
   name: string;
@@ -191,4 +192,119 @@ const techStacks: TechStack[] = [
   },
 ];
 
-export default techStacks;
+const typedTechStacks = techStacks as TechStack[];
+
+const pillarCards = [
+  {
+    icon: Server,
+    title: "Backend Engineering",
+    short: "APIs, services, and system design",
+    items: [
+      "TypeScript",
+      "NestJS",
+      "Fastify",
+      "GraphQL",
+      "JWT",
+      "Zod",
+      "Microservices",
+    ],
+    accent: "from-sky-400 to-blue-500",
+  },
+  {
+    icon: Workflow,
+    title: "Realtime & Streaming",
+    short: "Low-latency communication and media",
+    items: [
+      "WebRTC",
+      "Socket.io",
+      "RabbitMQ",
+      "Kafka",
+      "Redis",
+      "FFmpeg",
+      "HLS",
+    ],
+    accent: "from-cyan-400 to-indigo-500",
+  },
+  {
+    icon: Bot,
+    title: "AI & Automation",
+    short: "Agents, RAG, orchestration, workflows",
+    items: ["LangGraph", "LangChain", "MCP", "OpenAI", "A2A", "n8n"],
+    accent: "from-violet-400 to-fuchsia-500",
+  },
+  {
+    icon: Database,
+    title: "Data & Persistence",
+    short: "Relational, graph, cache, analytics",
+    items: ["PostgreSQL", "Drizzle", "Redis", "MongoDB", "Neo4j", "Pandas"],
+    accent: "from-emerald-400 to-teal-500",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud & Delivery",
+    short: "Infra, deployment, performance, CI/CD",
+    items: ["AWS", "Docker", "Cloudflare", "Linux", "GitHub Actions", "NGINX"],
+    accent: "from-orange-400 to-rose-500",
+  },
+  {
+    icon: Globe,
+    title: "Frontend & Product UI",
+    short: "Responsive interfaces that ship well",
+    items: [
+      "Next.js",
+      "React",
+      "React Query",
+      "Redux",
+      "Tailwind",
+      "shadcn/ui",
+    ],
+    accent: "from-amber-400 to-yellow-500",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Auth & Security",
+    short: "Access control and safe defaults",
+    items: ["OAuth", "RBAC", "ABAC", "CASL", "Passport", "BetterAuth"],
+    accent: "from-lime-400 to-green-500",
+  },
+  {
+    icon: Code2,
+    title: "Engineering Principles",
+    short: "Clean architecture and maintainability",
+    items: [
+      "SOLID",
+      "KISS",
+      "Modular design",
+      "Observability",
+      "Testing",
+      "Linux",
+    ],
+    accent: "from-slate-300 to-slate-500",
+  },
+];
+
+const spotlight = [
+  {
+    label: "Primary stack",
+    value: "TypeScript • NestJS • PostgreSQL • Next.js",
+  },
+  {
+    label: "Specialty",
+    value: "Realtime systems • Multi-tenant SaaS • AI workflows",
+  },
+  { label: "Delivery", value: "Docker • AWS • CI/CD • Observability" },
+];
+
+const featured = [
+  "TypeScript",
+  "Next.js",
+  "NestJS",
+  "PostgreSQL",
+  "Redis",
+  "AWS",
+  "WebRTC",
+  "Docker",
+  "LangGraph",
+];
+
+export { typedTechStacks, pillarCards, spotlight, featured };

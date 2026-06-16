@@ -1,11 +1,11 @@
 import Marquee from "../Home-components/Marquee/Marquee";
-import techStacks from "../../assets/techStackData";
+import {typedTechStacks} from "../../assets/techStackData";
 
 const TechStacks = () => {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee className="[--duration:20s]" repeat={5}>
-        {techStacks.map(({ icon: Icon, name }) => (
+        {typedTechStacks.map(({ icon: Icon, name }) => (
           <Icon className="size-20 md:max-lg:size-8" color="white" key={name} />
         ))}
       </Marquee>
