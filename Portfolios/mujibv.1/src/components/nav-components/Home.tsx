@@ -331,7 +331,7 @@ export default function Home() {
             subDelay={4000}
             className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
           >
-            <div className="grid grid-cols-3 gap-2 h-full transition-colors duration-300 px-2 py-1 rounded-xl">
+            <div className="grid grid-cols-3 gap-4 h-full transition-colors duration-300 px-2 py-1 rounded-xl">
               {[
                 {
                   icon: FaLinkedin,
@@ -347,7 +347,7 @@ export default function Home() {
                   key={index}
                   to={social.url}
                   target="_blank"
-                  className="border rounded-xl p-2 hover:border-4 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 duration-700 flex items-center justify-center bg-slate-600/80 hover:bg-slate-600 transition-colors bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
+                  className="rounded-xl p-2 hover:border-4 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 duration-700 flex items-center justify-center bg-slate-600/80 hover:bg-slate-600 transition-colors bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
                 >
                   <social.icon
                     color="white"
