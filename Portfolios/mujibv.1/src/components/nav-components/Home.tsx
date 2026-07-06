@@ -230,7 +230,7 @@ export default function Home() {
           {/* ── GitHub Section ── */}
           <AnimatedWrapper
             delay={4100}
-            className="col-span-full md:col-span-2 lg:col-span-6 w-full h-full overflow-hidden rounded-xl border border-white/10 bg-slate-600/80 p-3 shadow-[0_12px_36px_rgba(15,23,42,0.24),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition-[background-color,box-shadow,transform] duration-500 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.13),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.14),transparent_42%),radial-gradient(circle_at_center,rgba(99,102,241,0.06),transparent_55%)] hover:-translate-y-0.5 hover:bg-slate-600/95 hover:shadow-[0_18px_45px_rgba(15,23,42,0.32),0_0_28px_rgba(56,189,248,0.08),inset_0_1px_0_rgba(255,255,255,0.12)] lg:p-2 xl:p-4"
+            className="col-span-full md:col-span-2 lg:col-span-6 w-full h-full overflow-hidden rounded-xl border border-white/10 bg-slate-600/80 shadow-[0_12px_36px_rgba(15,23,42,0.24),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition-[background-color,box-shadow,transform] duration-500 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.13),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.14),transparent_42%),radial-gradient(circle_at_center,rgba(99,102,241,0.06),transparent_55%)] hover:-translate-y-0.5 hover:bg-slate-600/95 hover:shadow-[0_18px_45px_rgba(15,23,42,0.32),0_0_28px_rgba(56,189,248,0.08),inset_0_1px_0_rgba(255,255,255,0.12)]"
           >
             <NavLink
               to={"https://github.com/mujibulhaquetanim"}
@@ -331,7 +331,7 @@ export default function Home() {
             subDelay={4000}
             className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
           >
-            <div className="grid grid-cols-3 gap-4 h-full transition-colors duration-300 px-2 py-1 rounded-xl">
+            <div className="grid grid-cols-3 gap-4 h-full transition-colors duration-300 rounded-xl">
               {[
                 {
                   icon: FaLinkedin,
