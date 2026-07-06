@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .git-timeline-scrollbar {
+    @apply overflow-x-auto pb-2;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(215, 16%, 52%) hsla(216, 25%, 15%, 0.55);
+  }
+
+  .git-timeline-scrollbar::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .git-timeline-scrollbar::-webkit-scrollbar-track {
+    background: hsla(216, 25%, 15%, 0.55);
+    border-radius: 999px;
+  }
+
+  .git-timeline-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(215, 16%, 52%);
+    border-radius: 999px;
+  }
+
+  .git-timeline-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(215, 20%, 64%);
+  }
+
+  .animate-git-shimmer {
+    animation: git-shimmer 1.25s infinite;
+  }
+}
+
+@keyframes git-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .custom-border {
     position: relative;
   }
