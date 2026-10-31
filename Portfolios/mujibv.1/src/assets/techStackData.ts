@@ -1,6 +1,5 @@
 import {
   SiDocker,
-  SiAmazonwebservices,
   SiLangchain,
   SiRedux,
   SiDrizzle,
@@ -19,7 +18,6 @@ import {
   SiFastapi,
   SiFastify,
   SiPassport,
-  SiOpenai,
   SiGraphql,
   SiWebrtc,
   SiPandas,
@@ -29,7 +27,8 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { FaGolang } from "react-icons/fa6";
+import { FaAws, FaGolang } from "react-icons/fa6";
+import { RiOpenaiFill } from "react-icons/ri";
 import type { IconType } from "react-icons";
 import { Bot, Cloud, Code2, Database, Globe, Server, ShieldCheck, Workflow,  } from "lucide-react";
 
@@ -52,7 +51,7 @@ const techStacks: TechStack[] = [
   },
   {
     name: "AWS",
-    icon: SiAmazonwebservices,
+    icon: FaAws,
     description: "Cloud computing platform.",
   },
     {
@@ -182,7 +181,7 @@ const techStacks: TechStack[] = [
   },
   {
     name: "OpenAI",
-    icon: SiOpenai,
+    icon: RiOpenaiFill,
     description: "AI research and deployment company.",
     },
   {
