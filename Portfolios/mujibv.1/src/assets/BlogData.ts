@@ -10,6 +10,8 @@ interface BlogPost {
   slug: string;
   featured?: boolean;
   status: PostStatus;
+  /** Where the published article lives. Cards only link when this is set. */
+  url?: string;
 }
 
 const POSTS: BlogPost[] = [
@@ -61,3 +63,4 @@ const POSTS: BlogPost[] = [
 ];
 
 export { POSTS };
+export type { BlogPost };

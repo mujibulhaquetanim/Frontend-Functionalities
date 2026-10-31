@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { ImageOff } from "lucide-react";
 
+// Native lazy loading + a shimmer until decoded, and a readable fallback if the file is missing.
 export function LazyImage({
   src,
   alt,
@@ -9,30 +11,39 @@ export function LazyImage({
   alt: string;
   className?: string;
 }) {
-  const imgRef = useRef<HTMLImageElement | null>(null);
-  const [imageSrc, setImageSrc] = useState("");
+  const [status, setStatus] = useState<"loading" | "loaded" | "error">(
+    "loading",
+  );
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setImageSrc(src);
-        observer.disconnect();
-      },
-      { rootMargin: "200px" },
+  if (status === "error") {
+    return (
+      <div
+        role="img"
+        aria-label={alt}
+        className="flex h-full w-full flex-col items-center justify-center gap-2 bg-slate-800 text-slate-400"
+      >
+        <ImageOff aria-hidden className="size-6" />
+        <span className="px-3 text-center text-xs">{alt}</span>
+      </div>
     );
-    if (imgRef.current) observer.observe(imgRef.current);
-    return () => observer.disconnect();
-  }, [src]);
+  }
 
   return (
-    <img
-      ref={imgRef}
-      src={imageSrc}
-      alt={alt}
-      loading="lazy"
-      decoding="async"
-      className={className}
-    />
+    <>
+      {status === "loading" && (
+        <div aria-hidden className="absolute inset-0 animate-git-shimmer" />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setStatus("loaded")}
+        onError={() => setStatus("error")}
+        className={`${className ?? ""} transition-[opacity,transform] duration-500 ease-out-expo ${
+          status === "loaded" ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </>
   );
 }

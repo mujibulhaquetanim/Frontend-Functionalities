@@ -1,6 +1,7 @@
 import { FaXTwitter, FaFileExport } from "react-icons/fa6";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { NavLink } from "react-router";
+import { FaGithub, FaKeyboard, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router";
+import { ArrowUpRight } from "lucide-react";
 import ProjectsCard from "../Home-components/ProjectsCard";
 import TechStacks from "../Home-components/TechStack";
 import GitTimeline from "../Home-components/GithubActivity/GitTimeline";
@@ -9,23 +10,57 @@ import { Helmet } from "react-helmet-async";
 import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 import { MdEmail } from "react-icons/md";
 import { GrArticle } from "react-icons/gr";
+import CountUp from "../wrapper/CountUp";
+import { POSTS } from "../../assets/BlogData";
+
+const HIRE_MAILTO =
+  "mailto:info@mujibulhaquetanim.dev?subject=Salam%20Mujibul%20Haque%20Tanim&body=I%20would%20like%20to%20connect%20with%20you!";
+
+const CORE_STACK = [
+  "TypeScript",
+  "NestJS",
+  "Next.js",
+  "PostgreSQL",
+  "WebRTC",
+  "AWS",
+  "LangGraph",
+  "Docker",
+];
+
+const SOCIALS = [
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn profile",
+    url: "https://www.linkedin.com/in/mujibulhaquetanim/",
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub profile",
+    url: "https://github.com/mujibulhaquetanim",
+  },
+  {
+    icon: FaXTwitter,
+    label: "X (Twitter) profile",
+    url: "https://twitter.com/mmhtanim",
+  },
+];
 
 export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Mujibul Haque Tanim - Full-stack Software Engineer</title>
+        <title>Mujibul Haque Tanim - Full-Stack AI Engineer</title>
         <meta
           name="description"
-          content="Full-stack software engineer specializing in JavaScript/TypeScript, clean architecture, NestJS, and AI model integrations."
+          content="Full-Stack AI Engineer at MeshEver and builder of Zasmate, specializing in TypeScript, clean architecture, NestJS, and AI agent integrations."
         />
         <meta
           property="og:title"
-          content="Mujibul Haque Tanim - Full-stack Software Engineer"
+          content="Mujibul Haque Tanim - Full-Stack AI Engineer"
         />
         <meta
           property="og:description"
-          content="Full-stack software engineer specializing in JavaScript/TypeScript, clean architecture, NestJS, and AI model integrations."
+          content="Full-Stack AI Engineer at MeshEver and builder of Zasmate, specializing in TypeScript, clean architecture, NestJS, and AI agent integrations."
         />
         <meta property="og:url" content="https://www.mujibulhaquetanim.dev" />
         <meta
@@ -50,13 +85,24 @@ export default function Home() {
               "https://twitter.com/mmhtanim",
               "https://www.kaggle.com/mujibulhaque",
             ],
-            jobTitle: "Full-stack Software Engineer",
+            jobTitle: "Full-Stack AI Engineer",
             worksFor: {
               "@type": "Organization",
-              name: "Software Engineer",
+              name: "MeshEver",
+              url: "https://meshever.com",
             },
+            alumniOf: [
+              {
+                "@type": "CollegeOrUniversity",
+                name: "International Islamic University Chittagong",
+              },
+              {
+                "@type": "CollegeOrUniversity",
+                name: "Port City International University",
+              },
+            ],
             description:
-              "Performance-driven full-stack software engineer specializing in JavaScript/TypeScript, clean architecture, NestJS, and AI model integrations. Passionate about crafting intelligent, end-to-end applications that solve real-world problems.",
+              "Full-Stack AI Engineer at MeshEver specializing in TypeScript, NestJS, Next.js, multi-tenant backends, real-time systems, and AI agent integrations. Builder of Zasmate, an AI customer messaging SaaS.",
             image: "https://www.mujibulhaquetanim.dev/og-image.png",
             knowsAbout: [
               "React",
@@ -81,7 +127,7 @@ export default function Home() {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-slate-700 w-full overflow-x-hidden">
+      <div className="min-h-screen w-full overflow-x-hidden">
         <section
           className="
           grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12
@@ -94,268 +140,239 @@ export default function Home() {
           lg:h-[100dvh]
 
           auto-rows-auto
-          lg:grid-rows-[3fr_2fr_0.8fr]
+          lg:grid-rows-[minmax(min-content,3fr)_minmax(13.5rem,2fr)_minmax(4.25rem,0.8fr)]
 
           justify-items-stretch
         "
         >
           {/* ── Intro Section ── */}
           <AnimatedWrapper
-            delay={1000}
-            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600 rounded-xl w-full h-full shadow-lg bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)] backdrop-blur-xl hover:bg-slate-600/80 transition-colors duration-300"
+            delay={0}
+            className="col-span-full md:col-span-2 lg:col-span-6 w-full h-full"
           >
-            <section>
-              {/* Reduced padding at lg; restored at xl+ */}
-              <div className="flex flex-col h-full p-4 sm:p-5 lg:p-4 xl:p-6 2xl:p-8 gap-2 sm:gap-4 lg:gap-2 xl:gap-4 2xl:gap-6">
-                <AnimatedWrapper delay={2900}>
-                  <NavLink
-                    to={
-                      "mailto:info@mujibulhaquetanim.dev?subject=Salam%20Mujibul%20Haque%20Tanim&body=I%20would%20like%20to%20connect%20with%20you!"
-                    }
-                    target="_blank"
-                    className="mt-2 lg:mt-1 xl:mt-4 px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 border-solid hover:border-white border-2 shadow-[-7px_7px_0px_#334155] inline-block hover:shadow-[7px_7px_0px_#334155] rounded-xl text-white font-bold hover:scale-105 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 relative w-fit group"
+            <div className="tile flex flex-col h-full p-4 sm:p-5 lg:p-4 xl:p-6 2xl:p-8 gap-3 sm:gap-4 lg:gap-2 xl:gap-4 2xl:gap-6 short:p-4 short:gap-2">
+              <a
+                href={HIRE_MAILTO}
+                className="btn-press group relative w-fit mt-2 lg:mt-1 xl:mt-4 short:mt-1 px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 bg-transparent text-sm lg:text-xs xl:text-sm"
+              >
+                <span className="absolute -right-1 -top-1 flex size-2.5 xl:size-3">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-signal/60 animate-ping" />
+                  <span className="relative inline-flex h-full w-full rounded-full bg-signal" />
+                </span>
+                <MdEmail
+                  aria-hidden
+                  size={16}
+                  className="transition-transform duration-300 ease-out-expo group-hover:-rotate-12"
+                />
+                Open to opportunities
+              </a>
+
+              <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-5xl 2xl:text-6xl short:text-3xl text-white leading-[1.05] tracking-tight font-medium">
+                Salam, I'm Mujibul Haque{" "}
+                <span className="font-extrabold">Tanim</span>
+              </h1>
+
+              <p className="max-w-[62ch] text-sm sm:text-base lg:text-xs xl:text-sm 2xl:text-base text-slate-300 leading-relaxed text-pretty">
+                <b className="font-semibold text-white">
+                  Full-Stack AI Engineer
+                </b>{" "}
+                building production web applications with TypeScript, Node.js,
+                and Next.js. I work across backend services, real-time systems,
+                and AI features such as agents and RAG, from API design to
+                deployment.
+              </p>
+
+              <p className="text-sm lg:text-xs xl:text-sm text-slate-300">
+                <span className="mr-1.5 rounded-md bg-signal/15 px-1.5 py-0.5 text-[11px] lg:text-[10px] xl:text-xs font-semibold text-signal">
+                  Now
+                </span>
+                Working at{" "}
+                <a
+                  href="https://meshever.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
+                >
+                  MeshEver
+                </a>
+                , building{" "}
+                <a
+                  href="https://zasmate.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white"
+                >
+                  Zasmate
+                </a>
+                , an AI customer messaging SaaS.
+              </p>
+
+              <ul className="flex flex-wrap gap-1" aria-label="Core stack">
+                {CORE_STACK.map((item) => (
+                  <li
+                    key={item}
+                    className="chip text-[11px] lg:text-[10px] xl:text-sm short:text-[11px] short:py-0 transition-colors duration-200 hover:border-white/30 hover:bg-white/10"
                   >
-                    <AnimatedWrapper delay={3200}>
-                      <h1 className="text-sm lg:text-xs xl:text-sm">
-                        Available for hire
-                      </h1>
-                    </AnimatedWrapper>
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
-                    <AnimatedWrapper
-                      delay={3500}
-                      className="absolute w-2.5 h-2.5 lg:w-2 lg:h-2 xl:w-3 xl:h-3 bg-green-500 rounded-full -right-1 -top-1"
-                    >
-                      <div className="absolute w-full h-full bg-green-500/50 rounded-full animate-ping"></div>
-                    </AnimatedWrapper>
-
-                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm text-white bg-slate-600 px-2 py-1 rounded-md text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[7px_7px_0px_#334155] inline-block">
-                      <MdEmail size={20} className="inline-block text-center" />
-                    </span>
-                  </NavLink>
-                </AnimatedWrapper>
-
-                {/* Heading: tighter at lg, restored at xl+ */}
-                <AnimatedWrapper delay={1500}>
-                  <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-5xl 2xl:text-6xl text-white leading-tight">
-                    Salam, I'm Mujibul Haque{" "}
-                    <span className="font-bold">Tanim</span>
-                  </h1>
-                </AnimatedWrapper>
-
-                {/* Body text: xs at lg to save vertical space */}
-                <AnimatedWrapper delay={1900}>
-                  <h3 className="text-sm sm:text-base lg:text-xs xl:text-sm 2xl:text-base text-gray-300 text-justify leading-relaxed pr-2">
-                    A performance-driven <b>Full Stack & AI Engineer</b>{" "}
-                    crafting intelligent, end-to-end applications. I combine
-                    robust backend expertise (Node.js/TypeScript, microservices,
-                    real-time streaming) with hands-on AI/ML integration.
-                  </h3>
-                </AnimatedWrapper>
-
-                {/* Tech tags: tighter padding + smaller text at lg */}
-                <AnimatedWrapper delay={2100}>
-                  <div className="flex flex-wrap gap-1">
-                    {[
-                      "TypeScript",
-                      "NestJS",
-                      "Next.js",
-                      "PostgreSQL",
-                      "WebRTC",
-                      "AWS",
-                      "LangGraph",
-                      "Docker",
-                    ].map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-white/10 bg-black/20 px-2 py-0.5 lg:px-2 lg:py-0.5 xl:px-3 xl:py-1 text-[11px] lg:text-[10px] xl:text-sm text-slate-100 backdrop-blur-sm"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </AnimatedWrapper>
-
-                {/* CTA buttons: tighter top margin at lg */}
-                <AnimatedWrapper delay={2300}>
-                  <div className="flex gap-3 lg:gap-3 mt-auto">
-                    <NavLink
-                      to={"/about"}
-                      className="mt-2 lg:mt-1 xl:mt-4 px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] hover:shadow-[7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 text-sm lg:text-xs xl:text-sm"
-                    >
-                      <AnimatedWrapper delay={2500}>
-                        Explore More
-                      </AnimatedWrapper>
-                    </NavLink>
-                    <a
-                      href={resume}
-                      aria-label="Download Resume"
-                      download={"Mujibulhaquetanim-resume.pdf"}
-                      className="mt-2 lg:mt-1 xl:mt-4 px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 bg-white/20 border-solid border-white border-2 shadow-[-7px_7px_0px_#334155] hover:shadow-[7px_7px_0px_#334155] active:bg-gray-600 rounded-xl text-white font-bold hover:scale-95 hover:bg-slate-700/80 backdrop-blur-xl transition-transform duration-300 text-sm lg:text-xs xl:text-sm"
-                    >
-                      <AnimatedWrapper
-                        delay={3000}
-                        className="flex gap-1.5 items-center"
-                      >
-                        <FaFileExport size={18} />
-                        Resume
-                      </AnimatedWrapper>
-                    </a>
-                  </div>
-                </AnimatedWrapper>
+              <div className="flex flex-wrap gap-4 mt-auto pt-2 short:pt-1">
+                <Link
+                  to="/about"
+                  className="btn-press group px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 text-sm lg:text-xs xl:text-sm"
+                >
+                  About me
+                  <ArrowUpRight
+                    aria-hidden
+                    className="size-4 transition-transform duration-300 ease-out-expo group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+                <a
+                  href={resume}
+                  download="Mujibulhaquetanim-resume.pdf"
+                  className="btn-press group px-3 py-1.5 lg:px-3 lg:py-1 xl:px-4 xl:py-2 text-sm lg:text-xs xl:text-sm"
+                >
+                  <FaFileExport
+                    aria-hidden
+                    size={16}
+                    className="transition-transform duration-300 ease-out-expo group-hover:translate-y-0.5"
+                  />
+                  Download resume
+                </a>
               </div>
-            </section>
+            </div>
           </AnimatedWrapper>
 
           {/* ── Projects Section ── */}
           <AnimatedWrapper
-            delay={3500}
-            className="col-span-full md:col-span-2 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl pb-4 lg:pb-4 xl:pb-8 hover:bg-slate-600 transition-colors duration-300 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
+            delay={90}
+            className="col-span-full md:col-span-2 lg:col-span-6 w-full h-full min-h-[16rem] lg:min-h-0"
           >
-            <NavLink to={"/projects"}>
-              <AnimatedWrapper delay={3700} className="w-full h-full">
-                <div className="relative h-full w-full">
-                  <AnimatedWrapper delay={3800}>
-                    <h1 className="text-lg sm:text-xl lg:text-lg xl:text-2xl text-white font-bold pt-2 tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center lg:mt-2">
-                      Projects Overview
-                    </h1>
-                  </AnimatedWrapper>
-                  <AnimatedWrapper delay={3900} className="w-full h-full pb-4">
-                    <ProjectsCard />
-                  </AnimatedWrapper>
-                </div>
-              </AnimatedWrapper>
-            </NavLink>
+            <Link
+              to="/projects"
+              className="tile tile-link group flex flex-col h-full w-full pb-2 lg:pb-2 xl:pb-6"
+            >
+              <h2 className="flex items-center justify-center gap-1.5 text-lg sm:text-xl lg:text-lg xl:text-2xl text-white font-bold pt-3 lg:pt-3 tracking-tight">
+                Projects overview
+                <ArrowUpRight
+                  aria-hidden
+                  className="size-5 opacity-60 transition-all duration-300 ease-out-expo group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </h2>
+              <div className="flex-1 min-h-0 w-full">
+                <ProjectsCard />
+              </div>
+            </Link>
           </AnimatedWrapper>
 
           {/* ── GitHub Section ── */}
           <AnimatedWrapper
-            delay={4100}
-            className="col-span-full md:col-span-2 lg:col-span-6 w-full h-full overflow-hidden rounded-xl border border-white/10 bg-slate-600/80 shadow-[0_12px_36px_rgba(15,23,42,0.24),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl transition-[background-color,box-shadow,transform] duration-500 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.13),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.14),transparent_42%),radial-gradient(circle_at_center,rgba(99,102,241,0.06),transparent_55%)] hover:-translate-y-0.5 hover:bg-slate-600/95 hover:shadow-[0_18px_45px_rgba(15,23,42,0.32),0_0_28px_rgba(56,189,248,0.08),inset_0_1px_0_rgba(255,255,255,0.12)]"
+            delay={180}
+            className="col-span-full md:col-span-2 lg:col-span-6 w-full h-full min-h-0"
           >
-            <NavLink
-              to={"https://github.com/mujibulhaquetanim"}
-              target="_blank"
-            >
-              <AnimatedWrapper
-                delay={4500}
-                className="h-full flex flex-col justify-center"
-              >
-                <GitTimeline
-                  username="mujibulhaquetanim"
-                />
-              </AnimatedWrapper>
-            </NavLink>
+            <GitTimeline username="mujibulhaquetanim" />
           </AnimatedWrapper>
 
           {/* ── Typing Speed Section ── */}
           <AnimatedWrapper
-            delay={4700}
-            subDelay={700}
-            className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl hover:bg-slate-600 transition-colors duration-300 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
+            delay={240}
+            className="col-span-full md:col-span-1 lg:col-span-3 w-full h-full"
           >
-            <NavLink
-              to={"https://monkeytype.com/profile/mujibtanim"}
+            <a
+              href="https://monkeytype.com/profile/mujibtanim"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Typing speed: over 60 words per minute. Opens Monkeytype profile."
+              className="tile tile-link group flex flex-col items-center justify-center h-full p-4 gap-1.5 lg:gap-1 xl:gap-2"
             >
-              <div className="flex flex-col items-center justify-center h-full p-3 gap-1.5 lg:gap-1 xl:gap-2">
-                <div className="flex items-baseline gap-1">
-                  <AnimatedWrapper
-                    delay={5000}
-                    subDelay={1000}
-                    className="text-4xl sm:text-5xl lg:text-4xl xl:text-6xl 2xl:text-7xl text-white font-bold hover:shadow [7px_7px_0px_#334155] hover:scale-95 transition-transform duration-300 px-2 py-1 rounded-xl"
-                  >
-                    <p className="hover:shadow-[7px_7px_0px_#334155] hover:scale-95 transition-transform duration-300 px-2 py-1 rounded-xl text-center hover:bg-slate-700">
-                      60+
-                    </p>
-                  </AnimatedWrapper>
-                  <span className="text-xs text-gray-400 font-bold ml-1.5 lg:ml-1 xl:ml-2 2xl:ml-3">
-                    WPM
-                  </span>
-                </div>
-                <AnimatedWrapper
-                  delay={5300}
-                  subDelay={1500}
-                  className="text-xs sm:text-sm lg:text-xs xl:text-base text-white font-bold tracking-wide hover:scale-95 hover:underline hover:underline-offset-4 text-center mt-0.5"
-                >
-                  Typing Speed ⌨️
-                </AnimatedWrapper>
+              <div className="flex items-baseline gap-1" aria-hidden>
+                <span className="font-display text-5xl sm:text-6xl lg:text-4xl xl:text-6xl 2xl:text-7xl text-white font-bold tracking-tight">
+                  <CountUp to={60} suffix="+" />
+                </span>
+                <span className="text-xs text-slate-300 font-semibold ml-1.5">
+                  WPM
+                </span>
               </div>
-            </NavLink>
+              <span
+                aria-hidden
+                className="flex items-center gap-1.5 text-xs sm:text-sm lg:text-xs xl:text-base text-white font-semibold"
+              >
+                <FaKeyboard className="transition-transform duration-300 ease-out-expo group-hover:-translate-y-0.5" />
+                Typing speed
+              </span>
+            </a>
           </AnimatedWrapper>
 
           {/* ── Tech Stack Section ── */}
           <AnimatedWrapper
-            delay={5700}
-            subDelay={2000}
-            className="col-span-full md:col-span-1 lg:col-span-3 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 w-full h-full hover:bg-slate-600 transition-colors duration-300 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
+            delay={300}
+            className="col-span-full md:col-span-1 lg:col-span-3 w-full h-full"
           >
-            <NavLink to={"/tech-stack"}>
-              <AnimatedWrapper
-                delay={6000}
-                subDelay={2500}
-                className="flex flex-col items-center justify-center h-full gap-2 lg:gap-1.5 xl:gap-4 px-2 py-1 rounded-xl"
-              >
-                <AnimatedWrapper delay={6500} subDelay={3000}>
-                  <h1 className="text-lg sm:text-xl lg:text-base xl:text-2xl text-white font-bold tracking-wider hover:scale-95 hover:underline hover:underline-offset-4 text-center mb-0.5 mt-1 lg:mt-0 xl:mt-2 2xl:mt-3">
-                    Tech Stack
-                  </h1>
-                </AnimatedWrapper>
-                <TechStacks />
-              </AnimatedWrapper>
-            </NavLink>
+            <Link
+              to="/tech-stack"
+              className="tile tile-link group flex flex-col items-center justify-center h-full gap-2 lg:gap-1 xl:gap-3 p-3 lg:p-2 xl:p-4 overflow-hidden"
+            >
+              <h2 className="flex items-center gap-1 text-lg sm:text-xl lg:text-base xl:text-2xl text-white font-bold tracking-tight">
+                Tech stack
+                <ArrowUpRight
+                  aria-hidden
+                  className="size-4 xl:size-5 opacity-60 transition-all duration-300 ease-out-expo group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </h2>
+              <TechStacks />
+            </Link>
           </AnimatedWrapper>
 
           {/* ── Blogs Section ── */}
           <AnimatedWrapper
-            delay={6700}
-            subDelay={3200}
-            className="col-span-full md:col-span-1 lg:col-span-6 bg-slate-600/80 backdrop-blur-xl rounded-xl p-3 lg:p-2 xl:p-4 hover:bg-slate-600 transition-colors duration-300 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
+            delay={360}
+            className="col-span-full md:col-span-1 lg:col-span-6 w-full h-full"
           >
-            <NavLink to={"/Blogs"}>
-              <AnimatedWrapper
-                delay={7000}
-                subDelay={3500}
-                className="w-full h-full flex items-center justify-center"
-              >
-                {/* Scaled down at lg; xl gets the larger icon back */}
-                <h1 className="text-4xl sm:text-5xl lg:text-4xl xl:text-6xl 2xl:text-7xl text-white font-bold flex items-center justify-center h-full hover:scale-105 hover:underline hover:underline-offset-4 transition-transform duration-300 px-2 py-1 rounded-xl hover:shadow-[7px_7px_0px_#334155] hover:bg-slate-700/80 backdrop-blur-xl">
-                  <GrArticle />
-                </h1>
-              </AnimatedWrapper>
-            </NavLink>
+            <Link
+              to="/blogs"
+              className="tile tile-link group flex items-center justify-center gap-4 h-full p-4 lg:p-2 xl:p-4"
+            >
+              <GrArticle
+                aria-hidden
+                className="size-10 sm:size-12 lg:size-8 xl:size-12 2xl:size-14 text-white transition-transform duration-300 ease-out-expo group-hover:-rotate-6 group-hover:scale-110"
+              />
+              <span className="flex flex-col">
+                <span className="font-display text-xl sm:text-2xl lg:text-lg xl:text-2xl font-bold text-white tracking-tight">
+                  Blogs
+                </span>
+                <span className="text-xs lg:text-[11px] xl:text-sm text-slate-300">
+                  {POSTS.length} {POSTS.length === 1 ? "article" : "articles"}{" "}
+                  in the pipeline
+                </span>
+              </span>
+            </Link>
           </AnimatedWrapper>
 
           {/* ── Social Links Section ── */}
           <AnimatedWrapper
-            delay={7500}
-            subDelay={4000}
-            className="col-span-full md:col-span-1 lg:col-span-6 rounded-xl w-full h-full"
+            delay={420}
+            className="col-span-full md:col-span-1 lg:col-span-6 w-full h-full"
           >
-            <div className="grid grid-cols-3 gap-4 h-full transition-colors duration-300 rounded-xl">
-              {[
-                {
-                  icon: FaLinkedin,
-                  url: "https://www.linkedin.com/in/mujibulhaquetanim/",
-                },
-                {
-                  icon: FaGithub,
-                  url: "https://github.com/mujibulhaquetanim",
-                },
-                { icon: FaXTwitter, url: "https://twitter.com/mmhtanim" },
-              ].map((social, index) => (
-                <NavLink
-                  key={index}
-                  to={social.url}
-                  target="_blank"
-                  className="rounded-xl p-2 hover:border-4 hover:bg-slate-600/80 backdrop-blur-xl hover:scale-95 duration-700 flex items-center justify-center bg-slate-600/80 hover:bg-slate-600 transition-colors bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]"
-                >
-                  <social.icon
-                    color="white"
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-8 lg:h-8 xl:w-12 xl:h-12 2xl:w-16 2xl:h-16 hover:shadow-[7px_7px_0px_#334155] hover:scale-110 transition-transform duration-300 p-1 rounded-xl bg-slate-700/80"
-                  />
-                </NavLink>
+            <ul className="grid grid-cols-3 gap-2 sm:gap-3 xl:gap-4 h-full">
+              {SOCIALS.map((social) => (
+                <li key={social.url}>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="tile tile-link group flex h-full min-h-16 items-center justify-center p-2"
+                  >
+                    <social.icon
+                      aria-hidden
+                      className="size-8 sm:size-10 lg:size-8 xl:size-11 2xl:size-14 text-white transition-transform duration-300 ease-out-expo group-hover:scale-110 group-hover:-translate-y-0.5 group-active:scale-95"
+                    />
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </AnimatedWrapper>
         </section>
       </div>

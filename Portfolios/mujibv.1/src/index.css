@@ -2,6 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --page: #334155;
+    --tile: rgba(71, 85, 105, 0.8);
+    --tile-hover: #475569;
+    --edge: rgba(255, 255, 255, 0.1);
+    --ink: #f8fafc;
+    --muted: #cbd5e1;
+    --signal: #4ade80;
+    --sky: #7dd3fc;
+    /* Hard offset shadow colour — the page colour, so buttons read as cut out of the tile */
+    --hard: #334155;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    /* Used by the marquee edge fades */
+    --card-background: #4b596c;
+    color-scheme: dark;
+  }
+
+  html {
+    background-color: var(--page);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-page font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    font-optical-sizing: auto;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sky);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: rgba(125, 211, 252, 0.35);
+  }
+}
+
+@layer components {
+  /* Bento surface. Quiet by default; .tile-link adds the hover response. */
+  .tile {
+    @apply relative rounded-2xl border border-edge bg-tile backdrop-blur-xl;
+    background-image:
+      radial-gradient(
+        circle at top left,
+        rgba(255, 255, 255, 0.08),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(56, 189, 248, 0.09),
+        transparent 35%
+      );
+    transition:
+      background-color 300ms var(--ease-out),
+      border-color 300ms var(--ease-out),
+      transform 300ms var(--ease-out);
+  }
+
+  .tile-link {
+    @apply cursor-pointer;
+  }
+
+  .tile-link:hover,
+  .tile-link:focus-within {
+    @apply bg-tile-hover;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (hover: hover) {
+    .tile-link:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  /*
+    Signature press: a hard offset shadow that swings left → right on hover,
+    and the button sinks into it on press.
+  */
+  .btn-press {
+    @apply inline-flex items-center gap-1.5 rounded-xl border-2 border-white/90 bg-white/15 font-semibold text-white;
+    box-shadow: -6px 6px 0 var(--hard);
+    transition:
+      transform 180ms var(--ease-out),
+      box-shadow 180ms var(--ease-out),
+      background-color 200ms var(--ease-out);
+  }
+
+  .btn-press:hover {
+    @apply bg-white/25;
+    box-shadow: 6px 6px 0 var(--hard);
+    transform: translate(-1px, -1px);
+  }
+
+  .btn-press:active {
+    box-shadow: 0 0 0 var(--hard);
+    transform: translate(4px, 4px);
+  }
+
+  .chip {
+    @apply rounded-full border border-white/10 bg-black/20 px-2.5 py-0.5 text-slate-100;
+  }
+}
+
 @layer utilities {
   .git-timeline-scrollbar {
     @apply overflow-x-auto pb-2;
@@ -28,7 +139,32 @@
   }
 
   .animate-git-shimmer {
+    background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+    background-size: 200% 100%;
     animation: git-shimmer 1.25s infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee var(--duration, 40s) linear infinite;
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration, 40s) linear infinite;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(51, 65, 85, 0.3);
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0ea5e9, #8b5cf6);
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #0284c7, #7c3aed);
   }
 }
 
@@ -41,68 +177,70 @@
   }
 }
 
-.custom-border {
-    position: relative;
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
   }
-  
-  .custom-border::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    border-bottom: 4px solid whitesmoke;
+  to {
+    transform: translateX(-100%);
   }
+}
 
-  @keyframes marquee {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(100%);
   }
-  
-  @keyframes marquee-vertical {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(-100%);
-    }
+  to {
+    transform: translateY(-100%);
   }
-  
-  .animate-marquee {
-    animation: marquee var(--duration, 40s) linear infinite;
-  }
-  
-  .animate-marquee-vertical {
-    animation: marquee-vertical var(--duration, 40s) linear infinite;
-  }
-  
-          .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(51, 65, 85, 0.3);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #0ea5e9, #8b5cf6);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #0284c7, #7c3aed);
-        }
+}
+
+.custom-border {
+  position: relative;
+}
+
+.custom-border::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  border-bottom: 4px solid whitesmoke;
+}
 
 .animated-wrapper {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transform: translateY(14px) scale(0.985);
+  transition:
+    opacity 520ms var(--ease-out),
+    transform 620ms var(--ease-out);
 }
 
 .animated-wrapper.enter {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animated-wrapper {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* A marquee reduced to one iteration would jump; hold it still instead. */
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation: none !important;
+  }
 }
