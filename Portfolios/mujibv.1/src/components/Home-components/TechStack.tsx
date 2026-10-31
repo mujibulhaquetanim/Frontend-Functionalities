@@ -1,16 +1,25 @@
 import Marquee from "../Home-components/Marquee/Marquee";
-import {typedTechStacks} from "../../assets/techStackData";
+import { typedTechStacks } from "../../assets/techStackData";
 
 const TechStacks = () => {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee className="[--duration:20s]" repeat={5}>
+    // Mask-based edge fade works on any tile colour (including hover), unlike gradient overlays.
+    <div
+      aria-hidden
+      className="relative flex w-full flex-col items-center justify-center overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_22%,black_78%,transparent)]"
+    >
+      <Marquee
+        className="[--duration:45s] p-3 lg:p-2 xl:p-4"
+        repeat={5}
+        pauseOnHover
+      >
         {typedTechStacks.map(({ icon: Icon, name }) => (
-          <Icon className="size-20 md:max-lg:size-8" color="white" key={name} />
+          <Icon
+            className="size-14 sm:size-16 md:max-lg:size-10 lg:size-10 xl:size-16 text-white"
+            key={name}
+          />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[var(--card-background)]"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[var(--card-background)]"></div>
     </div>
   );
 };

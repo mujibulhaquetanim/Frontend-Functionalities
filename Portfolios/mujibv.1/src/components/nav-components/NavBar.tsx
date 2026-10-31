@@ -1,32 +1,61 @@
 import { NavLink } from "react-router";
+import { motion } from "framer-motion";
 import { FaHome, FaFolder, FaTasks } from "react-icons/fa";
 import { MdSupervisedUserCircle } from "react-icons/md";
 
-export default function NavBar() {
-  const routes = [
-    { to: "/", icon: FaHome, name: "Home" },
-    { to: "/projects", icon: FaFolder, name: "Projects" },
-    { to: "/tech-stack", icon: FaTasks, name: "Stack" },
-    { to: "/about", icon: MdSupervisedUserCircle, name: "About" },
-  ];
+const routes = [
+  { to: "/", icon: FaHome, name: "Home" },
+  { to: "/projects", icon: FaFolder, name: "Projects" },
+  { to: "/tech-stack", icon: FaTasks, name: "Stack" },
+  { to: "/about", icon: MdSupervisedUserCircle, name: "About" },
+];
 
+export default function NavBar({ layoutGroup }: { layoutGroup: string }) {
   return (
-    <nav className="grid place-items-center place-content-center h-full drop-shadow-lg gap-3">
-      <div className="border-2 py-3 md:py-7 px-5 rounded-2xl gap-7 grid md:grid-flow-row grid-flow-col bg-slate-700 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.09),transparent_35%)]">
-        {routes.map((route, index) => (
+    <nav
+      aria-label="Primary"
+      className="grid place-items-center place-content-center h-full drop-shadow-lg gap-3"
+    >
+      <div className="tile border-2 border-white/70 bg-page py-2 md:py-4 px-2 md:px-2 grid md:grid-flow-row grid-flow-col gap-1 md:gap-2">
+        {routes.map((route) => (
           <NavLink
             to={route.to}
-            key={index}
-            className={({ isActive }) =>
-              `relative flex flex-col items-center group transition-transform duration-200 ${
-                isActive ? "custom-border" : "hover:scale-110"
-              }`
-            }
+            key={route.to}
+            end={route.to === "/"}
+            aria-label={route.name}
+            className="relative grid place-items-center size-11 rounded-xl group"
           >
-            <route.icon color="white" size={20} />
-            <span className="absolute bottom-[24px] bg-slate-500 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {route.name}
-            </span>
+            {({ isActive }) => (
+              <>
+                {isActive && (
+                  <motion.span
+                    layoutId={`nav-active-${layoutGroup}`}
+                    className="absolute inset-0 rounded-xl bg-white/15 ring-1 ring-white/30"
+                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                  />
+                )}
+                <route.icon
+                  aria-hidden
+                  size={20}
+                  className={`relative transition-transform duration-200 ease-out-expo ${
+                    isActive
+                      ? "text-white"
+                      : "text-slate-300 group-hover:text-white group-hover:-translate-y-0.5"
+                  }`}
+                />
+                {/* Tooltip: above on mobile (bottom bar), right on desktop (side bar) */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute whitespace-nowrap rounded-md bg-slate-900/90 px-2 py-1 text-xs text-white opacity-0 transition-all duration-200 ease-out-expo
+                             bottom-full mb-2 translate-y-1
+                             md:bottom-auto md:mb-0 md:left-full md:ml-3 md:translate-y-0 md:-translate-x-1
+                             group-hover:opacity-100 group-hover:translate-y-0 md:group-hover:translate-x-0
+                             group-focus-visible:opacity-100 group-focus-visible:translate-y-0 md:group-focus-visible:translate-x-0"
+                >
+                  {route.name}
+                </span>
+              </>
+            )}
           </NavLink>
         ))}
       </div>

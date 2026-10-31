@@ -1,4 +1,11 @@
 import { NavLink } from "react-router";
+import {
+  CalendarClock,
+  Compass,
+  GraduationCap,
+  Target,
+  UserRound,
+} from "lucide-react";
 import AnimatedWrapper from "../wrapper/AnimatedWrapper";
 import {
   focusAreas,
@@ -27,7 +34,7 @@ export default function AboutMe() {
                   <div className="mb-5 flex flex-wrap items-center gap-3">
                     <span className="inline-flex w-fit items-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white shadow-lg backdrop-blur-sm">
                       <span className="inline-flex h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(34,197,94,0.18)]" />
-                      Available for hire
+                      Open to opportunities
                     </span>
 
                     <span className="inline-flex w-fit items-center rounded-2xl border border-white/10 bg-black/15 px-4 py-2 text-sm text-slate-200">
@@ -35,7 +42,7 @@ export default function AboutMe() {
                     </span>
                   </div>
 
-                  <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+                  <div className="grid flex-1 gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
                     <div className="flex flex-col items-start gap-4">
                       <AnimatedWrapper
                         delay={500}
@@ -46,7 +53,7 @@ export default function AboutMe() {
                             <AnimatedWrapper delay={700} className="text-4xl">
                               <img
                                 src="https://avatars.githubusercontent.com/u/70325279?v=4"
-                                alt="MT"
+                                alt="Mujibul Haque Tanim"
                                 className="h-24 w-24 rounded-full object-cover"
                               />
                             </AnimatedWrapper>
@@ -58,24 +65,24 @@ export default function AboutMe() {
                         <p className="text-xs font-medium tracking-[0.22em] text-slate-300 uppercase">
                           Mujibul Haque Tanim
                         </p>
-                        <h1 className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl md:pl-2">
-                          Building systems that are
+                        <h1 className="mt-4 text-3xl font-semibold leading-tight text-white md:text-4xl xl:text-5xl md:pl-2">
+                          I build reliable backends
                           <span className="block font-extrabold text-white">
-                            scalable, realtime, and AI-ready.
+                            and AI-powered products.
                           </span>
                         </h1>
                       </div>
                     </div>
 
-                    <div className="space-y-8 justify-end text-justify rounded-[24px] border border-white/10 bg-black/15 p-4">
+                    <div className="space-y-8 justify-end rounded-[24px] border border-white/10 bg-black/15 p-4">
                       <p className="max-w-2xl text-sm leading-7 text-slate-200 md:text-base md:leading-8">
-                        I design and build production-ready software with a
-                        focus on security, scalability, and maintainability. My
-                        work spans multi-tenant backends, realtime systems, AI
-                        workflows, and full-stack product delivery.
+                        I design and ship production software end to end:
+                        multi-tenant backends, real-time features, AI workflows,
+                        and the product interface on top. I focus on security,
+                        performance, and code that stays easy to maintain.
                       </p>
 
-                      <div className="grid gap-3 sm:grid-cols-3">
+                      <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 2xl:grid-cols-3">
                         {[
                           {
                             label: "Primary stack",
@@ -84,18 +91,18 @@ export default function AboutMe() {
                           },
                           {
                             label: "Specialty",
-                            value: "Realtime",
+                            value: "Real-time",
                             note: "WebRTC, Socket.io, Redis, Kafka",
                           },
                           {
                             label: "AI focus",
-                            value: "Agentic flows",
+                            value: "AI agents",
                             note: "LangGraph, MCP, A2A, n8n",
                           },
                         ].map((item) => (
                           <div
                             key={item.label}
-                            className="rounded-[22px] border text-justify border-white/10 bg-black/15 p-4"
+                            className="min-w-0 rounded-[22px] border border-white/10 bg-black/15 p-4"
                           >
                             <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
                               {item.label}
@@ -113,7 +120,7 @@ export default function AboutMe() {
                         to="/tech-stack"
                         className="mt-4 text-sm font-medium text-sky-300 hover:text-sky-200 hover:underline"
                       >
-                        Explore my tech stack &rarr;
+                        See my full tech stack
                       </NavLink>
                     </div>
                   </div>
@@ -155,12 +162,12 @@ export default function AboutMe() {
                         Focus Areas
                       </p>
                       <h2 className="mt-2 text-2xl font-semibold text-white md:text-3xl">
-                        What I care about most
+                        Core expertise
                       </h2>
                     </div>
 
-                    <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg shadow-lg">
-                      🚀
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                      <Target aria-hidden className="h-5 w-5 text-white" />
                     </div>
                   </div>
 
@@ -221,9 +228,10 @@ export default function AboutMe() {
                           key={item.text}
                           className="flex items-center gap-3 rounded-[14px] border border-white/[0.08] bg-white/[0.04] px-3 py-2.5"
                         >
-                          <span className="text-base leading-none">
-                            {item.icon}
-                          </span>
+                          <item.icon
+                            aria-hidden
+                            className="h-4 w-4 shrink-0 text-sky-300"
+                          />
                           <p className="text-sm text-slate-200">{item.text}</p>
                         </div>
                       ))}
@@ -234,9 +242,9 @@ export default function AboutMe() {
 
                 <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
                   <p className="text-sm leading-7 text-slate-300">
-                    I care about software that stays understandable after it
-                    ships. Fancy structure is nice. Maintainable structure is
-                    nicer.
+                    I prefer code that stays easy to read and change after it
+                    ships: clear module boundaries, typed interfaces, and good
+                    observability.
                   </p>
                 </div>
               </div>
@@ -258,8 +266,8 @@ export default function AboutMe() {
                     Who I am
                   </h2>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
-                  👋
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                  <UserRound aria-hidden className="h-5 w-5 text-white" />
                 </div>
               </div>
 
@@ -270,8 +278,27 @@ export default function AboutMe() {
                     <span className="font-semibold text-sky-300">
                       Mujibul Haque Tanim
                     </span>
-                    , a Full-Stack AI Engineer focused on building scalable,
-                    resilient, and production-ready systems.
+                    , a Full-Stack AI Engineer at{" "}
+                    <a
+                      href="https://meshever.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-white underline decoration-white/30 underline-offset-4 hover:decoration-white"
+                    >
+                      MeshEver
+                    </a>
+                    . I recently built{" "}
+                    <a
+                      href="https://zasmate.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-white underline decoration-white/30 underline-offset-4 hover:decoration-white"
+                    >
+                      Zasmate
+                    </a>
+                    , a SaaS that answers customer messages across WhatsApp,
+                    Messenger, and Instagram using each business&apos;s own
+                    data.
                   </div>
 
                   <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
@@ -279,45 +306,43 @@ export default function AboutMe() {
                     <span className="font-semibold text-blue-300">
                       TypeScript, Next.js, NestJS, Fastify, and GraphQL
                     </span>
-                    , with a strong focus on secure APIs, clean modular design,
-                    and multi-tenant backend systems.
+                    , with a focus on secure APIs, modular design, and
+                    multi-tenant backends.
                   </div>
 
                   <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
-                    I build with{" "}
+                    For data and infrastructure I use{" "}
                     <span className="font-semibold text-emerald-300">
-                      PostgreSQL RLS, Drizzle ORM, Redis, Docker, AWS, Kafka,
-                      RabbitMQ, and NGINX
-                    </span>
-                    , usually when the problem needs scale, reliability, and a
-                    system that does not fold under load.
+                      PostgreSQL (with row-level security), Drizzle ORM, Redis,
+                      Docker, AWS, Kafka, RabbitMQ, and NGINX
+                    </span>{" "}
+                    to build systems that scale reliably.
                   </div>
 
                   <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
-                    I also work on AI workflows using{" "}
+                    For AI features I use{" "}
                     <span className="font-semibold text-pink-300">
-                      LangGraph, MCP servers, OpenAI SDK, and n8n
-                    </span>
-                    , especially for Agentic RAG, automation, and smarter
-                    product flows.
+                      LangGraph, MCP servers, the OpenAI SDK, and n8n
+                    </span>{" "}
+                    to build agents, retrieval-augmented generation, and
+                    workflow automation.
                   </div>
 
                   <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
-                    My work also includes{" "}
+                    For real-time and media work I use{" "}
                     <span className="font-semibold text-yellow-300">
                       WebRTC, Socket.io, HLS, and FFmpeg
-                    </span>
-                    , which I have used for realtime systems and video streaming
-                    pipelines.
+                    </span>{" "}
+                    for live communication and video streaming pipelines.
                   </div>
 
                   <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
-                    I&apos;m currently pursuing an{" "}
+                    I hold an{" "}
                     <span className="font-semibold text-indigo-300">
-                      M.Sc. in Computer Science and Engineering
+                      M.Sc. and a B.Sc. in Computer Science and Engineering
                     </span>
-                    , and I keep sharpening my craft through real projects,
-                    architecture work, and continuous learning.
+                    , with research in NLP, AI-generated phishing detection, and
+                    explainable machine learning.
                   </div>
                 </div>
               </div>
@@ -336,8 +361,8 @@ export default function AboutMe() {
                     Academic background
                   </h2>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
-                  🎓
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                  <GraduationCap aria-hidden className="h-5 w-5 text-white" />
                 </div>
               </div>
 
@@ -385,22 +410,22 @@ export default function AboutMe() {
                     Career Timeline
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold text-white">
-                    Milestones
+                    Experience and milestones
                   </h2>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
-                  ⏳
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                  <CalendarClock aria-hidden className="h-5 w-5 text-white" />
                 </div>
               </div>
 
               <div className="mt-4 grid gap-3 md:grid-cols-2">
-                {timeline.map(([year, desc, icon]) => (
+                {timeline.map(([year, desc, Icon]) => (
                   <div
                     key={year}
                     className="rounded-[24px] border border-white/10 bg-black/15 p-4"
                   >
                     <div className="mb-2 flex items-center gap-3">
-                      <span className="text-lg">{icon}</span>
+                      <Icon aria-hidden className="h-5 w-5 text-sky-300" />
                       <span className="text-lg font-bold text-sky-300">
                         {year}
                       </span>
@@ -421,37 +446,36 @@ export default function AboutMe() {
                     Currently
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold text-white">
-                    Where I&apos;m heading
+                    Current focus
                   </h2>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-3 text-lg">
-                  ✨
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                  <Compass aria-hidden className="h-5 w-5 text-white" />
                 </div>
               </div>
 
               <div className="mt-4 space-y-3">
                 <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
                   <p className="text-sm leading-7 text-slate-300">
-                    I&apos;m focused on building systems that combine product
-                    quality, backend reliability, and AI capability without
-                    turning the codebase into a haunted house.
+                    Building products that pair a reliable backend and a
+                    polished interface with AI features that solve a real
+                    business problem.
                   </p>
                 </div>
 
                 <div className="rounded-[24px] border border-white/10 bg-black/15 p-4">
                   <p className="text-sm leading-7 text-slate-300">
-                    My current interests sit around scalable architecture,
-                    realtime products, multi-tenant SaaS, and intelligent
-                    workflow automation.
+                    Areas of interest: scalable architecture, real-time
+                    products, multi-tenant SaaS, and workflow automation.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Backend-first",
-                    "Realtime-ready",
-                    "AI-integrated",
-                    "Cloud-native",
+                    "Multi-tenant SaaS",
+                    "Real-time systems",
+                    "AI agents",
+                    "Cloud infrastructure",
                   ].map((item) => (
                     <span
                       key={item}

@@ -38,7 +38,7 @@ export default function TechStacksPage() {
   }, []);
 
   return (
-    <main className="min-h-screen text-white">
+    <div className="min-h-screen text-white">
       <section className="mx-auto max-w-[1600px] px-4 py-4 md:px-5 md:py-5 lg:px-6 lg:py-6">
         <div className="space-y-4 lg:space-y-5">
           <div className="grid gap-4 lg:grid-cols-[1.15fr_1fr]">
@@ -50,17 +50,17 @@ export default function TechStacksPage() {
                     Tech Stack & Expertise
                   </p>
                   <h1 className="mt-4 text-4xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl">
-                    Building scalable systems with
+                    The tools I use to build
                     <span className="block font-extrabold text-white">
-                      backend, realtime, and AI depth.
+                      backend, real-time, and AI products.
                     </span>
                   </h1>
 
                   <p className="mt-5 text-justify max-w-xl text-sm leading-7 text-slate-200 md:text-base md:leading-8">
-                    I focus on production-ready engineering: secure APIs,
-                    multi-tenant backends, realtime communication, AI
-                    orchestration, and cloud delivery. The page below highlights
-                    the stack I use most often to ship those systems.
+                    My work centres on secure APIs, multi-tenant backends,
+                    real-time communication, AI orchestration, and cloud
+                    deployment. This page lists the stack I use most often in
+                    production.
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-3">
@@ -83,9 +83,9 @@ export default function TechStacksPage() {
                 <div className="mt-6 flex items-center gap-3">
                   <NavLink
                     to="/about"
-                    className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-white/15 text-center animate-pulse"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-white/15 text-center"
                   >
-                    Explore About Me
+                    About me
                     <ArrowUpRight className="h-4 w-4" />
                   </NavLink>
                   <div className="hidden md:flex flex-wrap gap-2">
@@ -209,7 +209,7 @@ export default function TechStacksPage() {
                     Expertise Grid
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold text-white">
-                    What I’m strongest in
+                    Areas of expertise
                   </h2>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
@@ -232,7 +232,7 @@ export default function TechStacksPage() {
                       Impact
                     </p>
                     <h2 className="mt-2 text-2xl font-semibold text-white text-justify">
-                      Work that moved metrics
+                      Selected results
                     </h2>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
@@ -240,9 +240,7 @@ export default function TechStacksPage() {
                   </div>
                 </div>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
-                  These are the kinds of results I aim for: lower latency,
-                  stronger stability, better throughput, and cleaner delivery
-                  pipelines.
+                  Measured outcomes from production work.
                 </p>
               </div>
 
@@ -251,15 +249,15 @@ export default function TechStacksPage() {
                 <StatTile value="3k+" label="Concurrent users supported" />
                 <StatTile
                   value="<200ms"
-                  label="Median latency in realtime work"
+                  label="Median latency in real-time features"
                 />
                 <StatTile
                   value="Agentic RAG"
-                  label="Deployed on MCP servers for automation"
+                  label="Deployed on MCP servers for workflow automation"
                 />
                 <StatTile
                   value="Multi-tenant"
-                  label="Built with RLS and strong data isolation"
+                  label="Tenant isolation with PostgreSQL row-level security"
                 />
               </div>
             </div>
@@ -271,7 +269,7 @@ export default function TechStacksPage() {
                     Stack Notes
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold text-white">
-                    Tools I reach for
+                    Tools I use
                   </h2>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
@@ -324,12 +322,12 @@ export default function TechStacksPage() {
                   "KISS",
                   "Modular design",
                   "Observability",
-                  "Testing",
+                  "Automated testing",
                   "CI/CD",
                   "Performance tuning",
-                  "Security-first",
-                  "Multi-tenant mindset",
-                  "Realtime-aware",
+                  "Security by default",
+                  "Data isolation",
+                  "Code review",
                 ].map((item) => (
                   <span
                     key={item}
@@ -348,28 +346,27 @@ export default function TechStacksPage() {
                     My approach
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold text-white">
-                    My approach to building with this stack
+                    How I build
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-slate-300">
-                    I build with a backend-first approach, integrating AI where
-                    it adds the most value, and optimizing for realtime
-                    performance and cloud scalability. My focus is on delivering
-                    secure, maintainable systems that drive real business
-                    impact.
+                    I start from the data model and the API, add AI where it
+                    clearly helps the user, and plan for real-time load and
+                    cloud scaling from the beginning. The goal is secure,
+                    maintainable systems that are straightforward to operate.
                   </p>
                 </div>
 
                 <div className="mt-5 flex flex-wrap gap-2">
-                  <Pill>Backend-first</Pill>
-                  <Pill>AI-integrated</Pill>
-                  <Pill>Realtime-ready</Pill>
-                  <Pill>Cloud-native</Pill>
+                  <Pill>Data model first</Pill>
+                  <Pill>AI where it helps</Pill>
+                  <Pill>Built to scale</Pill>
+                  <Pill>Easy to operate</Pill>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

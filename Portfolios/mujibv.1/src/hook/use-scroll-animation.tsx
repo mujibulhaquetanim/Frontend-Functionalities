@@ -5,30 +5,33 @@ export function useScrollAnimation() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const currentRef = ref.current;
+    if (!currentRef) return;
+
+    // Old browsers / some webviews: never leave content stuck at opacity 0.
+    if (typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+          observer.disconnect();
         }
       },
       {
         root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      }
+        // Start a little before the element enters so it's settled by the time it's read.
+        rootMargin: "0px 0px -5% 0px",
+        threshold: 0.05,
+      },
     );
 
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    observer.observe(currentRef);
 
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
+    return () => observer.disconnect();
   }, []);
 
   return { ref, isVisible };
