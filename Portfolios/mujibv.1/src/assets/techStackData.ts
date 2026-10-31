@@ -30,7 +30,16 @@ import {
 import { FaAws, FaGolang } from "react-icons/fa6";
 import { RiOpenaiFill } from "react-icons/ri";
 import type { IconType } from "react-icons";
-import { Bot, Cloud, Code2, Database, Globe, Server, ShieldCheck, Workflow,  } from "lucide-react";
+import {
+  Bot,
+  Cloud,
+  Code2,
+  Database,
+  Globe,
+  Server,
+  ShieldCheck,
+  Workflow,
+} from "lucide-react";
 
 type TechStack = {
   name: string;
@@ -44,7 +53,7 @@ const techStacks: TechStack[] = [
     icon: SiTypescript,
     description: "TypeScript is a typed superset of JavaScript.",
   },
-    {
+  {
     name: "Linux",
     icon: SiLinux,
     description: "Open-source operating system.",
@@ -54,7 +63,7 @@ const techStacks: TechStack[] = [
     icon: FaAws,
     description: "Cloud computing platform.",
   },
-    {
+  {
     name: "GitHub Actions",
     icon: SiGithubactions,
     description: "CI/CD automation platform.",
@@ -74,7 +83,7 @@ const techStacks: TechStack[] = [
     icon: SiReact,
     description: "Library for building user interfaces.",
   },
-    {
+  {
     name: "NestJS",
     icon: SiNestjs,
     description: "Progressive Node.js framework.",
@@ -84,7 +93,7 @@ const techStacks: TechStack[] = [
     icon: SiDocker,
     description: "Containerization platform.",
   },
-    {
+  {
     name: "GraphQL",
     icon: SiGraphql,
     description: "Query language for APIs.",
@@ -119,7 +128,7 @@ const techStacks: TechStack[] = [
     icon: SiPostgresql,
     description: "Advanced open-source relational database.",
   },
-    {
+  {
     name: "Redis",
     icon: SiRedis,
     description: "In-memory data structure store.",
@@ -139,10 +148,10 @@ const techStacks: TechStack[] = [
     icon: SiPython,
     description: "High-level general-purpose language.",
   },
-    {
+  {
     name: "Cloudflare",
     icon: SiCloudflare,
-    description: "Web performance and security company.",
+    description: "CDN, DNS, and edge security.",
   },
   {
     name: "JWT",
@@ -182,8 +191,8 @@ const techStacks: TechStack[] = [
   {
     name: "OpenAI",
     icon: RiOpenaiFill,
-    description: "AI research and deployment company.",
-    },
+    description: "OpenAI API and SDK for LLM-powered features.",
+  },
   {
     name: "Pandas",
     icon: SiPandas,
@@ -211,7 +220,7 @@ const pillarCards = [
   },
   {
     icon: Workflow,
-    title: "Realtime & Streaming",
+    title: "Real-time & Streaming",
     short: "Low-latency communication and media",
     items: [
       "WebRTC",
@@ -248,7 +257,7 @@ const pillarCards = [
   {
     icon: Globe,
     title: "Frontend & Product UI",
-    short: "Responsive interfaces that ship well",
+    short: "Responsive, accessible product interfaces",
     items: [
       "Next.js",
       "React",
@@ -289,7 +298,7 @@ const spotlight = [
   },
   {
     label: "Specialty",
-    value: "Realtime systems • Multi-tenant SaaS • AI workflows",
+    value: "Real-time systems • Multi-tenant SaaS • AI workflows",
   },
   { label: "Delivery", value: "Docker • AWS • CI/CD • Observability" },
 ];
